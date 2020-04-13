@@ -5,7 +5,7 @@ require("@/utils/config/config");
 require("@/utils/config/filters");
 
 if (process.env.NODE_ENV === "development" && process.env.DEVTOOLS) {
-  require("@/utils/dev-tools");
+    require("@/utils/dev-tools");
 }
 
 // ** Start Vue here ** //
@@ -13,7 +13,7 @@ import App from "./app.vue";
 import router from "./router";
 Vue.component("app", App);
 new Vue({
-  el: "#app",
-  router,
-  render: h => h(App)
+    el: "#app",
+    router,
+    render: (h) => h(App),
 });
