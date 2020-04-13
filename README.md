@@ -7,3 +7,7 @@ Welcome to the Watch With Me repository.
 The extension can be found in the [./extension](./extension) folder.
 
 Have fun!
+
+## Devlopment
+
+Before anything you should run `make install` in the root directory.
