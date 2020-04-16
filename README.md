@@ -12,7 +12,9 @@ Have fun!
 
 Before anything you should run `make install` in the root directory.
 
-If you run into the following error `ERROR ENOENT: no such file or directory, mkdir` when install `pnpm` you can fix it by running:
+### Troubleshoot
+
+If you run into the following error `ERROR ENOENT: no such file or directory, mkdir` when running `make install` you can fix it by running:
 
 ```bash
 sudo mkdir -p /usr/local/pnpm-global
