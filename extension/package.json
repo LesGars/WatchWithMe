@@ -69,7 +69,7 @@
         "postcss-import": "^12.0.1",
         "postcss-loader": "^3.0.0",
         "postcss-scss": "^2.0.0",
-        "prettier": "^1.19.1",
+        "prettier": "2.0.5",
         "rimraf": "^3.0.0",
         "sass-loader": "~8.0",
         "string-replace-loader": "^2.2.0",
