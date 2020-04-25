@@ -12,6 +12,10 @@ Have fun!
 
 We use the [serverless](https://github.com/serverless/serverless) framework to manage and deploy our serverless backend.
 
+### Reference links
+
+Serverless websockets: https://serverless.com/framework/docs/providers/aws/events/websocket/
+
 ### Useful commands
 
 ```bash
