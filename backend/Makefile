@@ -23,3 +23,7 @@ deploy:
 
 remove:
 	sls remove
+
+monitor:
+	npx sls-dev-tools -p lesgars-watch-with-me -l . -n watch-with-me-dev
+
