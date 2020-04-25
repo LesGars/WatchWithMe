@@ -1,0 +1,23 @@
+{
+    "name": "beckend-watch-with-me",
+    "version": "1.0.0",
+    "description": "Backend powered by the serverless framework",
+    "main": "handler.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LesGars/WatchWithMe.git"
+    },
+    "author": "LesGars",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LesGars/WatchWithMe/issues"
+    },
+    "homepage": "https://github.com/LesGars/WatchWithMe#readme",
+    "devDependencies": {
+        "serverless-iam-roles-per-function": "^2.0.2"
+    }
+}

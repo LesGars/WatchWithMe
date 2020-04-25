@@ -1,5 +1,8 @@
 service: watch-with-me
 
+plugins:
+  - serverless-iam-roles-per-function # allows to set permissions per function
+
 provider:
   profile: lesgars-watch-with-me
   name: aws
@@ -10,6 +13,13 @@ provider:
 functions:
   connect:
     handler: handler.connect
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:PutItem
+        Resource:
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: $connect
@@ -20,11 +30,26 @@ functions:
               - "route.request.header.Auth"
   disconnect:
     handler: handler.disconnect
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:UpdateItem
+          - dynamodb:DeleteItem
+        Resource:
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: $disconnect
   default:
     handler: handler.default
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:GetItem
+        Resource:
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: $default

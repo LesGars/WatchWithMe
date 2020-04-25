@@ -1,0 +1,18 @@
+devDependencies:
+  serverless-iam-roles-per-function: 2.0.2
+lockfileVersion: 5.1
+packages:
+  /lodash/4.17.15:
+    dev: true
+    resolution:
+      integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  /serverless-iam-roles-per-function/2.0.2:
+    dependencies:
+      lodash: 4.17.15
+    dev: true
+    engines:
+      node: '>=6.10.0'
+    resolution:
+      integrity: sha512-3zv4Af3x7KJHC4fuJMHniEEstCljMghReaYIg94Spdsqkhiy8GJ3yfJ5Jy+wiG/DvyObK91JJNMjLhDnDc+vCQ==
+specifiers:
+  serverless-iam-roles-per-function: ^2.0.2
