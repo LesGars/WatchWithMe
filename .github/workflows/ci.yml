@@ -19,3 +19,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: make install
+      - name: Build extension
+        run: make build-extension

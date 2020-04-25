@@ -6,3 +6,10 @@ install-pnpm: ## Install/Update pnpm package manager
 
 install: install-pnpm ## Install all dependencies
 	pnpm install
+	# Extension
+	cd extension && pnpm install
+	# Backend
+	cd backend && pnpm install
+
+build-extension:
+	cd extension && pnpm run build
