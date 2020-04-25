@@ -1,4 +1,4 @@
-const { AWS } = require("./aws-boilerplate");
+const AWS = require("aws-sdk");
 
 module.exports.connect = async (event, context) => {
     return {
