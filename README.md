@@ -31,6 +31,14 @@ sls logs -t -f function_name
 sls remove
 ```
 
+### Testing the connection
+
+We use wscat to test socket connections. The url `wss://...` comes from the output of `sls deploy`.
+
+```
+wscat -c wss://5jibdimvtk.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
+```
+
 ## Development
 
 Before anything you should run `make install` in the root directory.
