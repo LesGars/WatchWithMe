@@ -14,10 +14,10 @@ var portFromCS: Runtime.Port;
 
 const connected = (p: Runtime.Port) => {
     portFromCS = p;
-    portFromCS.postMessage({ greeting: "Sending message to CS" });
+    portFromCS.postMessage("Sending message to CS");
     portFromCS.onMessage.addListener((m: any) => {
-        console.log("Message from CS");
-        console.log(m.greeting);
+        console.log("[BG] Message from CS");
+        console.log(m);
     });
 };
 

@@ -3,14 +3,18 @@ console.log(`Loaded into page`);
 import { browser } from "webextension-polyfill-ts";
 
 const myPort = browser.runtime.connect(undefined, { name: "PORT-CS" });
-myPort.postMessage({ greeting: "This is the content script" });
+myPort.postMessage("This is the content script");
 
 myPort.onMessage.addListener((message: any) => {
-    console.log("Message received from BG script");
-    console.log(message.greeting);
+    console.log("[CS] Message received from BG script");
+    console.log(message);
 });
 
-document.body.addEventListener("click", () => {
-    console.log("click");
-    myPort.postMessage({ greeting: "clickCS" });
-});
+const video = document.querySelector("video");
+if (video) {
+    video.addEventListener("playing", () => {
+        myPort.postMessage("[CS] Video is playing");
+    });
+
+    // TODO Send messages for other events
+}
