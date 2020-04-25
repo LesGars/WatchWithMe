@@ -62,6 +62,9 @@ sls logs -t -f default # or the name of the serverless function you want to log
 
 # Remove all serverless services
 sls remove
+
+# Monitor all your lambda from the terminal
+make monitor
 ```
 
 ### Testing the connection
