@@ -8,6 +8,21 @@ The extension can be found in the [./extension](./extension) folder.
 
 Have fun!
 
+## Development
+
+Before anything you should run `make install` in the root directory.
+
+### Troubleshoot
+
+If you run into the following error `ERROR ENOENT: no such file or directory, mkdir` when running `make install` you can fix it by running:
+
+```bash
+sudo mkdir -p /usr/local/pnpm-global
+sudo chown -R $(whoami) /usr/local/pnpm-global
+```
+
+(See https://github.com/pnpm/pnpm/issues/1909)
+
 ## Backend
 
 We use the [serverless](https://github.com/serverless/serverless) framework to manage and deploy our serverless backend.
@@ -19,7 +34,7 @@ Serverless websockets: https://serverless.com/framework/docs/providers/aws/event
 ### Useful commands
 
 ```bash
-# Install serverless
+# Install serverless (not necessary if you've run make install in the main directory )
 pnpm install -g serverless
 
 # Deploying everything
@@ -42,18 +57,3 @@ We use wscat to test socket connections. The url `wss://...` comes from the outp
 ```
 wscat -c wss://5jibdimvtk.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
 ```
-
-## Development
-
-Before anything you should run `make install` in the root directory.
-
-### Troubleshoot
-
-If you run into the following error `ERROR ENOENT: no such file or directory, mkdir` when running `make install` you can fix it by running:
-
-```bash
-sudo mkdir -p /usr/local/pnpm-global
-sudo chown -R $(whoami) /usr/local/pnpm-global
-```
-
-(See https://github.com/pnpm/pnpm/issues/1909)
