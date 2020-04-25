@@ -12,16 +12,21 @@ functions:
     handler: handler.connect
     events:
       - websocket:
-          route: $connect
-          # Only if we want authenticated connections
-          authorizer:
-            name: auth
-            identitySource:
-              - 'route.request.header.Auth'
+        route: $connect
+        # Only if we want authenticated connections
+        authorizer:
+          name: auth
+          identitySource:
+            - 'route.request.header.Auth'
+  disconnect:
+    handler: handler.disconnect
+    events:
+      - websocket:
+        route: $disconnect
   default:
     handler: handler.default
     events:
       - websocket:
-          route: $default
+        route: $default
   auth:
     handler: auth.auth
