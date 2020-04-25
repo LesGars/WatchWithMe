@@ -1,20 +1,18 @@
 const { AWS } = require("./aws-boilerplate");
 
-module.exports.connect = (event, context, cb) => {
-    cb(null, {
+module.exports.connect = async (event, context) => {
+    return {
         statusCode: 200,
-        body: "Connected.",
-    });
+    };
 };
 
-module.exports.disconnect = (event, context, cb) => {
-    cb(null, {
+module.exports.disconnect = async (event, context) => {
+    return {
         statusCode: 200,
-        body: "Disconnected.",
-    });
+    };
 };
 
-module.exports.default = async (event, context, cb) => {
+module.exports.default = async (event, context) => {
     // default function that just echos back the data to the client
     const client = new AWS.ApiGatewayManagementApi({
         apiVersion: "2018-11-29",
@@ -28,8 +26,7 @@ module.exports.default = async (event, context, cb) => {
         })
         .promise();
 
-    cb(null, {
+    return {
         statusCode: 200,
-        body: "Sent.",
-    });
+    };
 };
