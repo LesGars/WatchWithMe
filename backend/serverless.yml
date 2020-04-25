@@ -12,7 +12,8 @@ functions:
     handler: handler.connect
     events:
       - websocket:
-          route: $connect # authorizers are only for connect routes
+          route: $connect
+          # Only if we want authenticated connections
           authorizer:
             name: auth
             identitySource:
@@ -22,6 +23,5 @@ functions:
     events:
       - websocket:
           route: $default
-
   auth:
     handler: auth.auth

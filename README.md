@@ -29,7 +29,7 @@ sls deploy # sls and is an alias of serverless
 sls deploy function -f function_name
 
 # Logs the activity of a lambda. Very useful for debugging
-sls logs -t -f function_name
+sls logs -t -f default # or the name of the serverless function you want to log
 
 # Remove all serverless services
 sls remove
