@@ -12,6 +12,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
     "files.associations": {
         "*.scss": "stylus"
     },
