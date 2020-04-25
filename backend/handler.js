@@ -1,4 +1,4 @@
-const { AWS } = require("./boilerplate");
+const { AWS } = require("./aws-boilerplate");
 
 module.exports.connect = (event, context, cb) => {
     cb(null, {
