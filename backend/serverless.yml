@@ -1,7 +1,11 @@
-service: watch-with-me
+service:
+  name: watch-with-me
 
 plugins:
   - serverless-iam-roles-per-function # allows to set permissions per function
+
+custom:
+  tableName: RoomTable
 
 provider:
   profile: lesgars-watch-with-me
@@ -9,6 +13,8 @@ provider:
   stage: dev
   runtime: nodejs12.x
   region: eu-west-3
+  environment:
+    TABLE_NAME: ${self:custom.tableName}
 
 functions:
   connect:

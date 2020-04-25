@@ -1,3 +1,5 @@
+dependencies:
+  uuid: 7.0.3
 devDependencies:
   serverless-iam-roles-per-function: 2.0.2
 lockfileVersion: 5.1
@@ -14,5 +16,11 @@ packages:
       node: '>=6.10.0'
     resolution:
       integrity: sha512-3zv4Af3x7KJHC4fuJMHniEEstCljMghReaYIg94Spdsqkhiy8GJ3yfJ5Jy+wiG/DvyObK91JJNMjLhDnDc+vCQ==
+  /uuid/7.0.3:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
 specifiers:
   serverless-iam-roles-per-function: ^2.0.2
+  uuid: ^7.0.3

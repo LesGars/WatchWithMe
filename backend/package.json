@@ -19,5 +19,8 @@
     "homepage": "https://github.com/LesGars/WatchWithMe#readme",
     "devDependencies": {
         "serverless-iam-roles-per-function": "^2.0.2"
+    },
+    "dependencies": {
+        "uuid": "^7.0.3"
     }
 }

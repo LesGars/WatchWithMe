@@ -1,15 +1,55 @@
 const AWS = require("aws-sdk");
+const uuid = require("uuid");
+const DynamoDB = require("aws-sdk/clients/dynamodb");
+const { success, failure } = require("./libs/response");
 
 module.exports.connect = async (event, context) => {
-    return {
-        statusCode: 200,
+    if (!process.env.TABLE_NAME) {
+        throw new Error("env.tableName must be defined");
+    }
+
+    const data = {
+        test: "....",
     };
+
+    const params = {
+        TableName: process.env.TABLE_NAME,
+        Item: {
+            username: "anonymous",
+            uuid: uuid.v4(),
+            content: data.content,
+            createdAt: Date.now(),
+        },
+    };
+
+    try {
+        const dynamoDb = new DynamoDB.DocumentClient();
+        await dynamoDb.put(params).promise();
+        return success(params.Item);
+    } catch (e) {
+        return failure({ status: false, error: e.message });
+    }
 };
 
 module.exports.disconnect = async (event, context) => {
-    return {
-        statusCode: 200,
+    if (!process.env.TABLE_NAME) {
+        throw new Error("env.tableName must be defined");
+    }
+
+    const params = {
+        TableName: process.env.TABLE_NAME,
+        Key: {
+            username: "anonymous",
+        },
     };
+
+    try {
+        const dynamoDb = new DynamoDB.DocumentClient();
+        await dynamoDb.delete(params).promise();
+        return success({ status: true });
+    } catch (e) {
+        return failure({ status: false, error: e.message });
+    }
 };
 
 module.exports.default = async (event, context) => {
