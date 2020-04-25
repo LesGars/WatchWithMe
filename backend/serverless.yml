@@ -17,7 +17,7 @@ functions:
           authorizer:
             name: auth
             identitySource:
-              - 'route.request.header.Auth'
+              - "route.request.header.Auth"
   disconnect:
     handler: handler.disconnect
     events:
@@ -30,3 +30,6 @@ functions:
           route: $default
   auth:
     handler: auth.auth
+
+resources:
+  - ${file(resources/dynamodb.yml)}
