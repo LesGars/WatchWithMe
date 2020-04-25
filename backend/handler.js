@@ -17,7 +17,7 @@ module.exports.connect = async (event, context) => {
         Item: {
             username: "anonymous",
             uuid: uuid.v4(),
-            content: data.content,
+            content: data,
             createdAt: Date.now(),
         },
     };
@@ -34,17 +34,6 @@ module.exports.connect = async (event, context) => {
 };
 
 module.exports.disconnect = async (event, context) => {
-    if (!process.env.TABLE_NAME) {
-        throw new Error("env.tableName must be defined");
-    }
-
-    const params = {
-        TableName: process.env.TABLE_NAME,
-        Key: {
-            username: "anonymous",
-        },
-    };
-
     return success();
 };
 
