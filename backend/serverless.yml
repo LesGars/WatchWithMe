@@ -24,4 +24,4 @@ functions:
           route: $default
 
   auth:
-    handler: handler.auth
+    handler: auth.auth
