@@ -13,6 +13,13 @@ provider:
   stage: dev
   runtime: nodejs12.x
   region: eu-west-3
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - execute-api:ManageConnections
+      Resource:
+        - "*"
+
   environment:
     TABLE_NAME: ${self:custom.tableName}
 
@@ -47,15 +54,21 @@ functions:
     events:
       - websocket:
           route: $disconnect
-  default:
-    handler: handler.default
+  read:
+    handler: handler.read
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow
         Action:
-          - dynamodb:GetItem
+          - dynamodb:Query
         Resource:
           - "Fn::GetAtt": [RoomTable, Arn]
+    events:
+      - websocket:
+          route: read
+  default:
+    handler: handler.default
+    iamRoleStatementsInherit: true
     events:
       - websocket:
           route: $default

@@ -25,9 +25,11 @@ module.exports.connect = async (event, context) => {
     try {
         const dynamoDb = new DynamoDB.DocumentClient();
         await dynamoDb.put(params).promise();
-        return success(params.Item);
+        console.info(`inserted data for ${event.requestContext.connectionId}`);
+        return success();
     } catch (e) {
-        return failure({ status: false, error: e.message });
+        console.error(`Failed with ${e}`);
+        return failure();
     }
 };
 
@@ -43,13 +45,7 @@ module.exports.disconnect = async (event, context) => {
         },
     };
 
-    try {
-        const dynamoDb = new DynamoDB.DocumentClient();
-        await dynamoDb.delete(params).promise();
-        return success({ status: true });
-    } catch (e) {
-        return failure({ status: false, error: e.message });
-    }
+    return success();
 };
 
 module.exports.default = async (event, context) => {
@@ -69,4 +65,36 @@ module.exports.default = async (event, context) => {
     return {
         statusCode: 200,
     };
+};
+
+module.exports.read = async (event, context) => {
+    const client = new AWS.ApiGatewayManagementApi({
+        apiVersion: "2018-11-29",
+        endpoint: `https://${event.requestContext.domainName}/${event.requestContext.stage}`,
+    });
+
+    const params = {
+        TableName: process.env.TABLE_NAME,
+        KeyConditionExpression: "username = :u",
+        ExpressionAttributeValues: {
+            ":u": "anonymous",
+        },
+    };
+
+    try {
+        const dynamoDb = new DynamoDB.DocumentClient();
+        const data = await dynamoDb.query(params).promise();
+        await client
+            .postToConnection({
+                ConnectionId: event.requestContext.connectionId,
+                Data: `found: ${JSON.stringify(data)}`,
+            })
+            .promise();
+
+        console.info(`sent data to ${event.requestContext.connectionId}`);
+        return success();
+    } catch (e) {
+        console.error(`Failed with ${e}`);
+        return failure();
+    }
 };
