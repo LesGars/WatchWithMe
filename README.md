@@ -54,6 +54,6 @@ sls remove
 
 We use wscat to test socket connections. The url `wss://...` comes from the output of `sls deploy`.
 
-```
-wscat -c wss://5jibdimvtk.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
+```bash
+wscat -c wss://i5wm2ocma6.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
 ```
