@@ -5,6 +5,7 @@ provider:
   name: aws
   stage: dev
   runtime: nodejs12.x
+  region: eu-west-3
 
 functions:
   connect:
