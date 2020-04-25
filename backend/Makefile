@@ -4,8 +4,22 @@ help: ## List available commands
 install: install-deps ## Install all dependencies
 	pnpm install -g serverless
 
+intall-aws-cli-mac:
+	curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+	sudo installer -pkg AWSCLIV2.pkg -target /
+
+intall-aws-cli-linux:
+	curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+	unzip awscliv2.zip
+	sudo ./aws/install
+	rm -rf ./aws
+	rm awscliv2.zip
+
+configure:
+	aws configure --profile lesgars-watch-with-me
+
 deploy: 
 	sls deploy
 
-log-handler:
-	sls logs -t -f handler
+remove:
+	sls remove

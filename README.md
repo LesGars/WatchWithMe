@@ -31,6 +31,20 @@ We use the [serverless](https://github.com/serverless/serverless) framework to m
 
 Serverless websockets: https://serverless.com/framework/docs/providers/aws/events/websocket/
 
+### Install
+
+#### Serverless
+
+Run `make install` in root directory to install serverless
+
+#### AWS CLI
+
+```bash
+    cd backend
+    make intall-aws-cli-linux # or make intall-aws-cli-mac
+    make configure # And then fill in your AWS Acces Key, AWS Secret Key, eu-west-3, json
+```
+
 ### Useful commands
 
 ```bash
