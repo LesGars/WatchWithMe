@@ -10,7 +10,7 @@ dependencies:
   vue-router: 3.1.6
   webext-options-sync: 1.2.3
 devDependencies:
-  '@fullhuman/postcss-purgecss': 1.3.0
+  '@fullhuman/postcss-purgecss': 2.1.2
   '@types/chrome': 0.0.106
   '@types/copy-webpack-plugin': 5.0.0
   '@types/debug': 4.1.5
@@ -1002,13 +1002,13 @@ packages:
       global-tunnel-ng: 2.7.1
     resolution:
       integrity: sha512-OBIKtF6ttIJotDXe4KJMUyTBO4xMii+mFjlA8R4CORuD4HvCUaCK3lPjhdTRCvuEv6gzWNbAvd9DNBv0v780lw==
-  /@fullhuman/postcss-purgecss/1.3.0:
+  /@fullhuman/postcss-purgecss/2.1.2:
     dependencies:
       postcss: 7.0.27
-      purgecss: 1.4.2
+      purgecss: 2.1.2
     dev: true
     resolution:
-      integrity: sha512-zvfS3dPKD2FAtMcXapMJXGbDgEp9E++mLR6lTgSruv6y37uvV5xJ1crVktuC1gvnmMwsa7Zh1m05FeEiz4VnIQ==
+      integrity: sha512-Jf34YVBK9GtXTblpu0svNUJdA7rTQoRMz+yEJe6mwTnXDIGipWLzaX/VgU/x6IPC6WvU5SY/XlawwqhxoyFPTg==
   /@hapi/address/2.1.4:
     dev: true
     resolution:
@@ -2930,6 +2930,12 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
+  /commander/5.1.0:
+    dev: true
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
   /commondir/1.0.1:
     dev: true
     resolution:
@@ -8384,19 +8390,16 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  /purgecss/1.4.2:
+  /purgecss/2.1.2:
     dependencies:
+      commander: 5.1.0
       glob: 7.1.6
       postcss: 7.0.27
       postcss-selector-parser: 6.0.2
-      yargs: 14.2.3
     dev: true
-    engines:
-      node: '>=4.4.0'
-      npm: '>=5.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-hkOreFTgiyMHMmC2BxzdIw5DuC6kxAbP/gGOGd3MEsF3+5m69rIvUEPaxrnoUtfODTFKe9hcXjGwC6jcjoyhOw==
+      integrity: sha512-5oDBxiT9VonwKmEMohPFRFZrj8fdSVKxHPwq7G5Rx/2pXicZFJu+D4m5bb3NuV0sSK3ooNxq5jFIwwHzifP5FA==
   /q/1.5.1:
     dev: true
     engines:
@@ -11038,13 +11041,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3lbsNRf/j+A4QuSZfDRA7HRSfWrzO0YjqTJd5kjAq37Zep1CEgaYmrH9Q3GwPiB9cHyd1Y1UwggGhJGoxipbzg==
-  /yargs-parser/15.0.1:
-    dependencies:
-      camelcase: 5.3.1
-      decamelize: 1.2.0
-    dev: true
-    resolution:
-      integrity: sha512-0OAMV2mAZQrs3FkNpDQcBk1x5HXb8X4twADss4S0Iuk+2dGnLOE/fRHrsYm542GduMveyA77OF4wrNJuanRCWw==
   /yargs-parser/18.1.2:
     dependencies:
       camelcase: 5.3.1
@@ -11093,22 +11089,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-HG/DWAJa1PAnHT9JAhNa8AbAv3FPaiLzioSjCcmuXXhP8MlpHO5vwls4g4j6n30Z74GVQj8Xa62dWVx1QCGklg==
-  /yargs/14.2.3:
-    dependencies:
-      cliui: 5.0.0
-      decamelize: 1.2.0
-      find-up: 3.0.0
-      get-caller-file: 2.0.5
-      require-directory: 2.1.1
-      require-main-filename: 2.0.0
-      set-blocking: 2.0.0
-      string-width: 3.1.0
-      which-module: 2.0.0
-      y18n: 4.0.0
-      yargs-parser: 15.0.1
-    dev: true
-    resolution:
-      integrity: sha512-ZbotRWhF+lkjijC/VhmOT9wSgyBQ7+zr13+YLkhfsSiTriYsMzkTUFP18pFhWwBeMa5gUc1MzbhrO6/VB7c9Xg==
   /yargs/15.3.1:
     dependencies:
       cliui: 6.0.0
@@ -11185,7 +11165,7 @@ packages:
     resolution:
       integrity: sha512-5kNvPv+TUP3JqKWQUXj0vTgXHIRQpYw5YyBUVXQ0pumTAK+a4OZ+eXDHnh44nyr9B1XJQZq9WtSSm5j6NQhjWQ==
 specifiers:
-  '@fullhuman/postcss-purgecss': 1.3.0
+  '@fullhuman/postcss-purgecss': 2.1.2
   '@types/chrome': 0.0.106
   '@types/copy-webpack-plugin': 5.0.0
   '@types/debug': 4.1.5
