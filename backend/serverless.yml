@@ -19,6 +19,8 @@ provider:
   stage: dev
   runtime: nodejs12.x
   region: eu-west-3
+  memorySize: 256 # optional, in MB, default is 1024
+  timeout: 3 # optional, in seconds, default is 6
   iamRoleStatements:
     - Effect: Allow
       Action:
