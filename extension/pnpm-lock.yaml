@@ -24,7 +24,7 @@ devDependencies:
   '@vue/cli-plugin-babel': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-eslint': 4.3.1_39c37a0df7d91dff77b5226a724bc947
   '@vue/cli-plugin-typescript': 4.3.1_22122c1b335748d34772818bd2671b9d
-  '@vue/cli-service': 4.3.1_917dc0ed5e06c8c422ef7e27c33149b7
+  '@vue/cli-service': 4.3.1_593d625818e1c4ff231a2997bbf52163
   '@vue/devtools': 5.3.3
   '@vue/eslint-config-prettier': 6.0.0_af4605eedacb563169dd297b9dfe38db
   '@vue/eslint-config-typescript': 5.0.2_bfb65f6f322c54eb427e97b68401d418
@@ -1349,7 +1349,7 @@ packages:
     dependencies:
       '@babel/core': 7.9.0
       '@vue/babel-preset-app': 4.3.1
-      '@vue/cli-service': 4.3.1_917dc0ed5e06c8c422ef7e27c33149b7
+      '@vue/cli-service': 4.3.1_593d625818e1c4ff231a2997bbf52163
       '@vue/cli-shared-utils': 4.3.1
       babel-loader: 8.1.0_@babel+core@7.9.0+webpack@4.43.0
       cache-loader: 4.1.0_webpack@4.43.0
@@ -1362,7 +1362,7 @@ packages:
       integrity: sha512-tBqu0v1l4LfWX8xuJmofpp+8xQzKddFNxdLmeVDOX/omDBQX0qaVDeMUtRxxSTazI06SKr605SnUQoa35qwbvw==
   /@vue/cli-plugin-eslint/4.3.1_39c37a0df7d91dff77b5226a724bc947:
     dependencies:
-      '@vue/cli-service': 4.3.1_917dc0ed5e06c8c422ef7e27c33149b7
+      '@vue/cli-service': 4.3.1_593d625818e1c4ff231a2997bbf52163
       '@vue/cli-shared-utils': 4.3.1
       eslint: 6.8.0
       eslint-loader: 2.2.1_eslint@6.8.0+webpack@4.43.0
@@ -1378,7 +1378,7 @@ packages:
       integrity: sha512-5UEP93b8C/JQs9Rnuldsu8jMz0XO4wNXG0lL/GdChYBEheKCyXJXzan7qzEbIuvUwG3I+qlUkGsiyNokIgXejg==
   /@vue/cli-plugin-router/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_917dc0ed5e06c8c422ef7e27c33149b7
+      '@vue/cli-service': 4.3.1_593d625818e1c4ff231a2997bbf52163
       '@vue/cli-shared-utils': 4.3.1
     dev: true
     peerDependencies:
@@ -1388,7 +1388,7 @@ packages:
   /@vue/cli-plugin-typescript/4.3.1_22122c1b335748d34772818bd2671b9d:
     dependencies:
       '@types/webpack-env': 1.15.2
-      '@vue/cli-service': 4.3.1_917dc0ed5e06c8c422ef7e27c33149b7
+      '@vue/cli-service': 4.3.1_593d625818e1c4ff231a2997bbf52163
       '@vue/cli-shared-utils': 4.3.1
       cache-loader: 4.1.0_webpack@4.43.0
       fork-ts-checker-webpack-plugin: 3.1.1
@@ -1407,13 +1407,13 @@ packages:
       integrity: sha512-Uos7MTqG0btNMMhZdgLTPx24fqiiHhqz0Bow2rTeNa0piDeSjiQdyq0vgVKqJOLUu8zkvmG2jKUr15QQ0+yobQ==
   /@vue/cli-plugin-vuex/4.3.1_@vue+cli-service@4.3.1:
     dependencies:
-      '@vue/cli-service': 4.3.1_917dc0ed5e06c8c422ef7e27c33149b7
+      '@vue/cli-service': 4.3.1_593d625818e1c4ff231a2997bbf52163
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-mukwOlhZGBJhkqO2b3wHFFHjK5aP00b1WUHdrOfLR7M18euhaTyb4kA5nwZwEOmU3EzZx6kHzSFCRy/XaMkLug==
-  /@vue/cli-service/4.3.1_917dc0ed5e06c8c422ef7e27c33149b7:
+  /@vue/cli-service/4.3.1_593d625818e1c4ff231a2997bbf52163:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.43.0
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.43.0
@@ -1453,7 +1453,7 @@ packages:
       lodash.transform: 4.6.0
       mini-css-extract-plugin: 0.9.0_webpack@4.43.0
       minimist: 1.2.5
-      pnp-webpack-plugin: 1.6.4
+      pnp-webpack-plugin: 1.6.4_typescript@3.8.3
       portfinder: 1.0.25
       postcss-loader: 3.0.0
       sass-loader: 8.0.2_node-sass@4.14.0+webpack@4.43.0
@@ -1480,6 +1480,7 @@ packages:
       raw-loader: '*'
       sass-loader: '*'
       stylus-loader: '*'
+      typescript: '*'
       vue-template-compiler: ^2.0.0
       webpack-cli: '*'
     peerDependenciesMeta:
@@ -4772,6 +4773,15 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-Ggd/Ktt7E7I8pxZRbGIs7vwqAPscSESMrCSkx2FtWeqmheJgCo2R74fTsZFCifr0VTPwqRpPv17+6b8Zp7th0Q==
+  /fsevents/2.1.3:
+    dev: true
+    engines:
+      node: ^8.16.0 || ^10.6.0 || >=11.0.0
+    optional: true
+    os:
+      - darwin
+    resolution:
+      integrity: sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDnswsaaOTgTmA5pEjuQ==
   /fstream/1.0.12:
     dependencies:
       graceful-fs: 4.2.3
@@ -7806,12 +7816,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-yBmscoBZpGHKscOImivjxJoATX8=
-  /pnp-webpack-plugin/1.6.4:
+  /pnp-webpack-plugin/1.6.4_typescript@3.8.3:
     dependencies:
-      ts-pnp: 1.2.0
+      ts-pnp: 1.2.0_typescript@3.8.3
     dev: true
     engines:
       node: '>=6'
+    peerDependencies:
+      typescript: '*'
     resolution:
       integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
   /popper.js/1.16.1:
@@ -10075,10 +10087,14 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-wdGs9xO8UnwASwbluehzXciBtc9HfGlYA8Aiv856etLmdv8mJfAxCkt3YpS4g7G1IsGxaCVKQ102Qh0zycpeZQ==
-  /ts-pnp/1.2.0:
+  /ts-pnp/1.2.0_typescript@3.8.3:
+    dependencies:
+      typescript: 3.8.3
     dev: true
     engines:
       node: '>=6'
+    peerDependencies:
+      typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
