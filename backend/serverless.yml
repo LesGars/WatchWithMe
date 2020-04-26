@@ -21,6 +21,13 @@ provider:
   region: eu-west-3
   memorySize: 256 # optional, in MB, default is 1024
   timeout: 3 # optional, in seconds, default is 6
+  # By default serverless wants to create a single package that contains all the lambdas
+  # We want the lambdas to each be in their own package so that they can contain different files
+  # To achieve this we tell serverless to package the lambdas individually and by default to exclude all files
+  # Within the individual function definitions we then include the file(s) that we want which overrides the global exclude
+  package:
+    individually: true
+
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -33,7 +40,7 @@ provider:
 
 functions:
   connect:
-    handler: handler.connect
+    handler: functions/connect.main
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow
@@ -50,7 +57,7 @@ functions:
             identitySource:
               - 'route.request.header.Auth'
   disconnect:
-    handler: handler.disconnect
+    handler: functions/disconnect.main
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow
@@ -75,7 +82,7 @@ functions:
       - websocket:
           route: read
   default:
-    handler: handler.defaultHandler
+    handler: functions/read.main
     iamRoleStatementsInherit: true
     events:
       - websocket:

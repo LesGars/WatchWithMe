@@ -22,6 +22,9 @@ format:
 	pnpm run lint:fix
 	pnpm run prettier:fix
 
+build:
+	sls package
+
 deploy:
 	sls deploy
 
