@@ -1,21 +1,23 @@
-const AWS = require("aws-sdk");
-const uuid = require("uuid");
-const DynamoDB = require("aws-sdk/clients/dynamodb");
-const { success, failure } = require("./libs/response");
-
-module.exports.connect = async (event, context) => {
+import { IEvent, success, failure } from './libs/response';
+import { APIGatewayProxyResult } from 'aws-lambda';
+import { DocumentClient } from 'aws-sdk/lib/dynamodb/document_client';
+import * as ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
+import * as uuid from 'uuid';
+export const connect = async (
+    event: IEvent,
+): Promise<APIGatewayProxyResult> => {
     if (!process.env.TABLE_NAME) {
-        throw new Error("env.tableName must be defined");
+        throw new Error('env.tableName must be defined');
     }
 
     const data = {
-        test: "....",
+        test: '....',
     };
 
-    const params = {
+    const params: DocumentClient.PutItemInput = {
         TableName: process.env.TABLE_NAME,
         Item: {
-            username: "anonymous",
+            username: 'anonymous',
             uuid: uuid.v4(),
             content: data,
             createdAt: Date.now(),
@@ -23,7 +25,7 @@ module.exports.connect = async (event, context) => {
     };
 
     try {
-        const dynamoDb = new DynamoDB.DocumentClient();
+        const dynamoDb = new DocumentClient();
         await dynamoDb.put(params).promise();
         console.info(`inserted data for ${event.requestContext.connectionId}`);
         return success();
@@ -33,14 +35,14 @@ module.exports.connect = async (event, context) => {
     }
 };
 
-module.exports.disconnect = async (event, context) => {
+export const disconnect = async () => {
     return success();
 };
 
-module.exports.default = async (event, context) => {
+export const defaultHandler = async (event: IEvent) => {
     // default function that just echos back the data to the client
-    const client = new AWS.ApiGatewayManagementApi({
-        apiVersion: "2018-11-29",
+    const client = new ApiGatewayManagementApi({
+        apiVersion: '2018-11-29',
         endpoint: `https://${event.requestContext.domainName}/${event.requestContext.stage}`,
     });
 
@@ -56,22 +58,26 @@ module.exports.default = async (event, context) => {
     };
 };
 
-module.exports.read = async (event, context) => {
-    const client = new AWS.ApiGatewayManagementApi({
-        apiVersion: "2018-11-29",
+export const read = async (event: IEvent) => {
+    if (!process.env.TABLE_NAME) {
+        throw new Error('env.tableName must be defined');
+    }
+
+    const client = new ApiGatewayManagementApi({
+        apiVersion: '2018-11-29',
         endpoint: `https://${event.requestContext.domainName}/${event.requestContext.stage}`,
     });
 
-    const params = {
+    const params: DocumentClient.QueryInput = {
         TableName: process.env.TABLE_NAME,
-        KeyConditionExpression: "username = :u",
+        KeyConditionExpression: 'username = :u',
         ExpressionAttributeValues: {
-            ":u": "anonymous",
+            ':u': 'anonymous',
         },
     };
 
     try {
-        const dynamoDb = new DynamoDB.DocumentClient();
+        const dynamoDb = new DocumentClient();
         const data = await dynamoDb.query(params).promise();
         await client
             .postToConnection({

@@ -18,7 +18,11 @@ intall-aws-cli-linux:
 configure:
 	aws configure --profile lesgars-watch-with-me
 
-deploy: 
+format:
+	pnpm run lint:fix
+	pnpm run prettier:fix
+
+deploy:
 	sls deploy
 
 remove:
@@ -26,4 +30,3 @@ remove:
 
 monitor:
 	npx sls-dev-tools -p lesgars-watch-with-me -l . -n watch-with-me-dev
-

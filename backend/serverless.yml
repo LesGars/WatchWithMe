@@ -1,8 +1,14 @@
 service:
   name: watch-with-me
 
+package:
+  exclude:
+    - .git/**
+    - .gitignore
+
 plugins:
   - serverless-iam-roles-per-function # allows to set permissions per function
+  - serverless-webpack # add the ability to use typescript
 
 custom:
   tableName: RoomTable
@@ -18,7 +24,7 @@ provider:
       Action:
         - execute-api:ManageConnections
       Resource:
-        - "*"
+        - '*'
 
   environment:
     TABLE_NAME: ${self:custom.tableName}
@@ -32,7 +38,7 @@ functions:
         Action:
           - dynamodb:PutItem
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $connect
@@ -40,7 +46,7 @@ functions:
           authorizer:
             name: auth
             identitySource:
-              - "route.request.header.Auth"
+              - 'route.request.header.Auth'
   disconnect:
     handler: handler.disconnect
     iamRoleStatementsInherit: true
@@ -50,7 +56,7 @@ functions:
           - dynamodb:UpdateItem
           - dynamodb:DeleteItem
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $disconnect
@@ -62,12 +68,12 @@ functions:
         Action:
           - dynamodb:Query
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: read
   default:
-    handler: handler.default
+    handler: handler.defaultHandler
     iamRoleStatementsInherit: true
     events:
       - websocket:
