@@ -11,13 +11,13 @@
     "background": {
         "scripts": ["scripts/background.js"]
     },
-    "permissions": ["alarms", "tabs", "storage", "https://www.yahoo.com/*"],
+    "permissions": ["alarms", "tabs", "storage", "https://www.youtube.com/*"],
     "options_ui": {
         "page": "options.html"
     },
     "content_scripts": [
         {
-            "matches": ["https://www.yahoo.com/*"],
+            "matches": ["https://www.youtube.com/*"],
             "js": ["scripts/contentscript.js"],
             "css": [],
             "run_at": "document_end",

@@ -22,3 +22,38 @@ sudo chown -R $(whoami) /usr/local/pnpm-global
 ```
 
 (See https://github.com/pnpm/pnpm/issues/1909)
+
+## Backend
+
+We use the [serverless](https://github.com/serverless/serverless) framework to manage and deploy our serverless backend.
+
+### Reference links
+
+Serverless websockets: https://serverless.com/framework/docs/providers/aws/events/websocket/
+
+### Useful commands
+
+```bash
+# Install serverless (not necessary if you've run make install in the main directory )
+pnpm install -g serverless
+
+# Deploying everything
+serverless deploy
+sls deploy # sls and is an alias of serverless
+# Deploying only one service
+sls deploy function -f function_name
+
+# Logs the activity of a lambda. Very useful for debugging
+sls logs -t -f default # or the name of the serverless function you want to log
+
+# Remove all serverless services
+sls remove
+```
+
+### Testing the connection
+
+We use wscat to test socket connections. The url `wss://...` comes from the output of `sls deploy`.
+
+```bash
+wscat -c wss://i5wm2ocma6.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
+```

@@ -1,0 +1,32 @@
+service: watch-with-me
+
+provider:
+  profile: lesgars-watch-with-me
+  name: aws
+  stage: dev
+  runtime: nodejs12.x
+  region: eu-west-3
+
+functions:
+  connect:
+    handler: handler.connect
+    events:
+      - websocket:
+          route: $connect
+          # Only if we want authenticated connections
+          authorizer:
+            name: auth
+            identitySource:
+              - 'route.request.header.Auth'
+  disconnect:
+    handler: handler.disconnect
+    events:
+      - websocket:
+          route: $disconnect
+  default:
+    handler: handler.default
+    events:
+      - websocket:
+          route: $default
+  auth:
+    handler: auth.auth
