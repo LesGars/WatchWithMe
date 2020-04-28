@@ -1,7 +1,6 @@
 import { IEvent, success, failure } from '../libs/response';
 import { DocumentClient } from 'aws-sdk/lib/dynamodb/document_client';
-import * as DynamoDB from 'aws-sdk/clients/dynamodb';
-import * as ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
+import { DynamoDB, ApiGatewayManagementApi } from 'aws-sdk';
 
 export const read = async (event: IEvent) => {
     if (!process.env.TABLE_NAME) {

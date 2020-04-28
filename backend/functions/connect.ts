@@ -1,7 +1,7 @@
 import { IEvent, success, failure } from '../libs/response';
 import { APIGatewayProxyResult } from 'aws-lambda';
 import { DocumentClient } from 'aws-sdk/lib/dynamodb/document_client';
-import * as DynamoDB from 'aws-sdk/clients/dynamodb';
+import { DynamoDB } from 'aws-sdk';
 import * as uuid from 'uuid';
 
 export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {

@@ -1,5 +1,5 @@
 import { IEvent, success } from './libs/response';
-import * as ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
+import { ApiGatewayManagementApi } from 'aws-sdk';
 
 export const defaultHandler = async (event: IEvent) => {
     // default function that just echos back the data to the client
