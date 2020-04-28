@@ -58,7 +58,7 @@ devDependencies:
   rimraf: 3.0.2
   sass-loader: 8.0.2_node-sass@4.14.0+webpack@4.43.0
   string-replace-loader: 2.3.0_webpack@4.43.0
-  style-loader: 1.2.0_webpack@4.43.0
+  style-loader: 1.2.1_webpack@4.43.0
   terser-webpack-plugin: 2.3.6_webpack@4.43.0
   ts-loader: 7.0.1_typescript@3.8.3
   tsconfig-paths-webpack-plugin: 3.2.0
@@ -9703,7 +9703,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-e6/d0eBu7gHtdCqFt0xJr642LdToM5/cN4Qb9DbHjVx1CP5RyeM+zH7pbecEmDv/lBqb0QH+6Uqq75rxFPkM0w==
-  /style-loader/1.2.0_webpack@4.43.0:
+  /style-loader/1.2.1_webpack@4.43.0:
     dependencies:
       loader-utils: 2.0.0
       schema-utils: 2.6.6
@@ -9714,7 +9714,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-HC8WcGnjwNrKji7HSBqFOhGNUSt7UDU/jHxT6bA83Gk+JWJBmgitWlGihc0V1w6ZvwlzcX5LJOsofZzSP7b1tQ==
+      integrity: sha512-ByHSTQvHLkWE9Ir5+lGbVOXhxX10fbprhLvdg96wedFZb4NDekDPxVKv5Fwmio+QcMlkkNfuK+5W1peQ5CUhZg==
   /stylehacks/4.0.3:
     dependencies:
       browserslist: 4.11.1
@@ -11236,7 +11236,7 @@ specifiers:
   rimraf: 3.0.2
   sass-loader: 8.0.2
   string-replace-loader: 2.3.0
-  style-loader: 1.2.0
+  style-loader: 1.2.1
   terser-webpack-plugin: 2.3.6
   ts-loader: 7.0.1
   tsconfig-paths-webpack-plugin: 3.2.0
