@@ -1,6 +1,11 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'prettier/@typescript-eslint',
+    ],
     parserOptions: {
         ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
         sourceType: 'module', // Allows for the use of imports
@@ -26,26 +31,14 @@ module.exports = {
             2,
             { prefixWithI: 'always' },
         ],
-        '@typescript-eslint/member-delimiter-style': [
-            2,
-            {
-                multiline: {
-                    delimiter: 'none',
-                    requireLast: false,
-                },
-                singleline: {
-                    delimiter: 'semi',
-                    requireLast: false,
-                },
-            },
-        ],
+
         'comma-dangle': ['error', 'only-multiline'],
         quotes: [
             'error',
             'single',
             { avoidEscape: true, allowTemplateLiterals: true },
         ],
-        semi: ['error', 'never'],
+        semi: ['error', 'always'],
         'max-lines': [
             2,
             { max: 150, skipBlankLines: true, skipComments: true },
