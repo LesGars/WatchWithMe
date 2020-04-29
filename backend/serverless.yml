@@ -27,13 +27,12 @@ provider:
   # Within the individual function definitions we then include the file(s) that we want which overrides the global exclude
   package:
     individually: true
-
   iamRoleStatements:
     - Effect: Allow
       Action:
         - execute-api:ManageConnections
       Resource:
-        - '*'
+        - 'arn:aws:execute-api:*'
 
   environment:
     TABLE_NAME: ${self:custom.tableName}
@@ -70,7 +69,7 @@ functions:
       - websocket:
           route: $disconnect
   read:
-    handler: handler.read
+    handler: functions/read.main
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow
@@ -82,7 +81,7 @@ functions:
       - websocket:
           route: read
   default:
-    handler: functions/read.main
+    handler: handler.defaultHandler
     iamRoleStatementsInherit: true
     events:
       - websocket:
