@@ -14,7 +14,8 @@
         "stylelint": "13.3.3"
     },
     "scripts": {
-        "format": "prettier --write \"{,**/}*.{java,md,json,ts,css,scss,yml}\""
+        "format": "prettier --write \"{,**/}*.{java,md,json,ts,css,scss,yml}\"",
+        "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
     },
     "husky": {
         "hooks": {

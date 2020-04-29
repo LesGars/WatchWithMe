@@ -1,0 +1,48 @@
+{
+    "name": "beckend-watch-with-me",
+    "version": "1.0.0",
+    "description": "Backend powered by the serverless framework",
+    "main": "handler.js",
+    "scripts": {
+        "lint:fix": "eslint '**/*.{js,ts}' --fix",
+        "prettier:fix": "prettier '**/*.{js,ts,json,md,yml,yaml}' --write",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LesGars/WatchWithMe.git"
+    },
+    "author": "LesGars",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LesGars/WatchWithMe/issues"
+    },
+    "homepage": "https://github.com/LesGars/WatchWithMe#readme",
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "@babel/preset-typescript": "^7.9.0",
+        "@types/aws-lambda": "^8.10.51",
+        "@types/jest": "^25.2.1",
+        "@types/node": "^13.13.2",
+        "@types/uuid": "^7.0.3",
+        "@typescript-eslint/eslint-plugin": "^2.29.0",
+        "@typescript-eslint/parser": "^2.29.0",
+        "babel-jest": "^25.4.0",
+        "eslint": "^6.8.0",
+        "jest": "^25.4.0",
+        "prettier": "^2.0.5",
+        "serverless": "^1.68.0",
+        "serverless-iam-roles-per-function": "^2.0.2",
+        "serverless-webpack": "^5.3.1",
+        "ts-jest": "^25.4.0",
+        "ts-loader": "^7.0.1",
+        "typescript": "^3.8.3",
+        "webpack": "^4.43.0"
+    },
+    "dependencies": {
+        "aws-sdk": "^2.663.0",
+        "uuid": "^7.0.3"
+    }
+}

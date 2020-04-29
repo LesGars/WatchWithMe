@@ -31,6 +31,20 @@ We use the [serverless](https://github.com/serverless/serverless) framework to m
 
 Serverless websockets: https://serverless.com/framework/docs/providers/aws/events/websocket/
 
+### Install
+
+#### Serverless
+
+Run `make install` in root directory to install serverless
+
+#### AWS CLI
+
+```bash
+    cd backend
+    make intall-aws-cli-linux # or make intall-aws-cli-mac
+    make configure # And then fill in your AWS Acces Key, AWS Secret Key, eu-west-3, json
+```
+
 ### Useful commands
 
 ```bash
@@ -48,6 +62,9 @@ sls logs -t -f default # or the name of the serverless function you want to log
 
 # Remove all serverless services
 sls remove
+
+# Monitor all your lambda from the terminal
+make monitor
 ```
 
 ### Testing the connection
@@ -55,5 +72,5 @@ sls remove
 We use wscat to test socket connections. The url `wss://...` comes from the output of `sls deploy`.
 
 ```bash
-wscat -c wss://i5wm2ocma6.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
+wscat -c wss://555x5rdnx6.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
 ```

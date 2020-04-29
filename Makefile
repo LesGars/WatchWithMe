@@ -4,6 +4,7 @@ help: ## List available commands
 install-deps: ## Install/Update global packages
 	npx pnpm add -g pnpm
 	pnpm install -g serverless
+	pnpm install -g wscat
 
 install: install-deps ## Install all dependencies
 	pnpm install

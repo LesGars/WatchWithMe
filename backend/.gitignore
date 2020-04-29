@@ -1,2 +1,5 @@
 # Serverless
 .serverless
+node_modules
+.webpack
+coverage
