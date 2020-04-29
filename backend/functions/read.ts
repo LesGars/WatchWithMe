@@ -1,8 +1,8 @@
 import { IEvent, success, failure } from '../libs/response';
-import { DocumentClient } from 'aws-sdk/lib/dynamodb/document_client';
-import { DynamoDB, ApiGatewayManagementApi } from 'aws-sdk';
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
 
-export const read = async (event: IEvent) => {
+export const main = async (event: IEvent) => {
     if (!process.env.TABLE_NAME) {
         throw new Error('env.tableName must be defined');
     }
@@ -21,7 +21,7 @@ export const read = async (event: IEvent) => {
     };
 
     try {
-        const dynamoDb = new DynamoDB.DocumentClient();
+        const dynamoDb = new DocumentClient();
         const data = await dynamoDb.query(params).promise();
         await client
             .postToConnection({

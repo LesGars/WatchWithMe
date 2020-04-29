@@ -1,7 +1,6 @@
 import { IEvent, success, failure } from '../libs/response';
 import { APIGatewayProxyResult } from 'aws-lambda';
-import { DocumentClient } from 'aws-sdk/lib/dynamodb/document_client';
-import { DynamoDB } from 'aws-sdk';
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import * as uuid from 'uuid';
 
 export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {
@@ -24,7 +23,7 @@ export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {
     };
 
     try {
-        const dynamoDb = new DynamoDB.DocumentClient();
+        const dynamoDb = new DocumentClient();
         await dynamoDb.put(params).promise();
         console.info(`inserted data for ${event.requestContext.connectionId}`);
         return success();
