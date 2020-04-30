@@ -32,8 +32,7 @@ provider:
       Action:
         - execute-api:ManageConnections
       Resource:
-        - 'arn:aws:execute-api:*'
-
+        - "arn:aws:execute-api:*"
   environment:
     TABLE_NAME: ${self:custom.tableName}
 
@@ -46,7 +45,7 @@ functions:
         Action:
           - dynamodb:PutItem
         Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: $connect
@@ -54,7 +53,7 @@ functions:
           authorizer:
             name: auth
             identitySource:
-              - 'route.request.header.Auth'
+              - "route.request.header.Auth"
   disconnect:
     handler: functions/disconnect.main
     iamRoleStatementsInherit: true
@@ -64,7 +63,7 @@ functions:
           - dynamodb:UpdateItem
           - dynamodb:DeleteItem
         Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: $disconnect
@@ -76,7 +75,7 @@ functions:
         Action:
           - dynamodb:Query
         Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: read

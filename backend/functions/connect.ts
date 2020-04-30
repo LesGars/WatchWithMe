@@ -1,7 +1,7 @@
 import { IEvent, success, failure } from '../libs/response';
 import { APIGatewayProxyResult } from 'aws-lambda';
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
-import * as uuid from 'uuid';
+import { v4 } from 'uuid';
 
 export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {
     if (!process.env.TABLE_NAME) {
@@ -16,7 +16,7 @@ export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {
         TableName: process.env.TABLE_NAME,
         Item: {
             username: 'anonymous',
-            uuid: uuid.v4(),
+            uuid: v4(),
             content: data,
             createdAt: Date.now(),
         },
