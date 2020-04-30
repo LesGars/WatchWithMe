@@ -1519,7 +1519,6 @@ packages:
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
       tsutils: 3.17.1_typescript@3.8.3
-      typescript: 3.8.3
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1554,7 +1553,6 @@ packages:
       '@typescript-eslint/typescript-estree': 2.30.0_typescript@3.8.3
       eslint: 6.8.0
       eslint-visitor-keys: 1.1.0
-      typescript: 3.8.3
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1575,7 +1573,6 @@ packages:
       lodash: 4.17.15
       semver: 6.3.0
       tsutils: 3.17.1_typescript@3.8.3
-      typescript: 3.8.3
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -9957,7 +9954,7 @@ specifiers:
   aws-sdk: ^2.663.0
   babel-jest: 25.5.1
   eslint: 6.8.0
-  eslint-config-prettier: ^6.11.0
+  eslint-config-prettier: 6.11.0
   jest: 25.5.2
   prettier: 2.0.5
   serverless: 1.69.0
