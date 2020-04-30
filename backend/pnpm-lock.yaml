@@ -19,7 +19,7 @@ devDependencies:
   serverless-iam-roles-per-function: 2.0.2
   serverless-webpack: 5.3.1_webpack@4.43.0
   ts-jest: 25.4.0_jest@25.5.2+typescript@3.8.3
-  ts-loader: 7.0.1_typescript@3.8.3
+  ts-loader: 7.0.2_typescript@3.8.3
   typescript: 3.8.3
   webpack: 4.43.0_webpack@4.43.0
 lockfileVersion: 5.1
@@ -9174,7 +9174,7 @@ packages:
       typescript: '>=3.4 <4.0'
     resolution:
       integrity: sha512-+0ZrksdaquxGUBwSdTIcdX7VXdwLIlSRsyjivVA9gcO+Cvr6ByqDhu/mi5+HCcb6cMkiQp5xZ8qRO7/eCqLeyw==
-  /ts-loader/7.0.1_typescript@3.8.3:
+  /ts-loader/7.0.2_typescript@3.8.3:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.1.1
@@ -9188,7 +9188,7 @@ packages:
     peerDependencies:
       typescript: '*'
     resolution:
-      integrity: sha512-wdGs9xO8UnwASwbluehzXciBtc9HfGlYA8Aiv856etLmdv8mJfAxCkt3YpS4g7G1IsGxaCVKQ102Qh0zycpeZQ==
+      integrity: sha512-DwpZFB67RoILQHx42dMjSgv2STpacsQu5X+GD/H9ocd8IhU0m8p3b/ZrIln2KmcucC6xep2PdEMEblpWT71euA==
   /ts-node/3.3.0:
     dependencies:
       arrify: 1.0.1
@@ -9943,7 +9943,7 @@ specifiers:
   serverless-iam-roles-per-function: 2.0.2
   serverless-webpack: 5.3.1
   ts-jest: 25.4.0
-  ts-loader: 7.0.1
+  ts-loader: 7.0.2
   typescript: 3.8.3
   uuid: ^7.0.3
   webpack: 4.43.0
