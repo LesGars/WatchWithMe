@@ -59,7 +59,7 @@ michaelm
 
 So If I run make deploy, a stage named michaelm will be used.
 
-This imply that
+This implies
 
 -   A new API Gateway stage named michaelm will be created
 -   Functions will be deployed according to the naming convention watch-with-me-michaelm-function_name
