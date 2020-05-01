@@ -11,12 +11,13 @@ plugins:
   - serverless-webpack # add the ability to use typescript
 
 custom:
-  tableName: RoomTable
+  tablePrefix: ${self:service.name}-${self:provider.stage}
+  roomTable: ${self:custom.tablePrefix}-RoomTable
 
 provider:
   profile: lesgars-watch-with-me
   name: aws
-  stage: dev
+  stage: ${opt:stage, 'dev'}
   runtime: nodejs12.x
   region: eu-west-3
   memorySize: 256 # optional, in MB, default is 1024
@@ -32,9 +33,9 @@ provider:
       Action:
         - execute-api:ManageConnections
       Resource:
-        - "arn:aws:execute-api:*"
+        - 'arn:aws:execute-api:*'
   environment:
-    TABLE_NAME: ${self:custom.tableName}
+    ROOM_TABLE: ${self:custom.roomTable}
 
 functions:
   connect:
@@ -45,7 +46,7 @@ functions:
         Action:
           - dynamodb:PutItem
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $connect
@@ -53,7 +54,7 @@ functions:
           authorizer:
             name: auth
             identitySource:
-              - "route.request.header.Auth"
+              - 'route.request.header.Auth'
   disconnect:
     handler: functions/disconnect.main
     iamRoleStatementsInherit: true
@@ -63,7 +64,7 @@ functions:
           - dynamodb:UpdateItem
           - dynamodb:DeleteItem
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $disconnect
@@ -75,7 +76,7 @@ functions:
         Action:
           - dynamodb:Query
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: read

@@ -3,8 +3,8 @@ import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
 
 export const main = async (event: IEvent) => {
-    if (!process.env.TABLE_NAME) {
-        throw new Error('env.tableName must be defined');
+    if (!process.env.ROOM_TABLE) {
+        throw new Error('env.ROOM_TABLE must be defined');
     }
 
     const client = new ApiGatewayManagementApi({
@@ -13,7 +13,7 @@ export const main = async (event: IEvent) => {
     });
 
     const params: DocumentClient.QueryInput = {
-        TableName: process.env.TABLE_NAME,
+        TableName: process.env.ROOM_TABLE,
         KeyConditionExpression: 'username = :u',
         ExpressionAttributeValues: {
             ':u': 'anonymous',
