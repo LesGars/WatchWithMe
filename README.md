@@ -62,7 +62,7 @@ So If I run make deploy, a stage named michaelm will be used.
 This imply that
 
 -   A new API Gateway stage named michaelm will be created
--   All the function will be deployed with the according to the naming convention watch-with-me-michaelm-funciton_name
+-   Functions will be deployed according to the naming convention watch-with-me-michaelm-function_name
 -   A table named RoomTable-michaelm will be created.
 
 ### Useful commands
