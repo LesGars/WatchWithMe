@@ -1,5 +1,5 @@
+import NewRoom from "./pages/new-room.vue";
 import Popup from "./pages/popup.vue";
-import Second from "./pages/second.vue";
 
 export default [
     {
@@ -8,9 +8,9 @@ export default [
         component: Popup,
     },
     {
-        name: "second",
-        path: "/second",
-        component: Second,
+        name: "new-room",
+        path: "/new-room",
+        component: NewRoom,
         props: true,
     },
 ];
