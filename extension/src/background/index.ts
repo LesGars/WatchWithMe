@@ -10,7 +10,7 @@ async function polling() {
 
 async function fetchPreviousRoomId() {
     return new Promise(function (resolve, reject) {
-        // Maybe boot a random roomId on load ?
+        // Maybe boot a random roomId on first load ?
         chrome.storage.sync.get({ roomId: undefined }, function (options) {
             resolve(options.roomId);
         });
@@ -22,7 +22,6 @@ Poller.getInstance(polling);
 
 var portFromCS: Runtime.Port;
 
-// Top level async not available apparently, so let's use a regular promise.then()
 const connected = (p: Runtime.Port) => {
     portFromCS = p;
     console.log("[BG] Content Script connected");

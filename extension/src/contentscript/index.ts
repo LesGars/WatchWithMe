@@ -1,6 +1,6 @@
 import { browser } from "webextension-polyfill-ts";
 
-console.log(`Loading WatchWithMe Extension content script`);
+console.log(`[CS] Loading WatchWithMe Extension content script`);
 
 const csPort = browser.runtime.connect(undefined, { name: "PORT-CS" });
 csPort.postMessage({
