@@ -52,19 +52,19 @@ export default class NewRoom extends Vue {
     }
 
     createRoom() {
+        const roomId: string = uuid();
         const popupPort = browser.runtime.connect(undefined, {
             name: "PORT-PS"
         });
-        const roomId: string = uuid();
         popupPort.postMessage({ type: MessageType.CHANGE_ROOM, roomId });
-        popupPort.postMessage({
-            type: MessageType.CHANGE_ROOM,
-            roomId
-        });
         browser.tabs.query({ active: true, currentWindow: true }).then(tabs => {
             const linkWithRoomId: URL = new URL(tabs[0].url!);
             linkWithRoomId.searchParams.set("roomId", roomId);
             this.linkWithRoomId = linkWithRoomId.href;
+            popupPort.postMessage({
+                type: MessageType.DEBUG_MESSAGE,
+                message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`
+            });
         });
     }
 
