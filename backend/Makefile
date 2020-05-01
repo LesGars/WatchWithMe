@@ -23,7 +23,7 @@ format: ## Run eslint and prettier for formatting
 	pnpm run lint:fix
 	pnpm run prettier:fix
 
-build: ## Run webpack build process (Usefull for testing)
+build: ## Run webpack build process (Useful for testing)
 	sls package
 
 deploy: ## Deploy to your personnal stage
