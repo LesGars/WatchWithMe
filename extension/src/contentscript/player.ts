@@ -26,7 +26,7 @@ enum EventType {
  */
 const events = [
     {
-        htmlEvent: "paying",
+        htmlEvent: "playing",
         type: EventType.PLAY,
     },
     {
