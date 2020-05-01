@@ -1,10 +1,11 @@
 import { browser } from "webextension-polyfill-ts";
+import { MessageType } from "../types";
 
 console.log(`[CS] Loading WatchWithMe Extension content script`);
 
 const csPort = browser.runtime.connect(undefined, { name: "PORT-CS" });
 csPort.postMessage({
-    type: "debugMessage",
+    type: MessageType.DEBUG_MESSAGE,
     message: "[CS] This is the content script",
 });
 
@@ -13,7 +14,7 @@ if (roomId) {
     console.log(
         `[CS] detected roomId ${roomId} from URL param, notifying background script`
     );
-    csPort.postMessage({ type: "changeRoom", roomId });
+    csPort.postMessage({ type: MessageType.CHANGE_ROOM, roomId });
 } else {
     console.log("[CS] Invalid URL missing roomID");
 }
