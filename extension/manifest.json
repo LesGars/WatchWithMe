@@ -9,7 +9,8 @@
         "128": "icons/icon-128.png"
     },
     "background": {
-        "scripts": ["scripts/background.js"]
+        "scripts": ["scripts/background.js"],
+        "persistent": true
     },
     "permissions": ["alarms", "tabs", "storage", "https://www.youtube.com/*"],
     "options_ui": {
@@ -29,7 +30,7 @@
             "19": "icons/icon-19.png",
             "38": "icons/icon-38.png"
         },
-        "default_title": "Extension Boilerplate",
+        "default_title": "Watch With Me",
         "default_popup": "popup.html"
     },
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"

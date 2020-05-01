@@ -8,7 +8,7 @@
 
         <div>
             <div>
-                <h1>Your Extension</h1>
+                <h1>Your Watch With Me Extension</h1>
                 <router-link
                     :to="{ path: 'second', query: { id: 'some-id' } }"
                     class="px-3"
