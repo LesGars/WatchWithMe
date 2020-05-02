@@ -16,8 +16,7 @@ const connected = (p: Runtime.Port) => {
     portFromCS = p;
     portFromCS.postMessage("Sending message to CS");
     portFromCS.onMessage.addListener((m: any) => {
-        console.log("[BG] Message from CS");
-        console.log(m);
+        console.log(`[BG] Message from CS -> ${JSON.stringify(m)}`);
     });
 };
 
