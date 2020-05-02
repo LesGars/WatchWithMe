@@ -43,7 +43,7 @@ devDependencies:
   eslint-plugin-prettier: 3.1.3_eslint@6.8.0+prettier@2.0.5
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.43.0
-  generate-json-webpack-plugin: 0.3.1
+  generate-json-webpack-plugin: 1.0.0
   html-loader: 1.1.0_webpack@4.43.0
   html-webpack-plugin: 4.3.0_webpack@4.43.0
   markdown-loader: 5.1.0
@@ -4830,10 +4830,10 @@ packages:
       node: '>= 4.0.0'
     resolution:
       integrity: sha512-BRdNm8hbWzFzWHERTrejLqwHDfS4GibPoq5wjTPIoJHoBtKGPg3xAFfxmM+9ztbXelxcf2hwQcaz1PtmFeue8g==
-  /generate-json-webpack-plugin/0.3.1:
+  /generate-json-webpack-plugin/1.0.0:
     dev: true
     resolution:
-      integrity: sha512-0gsqCyLf1OF+9tjN75QkPYV6UoyuPCfhgLXcX44/Ft9j82z9kBG/7yMS/ufN8yU2l4noSNEVNYQ9GdqenH/0cQ==
+      integrity: sha512-VX3hYIHuVRGH44pz2c1/QonRvCLa7pzw1dP2pisRiRhVx7pl5/mkG+e/FL2nTAJTc6k8PDVI8npBA2WUH3YG3w==
   /gensync/1.0.0-beta.1:
     dev: true
     engines:
@@ -11289,7 +11289,7 @@ specifiers:
   eslint-plugin-prettier: 3.1.3
   eslint-plugin-vue: 6.2.2
   friendly-errors-webpack-plugin: 1.7.0
-  generate-json-webpack-plugin: 0.3.1
+  generate-json-webpack-plugin: 1.0.0
   html-loader: 1.1.0
   html-webpack-plugin: 4.3.0
   lodash-es: 4.17.15
