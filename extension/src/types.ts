@@ -90,27 +90,27 @@ export enum MessageType {
  * Video status for one user
  */
 enum UserVideoStatus {
-    Unknown, // Still Loading of DOM, or not on the video URL, or any othe reason (no info from Video API)
-    Buffering, // has not reached minBufferLength (video is paused or not started)
-    Playing, // is currently playing the video
-    Ready, // (equivalent of Waiting or Paused) has buffered enough of the video, is pending start signal
+    UNKNOWN = "UNKNOWN", // Still Loading of DOM, or not on the video URL, or any othe reason (no info from Video API)
+    BUFFERING = "BUFFERING", // has not reached minBufferLength (video is paused or not started)
+    PLAYING = "PLAYING", // is currently playing the video
+    READY = "READY", // (equivalent of Waiting or Paused) has buffered enough of the video, is pending start signal
 }
 
 /**
  * Video status for all players that have completed initial Sync
  */
 enum VideoSyncStatus {
-    Paused, // video is paused and no action should be taken (apart from buffering)
-    Waiting, // waiting for all players to be in waiting status before playing
-    Playing, // video should playing normally on all user browsers
+    PAUSED = "PAUSED", // video is paused and no action should be taken (apart from buffering)
+    WAITING = "WAITING", // waiting for all players to be in waiting status before playing
+    PLAYING = "PLAYING", // video should playing normally on all user browsers
 }
 
 /**
  * Information about one user
  */
-export class User {
+export class Watcher {
     id: string; // maybe not needed since it will be the index key
-    connection: string; // The kind of info we need to be able to communicate with the user (TOCONFIRM: just a string is enough ?)
+    connectionId: string; // The kind of info we need to be able to communicate with the user (TOCONFIRM: just a string is enough ?)
     joinedAt: number;
     lastVideoTimestamp: number; // Last video timestamp received during sync events of said user
     lastHeartbeat: number; // date of last event during sync received from said user
@@ -120,14 +120,10 @@ export class User {
     userAgent: string; // Might help debug issues later
 }
 
-interface UserIndex {
-    [id: string]: User;
-}
-
 export class Room {
-    roomId: string; // Partition key for DB
+    roomId: string; // Partition key for DDB
     createdAt: number;
-    users: UserIndex;
+    watchers: Record<string, Watcher>;
     ownerId: string;
 
     // Config options
@@ -136,8 +132,8 @@ export class Room {
 
     // History attributes
     currentVideoUrl: string; // URL of
-    syncStartedAt: number; // Date where the vide was first watched synchronously
-    syncStartedTimestamp: number; // Timestamp of the video when sync was first started was first watched synchronously
+    syncStartedAt: number; // Date when the video was first watched synchronously
+    syncStartedTimestamp: number; // Timestamp of the video when it was first watched synchronously
 
     // Sync values
     videoStatus: VideoSyncStatus;
