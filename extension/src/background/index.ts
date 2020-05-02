@@ -25,7 +25,6 @@ const connected = (p: Runtime.Port) => {
     });
 
     portFromCS.onMessage.addListener((m: any) => {
-        console.log(`[BG] Received message ${m} from content script`);
         const type = m.type as MessageType;
         switch (type) {
             case MessageType.CHANGE_ROOM: {

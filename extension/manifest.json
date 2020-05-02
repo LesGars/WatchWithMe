@@ -9,8 +9,7 @@
         "128": "icons/icon-128.png"
     },
     "background": {
-        "scripts": ["scripts/background.js"],
-        "persistent": true
+        "scripts": ["scripts/background.js"]
     },
     "permissions": ["alarms", "tabs", "storage", "https://www.youtube.com/*"],
     "options_ui": {
