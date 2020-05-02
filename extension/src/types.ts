@@ -125,7 +125,7 @@ interface UserIndex {
 }
 
 export class Room {
-    roomId: string;
+    roomId: string; // Partition key for DB
     createdAt: number;
     users: UserIndex;
     ownerId: string;
