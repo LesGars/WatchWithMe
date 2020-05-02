@@ -50,3 +50,13 @@ If you want to use lint or auto fix -
 ## Packaging
 
 Run `pnpm run dist` to create a zipped, production-ready extension for each browser. You can then upload that to the appstore.
+
+## Debugging
+
+The content script `console.log` messages are readable from the usual browser console of the inspector tool
+The backend script `console.log` messages are logged somewhere else
+
+### Reading background script logs from Chrome
+
+Open the extensions page, make sure the "developer mode" is enabled, and open the page of the background script.
+There you'll have access to the Background script console log.
