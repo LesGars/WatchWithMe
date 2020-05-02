@@ -36,6 +36,9 @@ build: ## Run webpack build process (Useful for testing)
 deploy: ## Deploy to your personnal stage
 	sls deploy --stage=$(STAGE)
 
+f-deploy: ## Deploy to your personnal stage
+	sls deploy function -f $(F) --stage=$(STAGE)
+
 deploy-prod: ## Deploy to production
 	sls deploy --stage=prod
 

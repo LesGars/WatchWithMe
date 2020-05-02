@@ -1,0 +1,5 @@
+Resources:
+  EventBus:
+    Type: AWS::Events::EventBus
+    Properties:
+      Name: ${self:custom.event.eventBus}

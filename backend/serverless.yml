@@ -9,10 +9,14 @@ package:
 plugins:
   - serverless-iam-roles-per-function # allows to set permissions per function
   - serverless-webpack # add the ability to use typescript
+  - serverless-pseudo-parameters # allows to use pseudo parameters such as Account ID
 
 custom:
-  tablePrefix: ${self:service.name}-${self:provider.stage}
-  roomTable: ${self:custom.tablePrefix}-RoomTable
+  prefix: ${self:service.name}-${self:provider.stage}
+  roomTable: ${self:custom.prefix}-RoomTable
+  event:
+    eventBus: ${self:custom.prefix}-event
+    source: com.watch-with-me
 
 provider:
   profile: lesgars-watch-with-me
@@ -33,11 +37,33 @@ provider:
       Action:
         - execute-api:ManageConnections
       Resource:
-        - 'arn:aws:execute-api:*'
+        - 'arn:aws:execute-api:*:*:*'
+    - Effect: Allow
+      Action:
+        - events:PutEvents
+      Resource:
+        - 'Fn::GetAtt': [EventBus, Arn]
   environment:
     ROOM_TABLE: ${self:custom.roomTable}
+    MEDIA_EVENT_BUS: ${self:custom.event.eventBus}
+    EVENT_SOURCE: ${self:custom.event.source}
 
 functions:
+  broadcast:
+    handler: functions/broadcast.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:Query
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
+    events:
+      - eventBridge:
+          eventBus: arn:aws:events:#{AWS::Region}:#{AWS::AccountId}:event-bus/${self:custom.event.eventBus}
+          pattern:
+            source:
+              - ${self:custom.event.source}
   connect:
     handler: functions/connect.main
     iamRoleStatementsInherit: true
@@ -65,13 +91,6 @@ functions:
           route: $disconnect
   read:
     handler: functions/read.main
-    iamRoleStatementsInherit: true
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - dynamodb:Query
-        Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: read
@@ -91,7 +110,6 @@ functions:
           route: join-room
   default:
     handler: handler.defaultHandler
-    iamRoleStatementsInherit: true
     events:
       - websocket:
           route: $default
@@ -100,3 +118,4 @@ functions:
 
 resources:
   - ${file(resources/dynamodb.yml)}
+  - ${file(resources/eventBus.yml)}

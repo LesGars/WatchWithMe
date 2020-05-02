@@ -1,39 +1,53 @@
-import { IEvent, success, failure } from '../libs/response';
-import { DocumentClient } from 'aws-sdk/clients/dynamodb';
-import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
+import {
+    IEvent,
+    success,
+    failure,
+    IApplicationEventWrapper,
+    EventType,
+} from '../libs/response';
+import EventBridge from 'aws-sdk/clients/eventbridge';
+
+/**
+ * Initialize outside handler to use function context
+ */
+const eventBridge = new EventBridge();
 
 export const main = async (event: IEvent) => {
-    if (!process.env.ROOM_TABLE) {
-        throw new Error('env.ROOM_TABLE must be defined');
+    if (!process.env.MEDIA_EVENT_BUS) {
+        throw new Error('env.MEDIA_EVENT_BUS must be defined');
     }
 
-    const client = new ApiGatewayManagementApi({
-        apiVersion: '2018-11-29',
-        endpoint: `https://${event.requestContext.domainName}/${event.requestContext.stage}`,
-    });
-
-    const params: DocumentClient.QueryInput = {
-        TableName: process.env.ROOM_TABLE,
-        KeyConditionExpression: 'username = :u',
-        ExpressionAttributeValues: {
-            ':u': 'anonymous',
-        },
-    };
+    if (!process.env.EVENT_SOURCE) {
+        throw new Error('env.EVENT_SOURCE must be defined');
+    }
 
     try {
-        const dynamoDb = new DocumentClient();
-        const data = await dynamoDb.query(params).promise();
-        await client
-            .postToConnection({
-                ConnectionId: event.requestContext.connectionId,
-                Data: `found: ${JSON.stringify(data)}`,
+        const readEvent: IApplicationEventWrapper = {
+            type: EventType.READ,
+            requestContext: event.requestContext,
+            data: {
+                roomId: event.body,
+            },
+        };
+
+        await eventBridge
+            .putEvents({
+                Entries: [
+                    {
+                        Source: process.env.EVENT_SOURCE,
+                        EventBusName: process.env.MEDIA_EVENT_BUS,
+                        DetailType: 'read',
+                        Detail: JSON.stringify(readEvent),
+                    },
+                ],
             })
             .promise();
 
-        console.info(`sent data to ${event.requestContext.connectionId}`);
+        console.log('pushed event');
         return success();
     } catch (e) {
-        console.error(`Failed with ${e}`);
+        console.error('error pushing event');
+        console.error(e);
         return failure();
     }
 };
