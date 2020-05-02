@@ -45,6 +45,26 @@ Run `make install` in root directory to install serverless
     make configure # And then fill in your AWS Acces Key, AWS Secret Key, eu-west-3, json
 ```
 
+#### Local development
+
+To make sure that you can deploy your own version of the serverless stack to AWS without impacting on someone else branch, dev or prod use the Makefile command for deployment `make deploy` and for removal `make remove`.
+
+They will check your current unix username with `id -un` and use that as the deployment stage.
+ex: for me
+
+```bash
+$ id -un
+michaelm
+```
+
+So If I run make deploy, a stage named michaelm will be used.
+
+This implies
+
+-   A new API Gateway stage named michaelm will be created
+-   Functions will be deployed according to the naming convention watch-with-me-michaelm-function_name
+-   A table named RoomTable-michaelm will be created.
+
 ### Useful commands
 
 ```bash

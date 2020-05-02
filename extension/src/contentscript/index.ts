@@ -1,7 +1,6 @@
 import { browser } from "webextension-polyfill-ts";
 import { MessageType } from "../types";
-
-console.log(`[CS] Loading WatchWithMe Extension content script`);
+import { VideoPlayer, Event } from "./player";
 
 const csPort = browser.runtime.connect(undefined, { name: "PORT-CS" });
 csPort.postMessage({
@@ -19,15 +18,15 @@ if (roomId) {
     console.log("[CS] Invalid URL missing roomID");
 }
 
-csPort.onMessage.addListener((message: any) => {
-    console.log("[CS] Message received from BG script : ", message);
-});
-
 const video = document.querySelector("video");
 if (video) {
-    video.addEventListener("playing", () => {
-        csPort.postMessage("[CS] Video is playing");
-    });
+    const videoPlayer = new VideoPlayer(video, csPort);
 
+    csPort.onMessage.addListener((message: Event) => {
+        console.log("[CS] Message received from BG script");
+        videoPlayer.sendEvent(message);
+    });
     // TODO Send messages for other events
+} else {
+    csPort.disconnect();
 }

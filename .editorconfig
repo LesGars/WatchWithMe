@@ -11,6 +11,9 @@ insert_final_newline = true
 [*.yml]
 indent_size = 2
 
+[*.yaml]
+indent_size = 2
+
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
