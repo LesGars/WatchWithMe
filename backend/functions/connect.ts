@@ -4,8 +4,8 @@ import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { v4 } from 'uuid';
 
 export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {
-    if (!process.env.TABLE_NAME) {
-        throw new Error('env.tableName must be defined');
+    if (!process.env.ROOM_TABLE) {
+        throw new Error('env.ROOM_TABLE must be defined');
     }
 
     const data = {
@@ -13,7 +13,7 @@ export const main = async (event: IEvent): Promise<APIGatewayProxyResult> => {
     };
 
     const params: DocumentClient.PutItemInput = {
-        TableName: process.env.TABLE_NAME,
+        TableName: process.env.ROOM_TABLE,
         Item: {
             username: 'anonymous',
             uuid: v4(),

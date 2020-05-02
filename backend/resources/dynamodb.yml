@@ -2,7 +2,7 @@ Resources:
   RoomTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: RoomTable
+      TableName: ${self:custom.roomTable}
       AttributeDefinitions:
         - AttributeName: username
           AttributeType: S

@@ -18,7 +18,7 @@ devDependencies:
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
   '@types/lodash': 4.14.150
-  '@types/node': 13.13.3
+  '@types/node': 13.13.4
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.12
   '@types/webpack-env': 1.15.2
@@ -66,7 +66,7 @@ devDependencies:
   tsconfig-paths-webpack-plugin: 3.2.0
   tslib: 1.11.1
   typescript: 3.8.3
-  vue-loader: 15.9.1_8a07d3f32dfa134c9129e9852e3cf1b8
+  vue-loader: 15.9.2_css-loader@3.5.3+webpack@4.43.0
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.11
   webextension-polyfill: 0.6.0
@@ -1191,10 +1191,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==
-  /@types/node/13.13.3:
+  /@types/node/13.13.4:
     dev: true
     resolution:
-      integrity: sha512-FiVARmwSn2s0nXKJM9V7jWtGiSeUc58dxIRIhLPrPZTPRUEoHMK7BDEo0XWxQ9vNflxoUQlGDBn9/gLxORzLKQ==
+      integrity: sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -10646,6 +10646,26 @@ packages:
         optional: true
     resolution:
       integrity: sha512-IaPU2KOPjs/QjMlxFs/TiTtQUSbftQ7lsAvoxe21rtcQohsMhx+1AltXCNhZIpIn46PtODiAgz+o8RbMpKtmJw==
+  /vue-loader/15.9.2_css-loader@3.5.3+webpack@4.43.0:
+    dependencies:
+      '@vue/component-compiler-utils': 3.1.2
+      css-loader: 3.5.3_webpack@4.43.0
+      hash-sum: 1.0.2
+      loader-utils: 1.4.0
+      vue-hot-reload-api: 2.3.4
+      vue-style-loader: 4.1.2
+      webpack: 4.43.0_webpack@4.43.0
+    dev: true
+    peerDependencies:
+      css-loader: '*'
+      webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
+    peerDependenciesMeta:
+      cache-loader:
+        optional: true
+      vue-template-compiler:
+        optional: true
+    resolution:
+      integrity: sha512-oXBubaY//CYEISBlHX+c2YPJbmOH68xXPXjFv4MAgPqQvUsnjrBAjCJi8HXZ/r/yfn0tPL5VZj1Zcp8mJPI8VA==
   /vue-navigation-bar/2.0.0:
     dependencies:
       tippy.js: 4.3.5
@@ -11285,7 +11305,7 @@ specifiers:
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
   '@types/lodash': 4.14.150
-  '@types/node': 13.13.3
+  '@types/node': 13.13.4
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.12
   '@types/webpack-env': 1.15.2
@@ -11341,7 +11361,7 @@ specifiers:
   vue-class-component: 7.2.3
   vue-clipboard2: ^0.3.1
   vue-form-generator: 2.3.4
-  vue-loader: 15.9.1
+  vue-loader: 15.9.2
   vue-navigation-bar: 2.0.0
   vue-property-decorator: 8.4.2
   vue-router: 3.1.6
