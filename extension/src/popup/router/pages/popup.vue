@@ -10,11 +10,11 @@
             <div>
                 <h1>Watch With Me Extension</h1>
                 <router-link
-                    :to="{ path: 'second', query: { id: 'some-id' } }"
+                    :to="{ path: 'new-room' }"
                     class="px-3"
-                    title="Second"
+                    title="new room"
                 >
-                    Second Vue Page
+                    Create a room
                 </router-link>
             </div>
         </div>
@@ -29,6 +29,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import get from "lodash/get";
 import { getStorage, getSettings } from "@/utils";
+import { browser } from "webextension-polyfill-ts";
 
 const log = require("debug")("ext:popup");
 
@@ -37,6 +38,7 @@ export default class Popup extends Vue {
     lastRun: number = 0;
     pollsPerDay: number = 0;
     polling: boolean = false;
+    roomId: string | null = null;
 
     data() {
         this.updateData().then(() => {
@@ -55,7 +57,7 @@ export default class Popup extends Vue {
     }
 
     async options() {
-        chrome.runtime.openOptionsPage();
+        browser.runtime.openOptionsPage();
     }
 }
 </script>
