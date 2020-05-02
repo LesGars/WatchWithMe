@@ -85,3 +85,55 @@ export enum MessageType {
     DEBUG_MESSAGE,
     CHANGE_ROOM,
 }
+
+/**
+ * Video status for one user
+ */
+enum UserVideoStatus {
+    Unknown, // Still Loading of DOM, or not on the video URL, or any othe reason (no info from Video API)
+    Buffering, // has not reached minBufferLength (video is paused or not started)
+    Playing, // is currently playing the video
+    Ready, // (equivalent of Waiting or Paused) has buffered enough of the video, is pending start signal
+}
+
+enum VideoSyncStatus {
+    Paused, // video is paused and no action should be taken (apart from buffering)
+    Waiting, // waiting for all players to be in waiting status before playing
+    Playing, // video should playing normally on all user browsers
+}
+
+export class User {
+    id: string;
+    joinedAt: number;
+    lastVideoTimestamp: number; // Last video timestamp received during sync events of said user
+    lastHeartbeat: number; // date of last event during sync received from said user
+    currentVideoStatus: UserVideoStatus;
+    initialSync: boolean = false;
+}
+
+interface UserIndex {
+    [id: string]: User;
+}
+
+export class Room {
+    roomId: string;
+    createdAt: number;
+    users: UserIndex;
+    ownerId: string;
+
+    // Config options
+    minBufferLength: number = 5; // Number of seconds each person should have loaded before resuming
+    videoSpeed: number = 1; // speed of video (2 means 2x)
+
+    // History attributes
+    currentVideoUrl: string; // URL of
+    syncStartedAt: number; // Date where the vide was first watched synchronously
+    syncStartedTimestamp: number; // Timestamp of the video when sync was first started was first watched synchronously
+
+    // Sync values
+    videoStatus: VideoSyncStatus;
+    resumePlayingAt: number | null; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
+    resumePlayingTimestamp: number; // Timestamp that should be seeked by users before video can start
+}
+
+export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
