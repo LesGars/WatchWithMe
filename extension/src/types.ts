@@ -96,19 +96,28 @@ enum UserVideoStatus {
     Ready, // (equivalent of Waiting or Paused) has buffered enough of the video, is pending start signal
 }
 
+/**
+ * Video status for all players that have completed initial Sync
+ */
 enum VideoSyncStatus {
     Paused, // video is paused and no action should be taken (apart from buffering)
     Waiting, // waiting for all players to be in waiting status before playing
     Playing, // video should playing normally on all user browsers
 }
 
+/**
+ * Information about one user
+ */
 export class User {
-    id: string;
+    id: string; // maybe not needed since it will be the index key
+    connection: string; // The kind of info we need to be able to communicate with the user (TOCONFIRM: just a string is enough ?)
     joinedAt: number;
     lastVideoTimestamp: number; // Last video timestamp received during sync events of said user
     lastHeartbeat: number; // date of last event during sync received from said user
     currentVideoStatus: UserVideoStatus;
     initialSync: boolean = false;
+
+    userAgent: string; // Might help debug issues later
 }
 
 interface UserIndex {
