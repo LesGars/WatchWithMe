@@ -110,7 +110,7 @@ enum VideoSyncStatus {
  */
 export class Watcher {
     id: string; // maybe not needed since it will be the index key
-    connectionId: string; // The kind of info we need to be able to communicate with the user (TOCONFIRM: just a string is enough ?)
+    connectionId: string; // API Gateway connexion ID to be used to communicate with the user
     joinedAt: number;
     lastVideoTimestamp: number; // Last video timestamp received during sync events of said user
     lastHeartbeat: number; // date of last event during sync received from said user
