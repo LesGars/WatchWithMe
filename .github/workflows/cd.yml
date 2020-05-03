@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [12.16.3]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - uses: actions/cache@v1
         with:
-          path: ~/.pnpm
+          path: /opt/hostedtoolcache/node/12.16.3/x64/pnpm-global
           key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: ${{ runner.os }}-node-
       - name: Install dependencies
@@ -35,9 +35,5 @@ jobs:
         run: |
           aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile lesgars-watch-with-me
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile lesgars-watch-with-me
-      # - name: serverless deploy
-      #   run: |
-      #     export PATH=$PATH:$HOME/.serverless/bin
-      #     make deploy
       - name: Deploy the project in prod
         run: make deploy-prod
