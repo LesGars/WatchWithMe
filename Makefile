@@ -9,9 +9,9 @@ install-deps: ## Install/Update global packages
 install: install-deps ## Install all dependencies
 	pnpm install
 	# Extension
-	cd extension && pnpm install
+	$(MAKE) -C backend install
 	# Backend
-	cd backend && pnpm install
+	$(MAKE) -C extension install
 
 build-extension:
 	cd extension && pnpm run build
