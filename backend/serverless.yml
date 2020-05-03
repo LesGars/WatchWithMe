@@ -1,15 +1,52 @@
-service: watch-with-me
+service:
+  name: watch-with-me
+
+package:
+  exclude:
+    - .git/**
+    - .gitignore
+
+plugins:
+  - serverless-iam-roles-per-function # allows to set permissions per function
+  - serverless-webpack # add the ability to use typescript
+
+custom:
+  tablePrefix: ${self:service.name}-${self:provider.stage}
+  roomTable: ${self:custom.tablePrefix}-RoomTable
 
 provider:
   profile: lesgars-watch-with-me
   name: aws
-  stage: dev
+  stage: ${opt:stage, 'dev'}
   runtime: nodejs12.x
   region: eu-west-3
+  memorySize: 256 # optional, in MB, default is 1024
+  timeout: 3 # optional, in seconds, default is 6
+  # By default serverless wants to create a single package that contains all the lambdas
+  # We want the lambdas to each be in their own package so that they can contain different files
+  # To achieve this we tell serverless to package the lambdas individually and by default to exclude all files
+  # Within the individual function definitions we then include the file(s) that we want which overrides the global exclude
+  package:
+    individually: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - execute-api:ManageConnections
+      Resource:
+        - 'arn:aws:execute-api:*'
+  environment:
+    ROOM_TABLE: ${self:custom.roomTable}
 
 functions:
   connect:
-    handler: handler.connect
+    handler: functions/connect.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:PutItem
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $connect
@@ -19,14 +56,38 @@ functions:
             identitySource:
               - 'route.request.header.Auth'
   disconnect:
-    handler: handler.disconnect
+    handler: functions/disconnect.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:UpdateItem
+          - dynamodb:DeleteItem
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $disconnect
+  read:
+    handler: functions/read.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:Query
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
+    events:
+      - websocket:
+          route: read
   default:
-    handler: handler.default
+    handler: handler.defaultHandler
+    iamRoleStatementsInherit: true
     events:
       - websocket:
           route: $default
   auth:
     handler: auth.auth
+
+resources:
+  - ${file(resources/dynamodb.yml)}

@@ -31,6 +31,40 @@ We use the [serverless](https://github.com/serverless/serverless) framework to m
 
 Serverless websockets: https://serverless.com/framework/docs/providers/aws/events/websocket/
 
+### Install
+
+#### Serverless
+
+Run `make install` in root directory to install serverless
+
+#### AWS CLI
+
+```bash
+    cd backend
+    make intall-aws-cli-linux # or make intall-aws-cli-mac
+    make configure # And then fill in your AWS Acces Key, AWS Secret Key, eu-west-3, json
+```
+
+#### Local development
+
+To make sure that you can deploy your own version of the serverless stack to AWS without impacting on someone else branch, dev or prod use the Makefile command for deployment `make deploy` and for removal `make remove`.
+
+They will check your current unix username with `id -un` and use that as the deployment stage.
+ex: for me
+
+```bash
+$ id -un
+michaelm
+```
+
+So If I run make deploy, a stage named michaelm will be used.
+
+This implies
+
+-   A new API Gateway stage named michaelm will be created
+-   Functions will be deployed according to the naming convention watch-with-me-michaelm-function_name
+-   A table named RoomTable-michaelm will be created.
+
 ### Useful commands
 
 ```bash
@@ -48,6 +82,9 @@ sls logs -t -f default # or the name of the serverless function you want to log
 
 # Remove all serverless services
 sls remove
+
+# Monitor all your lambda from the terminal
+make monitor
 ```
 
 ### Testing the connection
@@ -55,5 +92,5 @@ sls remove
 We use wscat to test socket connections. The url `wss://...` comes from the output of `sls deploy`.
 
 ```bash
-wscat -c wss://i5wm2ocma6.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
+wscat -c wss://555x5rdnx6.execute-api.eu-west-3.amazonaws.com/dev -H Auth:secret
 ```

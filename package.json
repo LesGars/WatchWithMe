@@ -9,12 +9,13 @@
         "@commitlint/cli": "8.3.5",
         "@commitlint/config-conventional": "8.3.4",
         "husky": "4.2.5",
-        "lint-staged": "10.1.7",
+        "lint-staged": "10.2.2",
         "prettier": "2.0.5",
         "stylelint": "13.3.3"
     },
     "scripts": {
-        "format": "prettier --write \"{,**/}*.{java,md,json,ts,css,scss,yml}\""
+        "format": "prettier --write \"{,**/}*.{java,md,json,ts,css,scss,yml}\"",
+        "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
     },
     "husky": {
         "hooks": {
