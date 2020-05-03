@@ -29,6 +29,9 @@ format: ## Run eslint and prettier for formatting
 lint:
 	pnpm run lint
 
+test:
+	pnpm run test
+
 build: ## Run webpack build process (Useful for testing)
 	sls package
 

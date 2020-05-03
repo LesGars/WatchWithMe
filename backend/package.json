@@ -7,7 +7,7 @@
         "lint": "eslint '**/*.{js,ts}'",
         "lint:fix": "eslint '**/*.{js,ts}' --fix",
         "prettier:fix": "prettier '**/*.{js,ts,json,md,yml,yaml}' --write",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "echo 'no tests yet in backend'",
         "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
     },
     "repository": {

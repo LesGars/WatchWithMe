@@ -6,6 +6,9 @@ help: ## List available commands
 install: ## Install dependency and start first build
 	pnpm install
 
+test:
+	pnpm run test
+
 build:
 	pnpm run build
 
