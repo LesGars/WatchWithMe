@@ -110,10 +110,10 @@ enum VideoSyncStatus {
  */
 export class Watcher {
     id: string; // maybe not needed since it will be the index key
-    connectionId: string; // API Gateway connexion ID to be used to communicate with the user
-    joinedAt: number;
-    lastVideoTimestamp: number; // Last video timestamp received during sync events of said user
-    lastHeartbeat: number; // date of last event during sync received from said user
+    connectionId: string; // API Gateway connection ID to be used to communicate with the user
+    joinedAtString: string;
+    lastVideoTimestampString: string; // Last video timestamp received during sync events of said user
+    lastHeartbeatString: string; // date of last event during sync received from said user
     currentVideoStatus: UserVideoStatus;
     initialSync: boolean = false;
 
@@ -122,7 +122,7 @@ export class Watcher {
 
 export class Room {
     roomId: string; // Partition key for DDB
-    createdAt: number;
+    createdAtString: string;
     watchers: Record<string, Watcher>;
     ownerId: string;
 
@@ -131,14 +131,14 @@ export class Room {
     videoSpeed: number = 1; // speed of video (2 means 2x)
 
     // History attributes
-    currentVideoUrl: string; // URL of
-    syncStartedAt: number; // Date when the video was first watched synchronously
-    syncStartedTimestamp: number; // Timestamp of the video when it was first watched synchronously
+    currentVideoUrl: string; // URL of video being watched
+    syncStartedAtString: string; // Date when the video was first watched synchronously
+    syncStartedTimestampString: string; // Timestamp of the video when it was first watched synchronously
 
     // Sync values
     videoStatus: VideoSyncStatus;
-    resumePlayingAt: number | null; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
-    resumePlayingTimestamp: number; // Timestamp that should be seeked by users before video can start
+    resumePlayingAtString: string | null; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
+    resumePlayingTimestampString: string; // Timestamp that should be seeked by users before video can start
 }
 
 export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
