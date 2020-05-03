@@ -11,5 +11,5 @@ build:
 f-watch: ## Start hot reload for firefox
 	pnpm run firefox:dev
 
-c-watch: ## Start hot reload for firefox
+c-watch: ## Start hot reload for chrome
 	pnpm run chrome:dev
