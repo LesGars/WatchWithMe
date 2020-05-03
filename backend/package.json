@@ -1,5 +1,5 @@
 {
-    "name": "beckend-watch-with-me",
+    "name": "backend-watch-with-me",
     "version": "1.0.0",
     "description": "Backend powered by the serverless framework",
     "main": "handler.js",
