@@ -2,7 +2,7 @@ name: Continuous Deployment
 on:
   push:
     branches:
-      - setup-github-actions-for-ci-cd
+      - master
 
 jobs:
   build:
