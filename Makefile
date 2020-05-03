@@ -19,5 +19,8 @@ test:
 	$(MAKE) -C backend test
 	$(MAKE) -C extension test
 
+deploy-prod:
+	$(MAKE) -C backend deploy-prod
+
 build-extension:
 	$(MAKE) -C extension build

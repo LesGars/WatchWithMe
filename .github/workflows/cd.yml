@@ -1,6 +1,8 @@
-name: Continuous Integration
+name: Continuous Deployment
 on:
-  push
+  push:
+    branches:
+      - setup-github-actions-for-ci-cd
 
 jobs:
   build:
@@ -17,9 +19,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: make install
-      - name: Run lint
-        run: make lint
-      - name: Run tests
-        run: make tests
-      - name: Build extension
-        run: make build-extension
+      - name: Deploy the project in prod
+        run: make deploy-prod
