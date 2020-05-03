@@ -14,4 +14,4 @@ install: install-deps ## Install all dependencies
 	$(MAKE) -C extension install
 
 build-extension:
-	cd extension && pnpm run build
+	$(MAKE) -C extension build
