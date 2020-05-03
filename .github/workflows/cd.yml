@@ -19,5 +19,20 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: make install
+      - name: Install AWS Cli
+        uses: chrislennon/action-aws-cli@v1.1
+      - name: Install Serverless Cli
+        run: curl -o- -L https://slss.io/install | bash
+      - name: Add credentials to ~/.aws/credentials
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile lesgars-watch-with-me
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile lesgars-watch-with-me
+      # - name: serverless deploy
+      #   run: |
+      #     export PATH=$PATH:$HOME/.serverless/bin
+      #     make deploy
       - name: Deploy the project in prod
         run: make deploy-prod
