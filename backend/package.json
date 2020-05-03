@@ -4,6 +4,7 @@
     "description": "Backend powered by the serverless framework",
     "main": "handler.js",
     "scripts": {
+        "lint": "eslint '**/*.{js,ts}'",
         "lint:fix": "eslint '**/*.{js,ts}' --fix",
         "prettier:fix": "prettier '**/*.{js,ts,json,md,yml,yaml}' --write",
         "test": "echo \"Error: no test specified\" && exit 1",

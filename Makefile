@@ -8,10 +8,12 @@ install-deps: ## Install/Update global packages
 
 install: install-deps ## Install all dependencies
 	pnpm install
-	# Extension
 	$(MAKE) -C backend install
-	# Backend
 	$(MAKE) -C extension install
+
+lint:
+	$(MAKE) -C backend lint
+	# $(MAKE) -C extension lint
 
 build-extension:
 	$(MAKE) -C extension build
