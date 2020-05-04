@@ -15,6 +15,7 @@
         "build": "npm run chrome:prod && npm run opera:prod && npm run firefox:prod",
         "dist": "npm run lint && cross-env NODE_ENV=production npm run chrome:prod && cross-env NODE_ENV=production npm run opera:prod && cross-env NODE_ENV=production npm run firefox:prod",
         "update-versions": "export VERSION=$(jq -r .version package.json) && jq \".version=\\\"$VERSION\\\"\" src/manifest.json | jq \".version_name=\\\"Release $VERSION\\\"\" > manifest.new && mv manifest.new src/manifest.json && git add src/manifest.json && git commit -m\"Release $VERSION\"; exit 0",
+        "test": "echo 'no tests yet in extension'",
         "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
     },
     "repository": {
