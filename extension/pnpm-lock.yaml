@@ -18,7 +18,7 @@ devDependencies:
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
   '@types/lodash': 4.14.150
-  '@types/node': 13.13.4
+  '@types/node': 13.13.5
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.12
   '@types/webpack-env': 1.15.2
@@ -1191,10 +1191,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==
-  /@types/node/13.13.4:
+  /@types/node/13.13.5:
     dev: true
     resolution:
-      integrity: sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
+      integrity: sha512-3ySmiBYJPqgjiHA7oEaIo2Rzz0HrOZ7yrNO5HWyaE5q0lQ3BppDZ3N53Miz8bw2I7gh1/zir2MGVZBvpb1zq9g==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -11339,7 +11339,7 @@ specifiers:
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
   '@types/lodash': 4.14.150
-  '@types/node': 13.13.4
+  '@types/node': 13.13.5
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.12
   '@types/webpack-env': 1.15.2

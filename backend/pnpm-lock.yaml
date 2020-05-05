@@ -7,7 +7,7 @@ devDependencies:
   '@babel/preset-typescript': 7.9.0_@babel+core@7.9.6
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.1
-  '@types/node': 13.13.4
+  '@types/node': 13.13.5
   '@types/uuid': 7.0.3
   '@typescript-eslint/eslint-plugin': 2.31.0_50950b2e6bdbd58a09a037463d6cec66
   '@typescript-eslint/parser': 2.31.0_eslint@6.8.0+typescript@3.8.3
@@ -1485,6 +1485,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-x26ur3dSXgv5AwKS0lNfbjpCakGIduWU1DU91Zz58ONRWrIKGunmZBNv4P7N+e27sJkiGDsw/3fT4AtsqQBrBA==
+  /@types/node/13.13.5:
+    dev: true
+    resolution:
+      integrity: sha512-3ySmiBYJPqgjiHA7oEaIo2Rzz0HrOZ7yrNO5HWyaE5q0lQ3BppDZ3N53Miz8bw2I7gh1/zir2MGVZBvpb1zq9g==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -9992,7 +9996,7 @@ specifiers:
   '@babel/preset-typescript': 7.9.0
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.1
-  '@types/node': 13.13.4
+  '@types/node': 13.13.5
   '@types/uuid': 7.0.3
   '@typescript-eslint/eslint-plugin': 2.31.0
   '@typescript-eslint/parser': 2.31.0
