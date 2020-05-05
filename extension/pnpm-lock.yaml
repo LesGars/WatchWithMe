@@ -12,7 +12,7 @@ dependencies:
   vue-router: 3.1.6
   webext-options-sync: 1.2.3
 devDependencies:
-  '@fullhuman/postcss-purgecss': 2.1.2
+  '@fullhuman/postcss-purgecss': 2.2.0
   '@types/chrome': 0.0.107
   '@types/copy-webpack-plugin': 5.0.0
   '@types/debug': 4.1.5
@@ -1004,13 +1004,13 @@ packages:
       global-tunnel-ng: 2.7.1
     resolution:
       integrity: sha512-OBIKtF6ttIJotDXe4KJMUyTBO4xMii+mFjlA8R4CORuD4HvCUaCK3lPjhdTRCvuEv6gzWNbAvd9DNBv0v780lw==
-  /@fullhuman/postcss-purgecss/2.1.2:
+  /@fullhuman/postcss-purgecss/2.2.0:
     dependencies:
-      postcss: 7.0.27
-      purgecss: 2.1.2
+      postcss: 7.0.28
+      purgecss: 2.2.0
     dev: true
     resolution:
-      integrity: sha512-Jf34YVBK9GtXTblpu0svNUJdA7rTQoRMz+yEJe6mwTnXDIGipWLzaX/VgU/x6IPC6WvU5SY/XlawwqhxoyFPTg==
+      integrity: sha512-q4zYAn8L9olA5uneaLhxkHRBoug9dnAqytbdX9R5dbzSORobhYr1yGR2JN3Q1UMd5RB0apm1NvJekHaymal/BQ==
   /@hapi/address/2.1.4:
     dev: true
     resolution:
@@ -8332,6 +8332,16 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-WuQETPMcW9Uf1/22HWUWP9lgsIC+KEHg2kozMflKjbeUtw9ujvFX6QmIfozaErDkmLWS9WEnEdEe6Uo9/BNTdQ==
+  /postcss/7.0.28:
+    dependencies:
+      chalk: 2.4.2
+      source-map: 0.6.1
+      supports-color: 6.1.0
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-YU6nVhyWIsVtlNlnAj1fHTsUKW5qxm3KEgzq2Jj6KTEFOTK8QWR12eIDvrlWhiSTK8WIBFTBhOJV4DY6dUuEbw==
   /prelude-ls/1.1.2:
     dev: true
     engines:
@@ -8479,16 +8489,16 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
-  /purgecss/2.1.2:
+  /purgecss/2.2.0:
     dependencies:
       commander: 5.1.0
       glob: 7.1.6
-      postcss: 7.0.27
+      postcss: 7.0.28
       postcss-selector-parser: 6.0.2
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-5oDBxiT9VonwKmEMohPFRFZrj8fdSVKxHPwq7G5Rx/2pXicZFJu+D4m5bb3NuV0sSK3ooNxq5jFIwwHzifP5FA==
+      integrity: sha512-krblW3ECdPq8GQZQ2mS4FaKtJbV8PX4x65V6wOuTwcfUSIxcTUeBekROCC53IbFKW/t044BuiVUHiSa3MqGJRg==
   /q/1.5.1:
     dev: true
     engines:
@@ -11323,7 +11333,7 @@ packages:
     resolution:
       integrity: sha512-5kNvPv+TUP3JqKWQUXj0vTgXHIRQpYw5YyBUVXQ0pumTAK+a4OZ+eXDHnh44nyr9B1XJQZq9WtSSm5j6NQhjWQ==
 specifiers:
-  '@fullhuman/postcss-purgecss': 2.1.2
+  '@fullhuman/postcss-purgecss': 2.2.0
   '@types/chrome': 0.0.107
   '@types/copy-webpack-plugin': 5.0.0
   '@types/debug': 4.1.5
