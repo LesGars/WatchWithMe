@@ -38,7 +38,7 @@
         "serverless": "1.69.0",
         "serverless-iam-roles-per-function": "2.0.2",
         "serverless-webpack": "5.3.2",
-        "ts-jest": "25.4.0",
+        "ts-jest": "25.5.0",
         "ts-loader": "7.0.2",
         "typescript": "3.8.3",
         "webpack": "4.43.0"
