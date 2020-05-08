@@ -16,6 +16,7 @@
 
 -   You might need to specify different data variables based on your environment. For example, you might want to use a localhost API endpoint during development and a production API endpoint once the extension is submitted to the appstore. You can specify such data in the json files inside `config` directory.
 -   You can also set custom data variables based on the platform (different variable for Chrome, FF, Opera).
+-   You can also set you own environment variables, by making your own `env/common.js` from `env/common.js.example`, and filling in the placeholders, while keeping the single and double quotes surrounding your variable
 
 ## Installation
 

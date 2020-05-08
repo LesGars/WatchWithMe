@@ -1,6 +1,6 @@
 var merge = require("webpack-merge");
 var prodEnv = require("./production.env");
-var common = require("./common");
+var common = require("./common").dev;
 
 module.exports = merge(prodEnv, {
     NODE_ENV: '"development"',
