@@ -85,3 +85,60 @@ export enum MessageType {
     DEBUG_MESSAGE,
     CHANGE_ROOM,
 }
+
+/**
+ * Video status for one user
+ */
+enum UserVideoStatus {
+    UNKNOWN = "UNKNOWN", // Still Loading of DOM, or not on the video URL, or any othe reason (no info from Video API)
+    BUFFERING = "BUFFERING", // has not reached minBufferLength (video is paused or not started)
+    PLAYING = "PLAYING", // is currently playing the video
+    READY = "READY", // (equivalent of Waiting or Paused) has buffered enough of the video, is pending start signal
+}
+
+/**
+ * Video status for all players that have completed initial Sync
+ */
+enum VideoSyncStatus {
+    PAUSED = "PAUSED", // video is paused and no action should be taken (apart from buffering)
+    WAITING = "WAITING", // waiting for all players to be in waiting status before playing
+    PLAYING = "PLAYING", // video should playing normally on all user browsers
+}
+
+/**
+ * Information about one user
+ */
+export class Watcher {
+    id: string; // maybe not needed since it will be the index key
+    connectionId: string; // API Gateway connection ID to be used to communicate with the user
+    joinedAtString: string;
+    lastVideoTimestampString: string; // Last video timestamp received during sync events of said user
+    lastHeartbeatString: string; // date of last event during sync received from said user
+    currentVideoStatus: UserVideoStatus;
+    initialSync: boolean = false;
+
+    userAgent: string; // Might help debug issues later
+}
+
+export class Room {
+    roomId: string; // Partition key for DDB
+    createdAtString: string;
+    watchers: Record<string, Watcher>;
+    ownerId: string;
+
+    // Config options
+    minBufferLength: number = 5; // Number of seconds each person should have loaded before resuming
+    videoSpeed: number = 1; // speed of video (2 means 2x)
+
+    // History attributes
+    currentVideoUrl: string; // URL of video being watched
+    syncStartedAtString: string; // Date when the video was first watched synchronously
+    syncStartedTimestampString: string; // Timestamp of the video when it was first watched synchronously
+
+    // Sync values
+    videoStatus: VideoSyncStatus;
+    resumePlayingAtString: string | null; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
+    resumePlayingTimestampString: string; // Timestamp that should be seeked by users before video can start
+}
+
+export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
