@@ -23,7 +23,7 @@ async function connectToWebSocket() {
         wsClient.getWebSocket().onmessage = (event: any) => {
             // Since the messages are supposed to be in JSON format, should be: JSON.parse(event.data)
             const receivedMsg = event.data;
-            console.log(receivedMsg);
+            console.log(`[WS-S] ${receivedMsg}`);
         };
     } catch (e) {
         console.log(e);
@@ -33,13 +33,14 @@ async function connectToWebSocket() {
 // Connect to previous roomId using websocket
 async function connectToPreviousRoom() {
     const roomId = await fetchPreviousRoomId();
-    wsClient.getWebSocket().send(JSON.stringify({ roomId }));
+    wsClient
+        .getWebSocket()
+        .send(JSON.stringify({ type: MessageType.CHANGE_ROOM, roomId }));
 }
 
 var portFromCS: Runtime.Port;
 
 const connected = (p: Runtime.Port) => {
-    console.log(process.env.NODE_ENV);
     portFromCS = p;
     console.log("[BG] Content Script connected");
     portFromCS.postMessage({

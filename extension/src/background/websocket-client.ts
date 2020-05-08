@@ -16,7 +16,7 @@ export default class WebSocketClient {
 
             this.webSocket.onopen = () => {
                 this.webSocket.send(
-                    JSON.stringify({ message: "[WS] Connected to server" })
+                    JSON.stringify({ message: "[WS-E] Connected to server" })
                 );
                 resolve();
             };

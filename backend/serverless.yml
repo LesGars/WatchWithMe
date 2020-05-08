@@ -50,11 +50,6 @@ functions:
     events:
       - websocket:
           route: $connect
-          # Only if we want authenticated connections
-          #authorizer:
-            #name: auth
-            #identitySource:
-              #- 'route.request.header.Auth'
   disconnect:
     handler: functions/disconnect.main
     iamRoleStatementsInherit: true
