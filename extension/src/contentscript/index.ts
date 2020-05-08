@@ -1,8 +1,10 @@
 import { browser } from "webextension-polyfill-ts";
 import { MessageType } from "../types";
-import { VideoPlayer, Event } from "./player";
+import { Event, VideoPlayer } from "./player";
 
-const csPort = browser.runtime.connect(undefined, { name: "PORT-CS" });
+export const CS_SCRIPT_NAME = "WWM Content-Script";
+
+const csPort = browser.runtime.connect(undefined, { name: CS_SCRIPT_NAME });
 csPort.postMessage({
     type: MessageType.DEBUG_MESSAGE,
     message: "[CS] This is the content script",

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "lib": ["es2018"],
+        "lib": ["es2019"],
         "moduleResolution": "node",
         "strict": true,
         "noImplicitAny": true,
@@ -11,7 +11,7 @@
         "resolveJsonModule": true,
         "noUnusedParameters": true,
         "sourceMap": true,
-        "target": "es2018",
+        "target": "es2019",
         "outDir": "lib",
         "allowSyntheticDefaultImports": true
     },

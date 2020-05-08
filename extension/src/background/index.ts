@@ -1,3 +1,5 @@
+import { CS_SCRIPT_NAME } from "@/contentscript";
+import { POPUP_SCRIPT_NAME } from "@/popup";
 import { browser, Runtime } from "webextension-polyfill-ts";
 import { MessageType } from "../types";
 import WebSocketClient from "./websocket-client";
@@ -9,11 +11,9 @@ async function polling() {
     log(`Polling`);
 }
 
-async function fetchPreviousRoomId(): Promise<{ [s: string]: any }> {
-    // Maybe boot a random roomId on first load ?
-    return browser.storage.sync.get({ roomId: undefined });
-}
-
+console.log(
+    `Preparing future Websocket connections on host ${process.env.WS_URL || ""}`
+);
 const wsClient: WebSocketClient = new WebSocketClient(process.env.WS_URL || "");
 
 async function connectToWebSocket() {
@@ -30,42 +30,51 @@ async function connectToWebSocket() {
     }
 }
 
-// Connect to previous roomId using websocket
-async function connectToPreviousRoom() {
-    const roomId = await fetchPreviousRoomId();
+async function connectToRoom(roomId: string) {
     wsClient
         .getWebSocket()
-        .send(JSON.stringify({ type: MessageType.CHANGE_ROOM, roomId }));
+        .send(JSON.stringify({ action: MessageType.CHANGE_ROOM, roomId }));
 }
 
 var portFromCS: Runtime.Port;
+var portFromPS: Runtime.Port;
 
 const connected = (p: Runtime.Port) => {
-    portFromCS = p;
-    console.log("[BG] Content Script connected");
-    portFromCS.postMessage({
-        type: MessageType.DEBUG_MESSAGE,
-        message: "[BG] Sending message to CS",
-    });
+    let message = `[BG] ${p.name} connected`;
+    if (!portFromCS && !portFromPS) {
+        connectToWebSocket();
+        console.log(
+            "[BG] First connection from any source, opening Websocket connection"
+        );
+    }
 
-    portFromCS.onMessage.addListener((m: any) => {
+    if (p.name === CS_SCRIPT_NAME) {
+        message += ` (from tab ${p.sender?.tab?.title})`;
+        // There is one new CS connection per page loaded on a tab with the extension
+        portFromCS = p;
+    } else if (p.name === POPUP_SCRIPT_NAME) {
+        // There is one new PS connection everytime the application popup opens
+        portFromPS = p;
+    }
+    console.log(message);
+
+    p.onMessage.addListener((m: any) => {
         const type = m.type as MessageType;
         switch (type) {
             case MessageType.CHANGE_ROOM: {
                 const { roomId } = m;
                 browser.storage.sync.set({ roomId });
                 // Connect to roomId using websocket
-                connectToPreviousRoom();
+                connectToRoom(roomId);
                 console.log(`[BG] Joined WatchWithMe room ${roomId}`);
+                // TODO : notify PS/CS that a room was joined (chat, etc)
                 break;
             }
             case MessageType.DEBUG_MESSAGE: {
-                console.log("[BG] Message from CS", m.message);
+                console.log(`[BG] Message from ${p.name}`, m.message);
                 break;
             }
         }
     });
-
-    connectToWebSocket();
 };
 browser.runtime.onConnect.addListener(connected);
