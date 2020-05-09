@@ -13,7 +13,7 @@ export const findRoomById = async (
         TableName: tableName,
         KeyConditionExpression: 'roomId = :r',
         ExpressionAttributeValues: {
-            ':r': roomId,
+            ':r': { S: roomId },
         },
     };
     try {
@@ -160,10 +160,31 @@ const unmarshallWatchers = (
 
 // TODO : also go through all watchers to marshall their dates
 const marshallRoom = (room: Room) => {
+    const roomForDDB = marshallMap(room);
+    roomForDDB.watchers = marshallWatchers(roomForDDB.watchers);
+    return roomForDDB;
+};
+
+// TODO : also go through all watchers to marshall their dates
+const marshallWatchers = (watchers: Record<string, Watcher>) => {
     return Object.fromEntries(
-        Object.entries(room).map(([key, value]) => [
-            key,
-            value instanceof Date ? value.toISOString : value,
+        Object.entries(watchers).map(([watcherID, watcherDDB]) => [
+            watcherID,
+            marshallMap(watcherDDB),
         ]),
     );
+};
+
+const marshallMap = (map: Record<string, any>): Record<string, any> => {
+    return Object.fromEntries(
+        Object.entries(map).map(([key, value]) => [key, marshallValue(value)]),
+    );
+};
+
+const marshallValue = (value: any): any => {
+    if (value instanceof Date) {
+        return value.toISOString;
+    } else {
+        return value;
+    }
 };

@@ -19,6 +19,7 @@ export const main = async (event: IEvent) => {
 
     let roomDDB = await findRoomById(roomId, process.env.ROOM_TABLE);
     if (roomDDB) {
+        // TODO: Make sure this works via WatchWithMe#90
         roomDDB = await joinExistingRoom(
             roomDDB,
             process.env.ROOM_TABLE,
