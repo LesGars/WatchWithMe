@@ -7,7 +7,9 @@ export const main = async (event: IEvent) => {
     }
     const { roomId } = JSON.parse(event.body);
     if (!roomId) {
-        console.log('[WS-S] Could not find a roomId in the join room request');
+        console.log(
+            '[WS-S] Could not find an existing roomId in the join room request',
+        );
         return failure();
     }
     const watcherConnectionString = event.requestContext.connectionId;
