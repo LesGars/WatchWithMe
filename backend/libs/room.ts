@@ -5,6 +5,10 @@ import {
     VideoSyncStatus,
     Watcher,
 } from '../../extension/src/types';
+
+/**
+ * Find a room by ID in DDB
+ */
 export const findRoomById = async (
     roomId: string,
     tableName: string,
@@ -32,6 +36,10 @@ export const findRoomById = async (
         return undefined;
     }
 };
+
+/**
+ * Create a new room in DDB
+ */
 export const createRoom = async (
     roomId: string,
     tableName: string,
@@ -74,6 +82,10 @@ export const createRoom = async (
         return undefined;
     }
 };
+
+/**
+ * Add a new user to the room's "watchers" map
+ */
 export const joinExistingRoom = async (
     room: Room,
     tableName: string,
@@ -110,6 +122,10 @@ export const joinExistingRoom = async (
         return undefined;
     }
 };
+
+/**
+ * RoomForDDB --> Room
+ */
 const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
     const room: Room = {
         roomId: roomDDB.roomId || 'error',
@@ -136,6 +152,10 @@ const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
     // TODO : check casting was good / we do not have out of date DDB items
     return room;
 };
+
+/**
+ * WatcherFromDDB --> Watcher
+ */
 const unmarshallWatchers = (
     watchersDDB: DocumentClient.AttributeMap,
 ): Record<string, Watcher> => {
@@ -158,14 +178,18 @@ const unmarshallWatchers = (
     );
 };
 
-// TODO : also go through all watchers to marshall their dates
+/**
+ * Room --> RoomForDDB
+ */
 const marshallRoom = (room: Room) => {
     const roomForDDB = marshallMap(room);
     roomForDDB.watchers = marshallWatchers(roomForDDB.watchers);
     return roomForDDB;
 };
 
-// TODO : also go through all watchers to marshall their dates
+/**
+ * watchers --> watchersForDDB
+ */
 const marshallWatchers = (watchers: Record<string, Watcher>) => {
     return Object.fromEntries(
         Object.entries(watchers).map(([watcherID, watcherDDB]) => [
@@ -175,12 +199,18 @@ const marshallWatchers = (watchers: Record<string, Watcher>) => {
     );
 };
 
+/**
+ * Converts a JS object to a compatible DDB format
+ */
 const marshallMap = (map: Record<string, any>): Record<string, any> => {
     return Object.fromEntries(
         Object.entries(map).map(([key, value]) => [key, marshallValue(value)]),
     );
 };
 
+/**
+ * Dates are converted to strings (ISO 8601)
+ */
 const marshallValue = (value: any): any => {
     if (value instanceof Date) {
         return value.toISOString;
