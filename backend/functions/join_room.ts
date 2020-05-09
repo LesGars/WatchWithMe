@@ -1,5 +1,9 @@
 import { failure, IEvent, success } from '../libs/response';
-import { createRoom, findRoomById, joinExistingRoom } from '../libs/room';
+import {
+    createRoom,
+    findRoomById,
+    joinExistingRoom,
+} from '../libs/room-operations';
 
 export const main = async (event: IEvent) => {
     if (!process.env.ROOM_TABLE) {
