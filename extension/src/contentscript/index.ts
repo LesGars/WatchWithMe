@@ -1,6 +1,6 @@
 import { browser } from "webextension-polyfill-ts";
 import { MessageType } from "../types";
-import { VideoPlayer, Event } from "./player";
+import { VideoPlayer } from "./player";
 
 const csPort = browser.runtime.connect(undefined, { name: "PORT-CS" });
 csPort.postMessage({
