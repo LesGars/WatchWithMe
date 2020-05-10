@@ -60,7 +60,7 @@ export class VideoPlayer {
         events.forEach((event) => {
             this.video.addEventListener(event.htmlEvent, () => {
                 this.port.postMessage({
-                    type: MessageType.PLAYER_EVENT,
+                    type: MessageType.MEDIA_EVENT,
                     ...this.buildEvent(event.type),
                 });
             });
