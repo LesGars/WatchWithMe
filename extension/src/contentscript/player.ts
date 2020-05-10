@@ -1,7 +1,8 @@
 import { Runtime } from "webextension-polyfill-ts";
+import { MessageType } from "@/types";
 
 export interface Event {
-    type: EventType;
+    eventType: EventType;
     duration: number;
     currentTime: number;
     now: Date;
@@ -58,14 +59,17 @@ export class VideoPlayer {
     private setupEvents() {
         events.forEach((event) => {
             this.video.addEventListener(event.htmlEvent, () => {
-                this.port.postMessage(this.buildEvent(event.type));
+                this.port.postMessage({
+                    type: MessageType.PLAYER_EVENT,
+                    ...this.buildEvent(event.type),
+                });
             });
         });
     }
 
-    private buildEvent(type: EventType): Event {
+    private buildEvent(eventType: EventType): Event {
         return {
-            type,
+            eventType,
             currentTime: this.video.currentTime,
             duration: this.video.duration,
             now: new Date(),

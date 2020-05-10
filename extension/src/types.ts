@@ -84,6 +84,7 @@ export class Extension {
 export enum MessageType {
     DEBUG_MESSAGE,
     CHANGE_ROOM,
+    PLAYER_EVENT,
 }
 
 /**

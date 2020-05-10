@@ -33,9 +33,16 @@ async function connectToWebSocket() {
 // Connect to previous roomId using websocket
 async function connectToPreviousRoom() {
     const roomId = await fetchPreviousRoomId();
-    wsClient
-        .getWebSocket()
-        .send(JSON.stringify({ type: MessageType.CHANGE_ROOM, roomId }));
+    sendMessageThroughWebSocket({ type: MessageType.CHANGE_ROOM, roomId });
+}
+
+function sendMessageThroughWebSocket(message: any) {
+    const webSocket = wsClient.getWebSocket();
+    if (webSocket.readyState === WebSocket.OPEN) {
+        wsClient.getWebSocket().send(JSON.stringify(message));
+    } else {
+        console.error("[BG]: WebSocket not open");
+    }
 }
 
 var portFromCS: Runtime.Port;
@@ -62,6 +69,10 @@ const connected = (p: Runtime.Port) => {
             case MessageType.DEBUG_MESSAGE: {
                 console.log("[BG] Message from CS", m.message);
                 break;
+            }
+            case MessageType.PLAYER_EVENT: {
+                console.log(`[BG] Sending ${m.eventType} to WebSocket`);
+                sendMessageThroughWebSocket(m);
             }
         }
     });
