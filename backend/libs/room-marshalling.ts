@@ -2,6 +2,7 @@ import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { Room, Watcher } from '../../extension/src/types';
 import { marshallMap } from './dynamodb-utils';
 
+/* eslint-disable complexity */
 /**
  * WatcherFromDDB --> Watcher
  */
@@ -56,6 +57,7 @@ export const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
     // TODO : check casting was good / we do not have out of date DDB items
     return room;
 };
+/* eslint-enable complexity */
 
 /**
  * watchers --> watchersForDDB
