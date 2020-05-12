@@ -81,6 +81,10 @@ export class Extension {
     }
 }
 
+/**
+ * Those messages are also used for routing to appropriate AWS lambda function
+ * Keep them in sync with serverless.yml (and in dash-case)
+ */
 export enum MessageType { // those values must be in sync with AWS lambda routes of servrless.yml
     DEBUG_MESSAGE,
     CHANGE_ROOM = "join-room",
