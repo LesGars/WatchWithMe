@@ -75,6 +75,20 @@ functions:
     events:
       - websocket:
           route: read
+  join_room:
+    handler: functions/join_room.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:Query
+          - dynamodb:PutItem
+          - dynamodb:UpdateItem
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
+    events:
+      - websocket:
+          route: join-room
   default:
     handler: handler.defaultHandler
     iamRoleStatementsInherit: true
