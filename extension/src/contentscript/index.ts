@@ -1,6 +1,6 @@
 import { browser } from "webextension-polyfill-ts";
 import { MessageType } from "../types";
-import { Event, VideoPlayer } from "./player";
+import { VideoPlayer } from "./player";
 
 export const CS_SCRIPT_NAME = "WWM Content-Script";
 
