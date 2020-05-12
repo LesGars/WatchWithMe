@@ -1,6 +1,5 @@
 name: Continuous Integration
-on:
-  push
+on: push
 
 jobs:
   build:
@@ -15,6 +14,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Use default env variables
+        run: cp extension/env/common.js.example extension/env/common.js
       - name: Install dependencies
         run: make install
       - name: Run lint
