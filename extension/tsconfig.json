@@ -15,7 +15,7 @@
             "@/*": ["src/*"]
         },
         "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-        "types": ["chrome", "node"],
+        "types": ["chrome", "node", "jest"],
         "noImplicitAny": false
     },
     "include": [
