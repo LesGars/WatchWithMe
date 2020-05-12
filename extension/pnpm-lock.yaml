@@ -62,7 +62,7 @@ devDependencies:
   string-replace-loader: 2.3.0_webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
   terser-webpack-plugin: 3.0.1_webpack@4.43.0
-  ts-loader: 7.0.3_typescript@3.8.3
+  ts-loader: 7.0.4_typescript@3.8.3
   tsconfig-paths-webpack-plugin: 3.2.0
   tslib: 1.11.2
   typescript: 3.8.3
@@ -10223,7 +10223,7 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-HDo5kXZCBml3EUPcc7RlZOV/JGlLHwppTLEHb3SHnr5V7NXD4klMEkrhJe5wgRbaWsSXi+Y1SIBN/K9B6zWGWQ==
-  /ts-loader/7.0.3_typescript@3.8.3:
+  /ts-loader/7.0.4_typescript@3.8.3:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.1.1
@@ -10237,7 +10237,7 @@ packages:
     peerDependencies:
       typescript: '*'
     resolution:
-      integrity: sha512-BXAHfPjm3J//20ibuI30M+xgLpdIng68p2H952QqbbmDk7SW72HV42k9Gop7rMxuHvrXWjazWhKuyr9D9kKe3A==
+      integrity: sha512-5du6OQHl+4ZjO4crEyoYUyWSrmmo7bAO+inkaILZ68mvahqrfoa4nn0DRmpQ4ruT4l+cuJCgF0xD7SBIyLeeow==
   /ts-pnp/1.2.0:
     dev: true
     engines:
@@ -11390,7 +11390,7 @@ specifiers:
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
   terser-webpack-plugin: 3.0.1
-  ts-loader: 7.0.3
+  ts-loader: 7.0.4
   tsconfig-paths-webpack-plugin: 3.2.0
   tslib: 1.11.2
   typescript: 3.8.3
