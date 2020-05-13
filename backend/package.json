@@ -40,7 +40,7 @@
         "serverless-webpack": "5.3.2",
         "ts-jest": "25.5.1",
         "ts-loader": "7.0.4",
-        "typescript": "3.8.3",
+        "typescript": "3.9.2",
         "webpack": "4.43.0"
     },
     "dependencies": {
