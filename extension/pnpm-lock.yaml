@@ -13,7 +13,7 @@ dependencies:
   webext-options-sync: 1.2.3
 devDependencies:
   '@fullhuman/postcss-purgecss': 2.2.0
-  '@types/chrome': 0.0.109
+  '@types/chrome': 0.0.110
   '@types/copy-webpack-plugin': 5.0.0
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
@@ -1110,13 +1110,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
-  /@types/chrome/0.0.109:
+  /@types/chrome/0.0.110:
     dependencies:
       '@types/filesystem': 0.0.29
       '@types/har-format': 1.2.4
     dev: true
     resolution:
-      integrity: sha512-VZTmNkzM3vrwKgrCA83htltKi7UBtlzoBWN1+TsSWHS1TLEMr9j/91jlSvObl/sn2HBw9s9s7/VC9/NQCLMV+w==
+      integrity: sha512-oUCGfina2v3eFgCA05vEL6ZlUZcoWaLQCmVRMYeqiDR4RcV9db8WrOQtSypwknathvcdmiatXGK9AiDO9lVDCg==
   /@types/color-name/1.1.1:
     dev: true
     resolution:
@@ -11338,7 +11338,7 @@ packages:
       integrity: sha512-5kNvPv+TUP3JqKWQUXj0vTgXHIRQpYw5YyBUVXQ0pumTAK+a4OZ+eXDHnh44nyr9B1XJQZq9WtSSm5j6NQhjWQ==
 specifiers:
   '@fullhuman/postcss-purgecss': 2.2.0
-  '@types/chrome': 0.0.109
+  '@types/chrome': 0.0.110
   '@types/copy-webpack-plugin': 5.0.0
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
