@@ -96,7 +96,7 @@
         "zip-webpack-plugin": "3.0.0"
     },
     "dependencies": {
-        "dayjs": "1.8.26",
+        "dayjs": "1.8.27",
         "debug": "4.1.1",
         "lodash-es": "4.17.15",
         "uuid": "8.0.0",
