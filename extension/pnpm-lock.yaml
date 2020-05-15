@@ -14,7 +14,7 @@ dependencies:
 devDependencies:
   '@fullhuman/postcss-purgecss': 2.2.0
   '@types/chrome': 0.0.112
-  '@types/copy-webpack-plugin': 5.0.0
+  '@types/copy-webpack-plugin': 5.0.1
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
   '@types/lodash': 4.14.150
@@ -1121,14 +1121,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/copy-webpack-plugin/5.0.0:
+  /@types/copy-webpack-plugin/5.0.1:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 13.13.2
-      '@types/webpack': 4.41.12
+      '@types/node': 13.13.6
+      '@types/webpack': 4.41.13
     dev: true
     resolution:
-      integrity: sha512-yQHocgdgES7W5Q2UyxJ5cj/E6MrV1zq3MZ8jdApS9NJKqax+rux9IE3QAbBmNCGbgivEsejrkIq3Rm76JLubkg==
+      integrity: sha512-ngoaMR6fxovcC8MIaWLugJuvq1uFvXY2ehh+k+cLlnKDRHVFbbcKc1AOCKzwkA3fMmt4lLeLcJ7l+PuNmKrmiQ==
   /@types/debug/4.1.5:
     dev: true
     resolution:
@@ -11356,7 +11356,7 @@ packages:
 specifiers:
   '@fullhuman/postcss-purgecss': 2.2.0
   '@types/chrome': 0.0.112
-  '@types/copy-webpack-plugin': 5.0.0
+  '@types/copy-webpack-plugin': 5.0.1
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
   '@types/lodash': 4.14.150
