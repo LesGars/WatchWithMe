@@ -55,7 +55,7 @@ devDependencies:
   postcss-import: 12.0.1
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
-  postcss-scss: 2.0.0
+  postcss-scss: 2.1.0
   prettier: 2.0.5
   rimraf: 3.0.2
   sass-loader: 8.0.2_node-sass@4.14.1+webpack@4.43.0
@@ -8290,6 +8290,14 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-um9zdGKaDZirMm+kZFKKVsnKPF7zF7qBAtIfTSnZXD1jZ0JNZIxdB6TxQOjCnlSzLRInVl2v3YdBh/M881C4ug==
+  /postcss-scss/2.1.0:
+    dependencies:
+      postcss: 7.0.30
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-1AFpO7BcDH+F4HWyHmn/QAEbo6FsqsbwBHrIyfUcASp+m7GFWW9bbRgN4aajdD0KlU3s00oWggmJIejeoF3YqA==
   /postcss-selector-parser/3.1.2:
     dependencies:
       dot-prop: 5.2.0
@@ -8359,6 +8367,16 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-YU6nVhyWIsVtlNlnAj1fHTsUKW5qxm3KEgzq2Jj6KTEFOTK8QWR12eIDvrlWhiSTK8WIBFTBhOJV4DY6dUuEbw==
+  /postcss/7.0.30:
+    dependencies:
+      chalk: 2.4.2
+      source-map: 0.6.1
+      supports-color: 6.1.0
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    resolution:
+      integrity: sha512-nu/0m+NtIzoubO+xdAlwZl/u5S5vi/y6BCsoL8D+8IxsD3XvBS8X4YEADNIVXKVuQvduiucnRv+vPIqj56EGMQ==
   /prelude-ls/1.1.2:
     dev: true
     engines:
@@ -11400,7 +11418,7 @@ specifiers:
   postcss-import: 12.0.1
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
-  postcss-scss: 2.0.0
+  postcss-scss: 2.1.0
   prettier: 2.0.5
   rimraf: 3.0.2
   sass-loader: 8.0.2
