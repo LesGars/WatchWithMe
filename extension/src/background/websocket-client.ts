@@ -4,6 +4,7 @@ export default class WebSocketClient {
 
     public constructor(host: string) {
         this.host = host;
+        this.webSocket = new WebSocket(this.host);
     }
 
     public getWebSocket(): WebSocket {
@@ -12,8 +13,6 @@ export default class WebSocketClient {
 
     public connect(): Promise<void> {
         return new Promise((resolve) => {
-            this.webSocket = new WebSocket(this.host);
-
             this.webSocket.onopen = () => {
                 this.webSocket.send(
                     JSON.stringify({ message: "[WS-E] Connected to server" })
