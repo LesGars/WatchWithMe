@@ -45,7 +45,7 @@
         "@vue/devtools": "5.3.3",
         "@vue/eslint-config-prettier": "6.0.0",
         "@vue/eslint-config-typescript": "5.0.2",
-        "autoprefixer": "9.7.6",
+        "autoprefixer": "9.8.0",
         "axios": "0.19.2",
         "clean-webpack-plugin": "3.0.0",
         "copy-webpack-plugin": "5.1.1",
