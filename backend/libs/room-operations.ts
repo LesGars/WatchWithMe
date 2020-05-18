@@ -5,6 +5,7 @@ import {
     VideoSyncStatus,
     Watcher,
 } from '../../extension/src/types';
+import { marshallMap } from './dynamodb-utils';
 import { marshallRoom, unmarshallRoom } from './room-marshalling';
 
 /**
@@ -14,18 +15,16 @@ export const findRoomById = async (
     roomId: string,
     tableName: string,
 ): Promise<Room | undefined> => {
-    const params: DocumentClient.QueryInput = {
+    const params: DocumentClient.GetItemInput = {
         TableName: tableName,
-        KeyConditionExpression: 'roomId = :r',
-        ExpressionAttributeValues: {
-            ':r': { S: roomId },
-        },
+        Key: { roomId },
     };
     try {
         const dynamoDb = new DocumentClient();
-        const data = await dynamoDb.query(params).promise();
-        if (data.Count! === 1) {
-            return unmarshallRoom(data.Items![0]);
+        console.debug(`Trying to find room ${roomId}`);
+        const data = await dynamoDb.get(params).promise();
+        if (data.Item) {
+            return unmarshallRoom(data.Item);
         } else {
             console.log(
                 `Could not find a room with id ${roomId}. It's either new or destroyed`,
@@ -33,7 +32,7 @@ export const findRoomById = async (
             return undefined;
         }
     } catch (e) {
-        console.error(`Failed to find or unmarshall room on DDB ${e}`);
+        console.error('Failed to find or unmarshall room on DDB', e);
         return undefined;
     }
 };
@@ -79,7 +78,7 @@ export const createRoom = async (
         await dynamoDb.put(params).promise();
         return room;
     } catch (e) {
-        console.error(`Failed to create a room on DDB ${e}`);
+        console.error('Failed to create a room on DDB', e);
         return undefined;
     }
 };
@@ -105,13 +104,13 @@ export const joinExistingRoom = async (
     const params: DocumentClient.UpdateItemInput = {
         TableName: tableName,
         Key: { roomId: room.roomId },
-        UpdateExpression: 'SET #watchers.#loc = :newWatcher',
+        UpdateExpression: 'SET #watchers.#watcherId = :newWatcher',
         ExpressionAttributeNames: {
             '#watcherId': watcherConnectionString,
             '#watchers': 'watchers',
         },
         ExpressionAttributeValues: {
-            ':newWatcher': newWatcher,
+            ':newWatcher': marshallMap(newWatcher),
         },
     };
     try {
@@ -119,7 +118,7 @@ export const joinExistingRoom = async (
         await dynamoDb.update(params).promise();
         return room;
     } catch (e) {
-        console.error(`Failed to create a room on DDB ${e}`);
+        console.error('Failed to join existing room', e);
         return undefined;
     }
 };
