@@ -5,6 +5,7 @@ devDependencies:
   '@babel/core': 7.9.6
   '@babel/preset-env': 7.9.6_@babel+core@7.9.6
   '@babel/preset-typescript': 7.9.0_@babel+core@7.9.6
+  '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.3
   '@types/node': 13.13.6
@@ -15,6 +16,7 @@ devDependencies:
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0_eslint@6.8.0
   jest: 26.0.1
+  js-yaml: 3.13.1
   prettier: 2.0.5
   serverless: 1.71.1
   serverless-iam-roles-per-function: 2.0.2
@@ -1361,6 +1363,19 @@ packages:
     dev: true
     resolution:
       integrity: sha512-H1sryCXyWryvHUl8nhgWXmFDfvixWER0y5A7gcpJzduwmCJOMaV3plg9MIrvS27tNg3c/RVQ0uKNkx1NlOFgJA==
+  /@shelf/jest-dynamodb/1.7.0_aws-sdk@2.663.0:
+    dependencies:
+      aws-sdk: 2.663.0
+      cwd: 0.10.0
+      debug: 4.1.1
+      dynamodb-local: 0.0.31
+    dev: true
+    engines:
+      node: '>=8'
+    peerDependencies:
+      aws-sdk: 2.x.x
+    resolution:
+      integrity: sha512-ASm/b43lXCgu8xmyIuth+iYp28JSVzn5GPuUq769AWveHMpuSUVESKSMpR0xrAlado4kxzqs0eupQOcuZamaeA==
   /@sindresorhus/is/0.14.0:
     dev: true
     engines:
@@ -1556,6 +1571,7 @@ packages:
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
       tsutils: 3.17.1_typescript@3.9.2
+      typescript: 3.9.2
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1590,6 +1606,7 @@ packages:
       '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.2
       eslint: 6.8.0
       eslint-visitor-keys: 1.1.0
+      typescript: 3.9.2
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1610,6 +1627,7 @@ packages:
       lodash: 4.17.15
       semver: 7.3.2
       tsutils: 3.17.1_typescript@3.9.2
+      typescript: 3.9.2
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -2133,7 +2151,6 @@ packages:
       url: 0.10.3
       uuid: 3.3.2
       xml2js: 0.4.19
-    dev: false
     engines:
       node: '>= 0.8.0'
     resolution:
@@ -3191,6 +3208,15 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
+  /cwd/0.10.0:
+    dependencies:
+      find-pkg: 0.1.2
+      fs-exists-sync: 0.1.0
+    dev: true
+    engines:
+      node: '>=0.8'
+    resolution:
+      integrity: sha1-FyQAaUBXwioTsM8WFix+S3p/5Wc=
   /cyclist/1.0.1:
     dev: true
     resolution:
@@ -3660,6 +3686,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-06kgtea+bGreF5eKYgI/36A6pLXggY7oR4p1pq4SmdFBn1ReOL5D8RhG64VrqfTTKNucqqtBAwEj8aB88mcqrg==
+  /dynamodb-local/0.0.31:
+    dependencies:
+      debug: 4.1.1
+      mkdirp: 0.5.5
+      q: 1.4.1
+      tar: 4.4.13
+    dev: true
+    engines:
+      node: '>= 0.10.33'
+    resolution:
+      integrity: sha512-5Ro47g989oLSC2JKFtPAWWSSicZOkqQrBGwHActqN6zdCZEy/eGvhq7Ki9Lgx/gNE+ksIF2wD6VNff3bjTI8ow==
   /ecc-jsbn/0.1.2:
     dependencies:
       jsbn: 0.1.1
@@ -4097,6 +4134,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-t3c14xXOMPa27/D4OwQVGiJEliI=
+  /expand-tilde/1.2.2:
+    dependencies:
+      os-homedir: 1.0.2
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-C4HrqJflo9MdHD0QL48BRB5VlEk=
   /expect/26.0.1:
     dependencies:
       '@jest/types': 26.0.1
@@ -4383,6 +4428,23 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-Tq6PixE0w/VMFfCgbONnkiQIVol/JJL7nRMi20fqzA4NRs9AfeqMGeRdPi3wIhYkxjeBaWh2rxwapn5Tu3IqOQ==
+  /find-file-up/0.1.3:
+    dependencies:
+      fs-exists-sync: 0.1.0
+      resolve-dir: 0.1.1
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-z2gJG8+fMApA2kEbN9pczlovvqA=
+  /find-pkg/0.1.2:
+    dependencies:
+      find-file-up: 0.1.3
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-G9wiwG42NlUy4qJIBGhUuXiNpVc=
   /find-process/1.4.3:
     dependencies:
       chalk: 2.4.2
@@ -4524,6 +4586,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
+  /fs-exists-sync/0.1.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-mC1ok6+RjnLQjeyehnP/K1qNat0=
   /fs-extra/7.0.1:
     dependencies:
       graceful-fs: 4.2.4
@@ -4544,6 +4612,12 @@ packages:
       node: '>=6 <7 || >=8'
     resolution:
       integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  /fs-minipass/1.2.7:
+    dependencies:
+      minipass: 2.9.0
+    dev: true
+    resolution:
+      integrity: sha512-GWSSJGFy4e9GUeCcbIkED+bgAoFyj7XF1mV8rma3QW4NIqX9Kyx79N/PF61H5udOV3aY1IaMLs6pGbH71nlCTA==
   /fs-write-stream-atomic/1.0.10:
     dependencies:
       graceful-fs: 4.2.4
@@ -4720,6 +4794,26 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-sxnA3UYH81PzvpzKTHL8FIxJ9EU=
+  /global-modules/0.2.3:
+    dependencies:
+      global-prefix: 0.1.5
+      is-windows: 0.2.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-6lo77ULG1s6ZWk+KEmm12uIjgo0=
+  /global-prefix/0.1.5:
+    dependencies:
+      homedir-polyfill: 1.0.3
+      ini: 1.3.5
+      is-windows: 0.2.0
+      which: 1.3.1
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-jTvGuNo8qBEqFg2NSW/wRiv+948=
   /globals/11.12.0:
     dev: true
     engines:
@@ -4961,6 +5055,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
+  /homedir-polyfill/1.0.3:
+    dependencies:
+      parse-passwd: 1.0.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==
   /hosted-git-info/2.8.8:
     dev: true
     resolution:
@@ -5471,6 +5573,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ITvGim8FhRiYe4IQ5uHSkj7pVaPDrCTkNd3yq3cV7iZAcJdHTUMPMEHcqSOy9xZ9qFenQCvi+2wjH9a1nXqHww==
+  /is-windows/0.2.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-3hqm1j6indJIc3tp8f+LgALSEIw=
   /is-windows/1.0.2:
     dev: true
     engines:
@@ -6618,6 +6726,19 @@ packages:
     dev: true
     resolution:
       integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  /minipass/2.9.0:
+    dependencies:
+      safe-buffer: 5.2.1
+      yallist: 3.1.1
+    dev: true
+    resolution:
+      integrity: sha512-wxfUjg9WebH+CUDX/CdbRlh5SmfZiy/hpkxaRI16Y9W56Pa75sWgd/rvFilSgrauD9NyFymP/+JFV3KwzIsJeg==
+  /minizlib/1.3.3:
+    dependencies:
+      minipass: 2.9.0
+    dev: true
+    resolution:
+      integrity: sha512-6ZYMOEnmVsdCeTJVE0W9ZD+pVnE8h9Hma/iOwwRDsdQoePpoX56/8B6z3P9VNwppJuBKNRuFDRNRqRWexT9G9Q==
   /mississippi/3.0.0:
     dependencies:
       concat-stream: 1.6.2
@@ -7054,6 +7175,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hUNzx/XCMVkU/Jv8a9gjj92h7Cc=
+  /os-homedir/1.0.2:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-/7xJiDNuDoM94MFox+8VISGqf7M=
   /os-tmpdir/1.0.2:
     dev: true
     engines:
@@ -7222,6 +7349,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-OOY5b7PAEFV0E2Fir1KOkxchnZNCdowAJgQ5NuxjpBKTRP3pQhwkrkxqQjeoKJ+fO7bCpmIZaogI4eZGDMEGOw==
+  /parse-passwd/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-bVuTSkVpk7I9N/QKOC1vFmao5cY=
   /parse5/5.1.1:
     dev: true
     resolution:
@@ -7601,6 +7734,13 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+  /q/1.4.1:
+    dev: true
+    engines:
+      node: '>=0.6.0'
+      teleport: '>=0.2.0'
+    resolution:
+      integrity: sha1-VXBbzZPF82c1MMLCy8DCs63cKG4=
   /qs/6.5.2:
     dev: true
     engines:
@@ -7944,6 +8084,15 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-DIgu+0Dv+6v2XwRaNWnumKu7GPufBBOr5I1gRPJHkvghrfCGOooJODFvgFimX/KRxk9j0whD2MnKHzM1jYvk9w==
+  /resolve-dir/0.1.1:
+    dependencies:
+      expand-tilde: 1.2.2
+      global-modules: 0.2.3
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-shklmlYC+sXFxJatiUpujMQwJh4=
   /resolve-from/4.0.0:
     dev: true
     engines:
@@ -8894,6 +9043,20 @@ packages:
     dev: true
     resolution:
       integrity: sha512-UaF6FoJ32WqALZGOIAApXx+OdxhekNMChu6axLJR85zMMjXKWFGjbIRe+J6P4UnRGg9rAwWvbTT0oI7hD/Un7Q==
+  /tar/4.4.13:
+    dependencies:
+      chownr: 1.1.4
+      fs-minipass: 1.2.7
+      minipass: 2.9.0
+      minizlib: 1.3.3
+      mkdirp: 0.5.5
+      safe-buffer: 5.2.1
+      yallist: 3.1.1
+    dev: true
+    engines:
+      node: '>=4.5'
+    resolution:
+      integrity: sha512-w2VwSrBoHa5BsSyH+KxEqeQBAllHhccyMFVHtGtdMpF4W7IRWfZjFiQceJPChOeTsSDVUpER2T8FA93pr0L+QA==
   /term-size/1.2.0:
     dependencies:
       execa: 0.7.0
@@ -9880,6 +10043,7 @@ specifiers:
   '@babel/core': 7.9.6
   '@babel/preset-env': 7.9.6
   '@babel/preset-typescript': 7.9.0
+  '@shelf/jest-dynamodb': ^1.7.0
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.3
   '@types/node': 13.13.6
@@ -9891,6 +10055,7 @@ specifiers:
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0
   jest: 26.0.1
+  js-yaml: ^3.13.1
   prettier: 2.0.5
   serverless: 1.71.1
   serverless-iam-roles-per-function: 2.0.2

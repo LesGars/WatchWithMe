@@ -7,7 +7,8 @@
         "lint": "eslint '**/*.{js,ts}'",
         "lint:fix": "eslint '**/*.{js,ts}' --fix",
         "prettier:fix": "prettier '**/*.{js,ts,json,md,yml,yaml}' --write",
-        "test": "echo 'no tests yet in backend'",
+        "test": "jest --watch",
+        "test-ci": "jest --ci --coverage",
         "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
     },
     "repository": {
@@ -24,6 +25,7 @@
         "@babel/core": "7.9.6",
         "@babel/preset-env": "7.9.6",
         "@babel/preset-typescript": "7.9.0",
+        "@shelf/jest-dynamodb": "^1.7.0",
         "@types/aws-lambda": "8.10.51",
         "@types/jest": "25.2.3",
         "@types/node": "13.13.6",
@@ -34,6 +36,7 @@
         "eslint": "6.8.0",
         "eslint-config-prettier": "6.11.0",
         "jest": "26.0.1",
+        "js-yaml": "^3.13.1",
         "prettier": "2.0.5",
         "serverless": "1.71.1",
         "serverless-iam-roles-per-function": "2.0.2",

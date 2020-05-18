@@ -14,13 +14,13 @@ import { marshallRoom, unmarshallRoom } from './room-marshalling';
 export const findRoomById = async (
     roomId: string,
     tableName: string,
+    dynamoDb: DocumentClient = new DocumentClient(),
 ): Promise<Room | undefined> => {
     const params: DocumentClient.GetItemInput = {
         TableName: tableName,
         Key: { roomId },
     };
     try {
-        const dynamoDb = new DocumentClient();
         console.debug(`Trying to find room ${roomId}`);
         const data = await dynamoDb.get(params).promise();
         if (data.Item) {
@@ -44,6 +44,7 @@ export const createRoom = async (
     roomId: string,
     tableName: string,
     ownerConnectionString: string,
+    dynamoDb: DocumentClient = new DocumentClient(),
 ): Promise<Room | undefined> => {
     const owner: Watcher = {
         id: ownerConnectionString,
@@ -74,7 +75,6 @@ export const createRoom = async (
         Item: marshallRoom(room),
     };
     try {
-        const dynamoDb = new DocumentClient();
         await dynamoDb.put(params).promise();
         return room;
     } catch (e) {
@@ -90,6 +90,7 @@ export const joinExistingRoom = async (
     room: Room,
     tableName: string,
     watcherConnectionString: string,
+    dynamoDb: DocumentClient = new DocumentClient(),
 ): Promise<Room | undefined> => {
     const newWatcher: Watcher = {
         id: watcherConnectionString,
@@ -99,7 +100,7 @@ export const joinExistingRoom = async (
         lastHeartbeat: new Date(),
         currentVideoStatus: UserVideoStatus.UNKNOWN,
         initialSync: false,
-        userAgent: '',
+        userAgent: 'TODO',
     };
     const params: DocumentClient.UpdateItemInput = {
         TableName: tableName,
@@ -114,7 +115,6 @@ export const joinExistingRoom = async (
         },
     };
     try {
-        const dynamoDb = new DocumentClient();
         await dynamoDb.update(params).promise();
         return room;
     } catch (e) {
