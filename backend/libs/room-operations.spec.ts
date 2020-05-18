@@ -1,12 +1,3 @@
-/*
-// TODO : find a way to read directly the YML to generate table
-// instead of relying on jest-dynamodb-config.js
-const yaml = require('js-yaml');
-const fs = require('fs');
-let fileContents = fs.readFileSync('..resources/dynamodb.yaml', 'utf8');
-let ddbConfig = yaml.safeLoad(fileContents);
-*/
-
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { Room } from '../../extension/src/types';
 import { createRoom, joinExistingRoom } from './room-operations';
@@ -20,9 +11,7 @@ const config = {
         region: 'local-env',
     }),
 };
-
 const ddb = new DocumentClient(config);
-
 const tableName = 'watch-with-me-dev-RoomTable';
 
 describe('#createRoom', () => {
