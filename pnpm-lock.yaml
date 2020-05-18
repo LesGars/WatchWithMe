@@ -2,7 +2,7 @@ devDependencies:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.3
+  lint-staged: 10.2.4
   prettier: 2.0.5
   stylelint: 13.4.0
 lockfileVersion: 5.1
@@ -1596,7 +1596,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /lint-staged/10.2.3:
+  /lint-staged/10.2.4:
     dependencies:
       chalk: 4.0.0
       commander: 5.1.0
@@ -1604,7 +1604,7 @@ packages:
       debug: 4.1.1
       dedent: 0.7.0
       execa: 4.0.1
-      listr2: 2.0.1
+      listr2: 2.0.2
       log-symbols: 4.0.0
       micromatch: 4.0.2
       normalize-path: 3.0.0
@@ -1614,8 +1614,8 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-dX5CeCIDtKoNv5IQpOMq/YUP8PXc58/QW+iWapv8KzgYcbgUWJwhPaFjX5aUS9pAa8cpGH7Jur3Puw3tugTGIg==
-  /listr2/2.0.1:
+      integrity: sha512-doTMGKXQAT34c3S3gwDrTnXmCZp/z1/92D8suPqqh755sKPT18ew1NoPNHxJdrvv1D4WrJ7CEnx79Ns3EdEFbg==
+  /listr2/2.0.2:
     dependencies:
       '@samverschueren/stream-to-observable': 0.3.0
       chalk: 4.0.0
@@ -1630,12 +1630,12 @@ packages:
       pad: 3.2.0
       rxjs: 6.5.5
       through: 2.3.8
-      uuid: 8.0.0
+      uuid: 7.0.3
     dev: true
     engines:
       node: '>=10.0.0'
     resolution:
-      integrity: sha512-APezMtg3gQTamAgixvFKPpq8ipQJix5dJcEw4S+UzF4k5fNn1Bm0ssULO01ekr3PkDT/hoT0bMKBb8hNFDAl2g==
+      integrity: sha512-HkbraLsbHRFtuT0p1g9KUiMoJeqlPdgsi4Q3mCvBlYnVK+2I1vPdCxBvJ+nAxwpL7SZiyaICWMvLOyMBtu+VKw==
   /load-json-file/4.0.0:
     dependencies:
       graceful-fs: 4.2.3
@@ -2987,11 +2987,11 @@ packages:
     dev: true
     resolution:
       integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
-  /uuid/8.0.0:
+  /uuid/7.0.3:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
+      integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
   /v8-compile-cache/2.1.0:
     dev: true
     resolution:
@@ -3114,6 +3114,6 @@ specifiers:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.3
+  lint-staged: 10.2.4
   prettier: 2.0.5
   stylelint: 13.4.0
