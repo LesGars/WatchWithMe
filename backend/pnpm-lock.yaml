@@ -8,7 +8,7 @@ devDependencies:
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.3
   '@types/node': 13.13.7
-  '@types/uuid': 7.0.3
+  '@types/uuid': 7.0.4
   '@typescript-eslint/eslint-plugin': 2.34.0_7736e17983494ab37bff012bcf9a2eb2
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.2
   babel-jest: 26.0.1_@babel+core@7.9.6
@@ -1532,10 +1532,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
-  /@types/uuid/7.0.3:
+  /@types/uuid/7.0.4:
     dev: true
     resolution:
-      integrity: sha512-PUdqTZVrNYTNcIhLHkiaYzoOIaUi5LFg/XLerAdgvwQrUCx+oSbtoBze1AMyvYbcwzUSNC+Isl58SM4Sm/6COw==
+      integrity: sha512-WGZCqBZZ0mXN2RxvLHL6/7RCu+OWs28jgQMP04LWfpyJlQUMTR6YU9CNJAKDgbw+EV/u687INXuLUc7FuML/4g==
   /@types/yargs-parser/15.0.0:
     dev: true
     resolution:
@@ -9887,7 +9887,7 @@ specifiers:
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.3
   '@types/node': 13.13.7
-  '@types/uuid': 7.0.3
+  '@types/uuid': 7.0.4
   '@typescript-eslint/eslint-plugin': 2.34.0
   '@typescript-eslint/parser': 2.34.0
   aws-sdk: ^2.663.0
