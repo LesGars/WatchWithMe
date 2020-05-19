@@ -72,7 +72,7 @@ devDependencies:
   webextension-polyfill: 0.6.0
   webextension-polyfill-ts: 0.15.0
   webpack: 4.43.0_webpack@4.43.0
-  webpack-bundle-analyzer: 3.7.0
+  webpack-bundle-analyzer: 3.8.0
   webpack-cli: 3.3.11_webpack@4.43.0
   webpack-dashboard: 3.2.0_webpack@4.43.0
   webpack-extension-reloader: 1.1.4_webpack@4.43.0
@@ -1775,6 +1775,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-add7dgA5ppRPxCFJoAGfMDi7PIBXq1RtGo7BhbLaxwrXPOmw8gq48Y9ozT01hUKy9byMjlR20EJhu5zlkErEkg==
+  /acorn/7.2.0:
+    dev: true
+    engines:
+      node: '>=0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
   /address/1.1.2:
     dev: true
     engines:
@@ -10917,6 +10924,27 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-mETdjZ30a3Yf+NTB/wqTgACK7rAYQl5uxKK0WVTNmF0sM3Uv8s3R58YZMW7Rhu0Lk2Rmuhdj5dcH5Q76zCDVdA==
+  /webpack-bundle-analyzer/3.8.0:
+    dependencies:
+      acorn: 7.2.0
+      acorn-walk: 7.1.1
+      bfj: 6.1.2
+      chalk: 2.4.2
+      commander: 2.20.3
+      ejs: 2.7.4
+      express: 4.17.1
+      filesize: 3.6.1
+      gzip-size: 5.1.1
+      lodash: 4.17.15
+      mkdirp: 0.5.5
+      opener: 1.5.1
+      ws: 6.2.1
+    dev: true
+    engines:
+      node: '>= 6.14.4'
+    hasBin: true
+    resolution:
+      integrity: sha512-PODQhAYVEourCcOuU+NiYI7WdR8QyELZGgPvB1y2tjbUpbmcQOt5Q7jEK+ttd5se0KSBKD9SXHCEozS++Wllmw==
   /webpack-chain/6.4.0:
     dependencies:
       deepmerge: 1.5.2
@@ -11485,7 +11513,7 @@ specifiers:
   webextension-polyfill: 0.6.0
   webextension-polyfill-ts: 0.15.0
   webpack: 4.43.0
-  webpack-bundle-analyzer: 3.7.0
+  webpack-bundle-analyzer: 3.8.0
   webpack-cli: 3.3.11
   webpack-dashboard: 3.2.0
   webpack-extension-reloader: 1.1.4
