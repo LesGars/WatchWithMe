@@ -25,7 +25,7 @@ devDependencies:
   '@types/webpack-merge': 4.1.5
   '@vue/cli-plugin-babel': 4.3.1_@vue+cli-service@4.3.1
   '@vue/cli-plugin-eslint': 4.3.1_39c37a0df7d91dff77b5226a724bc947
-  '@vue/cli-plugin-typescript': 4.3.1_510d697927f0cfa972d141c7e001142c
+  '@vue/cli-plugin-typescript': 4.3.1_748317ba3d2b773758d7cade08a523a9
   '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
   '@vue/devtools': 5.3.3
   '@vue/eslint-config-prettier': 6.0.0_af4605eedacb563169dd297b9dfe38db
@@ -62,10 +62,10 @@ devDependencies:
   string-replace-loader: 2.3.0_webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
   terser-webpack-plugin: 3.0.1_webpack@4.43.0
-  ts-loader: 7.0.4_typescript@3.9.2
+  ts-loader: 7.0.4_typescript@3.9.3
   tsconfig-paths-webpack-plugin: 3.2.0
   tslib: 1.13.0
-  typescript: 3.9.2
+  typescript: 3.9.3
   vue-loader: 15.9.2_css-loader@3.5.3+webpack@4.43.0
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.11
@@ -1412,7 +1412,7 @@ packages:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-m0ntr5R6q62oNMODgoyHAVAd/sDtsH15GdBrScZsPNeyHxmzmNBDlsNM38yYGGY064zDRRWif15d1yaTREybrA==
-  /@vue/cli-plugin-typescript/4.3.1_510d697927f0cfa972d141c7e001142c:
+  /@vue/cli-plugin-typescript/4.3.1_748317ba3d2b773758d7cade08a523a9:
     dependencies:
       '@types/webpack-env': 1.15.2
       '@vue/cli-service': 4.3.1_93f68061ca0d86937b881275f9db2069
@@ -1421,9 +1421,9 @@ packages:
       fork-ts-checker-webpack-plugin: 3.1.1
       globby: 9.2.0
       thread-loader: 2.1.3_webpack@4.43.0
-      ts-loader: 6.2.2_typescript@3.9.2
-      tslint: 5.20.1_typescript@3.9.2
-      typescript: 3.9.2
+      ts-loader: 6.2.2_typescript@3.9.3
+      tslint: 5.20.1_typescript@3.9.3
+      typescript: 3.9.3
       webpack: 4.43.0_webpack@4.43.0
       yorkie: 2.0.0
     dev: true
@@ -10295,14 +10295,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
-  /ts-loader/6.2.2_typescript@3.9.2:
+  /ts-loader/6.2.2_typescript@3.9.3:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.1.1
       loader-utils: 1.4.0
       micromatch: 4.0.2
       semver: 6.3.0
-      typescript: 3.9.2
+      typescript: 3.9.3
     dev: true
     engines:
       node: '>=8.6'
@@ -10310,14 +10310,14 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-HDo5kXZCBml3EUPcc7RlZOV/JGlLHwppTLEHb3SHnr5V7NXD4klMEkrhJe5wgRbaWsSXi+Y1SIBN/K9B6zWGWQ==
-  /ts-loader/7.0.4_typescript@3.9.2:
+  /ts-loader/7.0.4_typescript@3.9.3:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.1.1
       loader-utils: 1.4.0
       micromatch: 4.0.2
       semver: 6.3.0
-      typescript: 3.9.2
+      typescript: 3.9.3
     dev: true
     engines:
       node: '>=10.0.0'
@@ -10359,7 +10359,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tslint/5.20.1_typescript@3.9.2:
+  /tslint/5.20.1_typescript@3.9.3:
     dependencies:
       '@babel/code-frame': 7.8.3
       builtin-modules: 1.1.1
@@ -10373,8 +10373,8 @@ packages:
       resolve: 1.15.1
       semver: 5.7.1
       tslib: 1.11.1
-      tsutils: 2.29.0_typescript@3.9.2
-      typescript: 3.9.2
+      tsutils: 2.29.0_typescript@3.9.3
+      typescript: 3.9.3
     dev: true
     engines:
       node: '>=4.8.0'
@@ -10383,10 +10383,10 @@ packages:
       typescript: '>=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev'
     resolution:
       integrity: sha512-EcMxhzCFt8k+/UP5r8waCf/lzmeSyVlqxqMEDQE7rWYiQky8KpIBz1JAoYXfROHrPZ1XXd43q8yQnULOLiBRQg==
-  /tsutils/2.29.0_typescript@3.9.2:
+  /tsutils/2.29.0_typescript@3.9.3:
     dependencies:
       tslib: 1.11.1
-      typescript: 3.9.2
+      typescript: 3.9.3
     dev: true
     peerDependencies:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
@@ -10452,13 +10452,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /typescript/3.9.2:
+  /typescript/3.9.3:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-q2ktq4n/uLuNNShyayit+DTobV2ApPEo/6so68JaD5ojvc/6GClBipedB9zNWYxRSAlZXAe405Rlijzl6qDiSw==
+      integrity: sha512-D/wqnB2xzNFIcoBG9FG8cXRDjiqSTbG2wd8DMZeQyJlP1vfTkIxH4GKveWaEBYySKIg+USu+E+EDIR47SqnaMQ==
   /uglify-js/3.4.10:
     dependencies:
       commander: 2.19.0
@@ -11501,7 +11501,7 @@ specifiers:
   ts-loader: 7.0.4
   tsconfig-paths-webpack-plugin: 3.2.0
   tslib: 1.13.0
-  typescript: 3.9.2
+  typescript: 3.9.3
   uuid: 8.0.0
   vue: 2.6.11
   vue-class-component: 7.2.3
