@@ -2,7 +2,7 @@ import { Runtime } from "webextension-polyfill-ts";
 import { MessageType } from "@/types";
 
 export interface Event {
-    eventType: EventType;
+    mediaEventType: EventType;
     duration: number;
     currentTime: number;
     now: Date;
@@ -67,9 +67,9 @@ export class VideoPlayer {
         });
     }
 
-    private buildEvent(eventType: EventType): Event {
+    private buildEvent(mediaEventType: EventType): Event {
         return {
-            eventType,
+            mediaEventType,
             currentTime: this.video.currentTime,
             duration: this.video.duration,
             now: new Date(),
