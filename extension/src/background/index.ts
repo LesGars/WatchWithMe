@@ -62,7 +62,7 @@ const connected = (p: Runtime.Port): void => {
                 break;
             }
             case MessageType.MEDIA_EVENT: {
-                console.log(`[BG] Sending ${m.eventType} to WebSocket`);
+                console.log(`[BG] Sending ${m.mediaEventType} to WebSocket`);
                 sendMessageThroughWebSocket(m);
             }
         }
