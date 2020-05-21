@@ -4,7 +4,6 @@ export default class WebSocketClient {
 
     public constructor(host: string) {
         this.host = host;
-        this.webSocket = new WebSocket(this.host);
     }
 
     public getWebSocket(): WebSocket {
@@ -12,6 +11,7 @@ export default class WebSocketClient {
     }
 
     public connect(): Promise<void> {
+        this.webSocket = new WebSocket(this.host);
         return new Promise((resolve) => {
             this.webSocket.onopen = () => {
                 this.webSocket.send(
@@ -30,11 +30,11 @@ export default class WebSocketClient {
 
     public ensureOpened(): Promise<void> {
         return new Promise((resolve) => {
-            if (!this.webSocket) {
+            if (!this.getWebSocket()) {
                 this.connect().then(() => resolve());
                 return;
             }
-            switch (this.webSocket.readyState) {
+            switch (this.getWebSocket().readyState) {
                 case WebSocket.OPEN: {
                     resolve();
                     break;
