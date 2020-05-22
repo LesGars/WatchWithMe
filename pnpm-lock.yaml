@@ -2,7 +2,7 @@ devDependencies:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.4
+  lint-staged: 10.2.6
   prettier: 2.0.5
   stylelint: 13.5.0
 lockfileVersion: 5.1
@@ -1596,15 +1596,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /lint-staged/10.2.4:
+  /lint-staged/10.2.6:
     dependencies:
       chalk: 4.0.0
+      cli-truncate: 2.1.0
       commander: 5.1.0
       cosmiconfig: 6.0.0
       debug: 4.1.1
       dedent: 0.7.0
       execa: 4.0.1
-      listr2: 2.0.2
+      listr2: 2.0.4
       log-symbols: 4.0.0
       micromatch: 4.0.2
       normalize-path: 3.0.0
@@ -1614,8 +1615,8 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-doTMGKXQAT34c3S3gwDrTnXmCZp/z1/92D8suPqqh755sKPT18ew1NoPNHxJdrvv1D4WrJ7CEnx79Ns3EdEFbg==
-  /listr2/2.0.2:
+      integrity: sha512-2oEBWyPZHkdyjKcIv2U6ay80Q52ZMlZZrUnfsV0WTVcgzPlt3o2t5UFy2v8ETUTsIDZ0xSJVnffWCgD3LF6xTQ==
+  /listr2/2.0.4:
     dependencies:
       '@samverschueren/stream-to-observable': 0.3.0
       chalk: 4.0.0
@@ -1635,7 +1636,7 @@ packages:
     engines:
       node: '>=10.0.0'
     resolution:
-      integrity: sha512-HkbraLsbHRFtuT0p1g9KUiMoJeqlPdgsi4Q3mCvBlYnVK+2I1vPdCxBvJ+nAxwpL7SZiyaICWMvLOyMBtu+VKw==
+      integrity: sha512-oJaAcplPsa72rKW0eg4P4LbEJjhH+UO2I8uqR/I2wzHrVg16ohSfUy0SlcHS21zfYXxtsUpL8YXGHjyfWMR0cg==
   /load-json-file/4.0.0:
     dependencies:
       graceful-fs: 4.2.3
@@ -3114,6 +3115,6 @@ specifiers:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.4
+  lint-staged: 10.2.6
   prettier: 2.0.5
   stylelint: 13.5.0
