@@ -2,7 +2,7 @@ dependencies:
   dayjs: 1.8.27
   debug: 4.1.1
   lodash-es: 4.17.15
-  uuid: 8.0.0
+  uuid: 8.1.0
   vue: 2.6.11
   vue-class-component: 7.2.3_vue@2.6.11
   vue-clipboard2: 0.3.1
@@ -10688,11 +10688,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
-  /uuid/8.0.0:
+  /uuid/8.1.0:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
+      integrity: sha512-CI18flHDznR0lq54xBycOVmphdCYnQLKn8abKn7PXUiKUGdEd+/l9LWNJmugXel4hXq7S+RMNl34ecyC9TntWg==
   /v8-compile-cache/2.0.3:
     dev: true
     resolution:
@@ -11502,7 +11502,7 @@ specifiers:
   tsconfig-paths-webpack-plugin: 3.2.0
   tslib: 1.13.0
   typescript: 3.9.3
-  uuid: 8.0.0
+  uuid: 8.1.0
   vue: 2.6.11
   vue-class-component: 7.2.3
   vue-clipboard2: 0.3.1
