@@ -29,7 +29,7 @@ export interface IEvent extends Omit<IAPIGatewayProxyEvent, 'requestContext'> {
     source?: string;
 }
 
-export enum EventType {
+export enum BroadcastEventType {
     NEW_WATCHER = 'NEW_WATCHER',
 }
 
@@ -38,13 +38,13 @@ interface IApplicationEvent {
 }
 
 export interface IApplicationEventWrapper {
-    type: EventType;
+    type: BroadcastEventType;
     requestContext: IRequestContext;
     data: Room;
 }
 
 export type IEventBridgeEvent = EventBridgeEvent<
-    EventType,
+    BroadcastEventType,
     IApplicationEventWrapper
 >;
 

@@ -1,11 +1,11 @@
-import { failure, IEvent, success, EventType } from '../libs/response';
+import { failure, IEvent, success, BroadcastEventType } from '../libs/response';
 import {
     createRoom,
     findRoomById,
     joinExistingRoom,
 } from '../libs/room-operations';
 import EventBridge from 'aws-sdk/clients/eventbridge';
-import { buildEvent } from '../libs/event-utuls';
+import { buildEvent } from '../libs/event-utils';
 import { Room } from '../../extension/src/types';
 
 /**
@@ -41,7 +41,7 @@ const joinRoom = async (
 };
 
 const sendEvent = async (event: IEvent, room: Room) => {
-    const roomEvent = buildEvent(EventType.NEW_WATCHER, event, room);
+    const roomEvent = buildEvent(BroadcastEventType.NEW_WATCHER, event, room);
     console.log(roomEvent);
     try {
         await eventBridge
