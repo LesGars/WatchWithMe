@@ -17,7 +17,7 @@ devDependencies:
   eslint-config-prettier: 6.11.0_eslint@6.8.0
   eslint-plugin-jest: 23.13.1_eslint@6.8.0+typescript@3.9.3
   jest: 26.0.1
-  js-yaml: 3.13.1
+  js-yaml: 3.14.0
   prettier: 2.0.5
   serverless: 1.71.3
   serverless-iam-roles-per-function: 2.0.2
@@ -6237,6 +6237,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
+  /js-yaml/3.14.0:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-/4IbIeHcD9VMHFqDR/gQ7EdZdLimOvW2DdcxFjdyyZ9NsbS+ccrXqVWDtab/lRl5AlUqmpBx8EhPaWR+OtY17A==
   /jsbn/0.1.1:
     dev: true
     resolution:
@@ -10205,7 +10213,7 @@ specifiers:
   '@babel/core': 7.9.6
   '@babel/preset-env': 7.9.6
   '@babel/preset-typescript': 7.9.0
-  '@shelf/jest-dynamodb': ^1.7.0
+  '@shelf/jest-dynamodb': 1.7.0
   '@types/aws-lambda': 8.10.51
   '@types/jest': 25.2.3
   '@types/node': 13.13.9
@@ -10216,13 +10224,13 @@ specifiers:
   babel-jest: 26.0.1
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0
-  eslint-plugin-jest: ^23.13.1
+  eslint-plugin-jest: 23.13.1
   jest: 26.0.1
-  js-yaml: ^3.13.1
+  js-yaml: 3.14.0
   prettier: 2.0.5
   serverless: 1.71.3
   serverless-iam-roles-per-function: 2.0.2
-  serverless-pseudo-parameters: ^2.5.0
+  serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2
   ts-jest: 26.0.0
   ts-loader: 7.0.4
