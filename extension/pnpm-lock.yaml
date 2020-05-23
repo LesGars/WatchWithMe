@@ -78,7 +78,7 @@ devDependencies:
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.11
   webextension-polyfill: 0.6.0
-  webextension-polyfill-ts: 0.15.0
+  webextension-polyfill-ts: 0.16.0
   webpack: 4.43.0_webpack@4.43.0
   webpack-bundle-analyzer: 3.8.0
   webpack-cli: 3.3.11_webpack@4.43.0
@@ -13157,12 +13157,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-182rV8Q2vXSxfUsQjoEmdfV7byy2a+kPjI2J0DkQuKjk77IjWRDt9zGOsW9PBYtCCWsz99xIIXHOcV4tR+TUtQ==
-  /webextension-polyfill-ts/0.15.0:
+  /webextension-polyfill-ts/0.16.0:
     dependencies:
       webextension-polyfill: 0.6.0
     dev: true
     resolution:
-      integrity: sha512-4Cp4sd8M9/ZzYRuKt/V5jNDfXoKRnfsbFtCnufKCGEqBFifJe3GRzFnnOwI7v0GuRzlewbmkr/0QaMO3gImyag==
+      integrity: sha512-ibuzJf6lVbH5kKjRBzqNaF+C2tjfDNUtkT/h6RQlEt0zvW3HpLO9ESNJcyXCsPGgeBuXQfJprND/EiwCzIkYRw==
   /webextension-polyfill/0.5.0:
     dev: true
     resolution:
@@ -13838,7 +13838,7 @@ specifiers:
   vue-template-compiler: 2.6.11
   webext-options-sync: 1.2.3
   webextension-polyfill: 0.6.0
-  webextension-polyfill-ts: 0.15.0
+  webextension-polyfill-ts: 0.16.0
   webpack: 4.43.0
   webpack-bundle-analyzer: 3.8.0
   webpack-cli: 3.3.11
