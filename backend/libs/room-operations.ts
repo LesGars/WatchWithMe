@@ -107,7 +107,7 @@ export const joinExistingRoom = async (
         Key: { roomId: room.roomId },
         UpdateExpression: 'SET #watchers.#watcherId = :newWatcher',
         ExpressionAttributeNames: {
-            '#loc': watcherConnectionString,
+            '#watcherId': watcherConnectionString,
             '#watchers': 'watchers',
         },
         ExpressionAttributeValues: {
