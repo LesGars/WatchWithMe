@@ -5,5 +5,8 @@ module.exports = {
     test: {
         WS_URL: '""'
     },
+    prod: {
+        WS_URL: '""'
+    },
 
 }
