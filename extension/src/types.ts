@@ -151,3 +151,15 @@ export interface Room {
 }
 
 export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
+
+export enum BroadcastEventType {
+    NEW_WATCHER = "NEW_WATCHER",
+}
+
+/**
+ * Event coming from the websocket
+ */
+export interface BroadcastEvent {
+    type: BroadcastEventType;
+    room: Room;
+}
