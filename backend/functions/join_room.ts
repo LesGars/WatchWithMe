@@ -24,6 +24,9 @@ const joinRoom = async (
 
     let roomDDB = await findRoomById(roomId, tableName);
     if (roomDDB) {
+        console.log(
+            `[WS-S] Room ${roomId} already exists. Add user to the room`,
+        );
         // TODO: Make sure this works via WatchWithMe#90
         roomDDB = await joinExistingRoom(
             roomDDB,

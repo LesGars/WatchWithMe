@@ -18,7 +18,7 @@ export const findRoomById = async (
         TableName: tableName,
         KeyConditionExpression: 'roomId = :r',
         ExpressionAttributeValues: {
-            ':r': { S: roomId },
+            ':r': roomId,
         },
     };
     try {
@@ -107,7 +107,7 @@ export const joinExistingRoom = async (
         Key: { roomId: room.roomId },
         UpdateExpression: 'SET #watchers.#loc = :newWatcher',
         ExpressionAttributeNames: {
-            '#watcherId': watcherConnectionString,
+            '#loc': watcherConnectionString,
             '#watchers': 'watchers',
         },
         ExpressionAttributeValues: {
