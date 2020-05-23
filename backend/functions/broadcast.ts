@@ -1,4 +1,3 @@
-import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
 
 import { IEventBridgeEvent, success, failure } from '../libs/response';
@@ -6,7 +5,6 @@ import { IEventBridgeEvent, success, failure } from '../libs/response';
 /**
  * Initialize outside handler to use function context
  */
-const dynamoDb = new DocumentClient();
 let client: ApiGatewayManagementApi;
 
 /**
@@ -14,10 +12,7 @@ let client: ApiGatewayManagementApi;
  * @param event A wrapper to a EventBus Event
  */
 export const main = async (event: IEventBridgeEvent) => {
-    if (!process.env.ROOM_TABLE) {
-        throw new Error('env.ROOM_TABLE must be defined');
-    }
-
+    console.log('New event has been triggered');
     if (!client) {
         client = new ApiGatewayManagementApi({
             apiVersion: '2018-11-29',
@@ -25,26 +20,19 @@ export const main = async (event: IEventBridgeEvent) => {
         });
     }
 
-    const params: DocumentClient.QueryInput = {
-        TableName: process.env.ROOM_TABLE,
-        KeyConditionExpression: 'username = :u',
-        ExpressionAttributeValues: {
-            ':u': 'anonymous',
-        },
-    };
-
     try {
-        const data = await dynamoDb.query(params).promise();
-        await client
-            .postToConnection({
-                ConnectionId: event.detail.requestContext.connectionId,
-                Data: `found: ${JSON.stringify(data)}`,
-            })
-            .promise();
-
-        console.info(
-            `[WS-S] Sent data to ${event.detail.requestContext.connectionId}`,
+        await Promise.all(
+            Object.values(event.detail.data.watchers).map((watcher) => {
+                return client
+                    .postToConnection({
+                        ConnectionId: watcher.connectionId,
+                        Data: JSON.stringify(event.detail.data),
+                    })
+                    .promise();
+            }),
         );
+
+        console.info(`[WS-S] Sent data to all watchers`);
         return success();
     } catch (e) {
         console.error(`Failed with ${e}`);

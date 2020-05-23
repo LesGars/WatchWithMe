@@ -1,4 +1,5 @@
 import { EventBridgeEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { Room, MessageType } from '../../extension/src/types';
 
 // @ts-ignore
 //eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,7 +30,7 @@ export interface IEvent extends Omit<IAPIGatewayProxyEvent, 'requestContext'> {
 }
 
 export enum EventType {
-    READ = 'READ',
+    NEW_WATCHER = 'NEW_WATCHER',
 }
 
 interface IApplicationEvent {
@@ -39,7 +40,7 @@ interface IApplicationEvent {
 export interface IApplicationEventWrapper {
     type: EventType;
     requestContext: IRequestContext;
-    data: IApplicationEvent;
+    data: Room;
 }
 
 export type IEventBridgeEvent = EventBridgeEvent<
@@ -48,7 +49,7 @@ export type IEventBridgeEvent = EventBridgeEvent<
 >;
 
 export interface IAPIGatewayProxyEvent {
-    type: EventType;
+    type: MessageType;
     requestContext: IRequestContext;
     data: IApplicationEvent;
 }

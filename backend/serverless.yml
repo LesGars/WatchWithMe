@@ -55,12 +55,14 @@ functions:
     events:
       - websocket:
           route: $connect
+          routeResponseSelectionExpression: $default
   disconnect:
     handler: functions/disconnect.main
     iamRoleStatementsInherit: true
     events:
       - websocket:
           route: $disconnect
+          routeResponseSelectionExpression: $default
   broadcast:
     handler: functions/broadcast.main
     iamRoleStatementsInherit: true
@@ -70,11 +72,6 @@ functions:
           pattern:
             source:
               - ${self:custom.event.source}
-  read:
-    handler: functions/read.main
-    events:
-      - websocket:
-          route: read
   join_room:
     handler: functions/join_room.main
     iamRoleStatementsInherit: true
@@ -89,11 +86,13 @@ functions:
     events:
       - websocket:
           route: join-room
+          routeResponseSelectionExpression: $default
   default:
     handler: handler.defaultHandler
     events:
       - websocket:
           route: $default
+          routeResponseSelectionExpression: $default
   auth:
     handler: auth.auth
 
