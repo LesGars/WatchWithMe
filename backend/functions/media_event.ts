@@ -1,50 +1,59 @@
 import { failure, IEvent, success } from '../libs/response';
 import { findRoomById } from '../libs/room-operations';
 import { updateWatcherVideoStatus } from '../libs/watcher-operations';
-import { MediaEventForServer } from './../../extension/src/types';
+import { MediaEventForServer, Room } from './../../extension/src/types';
 
-export const main = async (event: IEvent) => {
-    if (!process.env.MEDIA_EVENT_BUS) {
-        throw new Error('env.MEDIA_EVENT_BUS must be defined');
-    }
+const findAndEnsureRoomJoined = async (
+    roomId: string,
+    watcherConnectionString: string,
+): Promise<Room | undefined> => {
     if (!process.env.ROOM_TABLE) {
         throw new Error('env.ROOM_TABLE must be defined');
     }
-
-    const mediaEvent = JSON.parse(event.body) as MediaEventForServer;
-    const { roomId, playerEvent } = mediaEvent;
 
     if (!roomId) {
         console.log(
             '[WS-S] Could not find an existing roomId in the join room request',
         );
-        return failure();
+        return undefined;
     }
-
-    const watcherConnectionString = event.requestContext.connectionId;
-
     const room = await findRoomById(roomId, process.env.ROOM_TABLE);
 
     if (!room) {
         console.log('[WS-S] Could not find room =_=');
-        return failure();
+        return undefined;
     }
     if (!room.watchers[watcherConnectionString]) {
         console.log(
             '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
         );
+        return undefined;
+    }
+    return room;
+};
+
+export const main = async (event: IEvent) => {
+    const mediaEvent = JSON.parse(event.body) as MediaEventForServer;
+    const { roomId, playerEvent } = mediaEvent;
+    const watcherId = event.requestContext.connectionId;
+
+    const room = await findAndEnsureRoomJoined(roomId, watcherId);
+    if (!room) {
         return failure();
     }
 
-    await updateWatcherVideoStatus(
+    const updatedRoom = await updateWatcherVideoStatus(
         room,
-        process.env.ROOM_TABLE,
-        watcherConnectionString,
+        process.env.ROOM_TABLE!,
+        watcherId,
         mediaEvent.playerEvent,
     );
+    if (!updatedRoom) {
+        return failure();
+    }
 
     console.log(
-        `[WS-S] User ${watcherConnectionString} media event ${playerEvent.mediaEventType} was successfully processed`,
+        `[WS-S] User ${watcherId} media event ${playerEvent.mediaEventType} was successfully processed`,
     );
 
     // TODO: Schedule play sync if all players are ready ()

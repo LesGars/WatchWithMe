@@ -18,7 +18,6 @@ module.exports = {
     env: {
         es6: true,
         node: true,
-        'jest/globals': true,
     },
     rules: {
         '@typescript-eslint/no-unused-vars': [
@@ -51,9 +50,15 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['**/*.test.ts', '**/*.test.js'],
+            files: ['**/*.spec.ts', '**/*.spec.js'],
             env: {
                 jest: true,
+                'jest/globals': true,
+            },
+            rules: {
+                'max-lines-per-function': 'off',
+                'max-lines': 'off',
+                '@typescript-eslint/no-non-null-assertion': 'off',
             },
         },
     ],

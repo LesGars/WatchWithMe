@@ -10,53 +10,25 @@ import {
     PlayerEvent,
 } from './../../extension/src/contentscript/player';
 import { marshallMap } from './dynamodb-utils';
+
 /**
- * Add a new user to the room's "watchers" map
+ * Indicate that any info was received from a given watcher websocket connection
  */
-export const updateWatcherVideoStatus = async (
-    room: Room,
-    tableName: string,
-    watcherConnectionString: string,
-    playerEvent: PlayerEvent,
-    dynamoDb: DocumentClient = new DocumentClient(),
-): Promise<Room | undefined> => {
-    const watcher = room.watchers[watcherConnectionString];
-    assignWatcherHeartbeat(watcher);
-    assignWatcherStatus(watcher, playerEvent, room);
-    return updateWatcher(room, tableName, watcher, dynamoDb);
-};
-
-export const updateWatcher = async (
-    room: Room,
-    tableName: string,
-    watcher: Watcher,
-    dynamoDb: DocumentClient,
-) => {
-    const params: DocumentClient.UpdateItemInput = {
-        TableName: tableName,
-        Key: { roomId: room.roomId },
-        UpdateExpression: 'SET #watchers.#watcherId = :updatedWatcher',
-        ExpressionAttributeNames: {
-            '#watcherId': watcher.id,
-            '#watchers': 'watchers',
-        },
-        ExpressionAttributeValues: {
-            ':updatedWatcher': marshallMap(watcher),
-        },
-    };
-    try {
-        await dynamoDb.update(params).promise();
-        return room;
-    } catch (e) {
-        console.error('Failed to update watcher', e);
-        return undefined;
-    }
-};
-
 const assignWatcherHeartbeat = (watcher: Watcher): void => {
     watcher.lastHeartbeat = new Date();
 };
 
+/**
+ * Indicate a watcher has buffered enough video from the expected video timestamp, and could schedule a sync start
+ */
+const markWatcherAsReady = (watcher: Watcher) => {
+    watcher.currentVideoStatus = UserVideoStatus.READY;
+};
+
+/* eslint-disable complexity */
+/**
+ * Compute the new watcher status from his incoming player media event and the current room status
+ */
 const assignWatcherStatus = (
     watcher: Watcher,
     playerEvent: PlayerEvent,
@@ -98,7 +70,47 @@ const assignWatcherStatus = (
             break;
     }
 };
+/* eslint-enable complexity */
 
-const markWatcherAsReady = (watcher: Watcher) => {
-    watcher.currentVideoStatus = UserVideoStatus.READY;
+export const updateWatcher = async (
+    room: Room,
+    tableName: string,
+    watcher: Watcher,
+    dynamoDb: DocumentClient,
+) => {
+    const params: DocumentClient.UpdateItemInput = {
+        TableName: tableName,
+        Key: { roomId: room.roomId },
+        UpdateExpression: 'SET #watchers.#watcherId = :updatedWatcher',
+        ExpressionAttributeNames: {
+            '#watcherId': watcher.id,
+            '#watchers': 'watchers',
+        },
+        ExpressionAttributeValues: {
+            ':updatedWatcher': marshallMap(watcher),
+        },
+    };
+    try {
+        await dynamoDb.update(params).promise();
+        return room;
+    } catch (e) {
+        console.error('Failed to update watcher', e);
+        return undefined;
+    }
+};
+
+/**
+ * Add a new user to the room's "watchers" map
+ */
+export const updateWatcherVideoStatus = async (
+    room: Room,
+    tableName: string,
+    watcherConnectionString: string,
+    playerEvent: PlayerEvent,
+    dynamoDb: DocumentClient = new DocumentClient(),
+): Promise<Room | undefined> => {
+    const watcher = room.watchers[watcherConnectionString];
+    assignWatcherHeartbeat(watcher);
+    assignWatcherStatus(watcher, playerEvent, room);
+    return updateWatcher(room, tableName, watcher, dynamoDb);
 };
