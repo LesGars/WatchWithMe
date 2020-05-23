@@ -9,6 +9,10 @@ import { IEventBridgeEvent, success, failure } from '../libs/response';
 const dynamoDb = new DocumentClient();
 let client: ApiGatewayManagementApi;
 
+/**
+ * This function will ne called anytime an event is sent to the event bus
+ * @param event A wrapper to a EventBus Event
+ */
 export const main = async (event: IEventBridgeEvent) => {
     if (!process.env.ROOM_TABLE) {
         throw new Error('env.ROOM_TABLE must be defined');
@@ -39,7 +43,7 @@ export const main = async (event: IEventBridgeEvent) => {
             .promise();
 
         console.info(
-            `sent data to ${event.detail.requestContext.connectionId}`,
+            `[WS-S] Sent data to ${event.detail.requestContext.connectionId}`,
         );
         return success();
     } catch (e) {

@@ -37,58 +37,39 @@ provider:
       Action:
         - execute-api:ManageConnections
       Resource:
-        - 'arn:aws:execute-api:*:*:*'
+        - "arn:aws:execute-api:*:*:*"
     - Effect: Allow
       Action:
         - events:PutEvents
       Resource:
-        - 'Fn::GetAtt': [EventBus, Arn]
+        - "Fn::GetAtt": [EventBus, Arn]
   environment:
     ROOM_TABLE: ${self:custom.roomTable}
     MEDIA_EVENT_BUS: ${self:custom.event.eventBus}
     EVENT_SOURCE: ${self:custom.event.source}
 
 functions:
-  broadcast:
-    handler: functions/broadcast.main
-    iamRoleStatementsInherit: true
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - dynamodb:Query
-        Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
-    events:
-      - eventBridge:
-          eventBus: arn:aws:events:#{AWS::Region}:#{AWS::AccountId}:event-bus/${self:custom.event.eventBus}
-          pattern:
-            source:
-              - ${self:custom.event.source}
   connect:
     handler: functions/connect.main
     iamRoleStatementsInherit: true
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - dynamodb:PutItem
-        Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $connect
   disconnect:
     handler: functions/disconnect.main
     iamRoleStatementsInherit: true
-    iamRoleStatements:
-      - Effect: Allow
-        Action:
-          - dynamodb:UpdateItem
-          - dynamodb:DeleteItem
-        Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: $disconnect
+  broadcast:
+    handler: functions/broadcast.main
+    iamRoleStatementsInherit: true
+    events:
+      - eventBridge:
+          eventBus: arn:aws:events:#{AWS::Region}:#{AWS::AccountId}:event-bus/${self:custom.event.eventBus}
+          pattern:
+            source:
+              - ${self:custom.event.source}
   read:
     handler: functions/read.main
     events:
@@ -104,7 +85,7 @@ functions:
           - dynamodb:PutItem
           - dynamodb:UpdateItem
         Resource:
-          - 'Fn::GetAtt': [RoomTable, Arn]
+          - "Fn::GetAtt": [RoomTable, Arn]
     events:
       - websocket:
           route: join-room

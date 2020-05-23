@@ -24,8 +24,8 @@ export const findRoomById = async (
     try {
         const dynamoDb = new DocumentClient();
         const data = await dynamoDb.query(params).promise();
-        if (data.Count! === 1) {
-            return unmarshallRoom(data.Items![0]);
+        if (data.Count === 1 && data.Items) {
+            return unmarshallRoom(data.Items[0]);
         } else {
             console.log(
                 `Could not find a room with id ${roomId}. It's either new or destroyed`,
