@@ -1,5 +1,9 @@
 import { EventBridgeEvent, APIGatewayProxyResult } from 'aws-lambda';
-import { Room, MessageType } from '../../extension/src/types';
+import {
+    Room,
+    MessageType,
+    BroadcastEventType,
+} from '../../extension/src/types';
 
 // @ts-ignore
 //eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -27,15 +31,6 @@ export interface IEvent extends Omit<IAPIGatewayProxyEvent, 'requestContext'> {
         id: string;
     };
     source?: string;
-}
-
-export enum BroadcastEventType {
-    NEW_WATCHER = 'NEW_WATCHER',
-}
-
-export interface BroadcastEvent {
-    type: BroadcastEventType;
-    room: Room;
 }
 
 interface IApplicationEvent {

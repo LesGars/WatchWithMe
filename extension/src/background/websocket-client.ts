@@ -1,7 +1,4 @@
-import {
-    BroadcastEvent,
-    BroadcastEventType,
-} from "../../../backend/libs/response";
+import { BroadcastEvent, BroadcastEventType } from "@/types";
 
 export default class WebSocketClient {
     private host: string;

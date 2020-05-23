@@ -1,11 +1,7 @@
 import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
 
-import {
-    IEventBridgeEvent,
-    success,
-    failure,
-    BroadcastEvent,
-} from '../libs/response';
+import { IEventBridgeEvent, success, failure } from '../libs/response';
+import { BroadcastEvent } from '../../extension/src/types';
 
 /**
  * Initialize outside handler to use function context

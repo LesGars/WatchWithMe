@@ -1,4 +1,4 @@
-import { failure, IEvent, success, BroadcastEventType } from '../libs/response';
+import { failure, IEvent, success } from '../libs/response';
 import {
     createRoom,
     findRoomById,
@@ -6,7 +6,7 @@ import {
 } from '../libs/room-operations';
 import EventBridge from 'aws-sdk/clients/eventbridge';
 import { buildEvent } from '../libs/event-utils';
-import { Room } from '../../extension/src/types';
+import { Room, BroadcastEventType } from '../../extension/src/types';
 
 /**
  * Initialize outside handler to use function context
