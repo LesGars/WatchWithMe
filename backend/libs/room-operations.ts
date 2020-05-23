@@ -18,14 +18,14 @@ export const findRoomById = async (
         TableName: tableName,
         KeyConditionExpression: 'roomId = :r',
         ExpressionAttributeValues: {
-            ':r': { S: roomId },
+            ':r': roomId,
         },
     };
     try {
         const dynamoDb = new DocumentClient();
         const data = await dynamoDb.query(params).promise();
-        if (data.Count! === 1) {
-            return unmarshallRoom(data.Items![0]);
+        if (data.Count === 1 && data.Items) {
+            return unmarshallRoom(data.Items[0]);
         } else {
             console.log(
                 `Could not find a room with id ${roomId}. It's either new or destroyed`,
@@ -107,7 +107,7 @@ export const joinExistingRoom = async (
         Key: { roomId: room.roomId },
         UpdateExpression: 'SET #watchers.#loc = :newWatcher',
         ExpressionAttributeNames: {
-            '#watcherId': watcherConnectionString,
+            '#loc': watcherConnectionString,
             '#watchers': 'watchers',
         },
         ExpressionAttributeValues: {

@@ -41,6 +41,7 @@
         "ts-jest": "26.0.0",
         "ts-loader": "7.0.4",
         "typescript": "3.9.3",
+        "serverless-pseudo-parameters": "^2.5.0",
         "webpack": "4.43.0"
     },
     "dependencies": {

@@ -27,11 +27,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-ignore': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-floating-promises': 'error',
-        '@typescript-eslint/interface-name-prefix': [
-            2,
-            { prefixWithI: 'always' },
-        ],
-
+        '@typescript-eslint/interface-name-prefix': 'off',
         'comma-dangle': ['error', 'only-multiline'],
         quotes: [
             'error',
