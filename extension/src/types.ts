@@ -87,6 +87,7 @@ export class Extension {
  */
 export enum MessageType { // those values must be in sync with AWS lambda routes of servrless.yml
     DEBUG_MESSAGE,
+    MEDIA_EVENT,
     CHANGE_ROOM = "join-room",
 }
 

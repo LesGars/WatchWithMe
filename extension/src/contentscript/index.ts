@@ -1,6 +1,6 @@
 import { browser } from "webextension-polyfill-ts";
 import { MessageType } from "../types";
-import { Event, VideoPlayer } from "./player";
+import { VideoPlayer } from "./player";
 
 export const CS_SCRIPT_NAME = "WWM Content-Script";
 
@@ -23,12 +23,6 @@ if (roomId) {
 const video = document.querySelector("video");
 if (video) {
     const videoPlayer = new VideoPlayer(video, csPort);
-
-    csPort.onMessage.addListener((message: Event) => {
-        console.log("[CS] Message received from BG script");
-        videoPlayer.sendEvent(message);
-    });
-    // TODO Send messages for other events
 } else {
     csPort.disconnect();
 }

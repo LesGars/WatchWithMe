@@ -1,11 +1,11 @@
 module.exports = {
-    prod: {
-        WS_URL: '""'
-    },
     dev: {
         WS_URL: '""'
     },
     test: {
+        WS_URL: '""'
+    },
+    prod: {
         WS_URL: '""'
     },
 

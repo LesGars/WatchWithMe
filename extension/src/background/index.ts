@@ -14,14 +14,19 @@ let wsClient: WebSocketClient = new WebSocketClient(process.env.WS_URL || "");
 async function changeRoom(roomId: string) {
     try {
         browser.storage.sync.set({ roomId });
-        wsClient.send(
-            JSON.stringify({ action: MessageType.CHANGE_ROOM, roomId })
-        );
+        sendMessageThroughWebSocket({
+            action: MessageType.CHANGE_ROOM,
+            roomId,
+        });
         log(`[BG] Joined WatchWithMe room ${roomId}`);
     } catch (e) {
         log(`[BG] Error joining room : ${e}`);
     }
     // TODO : notify PS/CS that a room was joined (chat, etc)
+}
+
+function sendMessageThroughWebSocket(message: any) {
+    wsClient.send(JSON.stringify(message));
 }
 
 let portFromCS: Runtime.Port;
@@ -55,6 +60,10 @@ const connected = (p: Runtime.Port): void => {
             case MessageType.DEBUG_MESSAGE: {
                 log(`[BG] Message from ${p.name}`, m.message);
                 break;
+            }
+            case MessageType.MEDIA_EVENT: {
+                console.log(`[BG] Sending ${m.mediaEventType} to WebSocket`);
+                sendMessageThroughWebSocket(m);
             }
         }
     });

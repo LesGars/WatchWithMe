@@ -1,4 +1,4 @@
-import { BroadcastEvent, BroadcastEventType } from "@/types";
+import { BroadcastEvent, BroadcastEventType } from "../types";
 
 export default class WebSocketClient {
     private host: string;
@@ -13,9 +13,8 @@ export default class WebSocketClient {
     }
 
     public connect(): Promise<void> {
+        this.webSocket = new WebSocket(this.host);
         return new Promise((resolve) => {
-            this.webSocket = new WebSocket(this.host);
-
             this.webSocket.onopen = () => {
                 this.webSocket.send(
                     JSON.stringify({ message: "[WS-E] Connected to server" })
@@ -44,11 +43,11 @@ export default class WebSocketClient {
 
     public ensureOpened(): Promise<void> {
         return new Promise((resolve) => {
-            if (!this.webSocket) {
+            if (!this.getWebSocket()) {
                 this.connect().then(() => resolve());
                 return;
             }
-            switch (this.webSocket.readyState) {
+            switch (this.getWebSocket().readyState) {
                 case WebSocket.OPEN: {
                     resolve();
                     break;
