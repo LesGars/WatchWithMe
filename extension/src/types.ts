@@ -121,7 +121,7 @@ export interface Watcher {
     lastVideoTimestamp: Date | undefined; // Last video timestamp received during sync events of said user
     lastHeartbeat: Date; // date of last event during sync received from said user
     currentVideoStatus: UserVideoStatus;
-    initialSync: boolean = false;
+    initialSync: boolean; // Must default to false
 
     userAgent: string; // Might help debug issues later
 }
@@ -137,8 +137,8 @@ export interface Room {
     ownerId: string;
 
     // Config options
-    minBufferLength: number = 5; // Number of seconds each person should have loaded before resuming
-    videoSpeed: number = 1; // speed of video (2 means 2x)
+    minBufferLength: number; // Number of seconds each person should have loaded before resuming. Default should be 5
+    videoSpeed: number; // speed of video (2 means 2x). Default should be 1
 
     // History attributes
     currentVideoUrl: string | undefined; // URL of video being watched
@@ -152,3 +152,15 @@ export interface Room {
 }
 
 export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
+
+export enum BroadcastEventType {
+    NEW_WATCHER = "NEW_WATCHER",
+}
+
+/**
+ * Event coming from the websocket
+ */
+export interface BroadcastEvent {
+    type: BroadcastEventType;
+    room: Room;
+}

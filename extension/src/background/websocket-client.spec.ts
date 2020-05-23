@@ -2,8 +2,8 @@
  * @jest-environment jsdom
  */
 
-import WebSocketClient from "./websocket-client";
 import sinon from "sinon";
+import WebSocketClient from "./websocket-client";
 
 describe("WebSocketClient.ensureOpened", () => {
     it("resolves the promise when the socket is opened", async () => {

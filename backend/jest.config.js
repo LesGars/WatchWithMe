@@ -3,4 +3,6 @@ module.exports = {
     collectCoverage: true,
     modulePaths: ['.'],
     moduleDirectories: ['node_modules', '.'],
+    preset: '@shelf/jest-dynamodb',
+    testEnvironment: 'node',
 };

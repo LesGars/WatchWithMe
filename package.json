@@ -9,9 +9,9 @@
         "@commitlint/cli": "8.3.5",
         "@commitlint/config-conventional": "8.3.4",
         "husky": "4.2.5",
-        "lint-staged": "10.2.2",
+        "lint-staged": "10.2.6",
         "prettier": "2.0.5",
-        "stylelint": "13.3.3"
+        "stylelint": "13.5.0"
     },
     "scripts": {
         "format": "prettier --write \"{,**/}*.{java,md,json,ts,css,scss,yml}\"",

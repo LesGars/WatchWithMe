@@ -1,4 +1,9 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { EventBridgeEvent, APIGatewayProxyResult } from 'aws-lambda';
+import {
+    Room,
+    MessageType,
+    BroadcastEventType,
+} from '../../extension/src/types';
 
 // @ts-ignore
 //eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,7 +23,7 @@ interface IResponseBody {
 
 type Body = IResponseBody | AttributeMap[] | AttributeMap;
 
-export interface IEvent extends Omit<APIGatewayProxyEvent, 'requestContext'> {
+export interface IEvent extends Omit<IAPIGatewayProxyEvent, 'requestContext'> {
     body: string;
     methodArn: string;
     requestContext: IRequestContext;
@@ -26,6 +31,27 @@ export interface IEvent extends Omit<APIGatewayProxyEvent, 'requestContext'> {
         id: string;
     };
     source?: string;
+}
+
+interface IApplicationEvent {
+    roomId: string;
+}
+
+export interface IApplicationEventWrapper {
+    type: BroadcastEventType;
+    requestContext: IRequestContext;
+    data: Room;
+}
+
+export type IEventBridgeEvent = EventBridgeEvent<
+    BroadcastEventType,
+    IApplicationEventWrapper
+>;
+
+export interface IAPIGatewayProxyEvent {
+    type: MessageType;
+    requestContext: IRequestContext;
+    data: IApplicationEvent;
 }
 
 function buildResponse(statusCode: number, body?: Body): APIGatewayProxyResult {

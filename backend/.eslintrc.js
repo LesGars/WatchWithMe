@@ -3,6 +3,8 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:jest/recommended',
+        'plugin:jest/style',
         'prettier',
         'prettier/@typescript-eslint',
     ],
@@ -12,9 +14,11 @@ module.exports = {
         project: './tsconfig.json',
         tsconfigRootDir: __dirname,
     },
+    plugins: ['jest'],
     env: {
         es6: true,
         node: true,
+        'jest/globals': true,
     },
     rules: {
         '@typescript-eslint/no-unused-vars': [
@@ -27,11 +31,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-ignore': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-floating-promises': 'error',
-        '@typescript-eslint/interface-name-prefix': [
-            2,
-            { prefixWithI: 'always' },
-        ],
-
+        '@typescript-eslint/interface-name-prefix': 'off',
         'comma-dangle': ['error', 'only-multiline'],
         quotes: [
             'error',
