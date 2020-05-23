@@ -5,8 +5,8 @@ import {
     VideoSyncStatus,
     Watcher,
 } from '../../extension/src/types';
-import { marshallMap } from './dynamodb-utils';
 import { marshallRoom, unmarshallRoom } from './room-marshalling';
+import { updateWatcher } from './watcher-operations';
 
 /**
  * Find a room by ID in DDB
@@ -67,7 +67,7 @@ export const createRoom = async (
         syncStartedAt: undefined,
         syncStartedTimestamp: undefined,
         videoStatus: VideoSyncStatus.WAITING,
-        resumePlayingAt: null,
+        resumePlayingAt: undefined,
         resumePlayingTimestamp: undefined,
     };
     const params: DocumentClient.PutItemInput = {
@@ -79,6 +79,37 @@ export const createRoom = async (
         return room;
     } catch (e) {
         console.error('Failed to create a room on DDB', e);
+        return undefined;
+    }
+};
+
+export const updateRoom = async (
+    room: Room,
+    tableName: string,
+    dynamoDb: DocumentClient = new DocumentClient(),
+): Promise<Room | undefined> => {
+    const roomForDDB = marshallRoom(room);
+    const params: DocumentClient.UpdateItemInput = {
+        TableName: tableName,
+        Key: { roomId: room.roomId },
+        UpdateExpression: [
+            'SET currentVideoUrl = :currentVideoUrl',
+            'videoStatus = :videoStatus',
+            // 'resumePlayingAt = :resumePlayingAt',
+            // 'resumePlayingTimestamp = :resumePlayingTimestamp',
+        ].join(','),
+        ExpressionAttributeValues: {
+            ':currentVideoUrl': roomForDDB.currentVideoUrl,
+            ':videoStatus': roomForDDB.videoStatus,
+            // ':resumePlayingAt': roomForDDB.resumePlayingAt,
+            // ':resumePlayingTimestamp': roomForDDB.resumePlayingTimestamp,
+        },
+    };
+    try {
+        await dynamoDb.update(params).promise();
+        return room;
+    } catch (e) {
+        console.error('Failed to join existing room', e);
         return undefined;
     }
 };
@@ -102,23 +133,5 @@ export const joinExistingRoom = async (
         initialSync: false,
         userAgent: 'TODO',
     };
-    const params: DocumentClient.UpdateItemInput = {
-        TableName: tableName,
-        Key: { roomId: room.roomId },
-        UpdateExpression: 'SET #watchers.#watcherId = :newWatcher',
-        ExpressionAttributeNames: {
-            '#watcherId': watcherConnectionString,
-            '#watchers': 'watchers',
-        },
-        ExpressionAttributeValues: {
-            ':newWatcher': marshallMap(newWatcher),
-        },
-    };
-    try {
-        await dynamoDb.update(params).promise();
-        return room;
-    } catch (e) {
-        console.error('Failed to join existing room', e);
-        return undefined;
-    }
+    return updateWatcher(room, tableName, newWatcher, dynamoDb);
 };

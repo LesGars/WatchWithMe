@@ -1,0 +1,104 @@
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+import {
+    Room,
+    UserVideoStatus,
+    VideoSyncStatus,
+    Watcher,
+} from '../../extension/src/types';
+import {
+    MediaEventType,
+    PlayerEvent,
+} from './../../extension/src/contentscript/player';
+import { marshallMap } from './dynamodb-utils';
+/**
+ * Add a new user to the room's "watchers" map
+ */
+export const updateWatcherVideoStatus = async (
+    room: Room,
+    tableName: string,
+    watcherConnectionString: string,
+    playerEvent: PlayerEvent,
+    dynamoDb: DocumentClient = new DocumentClient(),
+): Promise<Room | undefined> => {
+    const watcher = room.watchers[watcherConnectionString];
+    assignWatcherHeartbeat(watcher);
+    assignWatcherStatus(watcher, playerEvent, room);
+    return updateWatcher(room, tableName, watcher, dynamoDb);
+};
+
+export const updateWatcher = async (
+    room: Room,
+    tableName: string,
+    watcher: Watcher,
+    dynamoDb: DocumentClient,
+) => {
+    const params: DocumentClient.UpdateItemInput = {
+        TableName: tableName,
+        Key: { roomId: room.roomId },
+        UpdateExpression: 'SET #watchers.#watcherId = :updatedWatcher',
+        ExpressionAttributeNames: {
+            '#watcherId': watcher.id,
+            '#watchers': 'watchers',
+        },
+        ExpressionAttributeValues: {
+            ':updatedWatcher': marshallMap(watcher),
+        },
+    };
+    try {
+        await dynamoDb.update(params).promise();
+        return room;
+    } catch (e) {
+        console.error('Failed to update watcher', e);
+        return undefined;
+    }
+};
+
+const assignWatcherHeartbeat = (watcher: Watcher): void => {
+    watcher.lastHeartbeat = new Date();
+};
+
+const assignWatcherStatus = (
+    watcher: Watcher,
+    playerEvent: PlayerEvent,
+    room: Room,
+): void => {
+    watcher.lastVideoTimestamp = new Date(playerEvent.currentTime);
+    switch (playerEvent.mediaEventType) {
+        // TODO : https://github.com/LesGars/WatchWithMe/issues/116
+        // Right now we cannot differenciate "play:readyForSyncStart, play:buffering, play:syncStart"
+        // let's assume the current MediaEventType.PLAY means MediaEventType.PLAY:readyForSyncStart
+        case MediaEventType.PLAY: {
+            /*
+          if the room is NOT in PLAYING mode,
+            the play event should be intercepted by the extension to wait for sync
+          if the room is in PLAYING mode,
+            the play event should not be intercepted by the extension
+          */
+            switch (room.videoStatus) {
+                case VideoSyncStatus.PAUSED: {
+                    markWatcherAsReady(watcher);
+                    break;
+                }
+                case VideoSyncStatus.WAITING: {
+                    markWatcherAsReady(watcher);
+                    break;
+                }
+                case VideoSyncStatus.PLAYING: {
+                    watcher.currentVideoStatus = UserVideoStatus.PLAYING;
+                    break;
+                }
+            }
+            break;
+        }
+        case MediaEventType.SEEK:
+            watcher.currentVideoStatus = UserVideoStatus.BUFFERING;
+            break;
+        case MediaEventType.PAUSE:
+            watcher.currentVideoStatus = UserVideoStatus.BUFFERING;
+            break;
+    }
+};
+
+const markWatcherAsReady = (watcher: Watcher) => {
+    watcher.currentVideoStatus = UserVideoStatus.READY;
+};

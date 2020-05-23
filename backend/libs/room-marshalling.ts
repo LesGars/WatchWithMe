@@ -49,7 +49,7 @@ export const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
         videoStatus: roomDDB.videoStatus.WAITING,
         resumePlayingAt: roomDDB.resumePlayingAt
             ? new Date(roomDDB.resumePlayingAt)
-            : null,
+            : undefined,
         resumePlayingTimestamp: roomDDB.resumePlayingTimestamp
             ? new Date(roomDDB.resumePlayingTimestamp)
             : undefined,
