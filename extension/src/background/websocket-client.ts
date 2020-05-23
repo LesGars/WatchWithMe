@@ -1,3 +1,8 @@
+import {
+    BroadcastEvent,
+    BroadcastEventType,
+} from "../../../backend/libs/response";
+
 export default class WebSocketClient {
     private host: string;
     private webSocket!: WebSocket;
@@ -20,11 +25,22 @@ export default class WebSocketClient {
                 );
                 resolve();
             };
-            this.webSocket.onmessage = (event: any) => {
+
+            this.webSocket.onmessage = (event: MessageEvent) => {
                 // Since the messages are supposed to be in JSON format, should be: JSON.parse(event.data)
-                const receivedMsg = event.data;
-                console.log(`[WS-S] ${receivedMsg}`);
+                const broadcastEvent = event.data as BroadcastEvent;
+                switch (broadcastEvent.type) {
+                    case BroadcastEventType.NEW_WATCHER:
+                        console.log(`A new watcher joined`);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                console.log(`[WS-S] ${broadcastEvent}`);
             };
+
             this.webSocket.onclose = () => {};
         });
     }

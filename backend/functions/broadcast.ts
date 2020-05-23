@@ -1,6 +1,11 @@
 import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
 
-import { IEventBridgeEvent, success, failure } from '../libs/response';
+import {
+    IEventBridgeEvent,
+    success,
+    failure,
+    BroadcastEvent,
+} from '../libs/response';
 
 /**
  * Initialize outside handler to use function context
@@ -21,12 +26,17 @@ export const main = async (event: IEventBridgeEvent) => {
     }
 
     try {
+        const broadcastEvent: BroadcastEvent = {
+            type: event.detail.type,
+            room: event.detail.data,
+        };
+
         await Promise.all(
             Object.values(event.detail.data.watchers).map((watcher) => {
                 return client
                     .postToConnection({
                         ConnectionId: watcher.connectionId,
-                        Data: JSON.stringify(event.detail.data),
+                        Data: JSON.stringify(broadcastEvent),
                     })
                     .promise();
             }),

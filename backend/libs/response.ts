@@ -33,6 +33,11 @@ export enum BroadcastEventType {
     NEW_WATCHER = 'NEW_WATCHER',
 }
 
+export interface BroadcastEvent {
+    type: BroadcastEventType;
+    room: Room;
+}
+
 interface IApplicationEvent {
     roomId: string;
 }
