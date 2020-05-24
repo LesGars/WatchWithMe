@@ -14,7 +14,7 @@ import { updateWatcher } from './watcher-operations';
 export const findRoomById = async (
     roomId: string,
     tableName: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
     const params: DocumentClient.GetItemInput = {
         TableName: tableName,
@@ -44,7 +44,7 @@ export const createRoom = async (
     roomId: string,
     tableName: string,
     ownerConnectionString: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
     const owner: Watcher = {
         id: ownerConnectionString,
@@ -83,11 +83,16 @@ export const createRoom = async (
     }
 };
 
+/**
+ * Currently, this updateRoom function is only used in tests
+ * Feel free to add more complexity here (cf updateRoom related to sync state & commands, etc)
+ */
 export const updateRoom = async (
     room: Room,
     tableName: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
+    // If we need more speed improvements, we could work on a partial marshalling of the room
     const roomForDDB = marshallRoom(room);
     const params: DocumentClient.UpdateItemInput = {
         TableName: tableName,
@@ -95,14 +100,10 @@ export const updateRoom = async (
         UpdateExpression: [
             'SET currentVideoUrl = :currentVideoUrl',
             'videoStatus = :videoStatus',
-            // 'resumePlayingAt = :resumePlayingAt',
-            // 'resumePlayingTimestamp = :resumePlayingTimestamp',
         ].join(','),
         ExpressionAttributeValues: {
             ':currentVideoUrl': roomForDDB.currentVideoUrl,
             ':videoStatus': roomForDDB.videoStatus,
-            // ':resumePlayingAt': roomForDDB.resumePlayingAt,
-            // ':resumePlayingTimestamp': roomForDDB.resumePlayingTimestamp,
         },
     };
     try {
@@ -121,7 +122,7 @@ export const joinExistingRoom = async (
     room: Room,
     tableName: string,
     watcherConnectionString: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
     const newWatcher: Watcher = {
         id: watcherConnectionString,
@@ -134,4 +135,19 @@ export const joinExistingRoom = async (
         userAgent: 'TODO',
     };
     return updateWatcher(room, tableName, newWatcher, dynamoDb);
+};
+
+export const ensureRoomJoined = (
+    room: Room,
+    watcherConnectionString: string,
+) => {
+    if (!room.watchers[watcherConnectionString]) {
+        console.log(
+            '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
+        );
+        throw new Error(
+            `The room was not joined by watcher ${watcherConnectionString}`,
+        );
+    }
+    return room;
 };

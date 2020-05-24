@@ -77,7 +77,7 @@ export const updateWatcher = async (
     tableName: string,
     watcher: Watcher,
     dynamoDb: DocumentClient,
-) => {
+): Promise<Room> => {
     const params: DocumentClient.UpdateItemInput = {
         TableName: tableName,
         Key: { roomId: room.roomId },
@@ -95,7 +95,9 @@ export const updateWatcher = async (
         return room;
     } catch (e) {
         console.error('Failed to update watcher', e);
-        return undefined;
+        throw new Error(
+            `Failed to update watcher ${watcher.id} in room ${room.roomId}`,
+        );
     }
 };
 
@@ -108,7 +110,7 @@ export const updateWatcherVideoStatus = async (
     watcherConnectionString: string,
     playerEvent: PlayerEvent,
     dynamoDb: DocumentClient = new DocumentClient(),
-): Promise<Room | undefined> => {
+): Promise<Room> => {
     const watcher = room.watchers[watcherConnectionString];
     assignWatcherHeartbeat(watcher);
     assignWatcherStatus(watcher, playerEvent, room);

@@ -1,12 +1,13 @@
+import EventBridge from 'aws-sdk/clients/eventbridge';
+import { BroadcastEventType, Room } from '../../extension/src/types';
+import { dynamoDB } from '../libs/dynamodb-utils';
+import { buildEvent } from '../libs/event-utils';
 import { failure, IEvent, success } from '../libs/response';
 import {
     createRoom,
     findRoomById,
     joinExistingRoom,
 } from '../libs/room-operations';
-import EventBridge from 'aws-sdk/clients/eventbridge';
-import { buildEvent } from '../libs/event-utils';
-import { Room, BroadcastEventType } from '../../extension/src/types';
 
 /**
  * Initialize outside handler to use function context
@@ -22,7 +23,7 @@ const joinRoom = async (
         `[WS-S] User ${watcherConnectionString} attempting to join room ${roomId}`,
     );
 
-    let roomDDB = await findRoomById(roomId, tableName);
+    let roomDDB = await findRoomById(roomId, tableName, dynamoDB);
     if (roomDDB) {
         console.log(
             `[WS-S] Room ${roomId} already exists. Add user to the room`,
@@ -32,9 +33,15 @@ const joinRoom = async (
             roomDDB,
             tableName,
             watcherConnectionString,
+            dynamoDB,
         );
     } else {
-        roomDDB = await createRoom(roomId, tableName, watcherConnectionString);
+        roomDDB = await createRoom(
+            roomId,
+            tableName,
+            watcherConnectionString,
+            dynamoDB,
+        );
     }
 
     return roomDDB;

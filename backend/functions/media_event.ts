@@ -1,12 +1,15 @@
-import { failure, IEvent, success } from '../libs/response';
-import { findRoomById } from '../libs/room-operations';
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+import { dynamoDB } from '../libs/dynamodb-utils';
+import { IEvent, success } from '../libs/response';
+import { ensureRoomJoined, findRoomById } from '../libs/room-operations';
 import { updateWatcherVideoStatus } from '../libs/watcher-operations';
 import { MediaEventForServer, Room } from './../../extension/src/types';
 
 const findAndEnsureRoomJoined = async (
     roomId: string,
     watcherConnectionString: string,
-): Promise<Room | undefined> => {
+    dynamoDB: DocumentClient,
+): Promise<Room> => {
     if (!process.env.ROOM_TABLE) {
         throw new Error('env.ROOM_TABLE must be defined');
     }
@@ -15,20 +18,14 @@ const findAndEnsureRoomJoined = async (
         console.log(
             '[WS-S] Could not find an existing roomId in the join room request',
         );
-        return undefined;
+        throw new Error('A room ID must be provided');
     }
-    const room = await findRoomById(roomId, process.env.ROOM_TABLE);
-
+    const room = await findRoomById(roomId, process.env.ROOM_TABLE, dynamoDB);
     if (!room) {
-        console.log('[WS-S] Could not find room =_=');
-        return undefined;
+        console.log('[WS-S] Could not find room ', roomId);
+        throw new Error('Room ${roomId} does not exist and cannot be joined');
     }
-    if (!room.watchers[watcherConnectionString]) {
-        console.log(
-            '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
-        );
-        return undefined;
-    }
+    ensureRoomJoined(room, watcherConnectionString);
     return room;
 };
 
@@ -37,20 +34,15 @@ export const main = async (event: IEvent) => {
     const { roomId, playerEvent } = mediaEvent;
     const watcherId = event.requestContext.connectionId;
 
-    const room = await findAndEnsureRoomJoined(roomId, watcherId);
-    if (!room) {
-        return failure();
-    }
+    const room = await findAndEnsureRoomJoined(roomId, watcherId, dynamoDB);
 
-    const updatedRoom = await updateWatcherVideoStatus(
+    await updateWatcherVideoStatus(
         room,
         process.env.ROOM_TABLE!,
         watcherId,
         mediaEvent.playerEvent,
+        dynamoDB,
     );
-    if (!updatedRoom) {
-        return failure();
-    }
 
     console.log(
         `[WS-S] User ${watcherId} media event ${playerEvent.mediaEventType} was successfully processed`,
