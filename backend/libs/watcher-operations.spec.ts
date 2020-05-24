@@ -42,17 +42,6 @@ let room: Room;
 // Perform all assertions on ddbRoomAfterOperations
 let ddbRoomAfterOperations: DocumentClient.AttributeMap;
 
-const setupTestRoom = async (status: VideoSyncStatus) => {
-    const roomId = uuidv4();
-    room = (await createRoom(roomId, tableName, 'owner', ddb))!;
-    room.ownerId = 'owner';
-    room.videoStatus = status;
-    room.currentVideoUrl = 'https://www.youtube.com/watch?v=4242';
-    await updateRoom(room, tableName, ddb);
-    await joinExistingRoom(room, tableName, 'friend', ddb);
-    await reloadRoom(); // A reload is required since the room object is passed in intermediate functions
-};
-
 const reloadRoom = async () => {
     const { Item } = await ddb
         .get({
@@ -62,6 +51,17 @@ const reloadRoom = async () => {
         .promise();
     ddbRoomAfterOperations = Item!;
     room = unmarshallRoom(Item!);
+};
+
+const setupTestRoom = async (status: VideoSyncStatus) => {
+    const roomId = uuidv4();
+    room = (await createRoom(roomId, tableName, 'owner', ddb))!;
+    room.ownerId = 'owner';
+    room.videoStatus = status;
+    room.currentVideoUrl = 'https://www.youtube.com/watch?v=4242';
+    await updateRoom(room, tableName, ddb);
+    await joinExistingRoom(room, tableName, 'friend', ddb);
+    await reloadRoom(); // A reload is required since the room object is passed in intermediate functions
 };
 
 describe('#updateWatcher', () => {
