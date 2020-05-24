@@ -46,7 +46,7 @@ export const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
         syncStartedTimestamp: roomDDB.syncStartedTimestamp
             ? new Date(roomDDB.syncStartedTimestamp)
             : undefined,
-        videoStatus: roomDDB.videoStatus.WAITING,
+        videoStatus: roomDDB.videoStatus,
         resumePlayingAt: roomDDB.resumePlayingAt
             ? new Date(roomDDB.resumePlayingAt)
             : undefined,

@@ -1,11 +1,9 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { v4 as uuidv4 } from 'uuid';
 import { Room, VideoSyncStatus } from '../../extension/src/types';
-import {
-    MediaEventType,
-    PlayerEvent,
-} from './../../extension/src/contentscript/player';
+import { MediaEventType } from './../../extension/src/contentscript/player';
 import { UserVideoStatus } from './../../extension/src/types';
+import { unmarshallRoom } from './room-marshalling';
 import { createRoom, joinExistingRoom, updateRoom } from './room-operations';
 import { updateWatcherVideoStatus } from './watcher-operations';
 
@@ -20,68 +18,68 @@ const config = {
 };
 const ddb = new DocumentClient(config);
 const tableName = 'watch-with-me-dev-RoomTable';
+const defaultPlayerEventAttributes = {
+    duration: 42,
+    currentTime: 42,
+    now: new Date(),
+};
+const playerPlayEvent = {
+    mediaEventType: MediaEventType.PLAY,
+    ...defaultPlayerEventAttributes,
+};
+const playerPauseEvent = {
+    mediaEventType: MediaEventType.PLAY,
+    ...defaultPlayerEventAttributes,
+};
+const playerSeekEvent = {
+    mediaEventType: MediaEventType.PLAY,
+    ...defaultPlayerEventAttributes,
+};
 
-let roomId: string;
-let room: Room | undefined = undefined;
-let playerEvent: PlayerEvent;
-let ddbRoom: DocumentClient.AttributeMap | undefined = undefined;
+// Global variables used across tests
+// The room variable is used to easily manipulate the room in test setups
+let room: Room;
+// Perform all assertions on ddbRoomAfterOperations
+let ddbRoomAfterOperations: DocumentClient.AttributeMap;
 
-const getDDBRoom = async () => {
-    const { Item: item } = await ddb
+const setupTestRoom = async (status: VideoSyncStatus) => {
+    const roomId = uuidv4();
+    room = (await createRoom(roomId, tableName, 'owner', ddb))!;
+    room.ownerId = 'owner';
+    room.videoStatus = status;
+    room.currentVideoUrl = 'https://www.youtube.com/watch?v=4242';
+    await updateRoom(room, tableName, ddb);
+    await joinExistingRoom(room, tableName, 'friend', ddb);
+    await reloadRoom(); // A reload is required since the room object is passed in intermediate functions
+};
+
+const reloadRoom = async () => {
+    const { Item } = await ddb
         .get({
             TableName: tableName,
-            Key: { roomId },
+            Key: { roomId: room.roomId },
         })
         .promise();
-    if (!item) {
-        throw new Error('Error retrieving DDB room');
-    }
-    ddbRoom = item;
+    ddbRoomAfterOperations = Item!;
+    room = unmarshallRoom(Item!);
 };
 
 describe('#updateWatcher', () => {
-    beforeEach(async (done) => {
-        roomId = uuidv4();
-        const testRoom = await createRoom(roomId, tableName, 'owner', ddb);
-        if (!testRoom) {
-            throw new Error('Could not setup test');
-        }
-        room = testRoom;
-        done();
-    });
-    afterEach(() => {
-        ddbRoom = undefined;
-        room = undefined;
-    });
-
-    describe('when the room is in a waiting state with two watchers: the owner and a friend', () => {
-        beforeEach(async (done) => {
-            room!.videoStatus = VideoSyncStatus.WAITING;
-            room!.currentVideoUrl = 'https://www.youtube.com/watch?v=4242';
-            await updateRoom(room!, tableName, ddb);
-            await joinExistingRoom(room!, tableName, 'friend', ddb);
-            done();
-        });
-        describe('when receiving a play event from the owner but the other watcher is not ready', () => {
-            beforeEach(async (done) => {
-                playerEvent = {
-                    mediaEventType: MediaEventType.PLAY,
-                    duration: 42,
-                    currentTime: 42,
-                    now: new Date(),
-                };
+    describe('when the room is in a waiting state with two watchers: the owner and a friend, and they send play events', () => {
+        beforeAll(async () => await setupTestRoom(VideoSyncStatus.WAITING));
+        describe('when first receiving a play event from the owner but the other watcher is not ready', () => {
+            beforeAll(async () => {
                 await updateWatcherVideoStatus(
-                    room!,
+                    room,
                     tableName,
                     'owner',
-                    playerEvent,
+                    playerPlayEvent,
                     ddb,
                 );
-                await getDDBRoom();
-                done();
+                return await reloadRoom();
             });
-            it('updates the owner to the Ready state', async () => {
-                expect(ddbRoom!.watchers['owner']).toEqual({
+            it('updates the owner to the READY state', async () => {
+                expect(ddbRoomAfterOperations.watchers['owner']).toEqual({
                     connectionId: 'owner',
                     currentVideoStatus: UserVideoStatus.READY,
                     id: 'owner',
@@ -89,111 +87,81 @@ describe('#updateWatcher', () => {
                     userAgent: 'TODO',
                 });
             });
+            it('leaves the friend in the UNKNOWN state', async () => {
+                expect(ddbRoomAfterOperations.watchers['friend']).toEqual({
+                    connectionId: 'friend',
+                    currentVideoStatus: UserVideoStatus.UNKNOWN,
+                    id: 'friend',
+                    initialSync: false,
+                    userAgent: 'TODO',
+                });
+            });
             it('leaves the room in a waiting state', () => {
-                expect(ddbRoom!).toMatchObject({
+                expect(ddbRoomAfterOperations).toMatchObject({
                     ownerId: 'owner',
                     videoStatus: VideoSyncStatus.WAITING,
                 });
             });
         });
-        describe('when receiving a play event from all watchers', () => {
-            beforeEach(async (done) => {
-                playerEvent = {
-                    mediaEventType: MediaEventType.PLAY,
-                    duration: 42,
-                    currentTime: 42,
-                    now: new Date(),
-                };
+        describe('when second receiving another play event from the other watcher', () => {
+            beforeAll(async (done) => {
                 await updateWatcherVideoStatus(
-                    room!,
-                    tableName,
-                    'owner',
-                    playerEvent,
-                    ddb,
-                );
-                await updateWatcherVideoStatus(
-                    room!,
+                    room,
                     tableName,
                     'friend',
-                    playerEvent,
+                    playerPlayEvent,
                     ddb,
                 );
-                await getDDBRoom();
+                await reloadRoom();
                 done();
             });
-            test.todo(
-                'initiates synchronized start https://github.com/LesGars/WatchWithMe/issues/145',
-            );
-        });
-        describe('when receiving a seek event from the owner', () => {
-            beforeEach(async (done) => {
-                playerEvent = {
-                    mediaEventType: MediaEventType.SEEK,
-                    duration: 42,
-                    currentTime: 48,
-                    now: new Date(),
-                };
-                await updateWatcherVideoStatus(
-                    room!,
-                    tableName,
-                    'owner',
-                    playerEvent,
-                    ddb,
-                );
-                await getDDBRoom();
-                done();
-            });
-            it('updates the owner to the BUFFERING state', async () => {
-                expect(ddbRoom!.watchers['owner']).toEqual({
-                    connectionId: 'owner',
-                    currentVideoStatus: UserVideoStatus.BUFFERING,
-                    id: 'owner',
+            it('updates the friend to the Ready state', async () => {
+                expect(ddbRoomAfterOperations.watchers['friend']).toEqual({
+                    connectionId: 'friend',
+                    currentVideoStatus: UserVideoStatus.READY,
+                    id: 'friend',
                     initialSync: false,
                     userAgent: 'TODO',
                 });
             });
             test.todo(
-                'update room status for https://github.com/LesGars/WatchWithMe/issues/61',
+                'initiates synchronized start https://github.com/LesGars/WatchWithMe/issues/145',
+            );
+        });
+        describe('when third receiving a seek event from the owner', () => {
+            beforeAll(async (done) => {
+                await updateWatcherVideoStatus(
+                    room,
+                    tableName,
+                    'owner',
+                    playerSeekEvent,
+                    ddb,
+                );
+                await reloadRoom();
+                done();
+            });
+            test.todo(
+                'issues a PAUSE sync command https://github.com/LesGars/WatchWithMe/issues/61',
             );
         });
     });
 
     describe('when the room is in a playing state (synchronized start was initiated previously)', () => {
-        beforeEach(async (done) => {
-            room!.videoStatus = VideoSyncStatus.PLAYING;
-            room!.currentVideoUrl = 'https://www.youtube.com/watch?v=4242';
-            await updateRoom(room!, tableName, ddb);
-            done();
-        });
+        beforeAll(async () => await setupTestRoom(VideoSyncStatus.PLAYING));
         describe('when receiving a play event from the owner', () => {
-            beforeEach(async (done) => {
-                playerEvent = {
-                    mediaEventType: MediaEventType.PLAY,
-                    duration: 42,
-                    currentTime: 42,
-                    now: new Date(),
-                };
+            beforeAll(async (done) => {
                 await updateWatcherVideoStatus(
-                    room!,
+                    room,
                     tableName,
                     'owner',
-                    playerEvent,
+                    playerPlayEvent,
                     ddb,
                 );
+                await reloadRoom();
                 done();
             });
             it('updates the watcher to the PLAYING state', async () => {
-                const { Item } = await ddb
-                    .get({
-                        TableName: tableName,
-                        Key: { roomId },
-                    })
-                    .promise();
-                if (!Item) {
-                    throw new Error('Error retrieving DDB room');
-                }
-
-                expect(Item.watchers['owner']).toEqual({
+                expect(ddbRoomAfterOperations.watchers['owner']).toEqual({
                     connectionId: 'owner',
                     currentVideoStatus: UserVideoStatus.PLAYING,
                     id: 'owner',
@@ -203,72 +171,38 @@ describe('#updateWatcher', () => {
             });
         });
         describe('when receiving a pause event from the owner', () => {
-            beforeEach(async (done) => {
-                playerEvent = {
-                    mediaEventType: MediaEventType.PAUSE,
-                    duration: 42,
-                    currentTime: 42,
-                    now: new Date(),
-                };
+            beforeAll(async (done) => {
                 await updateWatcherVideoStatus(
-                    room!,
+                    room,
                     tableName,
                     'owner',
-                    playerEvent,
+                    playerPauseEvent,
                     ddb,
                 );
+                await reloadRoom();
                 done();
-            });
-            it('updates the watcher to the BUFFERING state', async () => {
-                const { Item } = await ddb
-                    .get({
-                        TableName: tableName,
-                        Key: { roomId },
-                    })
-                    .promise();
-                if (!Item) {
-                    throw new Error('Error retrieving DDB room');
-                }
-
-                expect(Item.watchers['owner']).toEqual({
-                    connectionId: 'owner',
-                    currentVideoStatus: UserVideoStatus.BUFFERING,
-                    id: 'owner',
-                    initialSync: false,
-                    userAgent: 'TODO',
-                });
-            });
-            test.todo('updates the room status to PAUSED');
-        });
-        describe('when receiving a seek event from the owner', () => {
-            beforeEach(async (done) => {
-                playerEvent = {
-                    mediaEventType: MediaEventType.SEEK,
-                    duration: 42,
-                    currentTime: 48,
-                    now: new Date(),
-                };
-                await updateWatcherVideoStatus(
-                    room!,
-                    tableName,
-                    'owner',
-                    playerEvent,
-                    ddb,
-                );
-                await getDDBRoom();
-                done();
-            });
-            it('updates the owner to the BUFFERING state', async () => {
-                expect(ddbRoom!.watchers['owner']).toEqual({
-                    connectionId: 'owner',
-                    currentVideoStatus: UserVideoStatus.BUFFERING,
-                    id: 'owner',
-                    initialSync: false,
-                    userAgent: 'TODO',
-                });
             });
             test.todo(
-                'update room status for https://github.com/LesGars/WatchWithMe/issues/61',
+                'updates the owner to the BUFFERING state https://github.com/LesGars/WatchWithMe/issues/149',
+            );
+            test.todo(
+                'updates the room status to PAUSED https://github.com/LesGars/WatchWithMe/issues/149',
+            );
+        });
+        describe('when third receiving a seek event from the owner', () => {
+            beforeAll(async (done) => {
+                await updateWatcherVideoStatus(
+                    room,
+                    tableName,
+                    'owner',
+                    playerSeekEvent,
+                    ddb,
+                );
+                await reloadRoom();
+                done();
+            });
+            test.todo(
+                'issues a PAUSE sync command https://github.com/LesGars/WatchWithMe/issues/61',
             );
         });
     });

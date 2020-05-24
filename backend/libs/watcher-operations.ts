@@ -63,7 +63,7 @@ const assignWatcherStatus = (
             break;
         }
         case MediaEventType.SEEK:
-            watcher.currentVideoStatus = UserVideoStatus.BUFFERING;
+            // TODO
             break;
         case MediaEventType.PAUSE:
             watcher.currentVideoStatus = UserVideoStatus.BUFFERING;
