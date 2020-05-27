@@ -15,7 +15,7 @@ devDependencies:
   babel-jest: 26.0.1_@babel+core@7.10.0
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0_eslint@6.8.0
-  eslint-plugin-jest: 23.13.1_eslint@6.8.0+typescript@3.9.3
+  eslint-plugin-jest: 23.13.2_eslint@6.8.0+typescript@3.9.3
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
@@ -4208,7 +4208,7 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
-  /eslint-plugin-jest/23.13.1_eslint@6.8.0+typescript@3.9.3:
+  /eslint-plugin-jest/23.13.2_eslint@6.8.0+typescript@3.9.3:
     dependencies:
       '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.3
       eslint: 6.8.0
@@ -4219,7 +4219,7 @@ packages:
       eslint: '>=5'
       typescript: '*'
     resolution:
-      integrity: sha512-TRLJH6M6EDvGocD98a7yVThrAOCK9WJfo9phuUb0MJptcrOYZeCKzC9aOzZCD93sxXCsiJVZywaTHdI/mAi0FQ==
+      integrity: sha512-qZit+moTXTyZFNDqSIR88/L3rdBlTU7CuW6XmyErD2FfHEkdoLgThkRbiQjzgYnX6rfgLx3Ci4eJmF4Ui5v1Cw==
   /eslint-scope/4.0.3:
     dependencies:
       esrecurse: 4.2.1
@@ -10472,7 +10472,7 @@ specifiers:
   babel-jest: 26.0.1
   eslint: 6.8.0
   eslint-config-prettier: 6.11.0
-  eslint-plugin-jest: 23.13.1
+  eslint-plugin-jest: 23.13.2
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
