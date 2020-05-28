@@ -1,5 +1,5 @@
 dependencies:
-  dayjs: 1.8.27
+  dayjs: 1.8.28
   debug: 4.1.1
   lodash-es: 4.17.15
   uuid: 8.1.0
@@ -5266,10 +5266,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==
-  /dayjs/1.8.27:
+  /dayjs/1.8.28:
     dev: false
     resolution:
-      integrity: sha512-Jpa2acjWIeOkg8KURUHICk0EqnEFSSF5eMEscsOgyJ92ZukXwmpmRkPSUka7KHSfbj5eKH30ieosYip+ky9emQ==
+      integrity: sha512-ccnYgKC0/hPSGXxj7Ju6AV/BP4HUkXC2u15mikXT5mX9YorEaoi1bEKOmAqdkJHN4EEkmAf97SpH66Try5Mbeg==
   /de-indent/1.0.2:
     dev: true
     resolution:
@@ -14252,7 +14252,7 @@ specifiers:
   cross-env: 7.0.2
   css-loader: 3.5.3
   cssnano: 4.1.10
-  dayjs: 1.8.27
+  dayjs: 1.8.28
   debug: 4.1.1
   eslint: 6.8.0
   eslint-config-airbnb: 18.1.0
