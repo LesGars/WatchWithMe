@@ -8,6 +8,7 @@ import {
     findRoomById,
     joinExistingRoom,
 } from '../libs/room-operations';
+import { ChangeRoom } from './../../extension/src/communications/from-extension-to-server';
 
 /**
  * Initialize outside handler to use function context
@@ -70,7 +71,8 @@ export const main = async (event: IEvent) => {
         throw new Error('env.ROOM_TABLE must be defined');
     }
 
-    const { roomId } = JSON.parse(event.body);
+    const joinRoomEvent = JSON.parse(event.body) as ChangeRoom;
+    const { roomId } = joinRoomEvent;
     if (!roomId) {
         console.log(
             '[WS-S] Could not find an existing roomId in the join room request',

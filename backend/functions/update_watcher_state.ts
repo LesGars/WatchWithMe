@@ -31,8 +31,8 @@ const findAndEnsureRoomJoined = async (
 };
 
 export const main = async (event: IEvent) => {
-    const mediaEvent = JSON.parse(event.body) as UpdateWatcherState;
-    const { roomId, playerEvent } = mediaEvent;
+    const updateWatcherEvent = JSON.parse(event.body) as UpdateWatcherState;
+    const { roomId, playerEvent } = updateWatcherEvent;
     const watcherId = event.requestContext.connectionId;
 
     const room = await findAndEnsureRoomJoined(roomId, watcherId, dynamoDB);
@@ -41,7 +41,7 @@ export const main = async (event: IEvent) => {
         room,
         process.env.ROOM_TABLE!,
         watcherId,
-        mediaEvent.playerEvent,
+        updateWatcherEvent.playerEvent,
         dynamoDB,
     );
 
