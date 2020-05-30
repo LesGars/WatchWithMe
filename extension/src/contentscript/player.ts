@@ -1,14 +1,14 @@
 import { Runtime } from "webextension-polyfill-ts";
-import { MessageType } from "@/types";
+import { MessageType } from "../types";
 
-export interface Event {
-    mediaEventType: EventType;
+export interface PlayerEvent {
+    mediaEventType: MediaEventType;
     duration: number;
     currentTime: number;
     now: Date;
 }
 
-enum EventType {
+export enum MediaEventType {
     PLAY = "PLAY",
     SEEK = "SEEK",
     PAUSE = "PAUSE",
@@ -30,19 +30,19 @@ enum EventType {
 const events = [
     {
         htmlEvent: "playing",
-        type: EventType.PLAY,
+        type: MediaEventType.PLAY,
     },
     {
         htmlEvent: "seeked",
-        type: EventType.SEEK,
+        type: MediaEventType.SEEK,
     },
     {
         htmlEvent: "pause",
-        type: EventType.PAUSE,
+        type: MediaEventType.PAUSE,
     },
     {
         htmlEvent: "waiting",
-        type: EventType.PAUSE,
+        type: MediaEventType.PAUSE,
     },
 ];
 
@@ -67,7 +67,7 @@ export class VideoPlayer {
         });
     }
 
-    private buildEvent(mediaEventType: EventType): Event {
+    private buildEvent(mediaEventType: MediaEventType): PlayerEvent {
         return {
             mediaEventType,
             currentTime: this.video.currentTime,
@@ -76,7 +76,7 @@ export class VideoPlayer {
         };
     }
 
-    sendEvent(event: Event) {
+    sendEvent(event: PlayerEvent) {
         console.log(event);
     }
 }

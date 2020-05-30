@@ -1,3 +1,5 @@
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Dates are converted to strings (ISO 8601)
@@ -18,3 +20,9 @@ export const marshallMap = (map: Record<string, any>): Record<string, any> => {
         Object.entries(map).map(([key, value]) => [key, marshallValue(value)]),
     );
 };
+
+/**
+ * Configured DynamoDB client - allows reuse across lambda function calls
+ * Cannot be used in test environment
+ */
+export const dynamoDB = new DocumentClient();

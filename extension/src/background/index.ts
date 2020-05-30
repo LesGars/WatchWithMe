@@ -1,34 +1,17 @@
 import { CS_SCRIPT_NAME } from "@/contentscript";
+import { PlayerEvent } from "@/contentscript/player";
 import { POPUP_SCRIPT_NAME } from "@/popup";
 import { browser, Runtime } from "webextension-polyfill-ts";
-import { MessageType } from "../types";
+import { EventForServer, MediaEventForServer, MessageType } from "../types";
 import WebSocketClient from "./websocket-client";
 
 const log = require("debug")("ext:background");
-
 log(
     `Preparing future Websocket connections on host ${process.env.WS_URL || ""}`
 );
+
 let wsClient: WebSocketClient = new WebSocketClient(process.env.WS_URL || "");
-
-async function changeRoom(roomId: string) {
-    try {
-        browser.storage.sync.set({ roomId });
-        sendMessageThroughWebSocket({
-            action: MessageType.CHANGE_ROOM,
-            roomId,
-        });
-        log(`[BG] Joined WatchWithMe room ${roomId}`);
-    } catch (e) {
-        log(`[BG] Error joining room : ${e}`);
-    }
-    // TODO : notify PS/CS that a room was joined (chat, etc)
-}
-
-function sendMessageThroughWebSocket(message: any) {
-    wsClient.send(JSON.stringify(message));
-}
-
+let currentRoomId: string | undefined = undefined;
 let portFromCS: Runtime.Port;
 let portFromPS: Runtime.Port;
 
@@ -62,10 +45,50 @@ const connected = (p: Runtime.Port): void => {
                 break;
             }
             case MessageType.MEDIA_EVENT: {
-                console.log(`[BG] Sending ${m.mediaEventType} to WebSocket`);
-                sendMessageThroughWebSocket(m);
+                processMediaEvent(m as PlayerEvent);
             }
         }
     });
 };
+
+async function changeRoom(roomId: string) {
+    try {
+        browser.storage.sync.set({ roomId });
+        currentRoomId = roomId;
+        const eventForServer: EventForServer = {
+            action: MessageType.CHANGE_ROOM,
+            roomId,
+        };
+        sendMessageThroughWebSocket(eventForServer);
+        log(`[BG] Joined WatchWithMe room ${roomId}`);
+    } catch (e) {
+        log(`[BG] Error joining room : ${e}`);
+    }
+    // TODO : notify PS/CS that a room was joined (chat, etc)
+}
+
+async function processMediaEvent(playerEvent: PlayerEvent) {
+    const roomId =
+        currentRoomId ?? (await browser.storage.sync.get("roomId"))?.roomId;
+    if (!roomId) {
+        console.log(
+            `[BG] Cannot process ${playerEvent.mediaEventType} media event since no room was joined`
+        );
+        return;
+    }
+    console.log(
+        `[BG] Sending ${playerEvent.mediaEventType} media event to WebSocket`
+    );
+    const eventForServer: MediaEventForServer = {
+        action: MessageType.MEDIA_EVENT,
+        roomId,
+        playerEvent,
+    };
+    sendMessageThroughWebSocket(eventForServer);
+}
+
+function sendMessageThroughWebSocket(message: EventForServer) {
+    wsClient.send(JSON.stringify(message));
+}
+
 browser.runtime.onConnect.addListener(connected);

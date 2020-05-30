@@ -5,8 +5,8 @@ import {
     VideoSyncStatus,
     Watcher,
 } from '../../extension/src/types';
-import { marshallMap } from './dynamodb-utils';
 import { marshallRoom, unmarshallRoom } from './room-marshalling';
+import { updateWatcher } from './watcher-operations';
 
 /**
  * Find a room by ID in DDB
@@ -14,7 +14,7 @@ import { marshallRoom, unmarshallRoom } from './room-marshalling';
 export const findRoomById = async (
     roomId: string,
     tableName: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
     const params: DocumentClient.GetItemInput = {
         TableName: tableName,
@@ -44,7 +44,7 @@ export const createRoom = async (
     roomId: string,
     tableName: string,
     ownerConnectionString: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
     const owner: Watcher = {
         id: ownerConnectionString,
@@ -67,7 +67,7 @@ export const createRoom = async (
         syncStartedAt: undefined,
         syncStartedTimestamp: undefined,
         videoStatus: VideoSyncStatus.WAITING,
-        resumePlayingAt: null,
+        resumePlayingAt: undefined,
         resumePlayingTimestamp: undefined,
     };
     const params: DocumentClient.PutItemInput = {
@@ -84,13 +84,45 @@ export const createRoom = async (
 };
 
 /**
+ * Currently, this updateRoom function is only used in tests
+ * Feel free to add more complexity here (cf updateRoom related to sync state & commands, etc)
+ */
+export const updateRoom = async (
+    room: Room,
+    tableName: string,
+    dynamoDb: DocumentClient,
+): Promise<Room | undefined> => {
+    // If we need more speed improvements, we could work on a partial marshalling of the room
+    const roomForDDB = marshallRoom(room);
+    const params: DocumentClient.UpdateItemInput = {
+        TableName: tableName,
+        Key: { roomId: room.roomId },
+        UpdateExpression: [
+            'SET currentVideoUrl = :currentVideoUrl',
+            'videoStatus = :videoStatus',
+        ].join(','),
+        ExpressionAttributeValues: {
+            ':currentVideoUrl': roomForDDB.currentVideoUrl,
+            ':videoStatus': roomForDDB.videoStatus,
+        },
+    };
+    try {
+        await dynamoDb.update(params).promise();
+        return room;
+    } catch (e) {
+        console.error('Failed to join existing room', e);
+        return undefined;
+    }
+};
+
+/**
  * Add a new user to the room's "watchers" map
  */
 export const joinExistingRoom = async (
     room: Room,
     tableName: string,
     watcherConnectionString: string,
-    dynamoDb: DocumentClient = new DocumentClient(),
+    dynamoDb: DocumentClient,
 ): Promise<Room | undefined> => {
     const newWatcher: Watcher = {
         id: watcherConnectionString,
@@ -102,23 +134,20 @@ export const joinExistingRoom = async (
         initialSync: false,
         userAgent: 'TODO',
     };
-    const params: DocumentClient.UpdateItemInput = {
-        TableName: tableName,
-        Key: { roomId: room.roomId },
-        UpdateExpression: 'SET #watchers.#watcherId = :newWatcher',
-        ExpressionAttributeNames: {
-            '#watcherId': watcherConnectionString,
-            '#watchers': 'watchers',
-        },
-        ExpressionAttributeValues: {
-            ':newWatcher': marshallMap(newWatcher),
-        },
-    };
-    try {
-        await dynamoDb.update(params).promise();
-        return room;
-    } catch (e) {
-        console.error('Failed to join existing room', e);
-        return undefined;
+    return updateWatcher(room, tableName, newWatcher, dynamoDb);
+};
+
+export const ensureRoomJoined = (
+    room: Room,
+    watcherConnectionString: string,
+) => {
+    if (!room.watchers[watcherConnectionString]) {
+        console.log(
+            '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
+        );
+        throw new Error(
+            `The room was not joined by watcher ${watcherConnectionString}`,
+        );
     }
+    return room;
 };

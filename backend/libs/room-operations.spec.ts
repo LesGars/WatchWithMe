@@ -30,7 +30,7 @@ describe('#createRoom', () => {
         expect(Item).toEqual({
             minBufferLength: 5,
             ownerId: 'owner',
-            resumePlayingAt: null,
+            resumePlayingAt: undefined,
             roomId: roomId,
             videoSpeed: 1,
             videoStatus: 'WAITING',
@@ -73,7 +73,7 @@ describe('#joinExistingRoom', () => {
         expect(roomAfterJoin).toEqual({
             minBufferLength: 5,
             ownerId: owner,
-            resumePlayingAt: null,
+            resumePlayingAt: undefined,
             roomId: roomId,
             videoSpeed: 1,
             videoStatus: 'WAITING',

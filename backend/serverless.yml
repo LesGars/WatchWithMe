@@ -37,12 +37,12 @@ provider:
       Action:
         - execute-api:ManageConnections
       Resource:
-        - "arn:aws:execute-api:*:*:*"
+        - 'arn:aws:execute-api:*:*:*'
     - Effect: Allow
       Action:
         - events:PutEvents
       Resource:
-        - "Fn::GetAtt": [EventBus, Arn]
+        - 'Fn::GetAtt': [EventBus, Arn]
   environment:
     ROOM_TABLE: ${self:custom.roomTable}
     MEDIA_EVENT_BUS: ${self:custom.event.eventBus}
@@ -83,10 +83,24 @@ functions:
           - dynamodb:PutItem
           - dynamodb:UpdateItem
         Resource:
-          - "Fn::GetAtt": [RoomTable, Arn]
+          - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
           route: join-room
+          routeResponseSelectionExpression: $default
+  media_event:
+    handler: functions/media_event.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:GetItem
+          - dynamodb:UpdateItem
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
+    events:
+      - websocket:
+          route: media-event
           routeResponseSelectionExpression: $default
   default:
     handler: handler.defaultHandler

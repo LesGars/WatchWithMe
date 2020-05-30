@@ -1,3 +1,4 @@
+import { PlayerEvent } from "./contentscript/player";
 // @ts-nocheck
 
 declare const browser: typeof chrome;
@@ -27,27 +28,29 @@ const apis = [
 ] as Array<keyof Extension>;
 
 export class Extension {
-    alarms: typeof chrome.alarms;
-    bookmarks: typeof chrome.bookmarks;
-    browserAction: typeof chrome.browserAction;
-    commands: typeof chrome.commands;
-    contextMenus: typeof chrome.contextMenus;
-    cookies: typeof chrome.cookies;
-    downloads: typeof chrome.downloads;
+    alarms!: typeof chrome.alarms;
+    bookmarks!: typeof chrome.bookmarks;
+    browserAction!: typeof chrome.browserAction;
+    commands!: typeof chrome.commands;
+    contextMenus!: typeof chrome.contextMenus;
+    cookies!: typeof chrome.cookies;
+    downloads!: typeof chrome.downloads;
     // events: typeof chrome.events
-    extension: typeof chrome.extension;
+    // events: typeof chrome.events
+    extension!: typeof chrome.extension;
     // extensionTypes: typeof chrome.extensionTypes
-    history: typeof chrome.history;
-    i18n: typeof chrome.i18n;
-    idle: typeof chrome.idle;
-    nortifications: typeof chrome.notifications;
-    pageAction: typeof chrome.pageAction;
-    runtime: typeof chrome.runtime;
-    storage: typeof chrome.storage;
-    tabs: typeof chrome.tabs;
-    webNavigation: typeof chrome.webNavigation;
-    webRequest: typeof chrome.webRequest;
-    windows: typeof chrome.windows;
+    // extensionTypes: typeof chrome.extensionTypes
+    history!: typeof chrome.history;
+    i18n!: typeof chrome.i18n;
+    idle!: typeof chrome.idle;
+    nortifications!: typeof chrome.notifications;
+    pageAction!: typeof chrome.pageAction;
+    runtime!: typeof chrome.runtime;
+    storage!: typeof chrome.storage;
+    tabs!: typeof chrome.tabs;
+    webNavigation!: typeof chrome.webNavigation;
+    webRequest!: typeof chrome.webRequest;
+    windows!: typeof chrome.windows;
 
     constructor() {
         apis.forEach((api: keyof Extension) => {
@@ -87,7 +90,7 @@ export class Extension {
  */
 export enum MessageType { // those values must be in sync with AWS lambda routes of servrless.yml
     DEBUG_MESSAGE,
-    MEDIA_EVENT,
+    MEDIA_EVENT = "media-event",
     CHANGE_ROOM = "join-room",
 }
 
@@ -147,7 +150,7 @@ export interface Room {
 
     // Sync values
     videoStatus: VideoSyncStatus;
-    resumePlayingAt: Date | null; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
+    resumePlayingAt: Date | undefined; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
     resumePlayingTimestamp: Date | undefined; // Timestamp that should be seeked by users before video can start
 }
 
@@ -163,4 +166,13 @@ export enum BroadcastEventType {
 export interface BroadcastEvent {
     type: BroadcastEventType;
     room: Room;
+}
+
+export interface EventForServer {
+    roomId: string;
+    action: MessageType; // Route to AWS Lambda function
+}
+
+export interface MediaEventForServer extends EventForServer {
+    playerEvent: PlayerEvent;
 }

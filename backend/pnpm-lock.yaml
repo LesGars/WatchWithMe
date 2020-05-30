@@ -1,6 +1,6 @@
 dependencies:
   aws-sdk: 2.663.0
-  uuid: 8.0.0
+  uuid: 8.1.0
 devDependencies:
   '@babel/core': 7.10.1
   '@babel/preset-env': 7.10.1_@babel+core@7.10.1
@@ -10162,9 +10162,15 @@ packages:
     resolution:
       integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
   /uuid/8.0.0:
+    dev: true
     hasBin: true
     resolution:
       integrity: sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
+  /uuid/8.1.0:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-CI18flHDznR0lq54xBycOVmphdCYnQLKn8abKn7PXUiKUGdEd+/l9LWNJmugXel4hXq7S+RMNl34ecyC9TntWg==
   /v8-compile-cache/2.1.0:
     dev: true
     resolution:
@@ -10589,5 +10595,5 @@ specifiers:
   ts-jest: 26.0.0
   ts-loader: 7.0.5
   typescript: 3.9.3
-  uuid: ^8.0.0
+  uuid: ^8.1.0
   webpack: 4.43.0
