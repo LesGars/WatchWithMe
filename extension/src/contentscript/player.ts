@@ -1,5 +1,5 @@
 import { Runtime } from "webextension-polyfill-ts";
-import { MessageType } from "../types";
+import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
 
 export interface PlayerEvent {
     mediaEventType: MediaEventType;
@@ -60,7 +60,7 @@ export class VideoPlayer {
         events.forEach((event) => {
             this.video.addEventListener(event.htmlEvent, () => {
                 this.port.postMessage({
-                    type: MessageType.MEDIA_EVENT,
+                    type: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
                     ...this.buildEvent(event.type),
                 });
             });

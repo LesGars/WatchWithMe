@@ -1,9 +1,9 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import {
     Room,
-    UserVideoStatus,
-    VideoSyncStatus,
+    SyncState,
     Watcher,
+    WatcherState,
 } from '../../extension/src/types';
 import { marshallRoom, unmarshallRoom } from './room-marshalling';
 import { updateWatcher } from './watcher-operations';
@@ -52,7 +52,7 @@ export const createRoom = async (
         joinedAt: new Date(),
         lastVideoTimestamp: undefined,
         lastHeartbeat: new Date(),
-        currentVideoStatus: UserVideoStatus.UNKNOWN,
+        currentVideoStatus: WatcherState.UNKNOWN,
         initialSync: false,
         userAgent: 'TODO',
     };
@@ -66,7 +66,7 @@ export const createRoom = async (
         currentVideoUrl: undefined,
         syncStartedAt: undefined,
         syncStartedTimestamp: undefined,
-        videoStatus: VideoSyncStatus.WAITING,
+        videoStatus: SyncState.WAITING,
         resumePlayingAt: undefined,
         resumePlayingTimestamp: undefined,
     };
@@ -130,7 +130,7 @@ export const joinExistingRoom = async (
         joinedAt: new Date(),
         lastVideoTimestamp: undefined,
         lastHeartbeat: new Date(),
-        currentVideoStatus: UserVideoStatus.UNKNOWN,
+        currentVideoStatus: WatcherState.UNKNOWN,
         initialSync: false,
         userAgent: 'TODO',
     };

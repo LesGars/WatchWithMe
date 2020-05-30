@@ -1,12 +1,12 @@
 import { browser } from "webextension-polyfill-ts";
-import { MessageType } from "../types";
+import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
 import { VideoPlayer } from "./player";
 
 export const CS_SCRIPT_NAME = "WWM Content-Script";
 
 const csPort = browser.runtime.connect(undefined, { name: CS_SCRIPT_NAME });
 csPort.postMessage({
-    type: MessageType.DEBUG_MESSAGE,
+    type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
     message: "[CS] This is the content script",
 });
 
@@ -15,7 +15,10 @@ if (roomId) {
     console.log(
         `[CS] detected roomId ${roomId} from URL param, notifying background script`
     );
-    csPort.postMessage({ type: MessageType.CHANGE_ROOM, roomId });
+    csPort.postMessage({
+        type: MessageFromExtensionToServerType.CHANGE_ROOM,
+        roomId,
+    });
 } else {
     console.log("[CS] Invalid URL missing roomID");
 }

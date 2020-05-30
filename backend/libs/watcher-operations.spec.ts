@@ -1,8 +1,8 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { v4 as uuidv4 } from 'uuid';
-import { Room, VideoSyncStatus } from '../../extension/src/types';
+import { Room, SyncState } from '../../extension/src/types';
 import { MediaEventType } from './../../extension/src/contentscript/player';
-import { UserVideoStatus } from './../../extension/src/types';
+import { WatcherState } from './../../extension/src/types';
 import { unmarshallRoom } from './room-marshalling';
 import { createRoom, joinExistingRoom, updateRoom } from './room-operations';
 import { updateWatcherVideoStatus } from './watcher-operations';
@@ -53,7 +53,7 @@ const reloadRoom = async () => {
     room = unmarshallRoom(Item!);
 };
 
-const setupTestRoom = async (status: VideoSyncStatus) => {
+const setupTestRoom = async (status: SyncState) => {
     const roomId = uuidv4();
     room = (await createRoom(roomId, tableName, 'owner', ddb))!;
     room.ownerId = 'owner';
@@ -66,7 +66,7 @@ const setupTestRoom = async (status: VideoSyncStatus) => {
 
 describe('#updateWatcher', () => {
     describe('when the room is in a waiting state with two watchers: the owner and a friend, and they send play events', () => {
-        beforeAll(async () => await setupTestRoom(VideoSyncStatus.WAITING));
+        beforeAll(async () => await setupTestRoom(SyncState.WAITING));
         describe('when first receiving a play event from the owner but the other watcher is not ready', () => {
             beforeAll(async () => {
                 await updateWatcherVideoStatus(
@@ -81,7 +81,7 @@ describe('#updateWatcher', () => {
             it('updates the owner to the READY state', async () => {
                 expect(ddbRoomAfterOperations.watchers['owner']).toEqual({
                     connectionId: 'owner',
-                    currentVideoStatus: UserVideoStatus.READY,
+                    currentVideoStatus: WatcherState.READY,
                     id: 'owner',
                     initialSync: false,
                     userAgent: 'TODO',
@@ -90,7 +90,7 @@ describe('#updateWatcher', () => {
             it('leaves the friend in the UNKNOWN state', async () => {
                 expect(ddbRoomAfterOperations.watchers['friend']).toEqual({
                     connectionId: 'friend',
-                    currentVideoStatus: UserVideoStatus.UNKNOWN,
+                    currentVideoStatus: WatcherState.UNKNOWN,
                     id: 'friend',
                     initialSync: false,
                     userAgent: 'TODO',
@@ -99,7 +99,7 @@ describe('#updateWatcher', () => {
             it('leaves the room in a waiting state', () => {
                 expect(ddbRoomAfterOperations).toMatchObject({
                     ownerId: 'owner',
-                    videoStatus: VideoSyncStatus.WAITING,
+                    videoStatus: SyncState.WAITING,
                 });
             });
         });
@@ -118,7 +118,7 @@ describe('#updateWatcher', () => {
             it('updates the friend to the Ready state', async () => {
                 expect(ddbRoomAfterOperations.watchers['friend']).toEqual({
                     connectionId: 'friend',
-                    currentVideoStatus: UserVideoStatus.READY,
+                    currentVideoStatus: WatcherState.READY,
                     id: 'friend',
                     initialSync: false,
                     userAgent: 'TODO',
@@ -147,7 +147,7 @@ describe('#updateWatcher', () => {
     });
 
     describe('when the room is in a playing state (synchronized start was initiated previously)', () => {
-        beforeAll(async () => await setupTestRoom(VideoSyncStatus.PLAYING));
+        beforeAll(async () => await setupTestRoom(SyncState.PLAYING));
         describe('when receiving a play event from the owner', () => {
             beforeAll(async (done) => {
                 await updateWatcherVideoStatus(
@@ -163,7 +163,7 @@ describe('#updateWatcher', () => {
             it('updates the watcher to the PLAYING state', async () => {
                 expect(ddbRoomAfterOperations.watchers['owner']).toEqual({
                     connectionId: 'owner',
-                    currentVideoStatus: UserVideoStatus.PLAYING,
+                    currentVideoStatus: WatcherState.PLAYING,
                     id: 'owner',
                     initialSync: false,
                     userAgent: 'TODO',

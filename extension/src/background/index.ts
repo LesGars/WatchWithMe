@@ -2,7 +2,11 @@ import { CS_SCRIPT_NAME } from "@/contentscript";
 import { PlayerEvent } from "@/contentscript/player";
 import { POPUP_SCRIPT_NAME } from "@/popup";
 import { browser, Runtime } from "webextension-polyfill-ts";
-import { EventForServer, MediaEventForServer, MessageType } from "../types";
+import {
+    MessageFromExtensionToServer,
+    MessageFromExtensionToServerType,
+    UpdateWatcherState,
+} from "../communications/from-extension-to-server";
 import WebSocketClient from "./websocket-client";
 
 const log = require("debug")("ext:background");
@@ -33,18 +37,18 @@ const connected = (p: Runtime.Port): void => {
     logAndRememberNewConnection(p);
 
     p.onMessage.addListener((m: any) => {
-        const type = m.type as MessageType;
+        const type = m.type as MessageFromExtensionToServerType;
         switch (type) {
-            case MessageType.CHANGE_ROOM: {
+            case MessageFromExtensionToServerType.CHANGE_ROOM: {
                 const { roomId } = m;
                 changeRoom(roomId);
                 break;
             }
-            case MessageType.DEBUG_MESSAGE: {
+            case MessageFromExtensionToServerType.DEBUG_MESSAGE: {
                 log(`[BG] Message from ${p.name}`, m.message);
                 break;
             }
-            case MessageType.MEDIA_EVENT: {
+            case MessageFromExtensionToServerType.UPDATE_WATCHER_STATE: {
                 processMediaEvent(m as PlayerEvent);
             }
         }
@@ -55,8 +59,8 @@ async function changeRoom(roomId: string) {
     try {
         browser.storage.sync.set({ roomId });
         currentRoomId = roomId;
-        const eventForServer: EventForServer = {
-            action: MessageType.CHANGE_ROOM,
+        const eventForServer: MessageFromExtensionToServer = {
+            action: MessageFromExtensionToServerType.CHANGE_ROOM,
             roomId,
         };
         sendMessageThroughWebSocket(eventForServer);
@@ -79,15 +83,15 @@ async function processMediaEvent(playerEvent: PlayerEvent) {
     console.log(
         `[BG] Sending ${playerEvent.mediaEventType} media event to WebSocket`
     );
-    const eventForServer: MediaEventForServer = {
-        action: MessageType.MEDIA_EVENT,
+    const eventForServer: UpdateWatcherState = {
+        action: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
         roomId,
         playerEvent,
     };
     sendMessageThroughWebSocket(eventForServer);
 }
 
-function sendMessageThroughWebSocket(message: EventForServer) {
+function sendMessageThroughWebSocket(message: MessageFromExtensionToServer) {
     wsClient.send(JSON.stringify(message));
 }
 

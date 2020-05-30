@@ -1,9 +1,6 @@
-import { EventBridgeEvent, APIGatewayProxyResult } from 'aws-lambda';
-import {
-    Room,
-    MessageType,
-    BroadcastEventType,
-} from '../../extension/src/types';
+import { APIGatewayProxyResult, EventBridgeEvent } from 'aws-lambda';
+import { MessageFromExtensionToServerType } from '../../extension/src/communications/from-extension-to-server';
+import { BroadcastEventType, Room } from '../../extension/src/types';
 
 // @ts-ignore
 //eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,7 +46,7 @@ export type IEventBridgeEvent = EventBridgeEvent<
 >;
 
 export interface IAPIGatewayProxyEvent {
-    type: MessageType;
+    type: MessageFromExtensionToServerType;
     requestContext: IRequestContext;
     data: IApplicationEvent;
 }

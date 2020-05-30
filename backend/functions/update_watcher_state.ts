@@ -1,9 +1,10 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+import { UpdateWatcherState } from '../../extension/src/communications/from-extension-to-server';
+import { Room } from '../../extension/src/types';
 import { dynamoDB } from '../libs/dynamodb-utils';
 import { IEvent, success } from '../libs/response';
 import { ensureRoomJoined, findRoomById } from '../libs/room-operations';
 import { updateWatcherVideoStatus } from '../libs/watcher-operations';
-import { MediaEventForServer, Room } from './../../extension/src/types';
 
 const findAndEnsureRoomJoined = async (
     roomId: string,
@@ -30,7 +31,7 @@ const findAndEnsureRoomJoined = async (
 };
 
 export const main = async (event: IEvent) => {
-    const mediaEvent = JSON.parse(event.body) as MediaEventForServer;
+    const mediaEvent = JSON.parse(event.body) as UpdateWatcherState;
     const { roomId, playerEvent } = mediaEvent;
     const watcherId = event.requestContext.connectionId;
 
