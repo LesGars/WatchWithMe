@@ -89,7 +89,7 @@ functions:
           route: join-room
           routeResponseSelectionExpression: $default
   media_event:
-    handler: functions/media_event.main
+    handler: functions/update-watcher-state.main
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow
@@ -100,7 +100,7 @@ functions:
           - 'Fn::GetAtt': [RoomTable, Arn]
     events:
       - websocket:
-          route: media-event
+          route: update-watcher-state
           routeResponseSelectionExpression: $default
   default:
     handler: handler.defaultHandler

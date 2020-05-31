@@ -1,9 +1,9 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import {
     Room,
-    UserVideoStatus,
-    VideoSyncStatus,
+    SyncState,
     Watcher,
+    WatcherState,
 } from '../../extension/src/types';
 import {
     MediaEventType,
@@ -22,7 +22,7 @@ const assignWatcherHeartbeat = (watcher: Watcher): void => {
  * Indicate a watcher has buffered enough video from the expected video timestamp, and could schedule a sync start
  */
 const markWatcherAsReady = (watcher: Watcher) => {
-    watcher.currentVideoStatus = UserVideoStatus.READY;
+    watcher.currentVideoStatus = WatcherState.READY;
 };
 
 /* eslint-disable complexity */
@@ -47,16 +47,16 @@ const assignWatcherStatus = (
             the play event should not be intercepted by the extension
           */
             switch (room.videoStatus) {
-                case VideoSyncStatus.PAUSED: {
+                case SyncState.PAUSED: {
                     markWatcherAsReady(watcher);
                     break;
                 }
-                case VideoSyncStatus.WAITING: {
+                case SyncState.WAITING: {
                     markWatcherAsReady(watcher);
                     break;
                 }
-                case VideoSyncStatus.PLAYING: {
-                    watcher.currentVideoStatus = UserVideoStatus.PLAYING;
+                case SyncState.PLAYING: {
+                    watcher.currentVideoStatus = WatcherState.PLAYING;
                     break;
                 }
             }
@@ -66,7 +66,7 @@ const assignWatcherStatus = (
             // TODO
             break;
         case MediaEventType.PAUSE:
-            watcher.currentVideoStatus = UserVideoStatus.BUFFERING;
+            watcher.currentVideoStatus = WatcherState.BUFFERING;
             break;
     }
 };

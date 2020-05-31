@@ -1,4 +1,3 @@
-import { PlayerEvent } from "./contentscript/player";
 // @ts-nocheck
 
 declare const browser: typeof chrome;
@@ -85,32 +84,50 @@ export class Extension {
 }
 
 /**
- * Those messages are also used for routing to appropriate AWS lambda function
- * Keep them in sync with serverless.yml (and in dash-case)
+ * An explicit user action (click on play/pasue button, click on the timeline to seek)
+ * These actions are extected to trigger changes to the Watcher State,
+ * and should never be transmitted to the server
  */
-export enum MessageType { // those values must be in sync with AWS lambda routes of servrless.yml
-    DEBUG_MESSAGE,
-    MEDIA_EVENT = "media-event",
-    CHANGE_ROOM = "join-room",
+export enum UserAction {
+    PLAY,
+    PAUSE,
+    SEEK,
 }
 
 /**
- * Video status for one user
+ * Video status for one video player
+ * Every non-transitional update should be transmitted to the server
  */
-export enum UserVideoStatus {
+export enum WatcherState {
     UNKNOWN = "UNKNOWN", // Still Loading of DOM, or not on the video URL, or any othe reason (no info from Video API)
     BUFFERING = "BUFFERING", // has not reached minBufferLength (video is paused or not started)
-    PLAYING = "PLAYING", // is currently playing the video
     READY = "READY", // (equivalent of Waiting or Paused) has buffered enough of the video, is pending start signal
+    PLAY_SCHEDULED = "PLAY_SCHEDULED", // Has scheduled play at a certain time
+    PLAYING = "PLAYING", // is currently playing the video
+}
+
+/**
+ * The desired synchronized state between participants
+ */
+export enum SyncIntent {
+    PLAY = "PLAY",
+    PAUSE = "PAUSE",
 }
 
 /**
  * Video status for all players that have completed initial Sync
  */
-export enum VideoSyncStatus {
+export enum SyncState {
     PAUSED = "PAUSED", // video is paused and no action should be taken (apart from buffering)
     WAITING = "WAITING", // waiting for all players to be in waiting status before playing
+    PLAY_SCHEDULED = "PLAY_SCHEDULED", // Indicate that the server has issues a sync play command to the players, and is waiting for players to start
     PLAYING = "PLAYING", // video should playing normally on all user browsers
+}
+
+export enum SyncCommandType {
+    SCHEDULE_PLAY = "SCHEDULE_PLAY",
+    PAUSE = "PAUSE",
+    CHANGE_VIDEO = "CHANGE_VIDEO",
 }
 
 /**
@@ -123,7 +140,7 @@ export interface Watcher {
     joinedAt: Date;
     lastVideoTimestamp: Date | undefined; // Last video timestamp received during sync events of said user
     lastHeartbeat: Date; // date of last event during sync received from said user
-    currentVideoStatus: UserVideoStatus;
+    currentVideoStatus: WatcherState;
     initialSync: boolean; // Must default to false
 
     userAgent: string; // Might help debug issues later
@@ -149,18 +166,15 @@ export interface Room {
     syncStartedTimestamp: Date | undefined; // Timestamp of the video when it was first watched synchronously
 
     // Sync values
-    videoStatus: VideoSyncStatus;
+    videoStatus: SyncState;
     resumePlayingAt: Date | undefined; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
     resumePlayingTimestamp: Date | undefined; // Timestamp that should be seeked by users before video can start
 }
 
 export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
 
-export enum BroadcastEventType {
-    NEW_WATCHER = "NEW_WATCHER",
-}
-
 /**
+ * @deprecated - use MessageFromXToY in communications folder
  * Event coming from the websocket
  */
 export interface BroadcastEvent {
@@ -168,11 +182,9 @@ export interface BroadcastEvent {
     room: Room;
 }
 
-export interface EventForServer {
-    roomId: string;
-    action: MessageType; // Route to AWS Lambda function
-}
-
-export interface MediaEventForServer extends EventForServer {
-    playerEvent: PlayerEvent;
+/**
+ * @deprecated - see BroadcastEvent deprecation
+ */
+export enum BroadcastEventType {
+    NEW_WATCHER = "NEW_WATCHER",
 }

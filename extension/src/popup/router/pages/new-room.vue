@@ -28,7 +28,7 @@ import Vue from "vue";
 import VueClipboard from "vue-clipboard2";
 import Component from "vue-class-component";
 import get from "lodash/get";
-import { MessageType } from "../../../types";
+import { MessageFromExtensionToServerType } from "../../../communications/from-extension-to-server";
 import { v4 as uuid } from "uuid";
 import { browser } from "webextension-polyfill-ts";
 
@@ -56,7 +56,10 @@ export default class NewRoom extends Vue {
         const popupPort = browser.runtime.connect(undefined, {
             name: "PORT-PS",
         });
-        popupPort.postMessage({ type: MessageType.CHANGE_ROOM, roomId });
+        popupPort.postMessage({
+            type: MessageFromExtensionToServerType.CHANGE_ROOM,
+            roomId,
+        });
         browser.tabs
             .query({ active: true, currentWindow: true })
             .then((tabs) => {
@@ -64,7 +67,7 @@ export default class NewRoom extends Vue {
                 linkWithRoomId.searchParams.set("roomId", roomId);
                 this.linkWithRoomId = linkWithRoomId.href;
                 popupPort.postMessage({
-                    type: MessageType.DEBUG_MESSAGE,
+                    type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
                     message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`,
                 });
             });
