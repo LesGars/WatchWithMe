@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.71.3
+  serverless: 1.72.0
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2_typescript@3.9.3+webpack@4.43.0
@@ -1561,9 +1561,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lOUyRopNTKJYVEU9T6stp2irwlTDsYMmUKBOUjnMcwGveuUfIJqrCOtFLtIPPj3XJlbZy5F68l4KP9rZ8Ipang==
-  /@serverless/components/2.30.11:
+  /@serverless/components/2.30.12:
     dependencies:
-      '@serverless/inquirer': 1.1.1
+      '@serverless/inquirer': 1.1.2
       '@serverless/platform-client': 0.25.7
       '@serverless/platform-client-china': 1.0.13
       '@serverless/platform-sdk': 2.3.0
@@ -1579,7 +1579,7 @@ packages:
       graphlib: 2.1.8
       https-proxy-agent: 5.0.0
       ini: 1.3.5
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
       minimist: 1.2.5
       moment: 2.25.3
       open: 7.0.3
@@ -1593,22 +1593,22 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-hji/a7li5prjGYf958kxXfwmiJZlVhrIR7WrdyV84FYUdqnwXc15ReJaL5LDl0TU0AeXnye7mpcHJ/Dlilzc8w==
+      integrity: sha512-cBqo2FcvKRIUF9IR8lwvTzQIdpx5AnDbGJRCz1xCFzLgav/Yaow46TY7eQApDEZI0/Pf6E6mSRAdGFx3PgxA0w==
   /@serverless/core/1.1.2:
     dependencies:
       fs-extra: 7.0.1
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
       package-json: 6.5.0
       ramda: 0.26.1
       semver: 6.3.0
     dev: true
     resolution:
       integrity: sha512-PY7gH+7aQ+MltcUD7SRDuQODJ9Sav9HhFJsgOiyf8IVo7XVD6FxZIsSnpMI6paSkptOB7n+0Jz03gNlEkKetQQ==
-  /@serverless/enterprise-plugin/3.6.12:
+  /@serverless/enterprise-plugin/3.6.13:
     dependencies:
       '@serverless/event-mocks': 1.1.1
-      '@serverless/platform-client': 0.25.7
-      '@serverless/platform-sdk': 2.3.0
+      '@serverless/platform-client': 0.25.14
+      '@serverless/platform-sdk': 2.3.1
       chalk: 2.4.2
       child-process-ext: 2.1.1
       chokidar: 3.4.0
@@ -1619,12 +1619,12 @@ packages:
       fs-extra: 8.1.0
       iso8601-duration: 1.2.0
       isomorphic-fetch: 2.2.1
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
       jsonata: 1.8.3
       jszip: 3.4.0
       lodash: 4.17.15
       memoizee: 0.4.14
-      moment: 2.25.3
+      moment: 2.26.0
       node-dir: 0.1.17
       node-fetch: 2.6.0
       regenerator-runtime: 0.13.5
@@ -1632,13 +1632,13 @@ packages:
       simple-git: 1.132.0
       source-map-support: 0.5.19
       update-notifier: 2.5.0
-      uuid: 8.0.0
+      uuid: 3.4.0
       yamljs: 0.3.0
     dev: true
     engines:
       node: '>=6.0'
     resolution:
-      integrity: sha512-AKfVXBQefJV0RIg3YpDlF9Vep3aMzjpD6lP+lgSVKUVUMEaZnp4x9Y40wc+O7pwAmowM033sFxoIkADEofv1Sg==
+      integrity: sha512-L7DOqo7LviAbYIySV5n+sURwyI5rf6IfVKRzFF3CK/EtbHUBJn7gEdHNo86Xmsm4I251ZggGSsorQvSIzT2VUQ==
   /@serverless/event-mocks/1.1.1:
     dependencies:
       '@types/lodash': 4.14.151
@@ -1646,14 +1646,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YAV5V/y+XIOfd+HEVeXfPWZb8C6QLruFk9tBivoX2roQLWVq145s4uxf8D0QioCueuRzkukHUS4JIj+KVoS34A==
-  /@serverless/inquirer/1.1.1:
+  /@serverless/inquirer/1.1.2:
     dependencies:
       chalk: 2.4.2
-      inquirer: 7.1.0
+      inquirer: 6.5.2
       ncjsm: 4.0.1
     dev: true
     resolution:
-      integrity: sha512-kzrFQ6/TV+z6WvMEEfOzMWEorClMrCJy4z+lcdaiEN8xe+VH+TcxT7O9tsgj4pYlHioT3raDPjTBX9jvPbzo3Q==
+      integrity: sha512-2c5A6HSWwXluknPNJ2s+Z4WfBwP7Kn6kgsEKD+5xlXpDpBFsRku/xJyO9eqRCwxTM41stgHNC6TRsZ03+wH/rw==
   /@serverless/platform-client-china/1.0.13:
     dependencies:
       '@serverless/utils-china': 0.1.12
@@ -1661,7 +1661,7 @@ packages:
       dotenv: 8.2.0
       https-proxy-agent: 5.0.0
       isomorphic-ws: 4.0.1_ws@7.3.0
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
       jwt-decode: 2.2.0
       minimatch: 3.0.4
       querystring: 0.2.0
@@ -1671,13 +1671,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-E28NGdvx1GiJ0hC94QXISLU4qJ6GRTb+DrZRaEZcBczNEN39RNbbQncrpBx+CsKjrzZuY3aYOKcyK9vUMCzG6A==
+  /@serverless/platform-client/0.25.14:
+    dependencies:
+      adm-zip: 0.4.14
+      axios: 0.19.2
+      https-proxy-agent: 5.0.0
+      isomorphic-ws: 4.0.1_ws@7.3.0
+      js-yaml: 3.14.0
+      jwt-decode: 2.2.0
+      minimatch: 3.0.4
+      querystring: 0.2.0
+      traverse: 0.6.6
+      ws: 7.3.0
+    dev: true
+    resolution:
+      integrity: sha512-ww5GBt5QEHYppLH8X+gEFiuMoFu9xdXK0bEROYbuxUliiB0IfXTXLzWR5whhi/S94R7pTnJ4O+WUiFj0PcV/tQ==
   /@serverless/platform-client/0.25.7:
     dependencies:
       adm-zip: 0.4.14
       axios: 0.19.2
       https-proxy-agent: 5.0.0
       isomorphic-ws: 4.0.1_ws@7.3.0
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
       jwt-decode: 2.2.0
       minimatch: 3.0.4
       querystring: 0.2.0
@@ -1705,6 +1720,25 @@ packages:
     dev: true
     resolution:
       integrity: sha512-+9TiMYDVKJOyDWg9p/k0kmGVZ3+rjB8DXpACDxxyUChDSsRS55CTJnt321Yx7APfHctNRSnv3ubYmx7oGSTETQ==
+  /@serverless/platform-sdk/2.3.1:
+    dependencies:
+      chalk: 2.4.2
+      https-proxy-agent: 4.0.0
+      is-docker: 1.1.0
+      isomorphic-fetch: 2.2.1
+      jwt-decode: 2.2.0
+      opn: 5.5.0
+      querystring: 0.2.0
+      ramda: 0.25.0
+      rc: 1.2.8
+      regenerator-runtime: 0.13.5
+      source-map-support: 0.5.19
+      uuid: 3.4.0
+      write-file-atomic: 2.4.3
+      ws: 6.2.1
+    dev: true
+    resolution:
+      integrity: sha512-EiSizya9bK0+5uae3GH9uXuWAchZplkLO0tWOAXtnU5QWSg5zicANL9jKCw0dyhjUOvbcO0ddhFlG8EGYvJFSA==
   /@serverless/template/1.1.3:
     dependencies:
       '@serverless/component-metrics': 1.0.8
@@ -1833,7 +1867,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 13.13.6
+      '@types/node': 13.13.9
     dev: true
     resolution:
       integrity: sha512-1Bh06cbWJUHMC97acuD6UMG29nMt0Aqz1vF3guLfG+kHHJhy3AyohZFFxYk2f7Q1SQIrNwvncxAE0N/9s70F2w==
@@ -1887,10 +1921,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3ySmiBYJPqgjiHA7oEaIo2Rzz0HrOZ7yrNO5HWyaE5q0lQ3BppDZ3N53Miz8bw2I7gh1/zir2MGVZBvpb1zq9g==
-  /@types/node/13.13.6:
-    dev: true
-    resolution:
-      integrity: sha512-zqRj8ugfROCjXCNbmPBe2mmQ0fJWP9lQaN519hwunOgpHgVykme4G6FW95++dyNFDvJUk4rtExkVkL0eciu5NA==
   /@types/node/13.13.9:
     dev: true
     resolution:
@@ -1976,26 +2006,6 @@ packages:
         optional: true
     resolution:
       integrity: sha512-03ilO0ucSD0EPTw2X4PntSIRFtDPWjrVq7C3/Z3VQHRC7+13YB55rcJI3Jt+YgeHbjUdJPcPa7b23rXCBokuyA==
-  /@typescript-eslint/typescript-estree/2.34.0_typescript@3.9.2:
-    dependencies:
-      debug: 4.1.1
-      eslint-visitor-keys: 1.1.0
-      glob: 7.1.6
-      is-glob: 4.0.1
-      lodash: 4.17.15
-      semver: 7.3.2
-      tsutils: 3.17.1_typescript@3.9.2
-      typescript: 3.9.2
-    dev: true
-    engines:
-      node: ^8.10.0 || ^10.13.0 || >=11.10.1
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    resolution:
-      integrity: sha512-OMAr+nJWKdlVM9LOqCqh3pQQPwxHAN7Du8DR6dmwCrAmxtiXQnhHJ6tBNtf+cggqfo51SG/FCwnKhXCIM7hnVg==
   /@typescript-eslint/typescript-estree/2.34.0_typescript@3.9.3:
     dependencies:
       debug: 4.1.1
@@ -2514,9 +2524,9 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-xPOszNOaSXTRs8VGXaMbhTKXdlq2TlDRfFRVEGxkZrtow87hEIVZGAUSUme2e3GHqHUDnySwcufrUpUPUizOKQ==
-  /aws-sdk/2.683.0:
+  /aws-sdk/2.687.0:
     dependencies:
-      buffer: 4.9.1
+      buffer: 4.9.2
       events: 1.1.1
       ieee754: 1.1.13
       jmespath: 0.15.0
@@ -2529,7 +2539,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-mi1175pJMbQhCWhBEQ5ccQ3SDE+SJzbapuAQtcb7tdLLV7dPKf4zQXhpqK1uG0dysm8NhsNtgxwA2diYOKWlTg==
+      integrity: sha512-gUIL4YXWdg3dv1QJMs0PCLpaHRe4DtPIYgRh3PPLJHnbIETLQdiA98co6qthAXIIWKx2hET4d1BhnAlAp77zQw==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -3381,6 +3391,12 @@ packages:
       node: '>= 0.6.x'
     resolution:
       integrity: sha1-Br42f+v9oMMwqh4qBy09yXYkJdQ=
+  /commander/4.1.1:
+    dev: true
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
   /commondir/1.0.1:
     dev: true
     resolution:
@@ -3658,10 +3674,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==
-  /dayjs/1.8.27:
+  /dayjs/1.8.28:
     dev: true
     resolution:
-      integrity: sha512-Jpa2acjWIeOkg8KURUHICk0EqnEFSSF5eMEscsOgyJ92ZukXwmpmRkPSUka7KHSfbj5eKH30ieosYip+ky9emQ==
+      integrity: sha512-ccnYgKC0/hPSGXxj7Ju6AV/BP4HUkXC2u15mikXT5mX9YorEaoi1bEKOmAqdkJHN4EEkmAf97SpH66Try5Mbeg==
   /debug/2.2.0:
     dependencies:
       ms: 0.7.1
@@ -3858,7 +3874,7 @@ packages:
       debug: 4.1.1
       filing-cabinet: 2.5.1
       precinct: 6.2.0
-      typescript: 3.9.2
+      typescript: 3.9.3
     dev: true
     engines:
       node: '>=6.0.0'
@@ -3954,10 +3970,10 @@ packages:
       integrity: sha1-UK7n24uruZA4HwEMY/q7pbWOVM0=
   /detective-typescript/5.8.0:
     dependencies:
-      '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.2
+      '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.3
       ast-module-types: 2.6.0
       node-source-walk: 4.2.0
-      typescript: 3.9.2
+      typescript: 3.9.3
     dev: true
     engines:
       node: '>=6.0'
@@ -4837,7 +4853,7 @@ packages:
       resolve-dependency-path: 2.0.0
       sass-lookup: 3.0.0
       stylus-lookup: 3.0.2
-      typescript: 3.9.2
+      typescript: 3.9.3
     dev: true
     engines:
       node: '>=6.0.0'
@@ -6667,21 +6683,22 @@ packages:
     dev: true
     resolution:
       integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==
-  /json-refs/2.1.7:
+  /json-refs/3.0.15:
     dependencies:
-      commander: 2.20.3
+      commander: 4.1.1
       graphlib: 2.1.8
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
+      lodash: 4.17.15
       native-promise-only: 0.8.1
       path-loader: 1.0.10
-      slash: 1.0.0
-      uri-js: 3.0.2
+      slash: 3.0.0
+      uri-js: 4.2.2
     dev: true
     engines:
       node: '>=0.8'
     hasBin: true
     resolution:
-      integrity: sha1-uesB/in16j6Sh48VrqEK04taz4k=
+      integrity: sha512-0vOQd9eLNBL18EGl5yYaO44GhixmImes2wiYn9Z3sag3QnehWrYWlB9AFtMxCL2Bj3fyxgDYkxGFEU/chlYssw==
   /json-schema-traverse/0.4.1:
     dev: true
     resolution:
@@ -7271,6 +7288,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-PuYv0PHxZvzc15Sp8ybUCoQ+xpyPWvjOuK72a5ovzp2LI32rJXOiIfyoFoYvG3s6EwwrdkMyWuRiEHSZRLJNdg==
+  /moment/2.26.0:
+    dev: true
+    resolution:
+      integrity: sha512-oIixUO+OamkUkwjhAVE18rAMfRJNsNe/Stid/gwHSOfHrOtw9EhAY2AHvdKZ/k/MggcYELFCJz/Sn2pL8b8JMw==
   /move-concurrently/1.0.1:
     dependencies:
       aproba: 1.2.0
@@ -7442,7 +7463,7 @@ packages:
       integrity: sha512-wp8zyQVwef2hpZ/dJH7SfSrIPD6YoJz6BDQDpGEkcA0s3LpAQoxBIYmfIq6QAhC1DhwsyCgTaTTcONwX8qzCuQ==
   /node-source-walk/4.2.0:
     dependencies:
-      '@babel/parser': 7.9.6
+      '@babel/parser': 7.10.2
     dev: true
     engines:
       node: '>=6.0'
@@ -8161,7 +8182,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.1
-      '@types/node': 13.13.6
+      '@types/node': 13.13.9
       long: 4.0.0
     dev: true
     hasBin: true
@@ -8848,14 +8869,15 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-/p0Ht87AeQb13Vz3lEcT72vE3GOyDX70iX8fTuDZ0xMwfKtRogRkYzuV89HKc2ULIHx++g/NGTRU6nSGpA3snA==
-  /serverless/1.71.3:
+  /serverless/1.72.0:
     dependencies:
       '@serverless/cli': 1.4.0
-      '@serverless/components': 2.30.11
-      '@serverless/enterprise-plugin': 3.6.12
+      '@serverless/components': 2.30.12
+      '@serverless/enterprise-plugin': 3.6.13
+      '@serverless/inquirer': 1.1.2
       archiver: 3.1.1
       async: 1.5.2
-      aws-sdk: 2.683.0
+      aws-sdk: 2.687.0
       bluebird: 3.7.2
       boxen: 3.2.0
       cachedir: 2.3.0
@@ -8863,7 +8885,7 @@ packages:
       child-process-ext: 2.1.1
       ci-info: 2.0.0
       d: 1.0.1
-      dayjs: 1.8.27
+      dayjs: 1.8.28
       decompress: 4.2.1
       download: 7.1.0
       essentials: 1.1.1
@@ -8874,12 +8896,11 @@ packages:
       globby: 9.2.0
       graceful-fs: 4.2.4
       https-proxy-agent: 5.0.0
-      inquirer: 6.5.2
       is-docker: 1.1.0
       is-wsl: 2.2.0
-      js-yaml: 3.13.1
+      js-yaml: 3.14.0
       json-cycle: 1.3.0
-      json-refs: 2.1.7
+      json-refs: 3.0.15
       jwt-decode: 2.2.0
       lodash: 4.17.15
       memoizee: 0.4.14
@@ -8898,7 +8919,7 @@ packages:
       tabtab: 3.0.2
       untildify: 3.0.3
       update-notifier: 2.5.0
-      uuid: 8.0.0
+      uuid: 3.4.0
       write-file-atomic: 2.4.3
       yaml-ast-parser: 0.0.43
       yargs-parser: 18.1.3
@@ -8908,7 +8929,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-QSUfzHhmpZLO6FrvdbpevfuBYYE519gLq6iBobclZ4Kj0NdG3VLBCJV6Dx2NZt/28I7F4O4470qXMFK3OKfQUA==
+      integrity: sha512-+ylbI53V3axZsOVaN4CxHERQAwtJ03B5r3IZfTy1//ZnM8uLlhMPu1jXkKaQ+Drolk6+VtgZwx+zzjzyKSzt6Q==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -9001,12 +9022,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
-  /slash/1.0.0:
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
   /slash/2.0.0:
     dev: true
     engines:
@@ -9841,17 +9856,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tsutils/3.17.1_typescript@3.9.2:
-    dependencies:
-      tslib: 1.13.0
-      typescript: 3.9.2
-    dev: true
-    engines:
-      node: '>= 6'
-    peerDependencies:
-      typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
-    resolution:
-      integrity: sha512-kzeQ5B8H3w60nFY2g8cJIuH7JDpsALXySGtwGJ0p2LSjLgay3NdIpqq5SoOBe46bKDW2iq25irHCr8wjomUS2g==
   /tsutils/3.17.1_typescript@3.9.3:
     dependencies:
       tslib: 1.13.0
@@ -9933,13 +9937,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /typescript/3.9.2:
-    dev: true
-    engines:
-      node: '>=4.2.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-q2ktq4n/uLuNNShyayit+DTobV2ApPEo/6so68JaD5ojvc/6GClBipedB9zNWYxRSAlZXAe405Rlijzl6qDiSw==
   /typescript/3.9.3:
     dev: true
     engines:
@@ -10066,12 +10063,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-gwMdhgJHGuj/+wHJJs9e6PcCszpxR1b236igrOkUofGhqJuG+amlIKwApH1IW1WWl7ovZxsX49lMBWLxSdm5Dw==
-  /uri-js/3.0.2:
-    dependencies:
-      punycode: 2.1.1
-    dev: true
-    resolution:
-      integrity: sha1-+QuFhQf4HepNz7s8TD2/orVX+qo=
   /uri-js/4.2.2:
     dependencies:
       punycode: 2.1.1
@@ -10161,11 +10152,6 @@ packages:
     optional: true
     resolution:
       integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
-  /uuid/8.0.0:
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw==
   /uuid/8.1.0:
     dev: false
     hasBin: true
@@ -10588,7 +10574,7 @@ specifiers:
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.71.3
+  serverless: 1.72.0
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2
