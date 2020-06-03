@@ -6,7 +6,7 @@ devDependencies:
   '@babel/preset-env': 7.10.2_@babel+core@7.10.2
   '@babel/preset-typescript': 7.10.1_@babel+core@7.10.2
   '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
-  '@types/aws-lambda': 8.10.52
+  '@types/aws-lambda': 8.10.53
   '@types/jest': 25.2.3
   '@types/node': 13.13.9
   '@types/uuid': 8.0.0
@@ -1818,10 +1818,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-5t94Mo/+Kdvr60tJR/+pylUCwIM+ipcBIkUi4M7dtV0yCpuykOXV4GYT1aWg/iWMXyIPnfOUk4Pr6OwDoAVehw==
-  /@types/aws-lambda/8.10.52:
+  /@types/aws-lambda/8.10.53:
     dev: true
     resolution:
-      integrity: sha512-Gm8hzCpdDj4/wlS8HA6nPPM5nHTF3Wjv/d6n7J2fdcJF4GtAIMbG7Wm8xKXY02K/Yqo8fzGw7PfbbkP9IeVlCg==
+      integrity: sha512-zHIgKKqwcdeHkPMPKd47DedJ4b+Tv01VGosWtJDMa8s6cnx03IeNagFWEpoxVI+H34fOvxtbqecJddpuVFbU2w==
   /@types/babel__core/7.1.7:
     dependencies:
       '@babel/parser': 7.9.6
@@ -10560,7 +10560,7 @@ specifiers:
   '@babel/preset-env': 7.10.2
   '@babel/preset-typescript': 7.10.1
   '@shelf/jest-dynamodb': 1.7.0
-  '@types/aws-lambda': 8.10.52
+  '@types/aws-lambda': 8.10.53
   '@types/jest': 25.2.3
   '@types/node': 13.13.9
   '@types/uuid': 8.0.0
