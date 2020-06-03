@@ -2,7 +2,7 @@ devDependencies:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.7
+  lint-staged: 10.2.8
   prettier: 2.0.5
   stylelint: 13.5.0
 lockfileVersion: 5.1
@@ -1596,7 +1596,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /lint-staged/10.2.7:
+  /lint-staged/10.2.8:
     dependencies:
       chalk: 4.0.0
       cli-truncate: 2.1.0
@@ -1615,7 +1615,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-srod2bTpF8riaLz+Bgr6v0mI/nSntE8M9jbh4WwAhoosx0G7RKEUIG7mI5Nu5SMbTF9o8GROPgK0Lhf5cDnUUw==
+      integrity: sha512-36VUVhZuTJUG0yuSv66o+/Cep9Uwp+od6VkjNxQjHKWvHClVD0SjAZx++4H3zgdr6DxPoUl1y/PVygfPhzAXQQ==
   /listr2/2.0.4:
     dependencies:
       '@samverschueren/stream-to-observable': 0.3.0
@@ -3115,6 +3115,6 @@ specifiers:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.7
+  lint-staged: 10.2.8
   prettier: 2.0.5
   stylelint: 13.5.0
