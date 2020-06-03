@@ -68,7 +68,7 @@ devDependencies:
   sinon: 9.0.2
   string-replace-loader: 2.3.0_webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
-  terser-webpack-plugin: 3.0.2_webpack@4.43.0
+  terser-webpack-plugin: 3.0.3_webpack@4.43.0
   ts-jest: 25.5.1_jest@26.0.1+typescript@3.9.3
   ts-loader: 7.0.5_typescript@3.9.3
   tsconfig-paths-webpack-plugin: 3.2.0
@@ -2538,6 +2538,14 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
+  /@npmcli/move-file/1.0.1:
+    dependencies:
+      mkdirp: 1.0.4
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-Uv6h1sT+0DrblvIrolFtbvM1FgWm+/sy4B3pvLp67Zys+thcukzS5ekn7HsZFGpWP4Q3fYJCljbWQE/XivMRLw==
   /@sindresorhus/is/0.14.0:
     dev: true
     engines:
@@ -4219,8 +4227,9 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-5ZvAxd05HDDU+y9BVvcqYu2LLXmPnQ0hW62h32g4xBTgL/MppR4/04NHfj/ycM2y6lmTnbw6HVi+1eN0Psba6w==
-  /cacache/15.0.3:
+  /cacache/15.0.4:
     dependencies:
+      '@npmcli/move-file': 1.0.1
       chownr: 2.0.0
       fs-minipass: 2.1.0
       glob: 7.1.6
@@ -4231,7 +4240,6 @@ packages:
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.2
       mkdirp: 1.0.4
-      move-file: 2.0.0
       p-map: 4.0.0
       promise-inflight: 1.0.1
       rimraf: 3.0.2
@@ -4242,7 +4250,7 @@ packages:
     engines:
       node: '>= 10'
     resolution:
-      integrity: sha512-bc3jKYjqv7k4pWh7I/ixIjfcjPul4V4jme/WbjvwGS5LzoPL/GzXr4C5EgPNLO/QEZl9Oi61iGitYEdwcrwLCQ==
+      integrity: sha512-YlnKQqTbD/6iyoJvEY3KJftjrdBYroCbxxYXzhOzsFLWlp6KX4BOlEf4mTx0cMUfVaTS3ENL2QtDWeRYoGLkkw==
   /cache-base/1.0.1:
     dependencies:
       collection-visit: 1.0.0
@@ -9439,14 +9447,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-viwAX9oy4LKa8fBdfEszIUxwH5I=
-  /move-file/2.0.0:
-    dependencies:
-      path-exists: 4.0.0
-    dev: true
-    engines:
-      node: '>=10.17'
-    resolution:
-      integrity: sha512-cdkdhNCgbP5dvS4tlGxZbD+nloio9GIimP57EjqFhwLcMjnU+XJKAZzlmg/TN/AK1LuNAdTSvm3CPPP4Xkv0iQ==
   /ms/2.0.0:
     dev: true
     resolution:
@@ -11848,6 +11848,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-skZcHYw2vEX4bw90nAr2iTTsz6x2SrHEnfxgKYmZlvJYBEZrvbKtobJWlQ20zczKb3bsHHXXTYt48zBA7ni9cw==
+  /serialize-javascript/3.1.0:
+    dependencies:
+      randombytes: 2.1.0
+    dev: true
+    resolution:
+      integrity: sha512-JIJT1DGiWmIKhzRsG91aS6Ze4sFUrYbltlkg2onR5OrnNM02Kl/hnY/T4FN2omvyeBbQmMJv+K4cPOpGzOTFBg==
   /serve-index/1.9.1:
     dependencies:
       accepts: 1.3.7
@@ -12740,14 +12746,14 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-I8IDsQwZrqjdmOicNeE8L/MhwatAap3mUrtcAKJuilsemUNcX+Hier/eAzwStVqhlCxq0aG3ni9bK/0BESXkTg==
-  /terser-webpack-plugin/3.0.2_webpack@4.43.0:
+  /terser-webpack-plugin/3.0.3_webpack@4.43.0:
     dependencies:
-      cacache: 15.0.3
+      cacache: 15.0.4
       find-cache-dir: 3.3.1
       jest-worker: 26.0.0
       p-limit: 2.3.0
       schema-utils: 2.6.6
-      serialize-javascript: 3.0.0
+      serialize-javascript: 3.1.0
       source-map: 0.6.1
       terser: 4.6.13
       webpack: 4.43.0_webpack@4.43.0
@@ -12758,7 +12764,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-QeBHLJzKJHCnrPNlZj5EmOF6wwvzpVGDHvTrySIH8+jZEXfcKKCiriRmF6945rKzuZDnkOEU/LDv7qtPiiyP/Q==
+      integrity: sha512-bZFnotuIKq5Rqzrs+qIwFzGdKdffV9epG5vDSEbYzvKAhPeR5RbbrQysfPgbIIMhNAQtZD2hGwBfSKUXjXZZZw==
   /terser/4.6.12:
     dependencies:
       commander: 2.20.3
@@ -14292,7 +14298,7 @@ specifiers:
   sinon: 9.0.2
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
-  terser-webpack-plugin: 3.0.2
+  terser-webpack-plugin: 3.0.3
   ts-jest: 25.5.1
   ts-loader: 7.0.5
   tsconfig-paths-webpack-plugin: 3.2.0
