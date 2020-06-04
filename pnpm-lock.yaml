@@ -2,7 +2,7 @@ devDependencies:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.8
+  lint-staged: 10.2.9
   prettier: 2.0.5
   stylelint: 13.5.0
 lockfileVersion: 5.1
@@ -350,14 +350,6 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-1V9XOY4rDW0rehzbrcqAmHnz8e7SKvX27gh8Gt2WgB0+pdzdiLV83p72kZPU+jvMbS1qU5mauP2iOvO8rhmurQ==
-  /@samverschueren/stream-to-observable/0.3.0:
-    dependencies:
-      any-observable: 0.3.0
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-MI4Xx6LHs4Webyvi6EbspgyAb4D2Q2VtnCQ1blOJcoLS6mVa8lNN2rkIy1CVxfTUpoyIbCTkXES1rLXztFD1lg==
   /@stylelint/postcss-css-in-js/0.37.1_bb6dbc53c96499c296550e88d324f3d6:
     dependencies:
       '@babel/core': 7.9.6
@@ -470,12 +462,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==
-  /any-observable/0.3.0:
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-/FQM1EDkTsf63Ub2C6O7GuYFDsSXUwsaZDurV0np41ocwq0jthUAYCmhBX9f+KwlaCgIuWyr/4WlUQUBfKfZog==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -729,12 +715,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-beMpP7BOtTipFuW8hrJvREQ2DrRu3BE7by0ZpibtfBA+qfHYvMGTc2Yb1JMYPKg/JUw0CHYvpg796aNTSW9z7Q==
-  /clone/1.0.4:
-    dev: true
-    engines:
-      node: '>=0.8'
-    resolution:
-      integrity: sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
   /collapse-white-space/1.0.6:
     dev: true
     resolution:
@@ -911,12 +891,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=
-  /defaults/1.0.3:
-    dependencies:
-      clone: 1.0.4
-    dev: true
-    resolution:
-      integrity: sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=
   /dir-glob/3.0.1:
     dependencies:
       path-type: 4.0.0
@@ -965,12 +939,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ty0LEroTap/xfMy31oQ3XX+Q377QvWvJaha2cmuXcbmBiX2EIB5SNDQ0hp8lhvxj63WG0zOgm/4MQ/oUBdfQqg==
-  /elegant-spinner/2.0.0:
-    dev: true
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-5YRYHhvhYzV/FC4AiMdeSIg3jAYGq9xFvbhZMpPlJoBsfYgrw2DSCYeXfat6tYBu45PWiyRr3+flaCPPmviPaA==
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -1596,7 +1564,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /lint-staged/10.2.8:
+  /lint-staged/10.2.9:
     dependencies:
       chalk: 4.0.0
       cli-truncate: 2.1.0
@@ -1604,8 +1572,9 @@ packages:
       cosmiconfig: 6.0.0
       debug: 4.1.1
       dedent: 0.7.0
+      enquirer: 2.3.5
       execa: 4.0.1
-      listr2: 2.0.4
+      listr2: 2.1.0_enquirer@2.3.5
       log-symbols: 4.0.0
       micromatch: 4.0.2
       normalize-path: 3.0.0
@@ -1615,28 +1584,25 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-36VUVhZuTJUG0yuSv66o+/Cep9Uwp+od6VkjNxQjHKWvHClVD0SjAZx++4H3zgdr6DxPoUl1y/PVygfPhzAXQQ==
-  /listr2/2.0.4:
+      integrity: sha512-ziRAuXEqvJLSXg43ezBpHxRW8FOJCXISaXU//BWrxRrp5cBdRkIx7g5IsB3OI45xYGE0S6cOacfekSjDyDKF2g==
+  /listr2/2.1.0_enquirer@2.3.5:
     dependencies:
-      '@samverschueren/stream-to-observable': 0.3.0
       chalk: 4.0.0
-      cli-cursor: 3.1.0
       cli-truncate: 2.1.0
-      elegant-spinner: 2.0.0
       enquirer: 2.3.5
       figures: 3.2.0
       indent-string: 4.0.0
       log-update: 4.0.0
       p-map: 4.0.0
-      pad: 3.2.0
       rxjs: 6.5.5
       through: 2.3.8
-      uuid: 7.0.3
     dev: true
     engines:
       node: '>=10.0.0'
+    peerDependencies:
+      enquirer: '>= 2.3.0 < 3'
     resolution:
-      integrity: sha512-oJaAcplPsa72rKW0eg4P4LbEJjhH+UO2I8uqR/I2wzHrVg16ohSfUy0SlcHS21zfYXxtsUpL8YXGHjyfWMR0cg==
+      integrity: sha512-pWrbMLO+6jxGbgAasTLUzfRYdBaQvv6sNTWDfIX8ENBNmTwt/eafZ/LlJ66/dNaDnEhzCpWricLH4U9cjSAHYg==
   /load-json-file/4.0.0:
     dependencies:
       graceful-fs: 4.2.3
@@ -1989,14 +1955,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
-  /pad/3.2.0:
-    dependencies:
-      wcwidth: 1.0.1
-    dev: true
-    engines:
-      node: '>= 4.0.0'
-    resolution:
-      integrity: sha512-2u0TrjcGbOjBTJpyewEl4hBO3OeX5wWue7eIFPzQTg6wFSvoaHcBTTUY5m+n0hd04gmTCPuY0kCpVIVuw5etwg==
   /parent-module/1.0.1:
     dependencies:
       callsites: 3.1.0
@@ -2988,11 +2946,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
-  /uuid/7.0.3:
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
   /v8-compile-cache/2.1.0:
     dev: true
     resolution:
@@ -3025,12 +2978,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lRjkpyDGjVlBA7cDQhQ+gNcvB1BGaTHYuSOcY3S7OhDmBtnzX95FhtZZDecSTDm6aajFymyve6S5DN4ZHGezdQ==
-  /wcwidth/1.0.1:
-    dependencies:
-      defaults: 1.0.3
-    dev: true
-    resolution:
-      integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
   /which-pm-runs/1.0.0:
     dev: true
     resolution:
@@ -3115,6 +3062,6 @@ specifiers:
   '@commitlint/cli': 8.3.5
   '@commitlint/config-conventional': 8.3.4
   husky: 4.2.5
-  lint-staged: 10.2.8
+  lint-staged: 10.2.9
   prettier: 2.0.5
   stylelint: 13.5.0
