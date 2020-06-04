@@ -11,7 +11,7 @@
         "husky": "4.2.5",
         "lint-staged": "10.2.9",
         "prettier": "2.0.5",
-        "stylelint": "13.5.0"
+        "stylelint": "13.6.0"
     },
     "scripts": {
         "format": "prettier --write \"{,**/}*.{java,md,json,ts,css,scss,yml}\"",
