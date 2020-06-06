@@ -28,3 +28,5 @@ export interface UpdateSyncIntent extends MessageFromExtensionToServer {
 }
 
 export interface ChangeRoom extends MessageFromExtensionToServer {}
+
+export interface WatcherDisconnects extends MessageFromExtensionToServer {}

@@ -137,6 +137,43 @@ export const joinExistingRoom = async (
     return updateWatcher(room, tableName, newWatcher, dynamoDb);
 };
 
+export const leaveRoom = async (
+    room: Room,
+    tableName: string,
+    watcherConnectionString: string,
+    dynamoDb: DocumentClient,
+): Promise<Room | undefined> => {
+    ensureRoomJoined(room, watcherConnectionString);
+    delete room.watchers[watcherConnectionString];
+
+    // TODO delete the room if there is no watcher
+    return updateRoom(room, tableName, dynamoDb);
+};
+
+export const findAndEnsureRoomJoined = async (
+    roomId: string,
+    watcherConnectionString: string,
+    dynamoDB: DocumentClient,
+): Promise<Room> => {
+    if (!process.env.ROOM_TABLE) {
+        throw new Error('env.ROOM_TABLE must be defined');
+    }
+
+    if (!roomId) {
+        console.log(
+            '[WS-S] Could not find an existing roomId in the join room request',
+        );
+        throw new Error('A room ID must be provided');
+    }
+    const room = await findRoomById(roomId, process.env.ROOM_TABLE, dynamoDB);
+    if (!room) {
+        console.log('[WS-S] Could not find room ', roomId);
+        throw new Error('Room ${roomId} does not exist and cannot be joined');
+    }
+    ensureRoomJoined(room, watcherConnectionString);
+    return room;
+};
+
 export const ensureRoomJoined = (
     room: Room,
     watcherConnectionString: string,
