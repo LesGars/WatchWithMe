@@ -1,7 +1,10 @@
 import { SyncIntent } from "../types";
 
 export enum MediaEventType {
+    NOP = "NOP",
     PLAY = "PLAY",
+    BUFFERING = "BUFFERING",
+    READY = "READY",
     SEEK = "SEEK",
     PAUSE = "PAUSE",
 }

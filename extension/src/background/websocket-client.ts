@@ -1,5 +1,7 @@
 import { BroadcastEvent, BroadcastEventType } from "../types";
 
+const log = require("debug")("ext:background:websocket");
+
 export default class WebSocketClient {
     private host: string;
     private webSocket!: WebSocket;
@@ -27,14 +29,14 @@ export default class WebSocketClient {
                 const broadcastEvent = event.data as BroadcastEvent;
                 switch (broadcastEvent.type) {
                     case BroadcastEventType.NEW_WATCHER:
-                        console.log(`A new watcher joined`);
+                        log(`A new watcher joined`);
                         break;
 
                     default:
                         break;
                 }
 
-                console.log(`[WS-S] ${broadcastEvent}`);
+                log(`[WS-S] ${broadcastEvent}`);
             };
 
             this.webSocket.onclose = () => {};
