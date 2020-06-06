@@ -1,11 +1,11 @@
 import { CS_SCRIPT_NAME } from "@/contentscript";
-import { PlayerEvent } from "@/contentscript/player";
 import { POPUP_SCRIPT_NAME } from "@/popup";
 import { browser, Runtime } from "webextension-polyfill-ts";
 import {
     MessageFromExtensionToServer,
     MessageFromExtensionToServerType,
     UpdateWatcherState,
+    PlayerEvent,
 } from "../communications/from-extension-to-server";
 import WebSocketClient from "./websocket-client";
 

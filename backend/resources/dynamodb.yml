@@ -12,4 +12,3 @@ Resources:
       BillingMode: PAY_PER_REQUEST
       StreamSpecification:
         StreamViewType: NEW_IMAGE
-        StreamEnabled: true

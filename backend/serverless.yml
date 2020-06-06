@@ -89,7 +89,7 @@ functions:
           route: join-room
           routeResponseSelectionExpression: $default
   media_event:
-    handler: functions/update-watcher-state.main
+    handler: functions/update_watcher_state.main
     iamRoleStatementsInherit: true
     iamRoleStatements:
       - Effect: Allow
