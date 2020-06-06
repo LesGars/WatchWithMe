@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import {
     Room,
@@ -7,6 +8,21 @@ import {
 } from '../../extension/src/types';
 import { marshallRoom, unmarshallRoom } from './room-marshalling';
 import { updateWatcher } from './watcher-operations';
+
+export const ensureRoomJoined = (
+    room: Room,
+    watcherConnectionString: string,
+) => {
+    if (!room.watchers[watcherConnectionString]) {
+        console.log(
+            '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
+        );
+        throw new Error(
+            `The room was not joined by watcher ${watcherConnectionString}`,
+        );
+    }
+    return room;
+};
 
 /**
  * Find a room by ID in DDB
@@ -137,6 +153,10 @@ export const joinExistingRoom = async (
     return updateWatcher(room, tableName, newWatcher, dynamoDb);
 };
 
+/**
+ * Removes a watcher from a room if there are 2 or more watchers
+ * If there is only 1 watcher, delete the room after removing the watcher
+ */
 export const leaveRoom = async (
     room: Room,
     tableName: string,
@@ -171,20 +191,5 @@ export const findAndEnsureRoomJoined = async (
         throw new Error('Room ${roomId} does not exist and cannot be joined');
     }
     ensureRoomJoined(room, watcherConnectionString);
-    return room;
-};
-
-export const ensureRoomJoined = (
-    room: Room,
-    watcherConnectionString: string,
-) => {
-    if (!room.watchers[watcherConnectionString]) {
-        console.log(
-            '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
-        );
-        throw new Error(
-            `The room was not joined by watcher ${watcherConnectionString}`,
-        );
-    }
     return room;
 };
