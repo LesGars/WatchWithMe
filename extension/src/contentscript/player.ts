@@ -1,18 +1,9 @@
 import { Runtime } from "webextension-polyfill-ts";
-import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
-
-export interface PlayerEvent {
-    mediaEventType: MediaEventType;
-    duration: number;
-    currentTime: number;
-    now: Date;
-}
-
-export enum MediaEventType {
-    PLAY = "PLAY",
-    SEEK = "SEEK",
-    PAUSE = "PAUSE",
-}
+import {
+    MessageFromExtensionToServerType,
+    MediaEventType,
+    PlayerEvent,
+} from "../communications/from-extension-to-server";
 
 /**
  * All the media events can be found here -> @see(https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events)

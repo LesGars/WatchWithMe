@@ -5,11 +5,11 @@ import {
     Watcher,
     WatcherState,
 } from '../../extension/src/types';
-import {
-    MediaEventType,
-    PlayerEvent,
-} from './../../extension/src/contentscript/player';
 import { marshallMap } from './dynamodb-utils';
+import {
+    PlayerEvent,
+    MediaEventType,
+} from '../../extension/src/communications/from-extension-to-server';
 
 /**
  * Indicate that any info was received from a given watcher websocket connection

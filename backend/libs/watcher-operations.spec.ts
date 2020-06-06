@@ -1,11 +1,10 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { v4 as uuidv4 } from 'uuid';
-import { Room, SyncState } from '../../extension/src/types';
-import { MediaEventType } from './../../extension/src/contentscript/player';
-import { WatcherState } from './../../extension/src/types';
+import { Room, SyncState, WatcherState } from '../../extension/src/types';
 import { unmarshallRoom } from './room-marshalling';
 import { createRoom, joinExistingRoom, updateRoom } from './room-operations';
 import { updateWatcherVideoStatus } from './watcher-operations';
+import { MediaEventType } from '../../extension/src/communications/from-extension-to-server';
 
 const isTest = process.env.JEST_WORKER_ID;
 const config = {
