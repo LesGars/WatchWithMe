@@ -20,7 +20,7 @@ const playEventHandler = (event) => {
     }
 };
 
-const detectIfJoiningARoomWithTHeUrl = () => {
+const detectIfJoiningARoomFromUrl = () => {
     log("Try to detect existing room");
     const roomId = new URLSearchParams(window.location.search).get("roomId");
     if (roomId) {
@@ -56,4 +56,4 @@ csPort.onMessage.addListener((event) => {
     }
 });
 
-detectIfJoiningARoomWithTHeUrl();
+detectIfJoiningARoomFromUrl();
