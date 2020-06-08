@@ -17,5 +17,3 @@ new Vue({
     router,
     render: (h) => h(App),
 });
-
-export const POPUP_SCRIPT_NAME = "WWM Popup Script";

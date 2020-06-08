@@ -1,5 +1,3 @@
-import { CS_SCRIPT_NAME } from "@/contentscript";
-import { POPUP_SCRIPT_NAME } from "@/popup";
 import { browser, Runtime } from "webextension-polyfill-ts";
 import {
     MessageFromExtensionToServer,
@@ -8,6 +6,7 @@ import {
     PlayerEvent,
 } from "../communications/from-extension-to-server";
 import WebSocketClient from "./websocket-client";
+import { CS_SCRIPT_NAME, POPUP_SCRIPT_NAME } from "@/utils/constants";
 
 const log = require("debug")("ext:background");
 log(
@@ -20,13 +19,15 @@ let portFromCS: Runtime.Port;
 let portFromPS: Runtime.Port;
 
 const logAndRememberNewConnection = (p: Runtime.Port): void => {
-    let message = `[BG] ${p.name} connected`;
+    let message = `${p.name} connected`;
 
     if (p.name === CS_SCRIPT_NAME) {
         message += ` (from tab ${p.sender?.tab?.title})`;
         // There is one new CS connection per page loaded on a tab with the extension
+        // TODO What happen if I have more than one tab with youtube on it ?
         portFromCS = p;
     } else if (p.name === POPUP_SCRIPT_NAME) {
+        message += ` (from popup)`;
         // There is one new PS connection everytime the application popup opens
         portFromPS = p;
     }
@@ -64,25 +65,31 @@ async function changeRoom(roomId: string) {
             roomId,
         };
         sendMessageThroughWebSocket(eventForServer);
-        log(`[BG] Joined WatchWithMe room ${roomId}`);
+
+        log(`Joined WatchWithMe room ${roomId}`);
     } catch (e) {
-        log(`[BG] Error joining room : ${e}`);
+        log(`Error joining room : ${e}`);
     }
-    // TODO : notify PS/CS that a room was joined (chat, etc)
+
+    const eventForEXT = {
+        type: MessageFromExtensionToServerType.CHANGE_ROOM,
+        roomId,
+    };
+
+    if (portFromCS) portFromCS.postMessage(eventForEXT);
+    if (portFromPS) portFromPS.postMessage(eventForEXT);
 }
 
 async function processMediaEvent(playerEvent: PlayerEvent) {
     const roomId =
         currentRoomId ?? (await browser.storage.sync.get("roomId"))?.roomId;
     if (!roomId) {
-        console.log(
-            `[BG] Cannot process ${playerEvent.mediaEventType} media event since no room was joined`
+        log(
+            `Cannot process ${playerEvent.mediaEventType} media event since no room was joined`
         );
         return;
     }
-    console.log(
-        `[BG] Sending ${playerEvent.mediaEventType} media event to WebSocket`
-    );
+    log(`Sending ${playerEvent.mediaEventType} media event to WebSocket`);
     const eventForServer: UpdateWatcherState = {
         action: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
         roomId,
