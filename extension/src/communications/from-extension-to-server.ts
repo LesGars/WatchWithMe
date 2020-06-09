@@ -1,5 +1,20 @@
-import { PlayerEvent } from "../contentscript/player";
 import { SyncIntent } from "../types";
+
+export enum MediaEventType {
+    NOP = "NOP",
+    PLAY = "PLAY",
+    BUFFERING = "BUFFERING",
+    READY = "READY",
+    SEEK = "SEEK",
+    PAUSE = "PAUSE",
+}
+
+export interface PlayerEvent {
+    mediaEventType: MediaEventType;
+    duration: number;
+    currentTime: number;
+    now: Date;
+}
 
 export interface MessageFromExtensionToServer {
     roomId: string;

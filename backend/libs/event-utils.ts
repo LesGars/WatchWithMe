@@ -1,9 +1,5 @@
-import {
-    IApplicationEventWrapper,
-    BroadcastEventType,
-    IEvent,
-} from './response';
-import { Room } from '../../extension/src/types';
+import { IApplicationEventWrapper, IEvent } from './response';
+import { Room, BroadcastEventType } from '../../extension/src/types';
 
 export const buildEvent = (
     type: BroadcastEventType,
