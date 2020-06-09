@@ -36,7 +36,7 @@ export default class WebSocketClient {
                         break;
                 }
 
-                log(`[WS-S] ${broadcastEvent}`);
+                log(`Received from backend ${JSON.stringify(broadcastEvent)}`);
             };
 
             this.webSocket.onclose = () => {};

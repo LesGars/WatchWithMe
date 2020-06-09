@@ -7,6 +7,22 @@ import {
 
 const log = require("debug")("ext:contentscript:player");
 
+export interface Event {
+    htmlEvent:
+        | "ratechange"
+        | "seeking"
+        | "progress"
+        | "ratechange"
+        | "canplaythrough"
+        | "play"
+        | "playing"
+        | "canplay"
+        | "seeked"
+        | "pause"
+        | "waiting";
+    type: MediaEventType;
+}
+
 /**
  * All the media events can be found here -> @see(https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events)
  * Events we need to process via the background script
@@ -16,7 +32,7 @@ const log = require("debug")("ext:contentscript:player");
  * - seeked (triggered when a user jumps to a specific timestamp and the media finish the transition - we might want to restrict who can seek vs play/pause)
  * - canplay (triggered when the media buffer is big enough to start playing)
  */
-const events = [
+export const events: Event[] = [
     {
         htmlEvent: "ratechange",
         type: MediaEventType.NOP,
@@ -72,6 +88,8 @@ export class VideoPlayer {
     private video: HTMLVideoElement;
     private port: Runtime.Port;
 
+    private interceptors: ((event: Event) => void)[] = [];
+
     constructor(video: HTMLVideoElement, port: Runtime.Port) {
         this.video = video;
         this.port = port;
@@ -82,11 +100,12 @@ export class VideoPlayer {
         log("Binding to html media event");
         events.forEach((event) => {
             this.video.addEventListener(event.htmlEvent, () => {
-                log(`New media event ${event.htmlEvent}`);
-                if (event.type === MediaEventType.NOP) return;
-
                 if (interceptedEvents.has(event.htmlEvent))
                     this.interceptEvent();
+
+                if (event.type === MediaEventType.NOP) return;
+
+                this.interceptors.forEach((interceptor) => interceptor(event));
 
                 this.port.postMessage({
                     type: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
@@ -96,7 +115,7 @@ export class VideoPlayer {
         });
     }
 
-    private buildEvent(mediaEventType: MediaEventType): PlayerEvent {
+    buildEvent(mediaEventType: MediaEventType): PlayerEvent {
         return {
             mediaEventType,
             currentTime: this.video.currentTime,
@@ -112,5 +131,9 @@ export class VideoPlayer {
 
     sendEvent(event: PlayerEvent) {
         console.log(event);
+    }
+
+    addInterceptor(func: (event: Event) => void) {
+        this.interceptors.push(func);
     }
 }
