@@ -102,6 +102,20 @@ functions:
       - websocket:
           route: update-watcher-state
           routeResponseSelectionExpression: $default
+  sync_intent:
+    handler: functions/update_sync_intent.main
+    iamRoleStatementsInherit: true
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - dynamodb:GetItem
+          - dynamodb:UpdateItem
+        Resource:
+          - 'Fn::GetAtt': [RoomTable, Arn]
+    events:
+      - websocket:
+          route: update-sync-intent
+          routeResponseSelectionExpression: $default
   default:
     handler: handler.defaultHandler
     events:

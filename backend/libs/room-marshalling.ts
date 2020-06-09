@@ -40,6 +40,7 @@ export const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
         minBufferLength: roomDDB.minBufferLength,
         videoSpeed: roomDDB.videoSpeed,
         currentVideoUrl: roomDDB.currentVideoUrl,
+        syncIntent: roomDDB.syncIntent,
         syncStartedAt: roomDDB.syncStartedAt
             ? new Date(roomDDB.syncStartedAt)
             : undefined,

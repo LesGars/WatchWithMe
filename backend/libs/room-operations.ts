@@ -4,37 +4,44 @@ import {
     SyncState,
     Watcher,
     WatcherState,
+    SyncIntent,
 } from '../../extension/src/types';
 import { marshallRoom, unmarshallRoom } from './room-marshalling';
 import { updateWatcher } from './watcher-operations';
+import { dynamoDB } from '../libs/dynamodb-utils';
+import { assignRoomIntent, syncIntentChanges } from './room-utils';
 
 /**
  * Find a room by ID in DDB
+ *
+ * Throw an error if the room could not be found
  */
 export const findRoomById = async (
     roomId: string,
     tableName: string,
-    dynamoDb: DocumentClient,
-): Promise<Room | undefined> => {
+    dynamoDb: DocumentClient = dynamoDB,
+): Promise<Room> => {
     const params: DocumentClient.GetItemInput = {
         TableName: tableName,
         Key: { roomId },
     };
+    console.debug(`Trying to find room ${roomId}`);
+    let data;
     try {
-        console.debug(`Trying to find room ${roomId}`);
-        const data = await dynamoDb.get(params).promise();
-        if (data.Item) {
-            return unmarshallRoom(data.Item);
-        } else {
-            console.log(
-                `Could not find a room with id ${roomId}. It's either new or destroyed`,
-            );
-            return undefined;
-        }
+        data = await dynamoDb.get(params).promise();
     } catch (e) {
         console.error('Failed to find or unmarshall room on DDB', e);
-        return undefined;
+        throw new Error('Failed to find or unmarshall room on DDB');
     }
+
+    if (!data.Item) {
+        console.log(
+            `Could not find a room with id ${roomId}. It's either new or destroyed`,
+        );
+        throw new Error('Room not found');
+    }
+
+    return unmarshallRoom(data.Item);
 };
 
 /**
@@ -44,8 +51,8 @@ export const createRoom = async (
     roomId: string,
     tableName: string,
     ownerConnectionString: string,
-    dynamoDb: DocumentClient,
-): Promise<Room | undefined> => {
+    dynamoDb: DocumentClient = dynamoDB,
+): Promise<Room> => {
     const owner: Watcher = {
         id: ownerConnectionString,
         connectionId: ownerConnectionString,
@@ -64,6 +71,7 @@ export const createRoom = async (
         minBufferLength: 5,
         videoSpeed: 1,
         currentVideoUrl: undefined,
+        syncIntent: SyncIntent.PAUSE,
         syncStartedAt: undefined,
         syncStartedTimestamp: undefined,
         videoStatus: SyncState.WAITING,
@@ -79,19 +87,24 @@ export const createRoom = async (
         return room;
     } catch (e) {
         console.error('Failed to create a room on DDB', e);
-        return undefined;
+        throw new Error('Failed to create room');
     }
 };
 
 /**
- * Currently, this updateRoom function is only used in tests
- * Feel free to add more complexity here (cf updateRoom related to sync state & commands, etc)
+ * This function will update the room in database based on the values of the input room.
+ *
+ * If the room could not be updated (eg: the room does not exist) an exception will be thrown
+ *
+ * @param room The room with the new values
+ * @param tableName The table in which to update the room
+ * @param dynamoDb An optional dynamoDB Client
  */
 export const updateRoom = async (
     room: Room,
     tableName: string,
-    dynamoDb: DocumentClient,
-): Promise<Room | undefined> => {
+    dynamoDb: DocumentClient = dynamoDB,
+): Promise<Room> => {
     // If we need more speed improvements, we could work on a partial marshalling of the room
     const roomForDDB = marshallRoom(room);
     const params: DocumentClient.UpdateItemInput = {
@@ -100,18 +113,29 @@ export const updateRoom = async (
         UpdateExpression: [
             'SET currentVideoUrl = :currentVideoUrl',
             'videoStatus = :videoStatus',
+            'syncState = :syncState',
+            'syncStartedAt = :syncStartedAt',
+            'syncStartedTimestamp = :syncStartedTimestamp',
+            'resumePlayingAt = :resumePlayingAt',
+            'resumePlayingTimestamp = :resumePlayingTimestamp',
         ].join(','),
         ExpressionAttributeValues: {
             ':currentVideoUrl': roomForDDB.currentVideoUrl,
             ':videoStatus': roomForDDB.videoStatus,
+            ':syncState': roomForDDB.syncState,
+            ':syncStartedAt': roomForDDB.syncStartedAt,
+            ':syncStartedTimestamp': roomForDDB.syncStartedTimestamp,
+            ':resumePlayingAt': roomForDDB.resumePlayingAt,
+            ':resumePlayingTimestamp': roomForDDB.resumePlayingTimestamp,
         },
     };
+
     try {
         await dynamoDb.update(params).promise();
         return room;
     } catch (e) {
-        console.error('Failed to join existing room', e);
-        return undefined;
+        console.error('Failed update room', e);
+        throw new Error('Failed to update room');
     }
 };
 
@@ -123,7 +147,7 @@ export const joinExistingRoom = async (
     tableName: string,
     watcherConnectionString: string,
     dynamoDb: DocumentClient,
-): Promise<Room | undefined> => {
+): Promise<Room> => {
     const newWatcher: Watcher = {
         id: watcherConnectionString,
         connectionId: watcherConnectionString,
@@ -137,17 +161,28 @@ export const joinExistingRoom = async (
     return updateWatcher(room, tableName, newWatcher, dynamoDb);
 };
 
-export const ensureRoomJoined = (
+/**
+ * Checks the user permission to modify the room the syncIntent
+ * Update it
+ *
+ * @param room The room to update
+ * @param tableName The name of the dynamodb table
+ * @param watcherConnectionString The connection id of the user trying to update the state
+ * @param syncIntent The new syncIntent for the room
+ */
+export const updateRoomSyncIntent = async (
     room: Room,
+    tableName: string,
     watcherConnectionString: string,
-) => {
-    if (!room.watchers[watcherConnectionString]) {
-        console.log(
-            '[WS-S] A media event was received for someone ho has not joined the room. Dropping',
-        );
-        throw new Error(
-            `The room was not joined by watcher ${watcherConnectionString}`,
-        );
+    syncIntent: SyncIntent,
+): Promise<Room> => {
+    if (
+        watcherConnectionString !== room.ownerId &&
+        syncIntent === SyncIntent.PLAY &&
+        syncIntentChanges(room, syncIntent)
+    ) {
+        throw new Error('Watcher is not authorized to perform this operation');
     }
-    return room;
+    room = assignRoomIntent(room, syncIntent);
+    return updateRoom(room, tableName);
 };

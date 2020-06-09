@@ -162,6 +162,7 @@ export interface Room {
 
     // History attributes
     currentVideoUrl: string | undefined; // URL of video being watched
+    syncIntent: SyncIntent;
     syncStartedAt: Date | undefined; // Date when the video was first watched synchronously
     syncStartedTimestamp: Date | undefined; // Timestamp of the video when it was first watched synchronously
 
