@@ -53,6 +53,53 @@ export const findRoomById = async (
     }
 };
 
+export const findRoomOfWatcher = async (
+    tableName: string,
+    watcherConnectionString: string,
+    dynamoDb: DocumentClient,
+): Promise<Room> => {
+    const params: DocumentClient.QueryInput = {
+        TableName: tableName,
+    };
+    try {
+        console.debug(
+            `Trying to find room of watcher ${watcherConnectionString}`,
+        );
+        const data = await dynamoDb.query(params).promise();
+        if (data.Items) {
+            const roomDDB:
+                | DocumentClient.AttributeMap
+                | undefined = data.Items.find(
+                (r: DocumentClient.AttributeMap) => {
+                    const watchers: DocumentClient.AttributeMap = r.watchers;
+                    return (
+                        Object.keys(watchers).find(
+                            (watcherId) =>
+                                watcherId === watcherConnectionString,
+                        ) !== undefined
+                    );
+                },
+            );
+
+            if (!roomDDB) {
+                console.log(
+                    `Could not find the room of watcher ${watcherConnectionString}`,
+                );
+                throw new Error(
+                    `Could not find the room of watcher ${watcherConnectionString}`,
+                );
+            }
+            return unmarshallRoom(roomDDB);
+        } else {
+            console.log('There is no room in the DB');
+            throw new Error('There is no room in the DB');
+        }
+    } catch (e) {
+        console.error('Failed to find or unmarshall room on DDB', e);
+        throw e;
+    }
+};
+
 /**
  * Create a new room in DDB
  */
