@@ -1,7 +1,7 @@
 import { Runtime } from "webextension-polyfill-ts";
 import {
-    MessageFromExtensionToServerType,
     MediaEventType,
+    MessageFromExtensionToServerType,
     PlayerEvent,
 } from "../communications/from-extension-to-server";
 
@@ -89,6 +89,7 @@ export class VideoPlayer {
     private port: Runtime.Port;
 
     private interceptors: ((event: Event) => void)[] = [];
+    private preventPlay = true; // Default behavior is to prevent play until syncOrder is received
 
     constructor(video: HTMLVideoElement, port: Runtime.Port) {
         this.video = video;
@@ -125,8 +126,10 @@ export class VideoPlayer {
     }
 
     private interceptEvent() {
-        log("Pause video - INTERCEPT");
-        this.video.pause();
+        if (this.preventPlay) {
+            log("Pause video - INTERCEPTED");
+            this.video.pause();
+        }
     }
 
     sendEvent(event: PlayerEvent) {
@@ -135,5 +138,19 @@ export class VideoPlayer {
 
     addInterceptor(func: (event: Event) => void) {
         this.interceptors.push(func);
+    }
+
+    /**
+     * Force the video player to play, ignoring default behavior to keep the video paused
+     */
+    public play() {
+        log("WATCH WITH ME");
+        this.preventPlay = false;
+        this.video.play();
+        this.preventPlay = true;
+    }
+
+    public seek(at: Number) {
+        this.video.currentTime = at.valueOf();
     }
 }

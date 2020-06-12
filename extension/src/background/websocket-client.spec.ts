@@ -12,7 +12,9 @@ describe("WebSocketClient.ensureOpened", () => {
             .returns({
                 readyState: WebSocket.OPEN,
             });
-        const client: WebSocketClient = new WebSocketClient("wss://fake");
+        const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
+            console.log("ok")
+        );
 
         await expect(client.ensureOpened()).resolves.not.toBeDefined();
 
@@ -25,7 +27,9 @@ describe("WebSocketClient.ensureOpened", () => {
             .returns({
                 readyState: WebSocket.CONNECTING,
             });
-        const client: WebSocketClient = new WebSocketClient("wss://fake");
+        const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
+            console.log("ok")
+        );
 
         await expect(client.ensureOpened()).rejects.toThrow();
 
@@ -38,7 +42,9 @@ describe("WebSocketClient.ensureOpened", () => {
             .returns({
                 readyState: WebSocket.CLOSING,
             });
-        const client: WebSocketClient = new WebSocketClient("wss://fake");
+        const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
+            console.log("ok")
+        );
 
         await expect(client.ensureOpened()).rejects.toThrow();
 
@@ -54,7 +60,9 @@ describe("WebSocketClient.ensureOpened", () => {
         const connectStub = sinon
             .stub(WebSocketClient.prototype, "connect")
             .resolves();
-        const client: WebSocketClient = new WebSocketClient("wss://fake");
+        const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
+            console.log("ok")
+        );
 
         await expect(client.ensureOpened()).resolves.not.toBeDefined();
         expect(connectStub.calledOnce).toBeTruthy();

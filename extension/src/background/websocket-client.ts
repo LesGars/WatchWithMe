@@ -1,13 +1,20 @@
-import { BroadcastEvent, BroadcastEventType } from "../types";
+import { MessageFromServerToExtension } from "@/communications/from-server-to-extension";
 
 const log = require("debug")("ext:background:websocket");
 
 export default class WebSocketClient {
     private host: string;
+    private serverMessageHandler: (
+        message: MessageFromServerToExtension
+    ) => void;
     private webSocket!: WebSocket;
 
-    public constructor(host: string) {
+    public constructor(
+        host: string,
+        serverMessageHandler: (message: MessageFromServerToExtension) => void
+    ) {
         this.host = host;
+        this.serverMessageHandler = serverMessageHandler;
     }
 
     public getWebSocket(): WebSocket {
@@ -19,24 +26,17 @@ export default class WebSocketClient {
         return new Promise((resolve) => {
             this.webSocket.onopen = () => {
                 this.webSocket.send(
-                    JSON.stringify({ message: "[WS-E] Connected to server" })
+                    JSON.stringify({
+                        message: "[WS-E] Connected to server",
+                    })
                 );
                 resolve();
             };
 
             this.webSocket.onmessage = (event: MessageEvent) => {
                 // Since the messages are supposed to be in JSON format, should be: JSON.parse(event.data)
-                const broadcastEvent = event.data as BroadcastEvent;
-                switch (broadcastEvent.type) {
-                    case BroadcastEventType.NEW_WATCHER:
-                        log(`A new watcher joined`);
-                        break;
-
-                    default:
-                        break;
-                }
-
-                log(`Received from backend ${JSON.stringify(broadcastEvent)}`);
+                const broadcastEvent = event.data as MessageFromServerToExtension;
+                this.handleServerMessage(broadcastEvent);
             };
 
             this.webSocket.onclose = () => {};
@@ -72,6 +72,11 @@ export default class WebSocketClient {
 
     public send(message: any) {
         this.ensureOpened().then(() => this.webSocket.send(message));
+    }
+
+    private handleServerMessage(broadcastEvent: MessageFromServerToExtension) {
+        this.serverMessageHandler(broadcastEvent);
+        log(`Received from backend ${JSON.stringify(broadcastEvent)}`);
     }
 
     public close() {

@@ -1,11 +1,12 @@
-import { browser } from "webextension-polyfill-ts";
 import {
-    MessageFromExtensionToServerType,
-    MediaEventType,
-} from "../communications/from-extension-to-server";
-import { VideoPlayer } from "./player";
-import { CS_SCRIPT_NAME } from "@/utils/constants";
+    MessageFromServerToExtensionType,
+    SchedulePlaySyncCommand,
+} from "@/communications/from-server-to-extension";
 import { SyncIntent } from "@/types";
+import { CS_SCRIPT_NAME } from "@/utils/constants";
+import { browser } from "webextension-polyfill-ts";
+import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
+import { VideoPlayer } from "./player";
 
 const log = require("debug")("ext:contentscript");
 let videoPlayer: VideoPlayer;
@@ -52,6 +53,14 @@ csPort.onMessage.addListener((event) => {
             }
 
             break;
+        }
+        case MessageFromServerToExtensionType.SCHEDULE_PLAY: {
+            const schedulePlayEvent = event as SchedulePlaySyncCommand;
+            videoPlayer.seek(schedulePlayEvent.startTimestamp);
+            setTimeout(
+                () => videoPlayer.play(),
+                schedulePlayEvent.startAt.getTime() - new Date().getTime()
+            );
         }
     }
 });
