@@ -32,7 +32,7 @@ devDependencies:
   '@vue/cli-plugin-typescript': 4.4.4_4997332da4f04c28ba3451b9f5d54080
   '@vue/cli-service': 4.4.4_874dafc705fddbdf5f6da33f60545d82
   '@vue/devtools': 5.3.3
-  '@vue/eslint-config-prettier': 6.0.0_af4605eedacb563169dd297b9dfe38db
+  '@vue/eslint-config-prettier': 6.0.0_fb4036f457a774d91b7f7ffffaa18639
   '@vue/eslint-config-typescript': 5.0.2_bfb65f6f322c54eb427e97b68401d418
   autoprefixer: 9.8.0
   axios: 0.19.2
@@ -45,7 +45,7 @@ devDependencies:
   eslint: 6.8.0
   eslint-config-airbnb: 18.1.0_eslint@6.8.0
   eslint-config-prettier: 6.11.0_eslint@6.8.0
-  eslint-plugin-prettier: 3.1.3_eslint@6.8.0+prettier@2.0.5
+  eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.0.5
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.43.0
   generate-json-webpack-plugin: 1.0.0
@@ -2321,11 +2321,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-wfQm0YHmEj1KLClhIyz/OFuRBky4/ptS5p7OqeNYIzEqgX+/jhTWbyKWUizYyYyz8HVEn/vAQb1pfPeYeeQCSQ==
-  /@vue/eslint-config-prettier/6.0.0_af4605eedacb563169dd297b9dfe38db:
+  /@vue/eslint-config-prettier/6.0.0_fb4036f457a774d91b7f7ffffaa18639:
     dependencies:
       eslint: 6.8.0
       eslint-config-prettier: 6.11.0_eslint@6.8.0
-      eslint-plugin-prettier: 3.1.3_eslint@6.8.0+prettier@2.0.5
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.0.5
       prettier: 2.0.5
     dev: true
     peerDependencies:
@@ -5170,7 +5170,7 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-prettier/3.1.3_eslint@6.8.0+prettier@2.0.5:
+  /eslint-plugin-prettier/3.1.4_eslint@6.8.0+prettier@2.0.5:
     dependencies:
       eslint: 6.8.0
       prettier: 2.0.5
@@ -5179,10 +5179,10 @@ packages:
     engines:
       node: '>=6.0.0'
     peerDependencies:
-      eslint: '>= 5.0.0'
-      prettier: '>= 1.13.0'
+      eslint: '>=5.0.0'
+      prettier: '>=1.13.0'
     resolution:
-      integrity: sha512-+HG5jmu/dN3ZV3T6eCD7a4BlAySdN7mLIbJYo0z1cFQuI+r2DiTJEFeF68ots93PsnrMxbzIZ2S/ieX+mkrBeQ==
+      integrity: sha512-jZDa8z76klRqo+TdGDTFJSavwbnWK2ZpqGKNZ+VvweMW516pDUMmQ2koXvxEE4JhzNvTv+radye/bWGBmA6jmg==
   /eslint-plugin-vue/6.2.2_eslint@6.8.0:
     dependencies:
       eslint: 6.8.0
@@ -13501,7 +13501,7 @@ specifiers:
   eslint: 6.8.0
   eslint-config-airbnb: 18.1.0
   eslint-config-prettier: 6.11.0
-  eslint-plugin-prettier: 3.1.3
+  eslint-plugin-prettier: 3.1.4
   eslint-plugin-vue: 6.2.2
   friendly-errors-webpack-plugin: 1.7.0
   generate-json-webpack-plugin: 1.0.0
