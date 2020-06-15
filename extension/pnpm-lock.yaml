@@ -68,7 +68,7 @@ devDependencies:
   sinon: 9.0.2
   string-replace-loader: 2.3.0_webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
-  terser-webpack-plugin: 3.0.4_webpack@4.43.0
+  terser-webpack-plugin: 3.0.5_webpack@4.43.0
   ts-jest: 26.1.0_jest@26.0.1+typescript@3.9.5
   ts-loader: 7.0.5_typescript@3.9.5
   tsconfig-paths-webpack-plugin: 3.2.0
@@ -11972,7 +11972,7 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-I8IDsQwZrqjdmOicNeE8L/MhwatAap3mUrtcAKJuilsemUNcX+Hier/eAzwStVqhlCxq0aG3ni9bK/0BESXkTg==
-  /terser-webpack-plugin/3.0.4_webpack@4.43.0:
+  /terser-webpack-plugin/3.0.5_webpack@4.43.0:
     dependencies:
       cacache: 15.0.4
       find-cache-dir: 3.3.1
@@ -11990,7 +11990,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-hcDwaacWj4gpWAC5+Up1spE1BulQEiLV63qN8TovDmFTEjC098vDQcO4BsO/HYKevWwisnSCy/qUNK7OUXn22Q==
+      integrity: sha512-pyHUyfQUZB3ciYL81GgXzDh8Qb3fGED77xDjZVSFYSN1cQnWgC51OMPKj7vBWVZx0GGuYhpa9+Vz2KxkzXWhBA==
   /terser/4.6.12:
     dependencies:
       commander: 2.20.3
@@ -13525,7 +13525,7 @@ specifiers:
   sinon: 9.0.2
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
-  terser-webpack-plugin: 3.0.4
+  terser-webpack-plugin: 3.0.5
   ts-jest: 26.1.0
   ts-loader: 7.0.5
   tsconfig-paths-webpack-plugin: 3.2.0
