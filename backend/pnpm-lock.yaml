@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.73.0
+  serverless: 1.73.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2_typescript@3.9.5+webpack@4.43.0
@@ -8847,7 +8847,7 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-/p0Ht87AeQb13Vz3lEcT72vE3GOyDX70iX8fTuDZ0xMwfKtRogRkYzuV89HKc2ULIHx++g/NGTRU6nSGpA3snA==
-  /serverless/1.73.0:
+  /serverless/1.73.1:
     dependencies:
       '@serverless/cli': 1.5.0
       '@serverless/components': 2.30.15
@@ -8908,7 +8908,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-ptScprMfsQqclgVzbmaTqyMkO7rggOf6kWw2Wa2ba7oq3HYcGQbRSCgTUW0QlR3HPYVt1pISsXTIoUDE16pMWw==
+      integrity: sha512-8cBSUS8uGzI9/mYJqWfLsx/byIfUlpZS2gXpUP5yXu6rRuBpLAsg1V02rzjK+48t+3Sv5+qZCk1XRGbzoUTVGg==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -10553,7 +10553,7 @@ specifiers:
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.73.0
+  serverless: 1.73.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2
