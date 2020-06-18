@@ -68,7 +68,7 @@ devDependencies:
   sinon: 9.0.2
   string-replace-loader: 2.3.0_webpack@4.43.0
   style-loader: 1.2.1_webpack@4.43.0
-  terser-webpack-plugin: 3.0.5_webpack@4.43.0
+  terser-webpack-plugin: 3.0.6_webpack@4.43.0
   ts-jest: 26.1.0_jest@26.0.1+typescript@3.9.5
   ts-loader: 7.0.5_typescript@3.9.5
   tsconfig-paths-webpack-plugin: 3.2.0
@@ -11898,7 +11898,7 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-I8IDsQwZrqjdmOicNeE8L/MhwatAap3mUrtcAKJuilsemUNcX+Hier/eAzwStVqhlCxq0aG3ni9bK/0BESXkTg==
-  /terser-webpack-plugin/3.0.5_webpack@4.43.0:
+  /terser-webpack-plugin/3.0.6_webpack@4.43.0:
     dependencies:
       cacache: 15.0.4
       find-cache-dir: 3.3.1
@@ -11907,7 +11907,7 @@ packages:
       schema-utils: 2.7.0
       serialize-javascript: 4.0.0
       source-map: 0.6.1
-      terser: 4.6.13
+      terser: 4.8.0
       webpack: 4.43.0_webpack@4.43.0
       webpack-sources: 1.4.3
     dev: true
@@ -11916,7 +11916,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-pyHUyfQUZB3ciYL81GgXzDh8Qb3fGED77xDjZVSFYSN1cQnWgC51OMPKj7vBWVZx0GGuYhpa9+Vz2KxkzXWhBA==
+      integrity: sha512-z3HLOOPUHkCNGkeEHqqiMAIy1pjpHwS1o+i6Zn0Ws3EAvHJj46737efNNEvJ0Vx9BdDQM83d56qySDJOSORA0A==
   /terser/4.6.12:
     dependencies:
       commander: 2.20.3
@@ -11939,6 +11939,17 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
+  /terser/4.8.0:
+    dependencies:
+      commander: 2.20.3
+      source-map: 0.6.1
+      source-map-support: 0.5.19
+    dev: true
+    engines:
+      node: '>=6.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-EAPipTNeWsb/3wLPeup1tVPaXfIaU68xMnVdPafIL1TV05OhASArYyIfFvnvJCNrR2NIOvDVNNTFRa+Re2MWyw==
   /test-exclude/6.0.0:
     dependencies:
       '@istanbuljs/schema': 0.1.2
@@ -13435,7 +13446,7 @@ specifiers:
   sinon: 9.0.2
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
-  terser-webpack-plugin: 3.0.5
+  terser-webpack-plugin: 3.0.6
   ts-jest: 26.1.0
   ts-loader: 7.0.5
   tsconfig-paths-webpack-plugin: 3.2.0
