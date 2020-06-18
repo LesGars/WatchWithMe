@@ -8,7 +8,7 @@ dependencies:
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-navigation-bar: 2.0.0
-  vue-property-decorator: 8.5.0_c6b1e15c06c7d74b01e1cbc99c98823a
+  vue-property-decorator: 8.5.1_vue@2.6.11
   vue-router: 3.3.4
   webext-options-sync: 1.2.3
 devDependencies:
@@ -12750,16 +12750,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8/2YVdmUngbcslxhpPhI1p4/G+iN6exf5oPaG3pOdJulTAXNXgELMUXG16LnZF5qjMvcm99FHVSIsahtrOVbNQ==
-  /vue-property-decorator/8.5.0_c6b1e15c06c7d74b01e1cbc99c98823a:
+  /vue-property-decorator/8.5.1_vue@2.6.11:
     dependencies:
       vue: 2.6.11
       vue-class-component: 7.2.3_vue@2.6.11
     dev: false
     peerDependencies:
       vue: '*'
-      vue-class-component: '*'
     resolution:
-      integrity: sha512-0RueJN/shPWf5gM8GLUD6bYiXr+q7bu+S1tgr7XwgBSng10H5DLQjVYfJ5XHAOPFo7fBfY1nxljBQ95qryAiWg==
+      integrity: sha512-O6OUN2OMsYTGPvgFtXeBU3jPnX5ffQ9V4I1WfxFQ6dqz6cOUbR3Usou7kgFpfiXDvV7dJQSFcJ5yUPgOtPPm1Q==
   /vue-router/3.3.4:
     dev: false
     resolution:
@@ -13459,7 +13458,7 @@ specifiers:
   vue-form-generator: 2.3.4
   vue-loader: 15.9.2
   vue-navigation-bar: 2.0.0
-  vue-property-decorator: 8.5.0
+  vue-property-decorator: 8.5.1
   vue-router: 3.3.4
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.11
