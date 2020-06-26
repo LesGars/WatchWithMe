@@ -4,9 +4,11 @@ import {
     MessageFromExtensionToServerType,
     UpdateWatcherState,
     PlayerEvent,
+    UpdateSyncIntent,
 } from "../communications/from-extension-to-server";
 import WebSocketClient from "./websocket-client";
 import { CS_SCRIPT_NAME, POPUP_SCRIPT_NAME } from "@/utils/constants";
+import { SyncIntent } from "@/types";
 
 const log = require("debug")("ext:background");
 log(
@@ -46,11 +48,19 @@ const connected = (p: Runtime.Port): void => {
                 break;
             }
             case MessageFromExtensionToServerType.DEBUG_MESSAGE: {
-                log(`[BG] Message from ${p.name}`, m.message);
+                log(`DEBUGMESSAGE from ${p.name}`, m.message);
                 break;
             }
             case MessageFromExtensionToServerType.UPDATE_WATCHER_STATE: {
                 processMediaEvent(m as PlayerEvent);
+                break;
+            }
+            case MessageFromExtensionToServerType.UPDATE_SYNC_INTENT: {
+                processEvent(
+                    MessageFromExtensionToServerType.UPDATE_SYNC_INTENT,
+                    { syncIntent: m.syncIntent }
+                );
+                break;
             }
         }
     });
@@ -94,6 +104,25 @@ async function processMediaEvent(playerEvent: PlayerEvent) {
         action: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
         roomId,
         playerEvent,
+    };
+    sendMessageThroughWebSocket(eventForServer);
+}
+
+async function processEvent(
+    type: MessageFromExtensionToServerType,
+    otherProps: {}
+) {
+    const roomId =
+        currentRoomId ?? (await browser.storage.sync.get("roomId"))?.roomId;
+    if (!roomId) {
+        log(`Cannot process event ${type}`);
+        return;
+    }
+    log(`Sending ${type} event to WebSocket`);
+    const eventForServer: MessageFromExtensionToServer = {
+        action: MessageFromExtensionToServerType.UPDATE_SYNC_INTENT,
+        roomId,
+        ...otherProps,
     };
     sendMessageThroughWebSocket(eventForServer);
 }

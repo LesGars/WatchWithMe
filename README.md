@@ -1,5 +1,7 @@
 # Watch with me
 
+![Continuous Deployment](https://github.com/LesGars/WatchWithMe/workflows/Continuous%20Deployment/badge.svg)
+
 Welcome to the Watch With Me repository.
 
 ## Extension
