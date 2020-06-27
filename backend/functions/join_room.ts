@@ -66,13 +66,13 @@ export const main = async (event: IEvent) => {
 
     const watcherConnectionString = event.requestContext.connectionId;
 
-    const roomDDB = await joinRoom(
+    const room = await joinRoom(
         roomId,
         watcherConnectionString,
         process.env.ROOM_TABLE,
     );
 
-    if (!roomDDB) {
+    if (!room) {
         console.log('[WS-S] Could not join or create a room =_=');
         return failure();
     }
@@ -81,11 +81,11 @@ export const main = async (event: IEvent) => {
         `[WS-S] User ${watcherConnectionString} joined room ${roomId} successfully`,
     );
 
-    await sendEvent(
-        event,
-        roomDDB,
-        MessageFromServerToExtensionType.NEW_WATCHER,
-    );
+    await sendEvent(event, room, {
+        type: MessageFromServerToExtensionType.NEW_WATCHER,
+        roomId: room.roomId,
+        serverDate: new Date(),
+    });
 
     // TODO : tell all roomates that someone joined the room
     return success();

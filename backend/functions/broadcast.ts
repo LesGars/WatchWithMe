@@ -1,5 +1,4 @@
 import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
-import { BroadcastEvent } from '../../extension/src/types';
 import { failure, IEventBridgeEvent, success } from '../libs/response';
 
 /**
@@ -21,17 +20,12 @@ export const main = async (event: IEventBridgeEvent) => {
     }
 
     try {
-        const broadcastEvent: BroadcastEvent = {
-            type: event.detail.type,
-            room: event.detail.data,
-        };
-
         await Promise.all(
-            Object.values(event.detail.data.watchers).map((watcher) => {
+            Object.values(event.detail.room.watchers).map((watcher) => {
                 return client
                     .postToConnection({
                         ConnectionId: watcher.connectionId,
-                        Data: JSON.stringify(broadcastEvent),
+                        Data: JSON.stringify(event.detail.message),
                     })
                     .promise();
             }),

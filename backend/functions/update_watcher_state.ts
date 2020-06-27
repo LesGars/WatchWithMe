@@ -5,7 +5,6 @@ import { dynamoDB } from '../libs/dynamodb-utils';
 import { IEvent, success } from '../libs/response';
 import { findRoomById } from '../libs/room-operations';
 import { ensureRoomJoined } from '../libs/room-utils';
-import { scheduleSyncPlayIfPossible } from '../libs/sync-commands';
 import { updateWatcherVideoStatus } from '../libs/watcher-operations';
 
 const findAndEnsureRoomJoined = async (
@@ -48,10 +47,12 @@ export const main = async (event: IEvent) => {
     );
 
     console.log(
-        `[WS-S] User ${watcherId} media event ${playerEvent.mediaEventType} was successfully processed`,
+        `[WS-S] Watcher ${watcherId} state notification change to ${playerEvent.watcherState} was successfully processed`,
     );
 
-    await scheduleSyncPlayIfPossible(room, event);
+    // TODO: scheduleSyncPlayIfPossible is disabled for now
+    //  as it causes concurrency issues with the UpdateSyncIntent
+    // await scheduleSyncPlayIfPossible(room, event);
     // TODO: notify other watchers of this watcher status (https://github.com/LesGars/WatchWithMe/issues/59)
     // TODO: ask other watchers to seek (https://github.com/LesGars/WatchWithMe/issues/61)
     return success();

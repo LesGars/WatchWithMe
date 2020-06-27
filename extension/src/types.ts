@@ -138,7 +138,7 @@ export interface Watcher {
     id: string; // maybe not needed since it will be the index key
     connectionId: string; // API Gateway connection ID to be used to communicate with the user
     joinedAt: Date;
-    lastVideoTimestamp: Date | null; // Last video timestamp received during sync events of said user
+    lastVideoTimestamp: Number | null; // Last video timestamp received during sync events of said user
     lastHeartbeat: Date; // date of last event during sync received from said user
     currentVideoStatus: WatcherState;
     initialSync: boolean; // Must default to false
@@ -169,23 +169,18 @@ export interface Room {
     // Sync values
     syncState: SyncState;
     resumePlayingAt: Date | null; // Date when players should resume watching if status is Waiting. If null, it means not all players are ready
-    resumePlayingTimestamp: Date | null; // Timestamp that should be seeked by users before video can start
+    resumePlayingTimestamp: Number | null; // Timestamp that should be seeked by users before video can start
 }
 
 export const maxSecondsBetweenWatchers = 1; // max time that can separate 2 people watching the same vide when they are synced
+export const minBufferTimeInSeconds = 3;
 
 /**
- * @deprecated - use MessageFromXToY in communications folder
- * Event coming from the websocket
+ * From the moment the server builds the SyncPlayCommand
+ * this is number of seconds given so that
+ *  - the server can finish sending the request
+ *  - the BG script receives the notif via websocket
+ *  - The BG communicaties with CS and CS with the player to schedule stuff
+ *
  */
-export interface BroadcastEvent {
-    type: MessageFromServerToExtension;
-    room: Room;
-}
-
-/**
- * @deprecated - see BroadcastEvent deprecation
- */
-export enum BroadcastEventType {
-    NEW_WATCHER = "NEW_WATCHER",
-}
+export const syncStartDelayInSeconds = 5;

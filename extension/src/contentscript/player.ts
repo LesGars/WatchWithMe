@@ -1,6 +1,6 @@
+import { minBufferTimeInSeconds, WatcherState } from "@/types";
 import { Runtime } from "webextension-polyfill-ts";
 import {
-    MediaEventType,
     MessageFromExtensionToServerType,
     PlayerEvent,
 } from "../communications/from-extension-to-server";
@@ -20,7 +20,21 @@ export interface Event {
         | "seeked"
         | "pause"
         | "waiting";
-    type: MediaEventType;
+    // Type is undefined when it should not trigger state update
+    type: WatcherState | undefined;
+}
+
+export enum HtmlVideoPlayerEventType {
+    ratechange = "ratechange",
+    seeking = "seeking",
+    progress = "progress",
+    canplaythrough = "canplaythrough",
+    play = "play",
+    playing = "playing",
+    canplay = "canplay",
+    seeked = "seeked",
+    pause = "pause",
+    waiting = "waiting",
 }
 
 /**
@@ -35,61 +49,65 @@ export interface Event {
 export const events: Event[] = [
     {
         htmlEvent: "ratechange",
-        type: MediaEventType.NOP,
+        type: undefined,
     },
     {
         htmlEvent: "seeking",
-        type: MediaEventType.NOP,
+        type: WatcherState.UNKNOWN,
     },
     {
         htmlEvent: "progress",
-        type: MediaEventType.NOP,
-    },
-    {
-        htmlEvent: "ratechange",
-        type: MediaEventType.NOP,
+        type: undefined,
     },
     {
         htmlEvent: "canplaythrough",
-        type: MediaEventType.NOP,
+        type: undefined,
     },
     {
         htmlEvent: "play",
-        type: MediaEventType.BUFFERING,
+        type: WatcherState.BUFFERING,
     },
     {
         htmlEvent: "playing",
-        type: MediaEventType.PLAY,
+        type: WatcherState.PLAYING,
     },
     {
         htmlEvent: "canplay",
-        type: MediaEventType.READY,
+        type: WatcherState.READY,
     },
     {
         htmlEvent: "seeked",
-        type: MediaEventType.SEEK,
+        type: WatcherState.BUFFERING,
     },
     {
         htmlEvent: "pause",
-        type: MediaEventType.PAUSE,
+        type: WatcherState.READY,
     },
     {
         htmlEvent: "waiting",
-        type: MediaEventType.BUFFERING,
+        type: WatcherState.BUFFERING,
     },
 ];
+
+export enum InterceptorResult {
+    DoIntercept,
+    DoNotIntercept,
+}
 
 /**
  * Event that we will have to intercept and to trigger a pause on the video
  */
-const interceptedEvents = new Set(["seeking", "play"]);
+const interceptedEvents = new Set(["seeking", "play", "playing"]);
 
 export class VideoPlayer {
     private video: HTMLVideoElement;
     private port: Runtime.Port;
 
-    private interceptors: ((event: Event) => void)[] = [];
+    private eventHandlers: ((event: Event) => void)[] = [];
     private preventPlay = true; // Default behavior is to prevent play until syncOrder is received
+
+    private prevBufferAmount: null | number = null;
+    private prevBufferTime: null | number = null;
 
     constructor(video: HTMLVideoElement, port: Runtime.Port) {
         this.video = video;
@@ -101,43 +119,69 @@ export class VideoPlayer {
         log("Binding to html media event");
         events.forEach((event) => {
             this.video.addEventListener(event.htmlEvent, () => {
-                if (interceptedEvents.has(event.htmlEvent))
-                    this.interceptEvent();
+                if (event.type === undefined) return;
 
-                if (event.type === MediaEventType.NOP) return;
+                let eventIsIntercepted = false;
+                if (interceptedEvents.has(event.htmlEvent)) {
+                    eventIsIntercepted =
+                        this.maybeInterceptEvent(event) ==
+                        InterceptorResult.DoIntercept;
+                }
 
-                this.interceptors.forEach((interceptor) => interceptor(event));
+                this.eventHandlers.forEach((handler) => handler(event));
 
-                this.port.postMessage({
-                    type: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
-                    ...this.buildEvent(event.type),
-                });
+                log(
+                    `event ${event.htmlEvent} ${
+                        eventIsIntercepted
+                            ? "intercepted and not dispatched to BG script"
+                            : "not intercepted and dispatched to BG script"
+                    }`
+                );
+
+                if (!eventIsIntercepted) {
+                    this.pushPlayerStateToBGScript(event.type);
+                }
             });
         });
     }
 
-    buildEvent(mediaEventType: MediaEventType): PlayerEvent {
+    buildEvent(watcherState: WatcherState): PlayerEvent {
         return {
-            mediaEventType,
+            watcherState,
             currentTime: this.video.currentTime,
             duration: this.video.duration,
             now: new Date(),
         };
     }
 
-    private interceptEvent() {
+    /**
+     * Decide wether event should be intercepted based on internal state of the player
+     *
+     * When the user clicks play, the video is paused immediately after being started (cf sync Play start)
+     * We want to notify the server of the new SyncPlay intent
+     * but we do not want to update the watcherState (video remains paused)
+     *
+     */
+    private maybeInterceptEvent(event: Event): InterceptorResult {
         if (this.preventPlay) {
-            log("Pause video - INTERCEPTED");
             this.video.pause();
+            return InterceptorResult.DoIntercept;
+        } else {
+            // If we end up here, it means we have received a SyncPlay Command
+            if (event.htmlEvent == "playing") {
+                this.preventPlay = true;
+            }
         }
+
+        return InterceptorResult.DoNotIntercept;
     }
 
     sendEvent(event: PlayerEvent) {
         console.log(event);
     }
 
-    addInterceptor(func: (event: Event) => void) {
-        this.interceptors.push(func);
+    addEventHandler(func: (event: Event) => void) {
+        this.eventHandlers.push(func);
     }
 
     /**
@@ -147,10 +191,63 @@ export class VideoPlayer {
         log("WATCH WITH ME");
         this.preventPlay = false;
         this.video.play();
-        this.preventPlay = true;
+        // => preventPlay will be re-enabled asynchronously
+        // (only after receiving "playing" event)
     }
 
     public seek(at: Number) {
         this.video.currentTime = at.valueOf();
+    }
+
+    /**
+     * Sends the current player state to the BG script
+     */
+    public pushPlayerStateToBGScript(type: WatcherState | void) {
+        const resolvedType = type || this.resolveVideoStatus();
+        this.port.postMessage({
+            type: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
+            ...this.buildEvent(resolvedType),
+        });
+    }
+
+    resolveVideoStatus(): WatcherState {
+        if (this.video.paused) {
+            if (this.isBuffering()) {
+                return WatcherState.BUFFERING;
+            }
+            return WatcherState.READY;
+        } else {
+            return WatcherState.PLAYING;
+        }
+    }
+
+    /**
+     * Based on https://stackoverflow.com/a/34135974/2832282
+     */
+    isBuffering(): boolean {
+        if (
+            this.video.buffered &&
+            this.video.buffered.end &&
+            this.video.buffered.length > 0
+        ) {
+            const buffer = this.video.buffered.end(0);
+            const time = this.video.currentTime;
+
+            // Check if the video hangs because of issues with e.g. performance
+            if (
+                this.prevBufferAmount === buffer &&
+                this.prevBufferTime === time &&
+                !this.video.paused
+            ) {
+                return true;
+            }
+            this.prevBufferAmount = buffer;
+            this.prevBufferTime = time;
+            // Check if video buffer is less
+            // than current time (tolerance 3 sec)
+
+            return buffer - minBufferTimeInSeconds < time;
+        }
+        return false;
     }
 }

@@ -1,8 +1,12 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
-import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
+import {
+    MessageFromServerToExtensionType,
+    SchedulePlaySyncCommand,
+} from '../../extension/src/communications/from-server-to-extension';
 import {
     Room,
     SyncIntent,
+    syncStartDelayInSeconds,
     SyncState,
     Watcher,
     WatcherState,
@@ -25,13 +29,18 @@ export const scheduleSyncPlayIfPossible = async (
         room.syncIntent == SyncIntent.PLAY &&
         areAllWatchersReady(Object.values(room.watchers))
     ) {
+        console.log('Scheduling sync play since all watchers are ready');
         await scheduleSyncPlay(room, dynamoDb);
         await sendSyncPlayCommandToWatchers(room, event);
+    } else {
+        console.log(
+            'Cannot schedule sync play : watchers not ready or sync intent is not PLAY',
+        );
     }
 };
 
 const areAllWatchersReady = (watchers: Watcher[]): boolean =>
-    !watchers.find((w: Watcher) => w.currentVideoStatus == WatcherState.READY);
+    !watchers.find((w: Watcher) => w.currentVideoStatus !== WatcherState.READY);
 
 const scheduleSyncPlay = async (
     room: Room,
@@ -42,9 +51,16 @@ const scheduleSyncPlay = async (
     }
 
     room.syncState = SyncState.PLAY_SCHEDULED;
-    room.resumePlayingAt = new Date();
-    room.resumePlayingTimestamp =
-        room.watchers[room.ownerId].lastVideoTimestamp;
+    const resumePlayingAt = new Date();
+    resumePlayingAt.setSeconds(
+        resumePlayingAt.getSeconds() + syncStartDelayInSeconds,
+    );
+    room.resumePlayingAt = resumePlayingAt;
+    console.log('room owner', room.watchers[room.ownerId]);
+    const ownerVideoTimestamp = room.watchers[room.ownerId].lastVideoTimestamp;
+    console.log('timestamp to resume playing at', ownerVideoTimestamp);
+    room.resumePlayingTimestamp = ownerVideoTimestamp;
+    console.log('Updating the room following a scheduleSyncPlay');
     updateRoom(room, process.env.ROOM_TABLE!, dynamoDb);
 };
 
@@ -52,8 +68,16 @@ const sendSyncPlayCommandToWatchers = async (
     room: Room,
     event: IEvent,
 ): Promise<void> => {
-    sendEvent(event, room, MessageFromServerToExtensionType.SCHEDULE_PLAY);
+    const message: SchedulePlaySyncCommand = {
+        startAt: room.resumePlayingAt!,
+        startTimestamp: room.resumePlayingTimestamp!,
+        roomId: room.roomId,
+        type: MessageFromServerToExtensionType.SCHEDULE_PLAY,
+        serverDate: new Date(),
+    };
+    sendEvent(event, room, message);
     console.log(
-        `SyncPlay command dispatched to watchers of room ${room.roomId}`,
+        `SyncPlay command dispatched to watchers of room ${room.roomId}` +
+            `start video at timestamp ${room.resumePlayingTimestamp} at ${room.resumePlayingAt}`,
     );
 };

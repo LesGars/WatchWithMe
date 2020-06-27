@@ -9,16 +9,15 @@ import { marshallMap } from './dynamodb-utils';
 const unmarshallWatchers = (
     watchersDDB: DocumentClient.AttributeMap,
 ): Record<string, Watcher> => {
-    return Object.fromEntries(
+    console.log('watchers DDB', watchersDDB);
+    const watchers = Object.fromEntries(
         Object.entries(watchersDDB).map(([watcherID, watcherDDB]) => [
             watcherID,
             {
                 id: watcherDDB.id,
                 connectionId: watcherDDB.connectionId,
                 joinedAt: new Date(watcherDDB.joinedAt),
-                lastVideoTimestamp: watcherDDB.lastVideoTimestamp
-                    ? new Date(watcherDDB.lastVideoTimestamp)
-                    : null,
+                lastVideoTimestamp: watcherDDB.lastVideoTimestamp,
                 lastHeartbeat: new Date(watcherDDB.lastHeartbeat),
                 currentVideoStatus: watcherDDB.currentVideoStatus,
                 initialSync: watcherDDB.initialSync,
@@ -26,6 +25,8 @@ const unmarshallWatchers = (
             },
         ]),
     );
+    console.log('watchers unmarshalled', watchers);
+    return watchers;
 };
 
 /**
@@ -51,9 +52,7 @@ export const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
         resumePlayingAt: roomDDB.resumePlayingAt
             ? new Date(roomDDB.resumePlayingAt)
             : null,
-        resumePlayingTimestamp: roomDDB.resumePlayingTimestamp
-            ? new Date(roomDDB.resumePlayingTimestamp)
-            : null,
+        resumePlayingTimestamp: roomDDB.resumePlayingTimestamp,
     };
     // TODO : check casting was good / we do not have out of date DDB items
     return room;

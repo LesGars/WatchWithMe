@@ -112,6 +112,7 @@ export const updateRoom = async (
         Key: { roomId: room.roomId },
         UpdateExpression: [
             'SET currentVideoUrl = :currentVideoUrl',
+            'syncIntent = :syncIntent',
             'syncState = :syncState',
             'syncStartedAt = :syncStartedAt',
             'syncStartedTimestamp = :syncStartedTimestamp',
@@ -120,7 +121,7 @@ export const updateRoom = async (
         ].join(','),
         ExpressionAttributeValues: {
             ':currentVideoUrl': roomForDDB.currentVideoUrl,
-            ':videoStatus': roomForDDB.videoStatus,
+            ':syncIntent': roomForDDB.syncIntent,
             ':syncState': roomForDDB.syncState,
             ':syncStartedAt': roomForDDB.syncStartedAt,
             ':syncStartedTimestamp': roomForDDB.syncStartedTimestamp,
@@ -128,6 +129,8 @@ export const updateRoom = async (
             ':resumePlayingTimestamp': roomForDDB.resumePlayingTimestamp,
         },
     };
+
+    console.log('updating room in DDB with new params', params);
 
     try {
         await dynamoDb.update(params).promise();
@@ -175,6 +178,7 @@ export const updateRoomSyncIntent = async (
     syncIntent: SyncIntent,
 ): Promise<Room> => {
     room = assignRoomIntent(room, syncIntent);
+    console.log('Update the room with the new sync intent');
     return updateRoom(room, tableName);
 };
 

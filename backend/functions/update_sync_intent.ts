@@ -25,12 +25,14 @@ export const main = async (event: IEvent) => {
     ensureOnlyOwnerCanDoThisError(room, watcherId);
     ensureRoomJoined(room, watcherId);
 
+    // There is a first room update query to DDB here
     await updateRoomSyncIntent(room, process.env.ROOM_TABLE, syncIntent);
 
     console.log(
         `[WS-S] User ${watcherId} sync intent ${syncIntent} was successfully processed`,
     );
 
+    // There is a second room update query to DDB here
     await scheduleSyncPlayIfPossible(room, event);
     // TODO: ask other watchers to seek (https://github.com/LesGars/WatchWithMe/issues/61)
     return success();

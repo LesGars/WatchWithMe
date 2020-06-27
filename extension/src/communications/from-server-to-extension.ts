@@ -15,13 +15,16 @@ export enum MessageFromServerToExtensionType {
 export interface SchedulePlaySyncCommand extends MessageFromServerToExtension {
     startAt: Date;
     startTimestamp: Number;
+    type: MessageFromServerToExtensionType.SCHEDULE_PLAY;
 }
 
 export interface PauseSyncCommand extends MessageFromServerToExtension {
     pauseTimestamp: Number;
+    type: MessageFromServerToExtensionType.PAUSE;
 }
 
 export interface ChangeVideoSyncCommand extends MessageFromServerToExtension {
     newUrl: String;
     videoTimestamp: Number;
+    type: MessageFromServerToExtensionType.CHANGE_VIDEO;
 }

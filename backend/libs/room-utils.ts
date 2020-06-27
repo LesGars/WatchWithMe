@@ -9,10 +9,15 @@ export const syncIntentChanges = (
 
 export const assignRoomIntent = (room: Room, syncIntent: SyncIntent): Room => {
     if (syncIntentChanges(room, syncIntent)) {
+        console.warn(
+            'Sync intent is changed, resetting all sync attributes to null',
+        );
         room.syncStartedAt = null;
         room.syncStartedTimestamp = null;
         room.resumePlayingAt = null;
         room.resumePlayingTimestamp = null;
+    } else {
+        console.warn('Sync intent is Not changed, it is weird');
     }
 
     room.syncIntent = syncIntent;

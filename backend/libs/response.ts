@@ -1,6 +1,9 @@
 import { APIGatewayProxyResult, EventBridgeEvent } from 'aws-lambda';
 import { MessageFromExtensionToServerType } from '../../extension/src/communications/from-extension-to-server';
-import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
+import {
+    MessageFromServerToExtension,
+    MessageFromServerToExtensionType,
+} from '../../extension/src/communications/from-server-to-extension';
 import { Room } from '../../extension/src/types';
 
 // @ts-ignore
@@ -35,10 +38,17 @@ interface IApplicationEvent {
     roomId: string;
 }
 
+/**
+ * This wrapper allows us to attach the room so we can access its watchers
+ * and send notification to all of them
+ *
+ * Note: if we need to improve performance,
+ * we could directly send only room watcher IDs instead of the whole room
+ */
 export interface IApplicationEventWrapper {
-    type: MessageFromServerToExtensionType;
+    message: MessageFromServerToExtension;
+    room: Room;
     requestContext: IRequestContext;
-    data: Room;
 }
 
 export type IEventBridgeEvent = EventBridgeEvent<

@@ -1,6 +1,10 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
-import { Room } from '../../extension/src/types';
-import { createRoom, joinExistingRoom } from './room-operations';
+import { Room, SyncIntent } from '../../extension/src/types';
+import {
+    createRoom,
+    joinExistingRoom,
+    updateRoomSyncIntent,
+} from './room-operations';
 
 const isTest = process.env.JEST_WORKER_ID;
 const config = {
@@ -93,6 +97,37 @@ describe('#joinExistingRoom', () => {
                     userAgent: 'TODO',
                 },
             },
+        });
+    });
+});
+
+describe('#updateRoomSyncIntent', () => {
+    let room: Room;
+    const roomId = 'testJoinRoom';
+    const owner = 'previous-guy';
+
+    beforeAll(async () => {
+        const localRoom = await createRoom(roomId, tableName, owner, ddb);
+        if (!localRoom) {
+            throw new Error('Could not create a room for the test');
+        }
+        room = localRoom;
+    });
+
+    describe('with a play syncIntent', () => {
+        it('updates the room sync intent', async () => {
+            await updateRoomSyncIntent(room, tableName, SyncIntent.PLAY);
+
+            const { Item: roomAfterJoin } = await ddb
+                .get({
+                    TableName: tableName,
+                    Key: { roomId },
+                })
+                .promise();
+
+            expect(roomAfterJoin).toMatchObject({
+                syncIntent: SyncIntent.PLAY,
+            });
         });
     });
 });

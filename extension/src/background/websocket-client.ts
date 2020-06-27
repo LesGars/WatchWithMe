@@ -34,9 +34,18 @@ export default class WebSocketClient {
             };
 
             this.webSocket.onmessage = (event: MessageEvent) => {
-                // Since the messages are supposed to be in JSON format, should be: JSON.parse(event.data)
-                const broadcastEvent = event.data as MessageFromServerToExtension;
-                this.handleServerMessage(broadcastEvent);
+                // Message data is received as a string
+                try {
+                    const broadcastEvent = JSON.parse(
+                        event.data
+                    ) as MessageFromServerToExtension;
+                    this.handleServerMessage(broadcastEvent);
+                } catch (e) {
+                    log(
+                        `Message received from the server (>>${event.data}<<) is not interpretable as JSON:`,
+                        e
+                    );
+                }
             };
 
             this.webSocket.onclose = () => {};
@@ -75,8 +84,8 @@ export default class WebSocketClient {
     }
 
     private handleServerMessage(broadcastEvent: MessageFromServerToExtension) {
+        log("Received from backend the following event: ", broadcastEvent);
         this.serverMessageHandler(broadcastEvent);
-        log(`Received from backend ${JSON.stringify(broadcastEvent)}`);
     }
 
     public close() {
