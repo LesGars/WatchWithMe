@@ -104,7 +104,7 @@ export class VideoPlayer {
     private port: Runtime.Port;
 
     private eventHandlers: ((event: Event) => void)[] = [];
-    private preventPlay = true; // Default behavior is to prevent play until syncOrder is received
+    private preventPlay = true; // Default behavior is to prevent play until syncPlayCommand is received
 
     private prevBufferAmount: null | number = null;
     private prevBufferTime: null | number = null;
