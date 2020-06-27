@@ -1,7 +1,8 @@
 import { UpdateSyncIntent } from '../../extension/src/communications/from-extension-to-server';
-import { IEvent, success, failure } from '../libs/response';
+import { failure, IEvent, success } from '../libs/response';
 import { findRoomById, updateRoomSyncIntent } from '../libs/room-operations';
 import { ensureRoomJoined } from '../libs/room-utils';
+import { scheduleSyncPlayIfPossible } from '../libs/sync-commands';
 
 export const main = async (event: IEvent) => {
     const updateWatcherEvent = JSON.parse(event.body) as UpdateSyncIntent;
@@ -26,7 +27,7 @@ export const main = async (event: IEvent) => {
         `[WS-S] User ${watcherId} sync intent ${syncIntent} was successfully processed`,
     );
 
-    // TODO: Schedule play sync if all players are ready ()
+    await scheduleSyncPlayIfPossible(room, event);
     // TODO: notify other watchers of this watcher status (https://github.com/LesGars/WatchWithMe/issues/59)
     // TODO: ask other watchers to seek (https://github.com/LesGars/WatchWithMe/issues/61)
     return success();

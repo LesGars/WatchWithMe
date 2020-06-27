@@ -1,8 +1,12 @@
+import EventBridge from 'aws-sdk/clients/eventbridge';
+import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
+import { Room } from '../../extension/src/types';
 import { IApplicationEventWrapper, IEvent } from './response';
-import { Room, BroadcastEventType } from '../../extension/src/types';
+
+const eventBridge = new EventBridge();
 
 export const buildEvent = (
-    type: BroadcastEventType,
+    type: MessageFromServerToExtensionType,
     originEvent: IEvent,
     room: Room,
 ) => {
@@ -18,4 +22,22 @@ export const buildEvent = (
         DetailType: type,
         Detail: JSON.stringify(readEvent),
     };
+};
+
+export const sendEvent = async (
+    event: IEvent,
+    room: Room,
+    type: MessageFromServerToExtensionType,
+) => {
+    const roomEvent = buildEvent(type, event, room);
+    console.log(roomEvent);
+    try {
+        await eventBridge
+            .putEvents({
+                Entries: [roomEvent],
+            })
+            .promise();
+    } catch (e) {
+        console.error('Could not send event', e);
+    }
 };
