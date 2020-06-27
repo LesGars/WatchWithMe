@@ -41,7 +41,7 @@ const scheduleSyncPlay = async (
         throw new Error('env.ROOM_TABLE must be defined');
     }
 
-    room.videoStatus = SyncState.PLAY_SCHEDULED;
+    room.syncState = SyncState.PLAY_SCHEDULED;
     room.resumePlayingAt = new Date();
     room.resumePlayingTimestamp =
         room.watchers[room.ownerId].lastVideoTimestamp;

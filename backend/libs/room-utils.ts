@@ -9,10 +9,10 @@ export const syncIntentChanges = (
 
 export const assignRoomIntent = (room: Room, syncIntent: SyncIntent): Room => {
     if (syncIntentChanges(room, syncIntent)) {
-        room.syncStartedAt = undefined;
-        room.syncStartedTimestamp = undefined;
-        room.resumePlayingAt = undefined;
-        room.resumePlayingTimestamp = undefined;
+        room.syncStartedAt = null;
+        room.syncStartedTimestamp = null;
+        room.resumePlayingAt = null;
+        room.resumePlayingTimestamp = null;
     }
 
     room.syncIntent = syncIntent;

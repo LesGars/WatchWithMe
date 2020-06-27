@@ -33,7 +33,7 @@ describe('#createRoom', () => {
             resumePlayingAt: undefined,
             roomId: roomId,
             videoSpeed: 1,
-            videoStatus: 'WAITING',
+            syncState: 'WAITING',
             watchers: {
                 owner: {
                     connectionId: 'owner',

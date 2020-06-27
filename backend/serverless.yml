@@ -102,7 +102,7 @@ functions:
       - websocket:
           route: update-watcher-state
           routeResponseSelectionExpression: $default
-  sync_intent:
+  update_sync_intent:
     handler: functions/update_sync_intent.main
     iamRoleStatementsInherit: true
     iamRoleStatements:

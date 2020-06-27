@@ -1,14 +1,12 @@
+import { CS_SCRIPT_NAME, POPUP_SCRIPT_NAME } from "@/utils/constants";
 import { browser, Runtime } from "webextension-polyfill-ts";
 import {
     MessageFromExtensionToServer,
     MessageFromExtensionToServerType,
-    UpdateWatcherState,
     PlayerEvent,
-    UpdateSyncIntent,
+    UpdateWatcherState,
 } from "../communications/from-extension-to-server";
 import WebSocketClient from "./websocket-client";
-import { CS_SCRIPT_NAME, POPUP_SCRIPT_NAME } from "@/utils/constants";
-import { SyncIntent } from "@/types";
 
 const log = require("debug")("ext:background");
 log(

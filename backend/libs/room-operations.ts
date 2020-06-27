@@ -1,15 +1,15 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import {
     Room,
+    SyncIntent,
     SyncState,
     Watcher,
     WatcherState,
-    SyncIntent,
 } from '../../extension/src/types';
-import { marshallRoom, unmarshallRoom } from './room-marshalling';
-import { updateWatcher } from './watcher-operations';
 import { dynamoDB } from '../libs/dynamodb-utils';
-import { assignRoomIntent, syncIntentChanges } from './room-utils';
+import { marshallRoom, unmarshallRoom } from './room-marshalling';
+import { assignRoomIntent } from './room-utils';
+import { updateWatcher } from './watcher-operations';
 
 /**
  * Find a room by ID in DDB
@@ -20,7 +20,7 @@ export const findRoomById = async (
     roomId: string,
     tableName: string,
     dynamoDb: DocumentClient = dynamoDB,
-): Promise<Room> => {
+): Promise<Room | undefined> => {
     const params: DocumentClient.GetItemInput = {
         TableName: tableName,
         Key: { roomId },
@@ -38,7 +38,7 @@ export const findRoomById = async (
         console.log(
             `Could not find a room with id ${roomId}. It's either new or destroyed`,
         );
-        throw new Error('Room not found');
+        return undefined;
     }
 
     return unmarshallRoom(data.Item);
@@ -57,7 +57,7 @@ export const createRoom = async (
         id: ownerConnectionString,
         connectionId: ownerConnectionString,
         joinedAt: new Date(),
-        lastVideoTimestamp: undefined,
+        lastVideoTimestamp: null,
         lastHeartbeat: new Date(),
         currentVideoStatus: WatcherState.UNKNOWN,
         initialSync: false,
@@ -70,13 +70,13 @@ export const createRoom = async (
         watchers: { [ownerConnectionString]: owner },
         minBufferLength: 5,
         videoSpeed: 1,
-        currentVideoUrl: undefined,
+        currentVideoUrl: null,
         syncIntent: SyncIntent.PAUSE,
-        syncStartedAt: undefined,
-        syncStartedTimestamp: undefined,
-        videoStatus: SyncState.WAITING,
-        resumePlayingAt: undefined,
-        resumePlayingTimestamp: undefined,
+        syncStartedAt: null,
+        syncStartedTimestamp: null,
+        syncState: SyncState.WAITING,
+        resumePlayingAt: null,
+        resumePlayingTimestamp: null,
     };
     const params: DocumentClient.PutItemInput = {
         TableName: tableName,
@@ -112,7 +112,6 @@ export const updateRoom = async (
         Key: { roomId: room.roomId },
         UpdateExpression: [
             'SET currentVideoUrl = :currentVideoUrl',
-            'videoStatus = :videoStatus',
             'syncState = :syncState',
             'syncStartedAt = :syncStartedAt',
             'syncStartedTimestamp = :syncStartedTimestamp',
@@ -152,7 +151,7 @@ export const joinExistingRoom = async (
         id: watcherConnectionString,
         connectionId: watcherConnectionString,
         joinedAt: new Date(),
-        lastVideoTimestamp: undefined,
+        lastVideoTimestamp: null,
         lastHeartbeat: new Date(),
         currentVideoStatus: WatcherState.UNKNOWN,
         initialSync: false,
@@ -173,16 +172,19 @@ export const joinExistingRoom = async (
 export const updateRoomSyncIntent = async (
     room: Room,
     tableName: string,
-    watcherConnectionString: string,
     syncIntent: SyncIntent,
 ): Promise<Room> => {
-    if (
-        watcherConnectionString !== room.ownerId &&
-        syncIntent === SyncIntent.PLAY &&
-        syncIntentChanges(room, syncIntent)
-    ) {
-        throw new Error('Watcher is not authorized to perform this operation');
-    }
     room = assignRoomIntent(room, syncIntent);
     return updateRoom(room, tableName);
+};
+
+export const ensureOnlyOwnerCanDoThisError = (
+    room: Room,
+    watcher: string,
+): void => {
+    if (watcher != room.ownerId) {
+        throw new Error(
+            `Watcher ${watcher} is not authorized to perform this operation, only ${room.ownerId} can`,
+        );
+    }
 };
