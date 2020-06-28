@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.73.1
+  serverless: 1.74.0
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2_typescript@3.9.5+webpack@4.43.0
@@ -423,13 +423,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lJZPilxX7Op3Nv/2cvFdnlepPXDxi29wxteT57Q965oc5R9v86ztx0jfxVrTcBk8C2kcPkkDa2Z4T3ZsPPVWsQ==
-  /@babel/parser/7.10.2:
-    dev: true
-    engines:
-      node: '>=6.0.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-PApSXlNMJyB4JiGVhCOlzKIif+TKFTvu0aQAhnTvfP/z3vVSN6ZypH5bfUNwFXXjRQtUEBNFd2PtmCmG2Py3qQ==
   /@babel/parser/7.10.3:
     dev: true
     engines:
@@ -1571,11 +1564,11 @@ packages:
     dev: true
     resolution:
       integrity: sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
-  /@serverless/cli/1.5.0:
+  /@serverless/cli/1.5.1:
     dependencies:
       '@serverless/core': 1.1.2
       '@serverless/template': 1.1.3
-      '@serverless/utils': 1.1.0
+      '@serverless/utils': 1.2.0
       ansi-escapes: 4.3.1
       chalk: 2.4.2
       chokidar: 3.4.0
@@ -1587,7 +1580,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-hGYbsI/Gf9RFTTZS4yXvufDAv/lk6ae8PGBbjZySEtlx/zqA31PgNaWBqWjCo3+KMfpcq8abDaxiJbsu4OfWew==
+      integrity: sha512-YUVPGutE8VEbIPCb6aHfePec5kKA1iaiMyLb8snXWYDLy/EWW1Dkff/DiLgeNEy6jqV4n+9lng92re+tMi+U6g==
   /@serverless/component-metrics/1.0.8:
     dependencies:
       node-fetch: 2.6.0
@@ -1595,12 +1588,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lOUyRopNTKJYVEU9T6stp2irwlTDsYMmUKBOUjnMcwGveuUfIJqrCOtFLtIPPj3XJlbZy5F68l4KP9rZ8Ipang==
-  /@serverless/components/2.30.15:
+  /@serverless/components/2.31.5:
     dependencies:
       '@serverless/inquirer': 1.1.2
-      '@serverless/platform-client': 0.25.14
-      '@serverless/platform-client-china': 1.0.13
+      '@serverless/platform-client': 1.0.3
+      '@serverless/platform-client-china': 1.0.20
       '@serverless/platform-sdk': 2.3.1
+      '@serverless/utils': 1.2.0
       adm-zip: 0.4.14
       ansi-escapes: 4.3.1
       axios: 0.19.2
@@ -1610,16 +1604,18 @@ packages:
       figures: 3.2.0
       fs-extra: 8.1.0
       globby: 10.0.2
+      got: 9.6.0
       graphlib: 2.1.8
       https-proxy-agent: 5.0.0
       ini: 1.3.5
       js-yaml: 3.14.0
       minimist: 1.2.5
-      moment: 2.26.0
-      open: 7.0.3
+      moment: 2.27.0
+      open: 7.0.4
       prettyoutput: 1.2.0
       ramda: 0.26.1
       semver: 7.3.2
+      stream.pipeline-shim: 1.1.0
       strip-ansi: 5.2.0
       traverse: 0.6.6
       uuid: 3.4.0
@@ -1627,7 +1623,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-1K8L1DV1pUEYeBtUyJZfCSpfzBuuvCEPwAuu/D89g4Lxlp5DcrnkXUItKFf1sprTR/20q3tS9iKdcgPsU5QFCA==
+      integrity: sha512-x+tejM0bt6SbKvoIVdCkwOPSPfmW3KdW7CP6y6jnAamdfEHrItpDIbnQzsh+ukBFaFd70RrELKI7MNEnHKzGfQ==
   /@serverless/core/1.1.2:
     dependencies:
       fs-extra: 7.0.1
@@ -1658,7 +1654,7 @@ packages:
       jszip: 3.4.0
       lodash: 4.17.15
       memoizee: 0.4.14
-      moment: 2.26.0
+      moment: 2.27.0
       node-dir: 0.1.17
       node-fetch: 2.6.0
       regenerator-runtime: 0.13.5
@@ -1688,23 +1684,26 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2c5A6HSWwXluknPNJ2s+Z4WfBwP7Kn6kgsEKD+5xlXpDpBFsRku/xJyO9eqRCwxTM41stgHNC6TRsZ03+wH/rw==
-  /@serverless/platform-client-china/1.0.13:
+  /@serverless/platform-client-china/1.0.20:
     dependencies:
-      '@serverless/utils-china': 0.1.14
-      adm-zip: 0.4.14
+      '@serverless/utils-china': 0.1.17
+      archiver: 4.0.1
       dotenv: 8.2.0
+      fs-extra: 8.1.0
       https-proxy-agent: 5.0.0
       isomorphic-ws: 4.0.1_ws@7.3.0
       js-yaml: 3.14.0
       jwt-decode: 2.2.0
       minimatch: 3.0.4
+      pify: 5.0.0
       querystring: 0.2.0
+      stream.pipeline-shim: 1.1.0
       traverse: 0.6.6
       urlencode: 1.1.0
       ws: 7.3.0
     dev: true
     resolution:
-      integrity: sha512-E28NGdvx1GiJ0hC94QXISLU4qJ6GRTb+DrZRaEZcBczNEN39RNbbQncrpBx+CsKjrzZuY3aYOKcyK9vUMCzG6A==
+      integrity: sha512-KJisy1IKzE4CG86WFzhN5b0tHv6FI9/K9BxvqLZktIeGRf8tr4CqPbU+UE/DnCpDADuBBrFAXbbIv1RZonwhsQ==
   /@serverless/platform-client/0.25.14:
     dependencies:
       adm-zip: 0.4.14
@@ -1720,6 +1719,21 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ww5GBt5QEHYppLH8X+gEFiuMoFu9xdXK0bEROYbuxUliiB0IfXTXLzWR5whhi/S94R7pTnJ4O+WUiFj0PcV/tQ==
+  /@serverless/platform-client/1.0.3:
+    dependencies:
+      adm-zip: 0.4.14
+      axios: 0.19.2
+      https-proxy-agent: 5.0.0
+      isomorphic-ws: 4.0.1_ws@7.3.0
+      js-yaml: 3.14.0
+      jwt-decode: 2.2.0
+      minimatch: 3.0.4
+      querystring: 0.2.0
+      traverse: 0.6.6
+      ws: 7.3.0
+    dev: true
+    resolution:
+      integrity: sha512-c+KJQLmzGqEK52S98cTZsltvyoNVYMxtYF40KVBWCWTEK9hPO7bNIV79WdB90pBKYTh0sIlHmSlf2dUuOiOxlw==
   /@serverless/platform-sdk/2.3.1:
     dependencies:
       chalk: 2.4.2
@@ -1748,9 +1762,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hcMiX523rkp6kHeKnM1x6/dXEY+d1UFSr901yVKeeCgpFy4u33UI9vlKaPweAZCF6Ahzqywf01IsFTuBVadCrQ==
-  /@serverless/utils-china/0.1.14:
+  /@serverless/utils-china/0.1.17:
     dependencies:
-      '@tencent-sdk/capi': 0.2.15-alpha.0
+      '@tencent-sdk/capi': 0.2.17
       dijkstrajs: 1.0.1
       dot-qs: 0.2.0
       duplexify: 4.1.1
@@ -1759,12 +1773,11 @@ packages:
       object-assign: 4.1.1
       protobufjs: 6.9.0
       socket.io-client: 2.3.0
-      socket.io-stream: 0.9.1
       winston: 3.2.1
     dev: true
     resolution:
-      integrity: sha512-M1/bvs/ZhqPfj1yqdsyxu4yIWtCXHd+a5Av/ZXef1deTn1zJHO+ZJdOtvFzWHb0Sr7sX4p2ZHD/vGj0Rve/Pzg==
-  /@serverless/utils/1.1.0:
+      integrity: sha512-GhveUbvj32whixPOztLhHJdLZUP5L3Ni+giOyM2vOl00Dnf1oklau2QCiDxvSWj5+ZlBGxyDMRJUXAfO1F6SPA==
+  /@serverless/utils/1.2.0:
     dependencies:
       chalk: 2.4.2
       lodash: 4.17.15
@@ -1776,7 +1789,7 @@ packages:
     engines:
       node: '>=6.0'
     resolution:
-      integrity: sha512-MZBLphb8Dz9/mGclFQ53INznSFHZAwS2z4H8RZb6UPCqcRhW0SRrdLwLmn9JIqLWH4Zn95LbNsAjmzJ4Dl3CPQ==
+      integrity: sha512-aI/cpGVUhWbJUR8QDMtPue28EU4ViG/L4/XKuZDfAN2uNQv3NRjwEFIBi/cxyfQnMTYVtMLe9wDjuwzOT4ENzA==
   /@shelf/jest-dynamodb/1.7.0_aws-sdk@2.663.0:
     dependencies:
       aws-sdk: 2.663.0
@@ -1822,17 +1835,19 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
-  /@tencent-sdk/capi/0.2.15-alpha.0:
+  /@tencent-sdk/capi/0.2.17:
     dependencies:
-      chalk: 3.0.0
-      moment: 2.26.0
+      '@types/chalk': 2.2.0
+      '@types/object-assign': 4.0.30
+      '@types/request': 2.48.5
+      '@types/request-promise-native': 1.0.17
       object-assign: 4.1.1
       querystring: 0.2.0
       request: 2.88.2
       request-promise-native: 1.0.8_request@2.88.2
     dev: true
     resolution:
-      integrity: sha512-1P3tlXJgQaQIqphh1jVeyXDOajFUFIU4J7MoU3Pwxdx58dOwS59/suTq4El0Fe12pc3Gmhw+eDeQc35GaHYViw==
+      integrity: sha512-DIenMFJXrd4yb35BbW/7LiikCQotbm9HEBG9S4HKV47tcKt6e4nZrNPO3R2hHgQ2jdo0xfqmlUlCP0O4Q3b9pw==
   /@types/aws-lambda/8.10.57:
     dev: true
     resolution:
@@ -1866,6 +1881,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ddHK5icION5U6q11+tV2f9Mo6CZVuT8GJKld2q9LqHSZbvLbH34Kcu2yFGckZut453+eQU6btIA3RihmnRgI+Q==
+  /@types/caseless/0.12.2:
+    dev: true
+    resolution:
+      integrity: sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
+  /@types/chalk/2.2.0:
+    dependencies:
+      chalk: 4.0.0
+    deprecated: 'This is a stub types definition for chalk (https://github.com/chalk/chalk). chalk provides its own type definitions, so you don''t need @types/chalk installed!'
+    dev: true
+    resolution:
+      integrity: sha512-1zzPV9FDe1I/WHhRkf9SNgqtRJWZqrBWgu7JGveuHmmyR9CnAPCie2N/x+iHrgnpYBIcCJWHBoMRv2TRWktsvw==
   /@types/color-name/1.1.1:
     dev: true
     resolution:
@@ -1944,14 +1970,37 @@ packages:
     dev: true
     resolution:
       integrity: sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
+  /@types/object-assign/4.0.30:
+    dev: true
+    resolution:
+      integrity: sha1-iUk3HVqZ9Dge4PHfCpt6GH4H5lI=
   /@types/prettier/2.0.0:
     dev: true
     resolution:
       integrity: sha512-/rM+sWiuOZ5dvuVzV37sUuklsbg+JPOP8d+nNFlo2ZtfpzPiPvh1/gc8liWOLBqe+sR+ZM7guPaIcTt6UZTo7Q==
+  /@types/request-promise-native/1.0.17:
+    dependencies:
+      '@types/request': 2.48.5
+    dev: true
+    resolution:
+      integrity: sha512-05/d0WbmuwjtGMYEdHIBZ0tqMJJQ2AD9LG2F6rKNBGX1SSFR27XveajH//2N/XYtual8T9Axwl+4v7oBtPUZqg==
+  /@types/request/2.48.5:
+    dependencies:
+      '@types/caseless': 0.12.2
+      '@types/node': 13.13.12
+      '@types/tough-cookie': 4.0.0
+      form-data: 2.5.1
+    dev: true
+    resolution:
+      integrity: sha512-/LO7xRVnL3DxJ1WkPGDQrp4VTV1reX9RkC85mJ+Qzykj2Bdw+mG15aAfDahc76HtknjzE16SX/Yddn6MxVbmGQ==
   /@types/stack-utils/1.0.1:
     dev: true
     resolution:
       integrity: sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
+  /@types/tough-cookie/4.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-I99sngh224D0M7XgW1s120zxCt3VYQ3IQsuw3P3jbq5GG4yc79+ZjyKznyOGIQrflfylLgcfekeZW/vk0yng6A==
   /@types/uuid/8.0.0:
     dev: true
     resolution:
@@ -2394,6 +2443,20 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-5Hxxcig7gw5Jod/8Gq0OneVgLYET+oNHcxgWItq4TbhOzRLKNAFUb9edAftiMKXvXfCB0vbGrJdZDNq0dWMsxg==
+  /archiver/4.0.1:
+    dependencies:
+      archiver-utils: 2.1.0
+      async: 2.6.3
+      buffer-crc32: 0.2.13
+      glob: 7.1.6
+      readable-stream: 3.6.0
+      tar-stream: 2.1.2
+      zip-stream: 3.0.1
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-/YV1pU4Nhpf/rJArM23W6GTUjT0l++VbjykrCRua1TSXrn+yM8Qs7XvtwSiRse0iCe49EPNf7ktXnPsWuSb91Q==
   /arg/4.1.3:
     dev: true
     resolution:
@@ -2539,7 +2602,7 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-xPOszNOaSXTRs8VGXaMbhTKXdlq2TlDRfFRVEGxkZrtow87hEIVZGAUSUme2e3GHqHUDnySwcufrUpUPUizOKQ==
-  /aws-sdk/2.697.0:
+  /aws-sdk/2.706.0:
     dependencies:
       buffer: 4.9.2
       events: 1.1.1
@@ -2554,7 +2617,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-aNrwiPRHQyzjJxpfgLwVOevuGTOMkU5uiP4VDIngfc/k4s2kQgLSyhLSKmNTjbubHCHfs1sQQkP3RXK2Oi8Rbw==
+      integrity: sha512-7GT+yrB5Wb/zOReRdv/Pzkb2Qt+hz6B/8FGMVaoysX3NryHvQUdz7EQWi5yhg9CxOjKxdw5lFwYSs69YlSp1KA==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -3443,6 +3506,17 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-eVw6n7CnEMFzc3duyFVrQEuY1BlHR3rYsSztyG32ibGMW722i3C6IizEGMFmfMU+A+fALvBIwxN3czffTcdA+Q==
+  /compress-commons/3.0.0:
+    dependencies:
+      buffer-crc32: 0.2.13
+      crc32-stream: 3.0.1
+      normalize-path: 3.0.0
+      readable-stream: 2.3.7
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-FyDqr8TKX5/X0qo+aVfaZ+PVmNJHJeckFBlq8jZGSJOgnynhfifoyl24qaqdUdDIBe0EVTHByN6NAkqYvE/2Xg==
   /concat-map/0.0.1:
     dev: true
     resolution:
@@ -3693,12 +3767,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ccnYgKC0/hPSGXxj7Ju6AV/BP4HUkXC2u15mikXT5mX9YorEaoi1bEKOmAqdkJHN4EEkmAf97SpH66Try5Mbeg==
-  /debug/2.2.0:
-    dependencies:
-      ms: 0.7.1
-    dev: true
-    resolution:
-      integrity: sha1-+HBX6ZWxofauaklgZkE3vFbwOdo=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -7299,10 +7367,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-uxHCj5Pw9psZiC1znjU2qPsubt6haCSsN9m7xmIdoTciEgfxUkE1vhtDvjHPuOXEZrVJhjKgkmkP+w73rRuelQ==
-  /moment/2.26.0:
+  /moment/2.27.0:
     dev: true
     resolution:
-      integrity: sha512-oIixUO+OamkUkwjhAVE18rAMfRJNsNe/Stid/gwHSOfHrOtw9EhAY2AHvdKZ/k/MggcYELFCJz/Sn2pL8b8JMw==
+      integrity: sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
   /move-concurrently/1.0.1:
     dependencies:
       aproba: 1.2.0
@@ -7314,10 +7382,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-viwAX9oy4LKa8fBdfEszIUxwH5I=
-  /ms/0.7.1:
-    dev: true
-    resolution:
-      integrity: sha1-nNE8A62/8ltl7/3nzoZO6VIBcJg=
   /ms/2.0.0:
     dev: true
     resolution:
@@ -7474,7 +7538,7 @@ packages:
       integrity: sha512-wp8zyQVwef2hpZ/dJH7SfSrIPD6YoJz6BDQDpGEkcA0s3LpAQoxBIYmfIq6QAhC1DhwsyCgTaTTcONwX8qzCuQ==
   /node-source-walk/4.2.0:
     dependencies:
-      '@babel/parser': 7.10.2
+      '@babel/parser': 7.10.3
     dev: true
     engines:
       node: '>=6.0'
@@ -7637,7 +7701,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-5NcSkPHhwTVFIQN+TUqXoS5+dlElHXdpAWu9I0HP20YOtIi+aZ0Ct82jdlILDxjLEAWwvm+qj1m6aEtsDVmm6Q==
-  /open/7.0.3:
+  /open/7.0.4:
     dependencies:
       is-docker: 2.0.0
       is-wsl: 2.2.0
@@ -7645,7 +7709,7 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-sP2ru2v0P290WFfv49Ap8MF6PkzGNnGlAwHweB4WR4mr5d2d0woiCluUeJ218w7/+PmoBy9JmYgD5A4mLcWOFA==
+      integrity: sha512-brSA+/yq+b08Hsr4c8fsEW2CRzk1BmfN3SAK/5VCHQ9bdoZJ4qa/+AfR0xHjlbbZUyPkUHs1b8x1RqdyZdkVqQ==
   /opn/5.5.0:
     dependencies:
       is-wsl: 1.1.0
@@ -7984,6 +8048,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
+  /pify/5.0.0:
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==
   /pinkie-promise/2.0.1:
     dependencies:
       pinkie: 2.0.4
@@ -8880,16 +8950,16 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-/p0Ht87AeQb13Vz3lEcT72vE3GOyDX70iX8fTuDZ0xMwfKtRogRkYzuV89HKc2ULIHx++g/NGTRU6nSGpA3snA==
-  /serverless/1.73.1:
+  /serverless/1.74.0:
     dependencies:
-      '@serverless/cli': 1.5.0
-      '@serverless/components': 2.30.15
+      '@serverless/cli': 1.5.1
+      '@serverless/components': 2.31.5
       '@serverless/enterprise-plugin': 3.6.13
       '@serverless/inquirer': 1.1.2
-      '@serverless/utils': 1.1.0
+      '@serverless/utils': 1.2.0
       archiver: 3.1.1
       async: 1.5.2
-      aws-sdk: 2.697.0
+      aws-sdk: 2.706.0
       bluebird: 3.7.2
       boxen: 3.2.0
       cachedir: 2.3.0
@@ -8941,7 +9011,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-8cBSUS8uGzI9/mYJqWfLsx/byIfUlpZS2gXpUP5yXu6rRuBpLAsg1V02rzjK+48t+3Sv5+qZCk1XRGbzoUTVGg==
+      integrity: sha512-aTnGVxGJ3J5hMFlHFUorhqOkshN933ZclRcJe7C9JGJ8ot7KDAmudRgvOB2/jzHL2t6LoutpTmCuyNllxy8ESA==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -9116,13 +9186,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hczmV6bDgdaEbVqhAeVMM/jfUfzuEZHsQg6eOmLgJht6G3mPKMxYm75w2+qhAQZ+4X+1+ATZ+QFKeOZD5riHng==
-  /socket.io-stream/0.9.1:
-    dependencies:
-      component-bind: 1.0.0
-      debug: 2.2.0
-    dev: true
-    resolution:
-      integrity: sha1-QhJYMWKIuDrGk7DUPv0J1tQ6upc=
   /sort-keys-length/1.0.1:
     dependencies:
       sort-keys: 1.1.2
@@ -9322,6 +9385,21 @@ packages:
     dev: true
     resolution:
       integrity: sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
+  /stream.finished/1.2.0:
+    dependencies:
+      define-properties: 1.1.3
+      function-bind: 1.1.1
+    dev: true
+    resolution:
+      integrity: sha512-xSp45f/glqd035qAtFUxAGvhotjY/EfqDNV+rQW8o7ffligiOjPaguTEvRzeQAhiQMCdkPEBrp5++S/rQyavWQ==
+  /stream.pipeline-shim/1.1.0:
+    dependencies:
+      define-properties: 1.1.3
+      function-bind: 1.1.1
+      stream.finished: 1.2.0
+    dev: true
+    resolution:
+      integrity: sha512-pSi/SZZDbSA5l3YYjSmJadCoD74/qSe79r9ZVR21lD4bpf+khn5Umi6AlfJrD8I0KQfGSqm/7Yp48dmithM+Vw==
   /strict-uri-encode/1.1.0:
     dev: true
     engines:
@@ -10567,6 +10645,16 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-EkXc2JGcKhO5N5aZ7TmuNo45budRaFGHOmz24wtJR7znbNqDPmdZtUauKX6et8KAVseAMBOyWJqEpXcHTBsh7Q==
+  /zip-stream/3.0.1:
+    dependencies:
+      archiver-utils: 2.1.0
+      compress-commons: 3.0.0
+      readable-stream: 3.6.0
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-r+JdDipt93ttDjsOVPU5zaq5bAyY+3H19bDrThkvuVxC0xMQzU1PJcS6D+KrP3u96gH9XLomcHPb+2skoDjulQ==
 specifiers:
   '@babel/core': 7.10.3
   '@babel/preset-env': 7.10.3
@@ -10586,7 +10674,7 @@ specifiers:
   jest: 26.0.1
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.73.1
+  serverless: 1.74.0
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2
