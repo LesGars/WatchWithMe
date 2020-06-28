@@ -31,13 +31,18 @@ describe('#createRoom', () => {
             })
             .promise();
 
-        expect(Item).toEqual({
+        expect(Item).toMatchObject({
+            currentVideoUrl: null,
             minBufferLength: 5,
             ownerId: 'owner',
-            resumePlayingAt: undefined,
+            resumePlayingAt: null,
+            resumePlayingTimestamp: null,
+            syncIntent: 'PAUSE',
+            syncStartedAt: null,
+            syncStartedTimestamp: null,
+            syncState: 'WAITING',
             roomId: roomId,
             videoSpeed: 1,
-            syncState: 'WAITING',
             watchers: {
                 owner: {
                     connectionId: 'owner',
@@ -74,28 +79,33 @@ describe('#joinExistingRoom', () => {
             })
             .promise();
 
-        expect(roomAfterJoin).toEqual({
+        expect(roomAfterJoin).toMatchObject({
+            currentVideoUrl: null,
             minBufferLength: 5,
             ownerId: owner,
-            resumePlayingAt: undefined,
+            resumePlayingAt: null,
+            resumePlayingTimestamp: null,
+            syncIntent: 'PAUSE',
+            syncStartedAt: null,
+            syncStartedTimestamp: null,
+            syncState: 'WAITING',
             roomId: roomId,
             videoSpeed: 1,
-            videoStatus: 'WAITING',
             watchers: {
-                [owner]: {
+                [owner]: expect.objectContaining({
                     connectionId: owner,
                     currentVideoStatus: 'UNKNOWN',
                     id: owner,
                     initialSync: false,
                     userAgent: 'TODO',
-                },
-                friend: {
+                }),
+                friend: expect.objectContaining({
                     connectionId: 'friend',
                     currentVideoStatus: 'UNKNOWN',
                     id: 'friend',
                     initialSync: false,
                     userAgent: 'TODO',
-                },
+                }),
             },
         });
     });
@@ -116,7 +126,7 @@ describe('#updateRoomSyncIntent', () => {
 
     describe('with a play syncIntent', () => {
         it('updates the room sync intent', async () => {
-            await updateRoomSyncIntent(room, tableName, SyncIntent.PLAY);
+            await updateRoomSyncIntent(room, tableName, SyncIntent.PLAY, ddb);
 
             const { Item: roomAfterJoin } = await ddb
                 .get({

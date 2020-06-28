@@ -5,6 +5,7 @@ import {
     Watcher,
     WatcherState,
 } from '../../extension/src/types';
+import { dynamoDB } from './dynamodb-utils';
 import { updateRoom } from './room-operations-crud';
 import { assignRoomIntent } from './room-utils';
 import { updateWatcher } from './watcher-operations';
@@ -44,10 +45,11 @@ export const updateRoomSyncIntent = async (
     room: Room,
     tableName: string,
     syncIntent: SyncIntent,
+    dynamoDb: DocumentClient = dynamoDB,
 ): Promise<Room> => {
     room = assignRoomIntent(room, syncIntent);
     console.log('Update the room with the new sync intent');
-    return updateRoom(room, tableName);
+    return updateRoom(room, tableName, dynamoDb);
 };
 
 export const ensureOnlyOwnerCanDoThisError = (

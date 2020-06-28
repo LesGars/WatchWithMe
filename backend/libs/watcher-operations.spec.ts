@@ -78,7 +78,7 @@ describe('#updateWatcher', () => {
                 return await reloadRoom();
             });
             it('updates the owner to the READY state', async () => {
-                expect(ddbRoomAfterOperations.watchers['owner']).toEqual({
+                expect(ddbRoomAfterOperations.watchers['owner']).toMatchObject({
                     connectionId: 'owner',
                     currentVideoStatus: WatcherState.READY,
                     id: 'owner',
@@ -87,18 +87,20 @@ describe('#updateWatcher', () => {
                 });
             });
             it('leaves the friend in the UNKNOWN state', async () => {
-                expect(ddbRoomAfterOperations.watchers['friend']).toEqual({
-                    connectionId: 'friend',
-                    currentVideoStatus: WatcherState.UNKNOWN,
-                    id: 'friend',
-                    initialSync: false,
-                    userAgent: 'TODO',
-                });
+                expect(ddbRoomAfterOperations.watchers['friend']).toMatchObject(
+                    {
+                        connectionId: 'friend',
+                        currentVideoStatus: WatcherState.UNKNOWN,
+                        id: 'friend',
+                        initialSync: false,
+                        userAgent: 'TODO',
+                    },
+                );
             });
             it('leaves the room in a waiting state', () => {
                 expect(ddbRoomAfterOperations).toMatchObject({
                     ownerId: 'owner',
-                    videoStatus: SyncState.WAITING,
+                    syncState: SyncState.WAITING,
                 });
             });
         });
@@ -115,13 +117,15 @@ describe('#updateWatcher', () => {
                 done();
             });
             it('updates the friend to the Ready state', async () => {
-                expect(ddbRoomAfterOperations.watchers['friend']).toEqual({
-                    connectionId: 'friend',
-                    currentVideoStatus: WatcherState.READY,
-                    id: 'friend',
-                    initialSync: false,
-                    userAgent: 'TODO',
-                });
+                expect(ddbRoomAfterOperations.watchers['friend']).toMatchObject(
+                    {
+                        connectionId: 'friend',
+                        currentVideoStatus: WatcherState.READY,
+                        id: 'friend',
+                        initialSync: false,
+                        userAgent: 'TODO',
+                    },
+                );
             });
             test.todo(
                 'initiates synchronized start https://github.com/LesGars/WatchWithMe/issues/145',
@@ -144,7 +148,7 @@ describe('#updateWatcher', () => {
                 done();
             });
             it('updates the watcher to the PLAYING state', async () => {
-                expect(ddbRoomAfterOperations.watchers['owner']).toEqual({
+                expect(ddbRoomAfterOperations.watchers['owner']).toMatchObject({
                     connectionId: 'owner',
                     currentVideoStatus: WatcherState.PLAYING,
                     id: 'owner',

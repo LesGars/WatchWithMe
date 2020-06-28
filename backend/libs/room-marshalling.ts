@@ -9,8 +9,7 @@ import { marshallMap } from './dynamodb-utils';
 const unmarshallWatchers = (
     watchersDDB: DocumentClient.AttributeMap,
 ): Record<string, Watcher> => {
-    console.log('watchers DDB', watchersDDB);
-    const watchers = Object.fromEntries(
+    return Object.fromEntries(
         Object.entries(watchersDDB).map(([watcherID, watcherDDB]) => [
             watcherID,
             {
@@ -25,8 +24,6 @@ const unmarshallWatchers = (
             },
         ]),
     );
-    console.log('watchers unmarshalled', watchers);
-    return watchers;
 };
 
 /**
