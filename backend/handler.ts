@@ -1,5 +1,5 @@
-import { IEvent, success } from './libs/response';
 import ApiGatewayManagementApi from 'aws-sdk/clients/apigatewaymanagementapi';
+import { IEvent, success } from './libs/response';
 
 export const defaultHandler = async (event: IEvent) => {
     // default function that just echos back the data to the client
@@ -11,9 +11,11 @@ export const defaultHandler = async (event: IEvent) => {
     await client
         .postToConnection({
             ConnectionId: event.requestContext.connectionId,
-            Data: `received: ${event.body}`,
+            Data: {
+                message: event.body,
+            },
         })
         .promise();
 
-    return success();
+    return success({ message: event.body });
 };

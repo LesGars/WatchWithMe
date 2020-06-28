@@ -63,7 +63,7 @@ export const scheduleSyncPlayIfPossible = async (
     room: Room,
     event: IEvent,
     dynamoDb: DocumentClient = dynamoDB,
-): Promise<void> => {
+): Promise<boolean> => {
     if (!process.env.ROOM_TABLE) {
         throw new Error('env.ROOM_TABLE must be defined');
     }
@@ -75,9 +75,11 @@ export const scheduleSyncPlayIfPossible = async (
         console.log('Scheduling sync play since all watchers are ready');
         await scheduleSyncPlay(room, dynamoDb);
         await sendSyncPlayCommandToWatchers(room, event);
+        return true;
     } else {
         console.log(
             'Cannot schedule sync play : watchers not ready or sync intent is not PLAY',
         );
+        return false;
     }
 };

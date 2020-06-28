@@ -10,6 +10,7 @@ export enum MessageFromServerToExtensionType {
     PAUSE = "PAUSE",
     CHANGE_VIDEO = "CHANGE_VIDEO",
     NEW_WATCHER = "NEW_WATCHER",
+    SUCCESS = "SUCCESS", // When replying to WS message sent from client
 }
 
 export interface SchedulePlaySyncCommand extends MessageFromServerToExtension {

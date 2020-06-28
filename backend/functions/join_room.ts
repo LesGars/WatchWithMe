@@ -74,9 +74,8 @@ export const main = async (event: IEvent) => {
         return failure();
     }
 
-    console.log(
-        `[WS-S] User ${watcherConnectionString} joined room ${roomId} successfully`,
-    );
+    const message = `[WS-S] User ${watcherConnectionString} joined room ${roomId} successfully`;
+    console.log(message);
 
     await sendEvent(event, room, {
         type: MessageFromServerToExtensionType.NEW_WATCHER,
@@ -85,5 +84,5 @@ export const main = async (event: IEvent) => {
     });
 
     // TODO : tell all roomates that someone joined the room
-    return success();
+    return success({ message, type: MessageFromServerToExtensionType.SUCCESS });
 };
