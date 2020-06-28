@@ -49,7 +49,7 @@
         "@vue/devtools": "5.3.3",
         "@vue/eslint-config-prettier": "6.0.0",
         "@vue/eslint-config-typescript": "5.0.2",
-        "autoprefixer": "9.8.2",
+        "autoprefixer": "9.8.4",
         "axios": "0.19.2",
         "babel-jest": "26.0.1",
         "clean-webpack-plugin": "3.0.0",

@@ -34,7 +34,7 @@ devDependencies:
   '@vue/devtools': 5.3.3
   '@vue/eslint-config-prettier': 6.0.0_fb4036f457a774d91b7f7ffffaa18639
   '@vue/eslint-config-typescript': 5.0.2_bfb65f6f322c54eb427e97b68401d418
-  autoprefixer: 9.8.2
+  autoprefixer: 9.8.4
   axios: 0.19.2
   babel-jest: 26.0.1_@babel+core@7.10.3
   clean-webpack-plugin: 3.0.0_webpack@4.43.0
@@ -3667,21 +3667,19 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-D96ZiIHXbDmU02dBaemyAg53ez+6F5yZmapmgKcjm35yEe1uVDYI8hGW3VYoGRaG290ZFf91YxHrR518vC0u/A==
-  /autoprefixer/9.8.2:
+  /autoprefixer/9.8.4:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001084
-      kleur: 4.0.1
+      caniuse-lite: 1.0.30001090
+      colorette: 1.2.0
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       postcss: 7.0.32
       postcss-value-parser: 4.1.0
     dev: true
-    engines:
-      node: ^6 || ^8 || ^10 || ^12 || >=13.7
     hasBin: true
     resolution:
-      integrity: sha512-9UwMMU8Rg7Fj0c55mbOpXrr/2WrRqoOwOlLNTyyYt+nhiyQdIBWipp5XWzt+Lge8r3DK5y+EHMc1OBf8VpZA6Q==
+      integrity: sha512-84aYfXlpUe45lvmS+HoAWKCkirI/sw4JK0/bTeeqgHYco3dcsOn0NqdejISjptsYwNji/21dnkDri9PsYKk89A==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -4380,10 +4378,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hdBcQMFvJIrOhkpAZiRXz04Cmetwc9NekeuNl0qZfHOugxOhJKxsjF1RmISMPFjIF4PPx1reliIzbfN42EiQ5A==
-  /caniuse-lite/1.0.30001084:
+  /caniuse-lite/1.0.30001090:
     dev: true
     resolution:
-      integrity: sha512-ftdc5oGmhEbLUuMZ/Qp3mOpzfZLCxPYKcvGv6v2dJJ+8EdqcvZRbAGOiLmkM/PV1QGta/uwBs8/nCl6sokDW6w==
+      integrity: sha512-QzPRKDCyp7RhjczTPZaqK3CjPA5Ht2UnXhZhCI4f7QiB5JK6KEuZBxIzyWnB3wO4hgAj4GMRxAhuiacfw0Psjg==
   /capture-exit/2.0.0:
     dependencies:
       rsvp: 4.8.5
@@ -4730,6 +4728,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
+  /colorette/1.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-soRSroY+OF/8OdA3PTQXwaDJeMc7TfknKKrxeSCencL2a4+Tx5zhxmmv7hdpCjhKBjehzp8+bwe/T68K0hpIjw==
   /colors/1.4.0:
     dev: true
     engines:
@@ -8798,12 +8800,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
-  /kleur/4.0.1:
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-Qs6SqCLm63rd0kNVh+wO4XsWLU6kgfwwaPYsLiClWf0Tewkzsa6MvB21bespb8cz+ANS+2t3So1ge3gintzhlw==
   /launch-editor-middleware/2.2.1:
     dependencies:
       launch-editor: 2.2.1
@@ -14223,7 +14219,7 @@ specifiers:
   '@vue/devtools': 5.3.3
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 5.0.2
-  autoprefixer: 9.8.2
+  autoprefixer: 9.8.4
   axios: 0.19.2
   babel-jest: 26.0.1
   clean-webpack-plugin: 3.0.0
