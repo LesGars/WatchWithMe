@@ -1,10 +1,10 @@
 import { UpdateSyncIntent } from '../../extension/src/communications/from-extension-to-server';
 import { failure, IEvent, success } from '../libs/response';
+import { findRoomById } from '../libs/room-operations-crud';
 import {
     ensureOnlyOwnerCanDoThisError,
-    findRoomById,
     updateRoomSyncIntent,
-} from '../libs/room-operations';
+} from '../libs/room-operations-other';
 import { ensureRoomJoined } from '../libs/room-utils';
 import { scheduleSyncPlayIfPossible } from '../libs/sync-commands';
 

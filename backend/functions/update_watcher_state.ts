@@ -3,7 +3,7 @@ import { UpdateWatcherState } from '../../extension/src/communications/from-exte
 import { Room } from '../../extension/src/types';
 import { dynamoDB } from '../libs/dynamodb-utils';
 import { IEvent, success } from '../libs/response';
-import { findRoomById } from '../libs/room-operations';
+import { findRoomById } from '../libs/room-operations-crud';
 import { ensureRoomJoined } from '../libs/room-utils';
 import { updateWatcherVideoStatus } from '../libs/watcher-operations';
 

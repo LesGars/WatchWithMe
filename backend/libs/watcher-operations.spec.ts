@@ -2,7 +2,8 @@ import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { v4 as uuidv4 } from 'uuid';
 import { Room, SyncState, WatcherState } from '../../extension/src/types';
 import { unmarshallRoom } from './room-marshalling';
-import { createRoom, joinExistingRoom, updateRoom } from './room-operations';
+import { createRoom, updateRoom } from './room-operations-crud';
+import { joinExistingRoom } from './room-operations-other';
 import { updateWatcherVideoStatus } from './watcher-operations';
 
 const isTest = process.env.JEST_WORKER_ID;

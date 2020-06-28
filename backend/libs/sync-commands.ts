@@ -14,30 +14,7 @@ import {
 import { dynamoDB } from './dynamodb-utils';
 import { sendEvent } from './event-utils';
 import { IEvent } from './response';
-import { updateRoom } from './room-operations';
-
-export const scheduleSyncPlayIfPossible = async (
-    room: Room,
-    event: IEvent,
-    dynamoDb: DocumentClient = dynamoDB,
-): Promise<void> => {
-    if (!process.env.ROOM_TABLE) {
-        throw new Error('env.ROOM_TABLE must be defined');
-    }
-
-    if (
-        room.syncIntent == SyncIntent.PLAY &&
-        areAllWatchersReady(Object.values(room.watchers))
-    ) {
-        console.log('Scheduling sync play since all watchers are ready');
-        await scheduleSyncPlay(room, dynamoDb);
-        await sendSyncPlayCommandToWatchers(room, event);
-    } else {
-        console.log(
-            'Cannot schedule sync play : watchers not ready or sync intent is not PLAY',
-        );
-    }
-};
+import { updateRoom } from './room-operations-crud';
 
 const areAllWatchersReady = (watchers: Watcher[]): boolean =>
     !watchers.find((w: Watcher) => w.currentVideoStatus !== WatcherState.READY);
@@ -61,7 +38,7 @@ const scheduleSyncPlay = async (
     console.log('timestamp to resume playing at', ownerVideoTimestamp);
     room.resumePlayingTimestamp = ownerVideoTimestamp;
     console.log('Updating the room following a scheduleSyncPlay');
-    updateRoom(room, process.env.ROOM_TABLE!, dynamoDb);
+    await updateRoom(room, process.env.ROOM_TABLE!, dynamoDb);
 };
 
 const sendSyncPlayCommandToWatchers = async (
@@ -75,9 +52,32 @@ const sendSyncPlayCommandToWatchers = async (
         type: MessageFromServerToExtensionType.SCHEDULE_PLAY,
         serverDate: new Date(),
     };
-    sendEvent(event, room, message);
+    await sendEvent(event, room, message);
     console.log(
         `SyncPlay command dispatched to watchers of room ${room.roomId}` +
             `start video at timestamp ${room.resumePlayingTimestamp} at ${room.resumePlayingAt}`,
     );
+};
+
+export const scheduleSyncPlayIfPossible = async (
+    room: Room,
+    event: IEvent,
+    dynamoDb: DocumentClient = dynamoDB,
+): Promise<void> => {
+    if (!process.env.ROOM_TABLE) {
+        throw new Error('env.ROOM_TABLE must be defined');
+    }
+
+    if (
+        room.syncIntent == SyncIntent.PLAY &&
+        areAllWatchersReady(Object.values(room.watchers))
+    ) {
+        console.log('Scheduling sync play since all watchers are ready');
+        await scheduleSyncPlay(room, dynamoDb);
+        await sendSyncPlayCommandToWatchers(room, event);
+    } else {
+        console.log(
+            'Cannot schedule sync play : watchers not ready or sync intent is not PLAY',
+        );
+    }
 };

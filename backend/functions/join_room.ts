@@ -2,11 +2,8 @@ import { MessageFromServerToExtensionType } from '../../extension/src/communicat
 import { dynamoDB } from '../libs/dynamodb-utils';
 import { sendEvent } from '../libs/event-utils';
 import { failure, IEvent, success } from '../libs/response';
-import {
-    createRoom,
-    findRoomById,
-    joinExistingRoom,
-} from '../libs/room-operations';
+import { createRoom, findRoomById } from '../libs/room-operations-crud';
+import { joinExistingRoom } from '../libs/room-operations-other';
 import { ChangeRoom } from './../../extension/src/communications/from-extension-to-server';
 
 /**

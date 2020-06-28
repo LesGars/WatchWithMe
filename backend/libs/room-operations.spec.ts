@@ -1,10 +1,10 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { Room, SyncIntent } from '../../extension/src/types';
+import { createRoom } from './room-operations-crud';
 import {
-    createRoom,
     joinExistingRoom,
     updateRoomSyncIntent,
-} from './room-operations';
+} from './room-operations-other';
 
 const isTest = process.env.JEST_WORKER_ID;
 const config = {
