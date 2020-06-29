@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.1.0
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.74.0
+  serverless: 1.74.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2_typescript@3.9.5+webpack@4.43.0
@@ -1333,7 +1333,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lOUyRopNTKJYVEU9T6stp2irwlTDsYMmUKBOUjnMcwGveuUfIJqrCOtFLtIPPj3XJlbZy5F68l4KP9rZ8Ipang==
-  /@serverless/components/2.31.5:
+  /@serverless/components/2.31.6:
     dependencies:
       '@serverless/inquirer': 1.1.2
       '@serverless/platform-client': 1.0.3
@@ -1368,7 +1368,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-x+tejM0bt6SbKvoIVdCkwOPSPfmW3KdW7CP6y6jnAamdfEHrItpDIbnQzsh+ukBFaFd70RrELKI7MNEnHKzGfQ==
+      integrity: sha512-OUEW1x+/1rqN2XyxbEqBykY/l9JbintzwwOl8re7L63++ssKZuSAn1pgPWEOti5SloOuG9RnMOrQWsQx8dNfRg==
   /@serverless/core/1.1.2:
     dependencies:
       fs-extra: 7.0.1
@@ -1379,7 +1379,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-PY7gH+7aQ+MltcUD7SRDuQODJ9Sav9HhFJsgOiyf8IVo7XVD6FxZIsSnpMI6paSkptOB7n+0Jz03gNlEkKetQQ==
-  /@serverless/enterprise-plugin/3.6.13:
+  /@serverless/enterprise-plugin/3.6.14:
     dependencies:
       '@serverless/event-mocks': 1.1.1
       '@serverless/platform-client': 0.25.14
@@ -1396,7 +1396,7 @@ packages:
       isomorphic-fetch: 2.2.1
       js-yaml: 3.14.0
       jsonata: 1.8.3
-      jszip: 3.4.0
+      jszip: 3.5.0
       lodash: 4.17.15
       memoizee: 0.4.14
       moment: 2.27.0
@@ -1413,7 +1413,7 @@ packages:
     engines:
       node: '>=6.0'
     resolution:
-      integrity: sha512-L7DOqo7LviAbYIySV5n+sURwyI5rf6IfVKRzFF3CK/EtbHUBJn7gEdHNo86Xmsm4I251ZggGSsorQvSIzT2VUQ==
+      integrity: sha512-JB26Anb5t80/wZzF0s4EIh2qSrvHDTaiLjgeFoCoEzBJZlSxZTJHva1ei3rfni0DwAtg4tm0qdRG2opyrqBP2A==
   /@serverless/event-mocks/1.1.1:
     dependencies:
       '@types/lodash': 4.14.151
@@ -6542,7 +6542,7 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-MT5mvB5cwG5Di8G3SZwuXFastqI=
-  /jszip/3.4.0:
+  /jszip/3.5.0:
     dependencies:
       lie: 3.3.0
       pako: 1.0.11
@@ -6550,7 +6550,7 @@ packages:
       set-immediate-shim: 1.0.1
     dev: true
     resolution:
-      integrity: sha512-gZAOYuPl4EhPTXT0GjhI3o+ZAz3su6EhLrKUoAivcKqyqC7laS5JEv4XWZND9BgcDcF83vI85yGbDmDR6UhrIg==
+      integrity: sha512-WRtu7TPCmYePR1nazfrtuF216cIVon/3GWOvHS9QR5bIwSbnxtdpma6un3jyGGNhHsKCSzn5Ypk+EkDRvTGiFA==
   /jwt-decode/2.2.0:
     dev: true
     resolution:
@@ -8655,11 +8655,11 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-/p0Ht87AeQb13Vz3lEcT72vE3GOyDX70iX8fTuDZ0xMwfKtRogRkYzuV89HKc2ULIHx++g/NGTRU6nSGpA3snA==
-  /serverless/1.74.0:
+  /serverless/1.74.1:
     dependencies:
       '@serverless/cli': 1.5.1
-      '@serverless/components': 2.31.5
-      '@serverless/enterprise-plugin': 3.6.13
+      '@serverless/components': 2.31.6
+      '@serverless/enterprise-plugin': 3.6.14
       '@serverless/inquirer': 1.1.2
       '@serverless/utils': 1.2.0
       archiver: 3.1.1
@@ -8716,7 +8716,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-aTnGVxGJ3J5hMFlHFUorhqOkshN933ZclRcJe7C9JGJ8ot7KDAmudRgvOB2/jzHL2t6LoutpTmCuyNllxy8ESA==
+      integrity: sha512-j/IlaoAb20/RADC3+WE95Elk/1UW88FzXCPsj8DX8YHXNWe+V+mMJpHP33xdCwPjEIH/0dt/YbT4+yVCoGzrqg==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -10365,7 +10365,7 @@ specifiers:
   jest: 26.1.0
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.74.0
+  serverless: 1.74.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2
