@@ -27,9 +27,9 @@
         "url": "https://github.com/LesGars/WatchWithMe/issues"
     },
     "devDependencies": {
-        "@babel/core": "7.10.3",
-        "@babel/preset-env": "7.10.3",
-        "@babel/preset-typescript": "7.10.1",
+        "@babel/core": "7.10.4",
+        "@babel/preset-env": "7.10.4",
+        "@babel/preset-typescript": "7.10.4",
         "@fullhuman/postcss-purgecss": "2.3.0",
         "@types/chrome": "0.0.117",
         "@types/copy-webpack-plugin": "5.0.2",
