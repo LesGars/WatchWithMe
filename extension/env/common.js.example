@@ -6,7 +6,7 @@ module.exports = {
         WS_URL: '""'
     },
     prod: {
-        WS_URL: '""'
+        WS_URL: '"wss://xph4usa3cc.execute-api.eu-west-3.amazonaws.com/prod"'
     },
 
 }
