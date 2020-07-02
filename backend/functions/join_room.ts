@@ -1,7 +1,6 @@
-import EventBridge from 'aws-sdk/clients/eventbridge';
-import { BroadcastEventType, Room } from '../../extension/src/types';
+import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
 import { dynamoDB } from '../libs/dynamodb-utils';
-import { buildEvent } from '../libs/event-utils';
+import { sendEvent } from '../libs/event-utils';
 import { failure, IEvent, success } from '../libs/response';
 import {
     createRoom,
@@ -13,7 +12,6 @@ import { ChangeRoom } from './../../extension/src/communications/from-extension-
 /**
  * Initialize outside handler to use function context
  */
-const eventBridge = new EventBridge();
 
 const joinRoom = async (
     roomId: string,
@@ -46,20 +44,6 @@ const joinRoom = async (
     }
 
     return roomDDB;
-};
-
-const sendEvent = async (event: IEvent, room: Room) => {
-    const roomEvent = buildEvent(BroadcastEventType.NEW_WATCHER, event, room);
-    console.log(roomEvent);
-    try {
-        await eventBridge
-            .putEvents({
-                Entries: [roomEvent],
-            })
-            .promise();
-    } catch (e) {
-        console.error('Could not send event', e);
-    }
 };
 
 export const main = async (event: IEvent) => {
@@ -97,7 +81,11 @@ export const main = async (event: IEvent) => {
         `[WS-S] User ${watcherConnectionString} joined room ${roomId} successfully`,
     );
 
-    await sendEvent(event, roomDDB);
+    await sendEvent(
+        event,
+        roomDDB,
+        MessageFromServerToExtensionType.NEW_WATCHER,
+    );
 
     // TODO : tell all roomates that someone joined the room
     return success();

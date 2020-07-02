@@ -18,7 +18,7 @@ const unmarshallWatchers = (
                 joinedAt: new Date(watcherDDB.joinedAt),
                 lastVideoTimestamp: watcherDDB.lastVideoTimestamp
                     ? new Date(watcherDDB.lastVideoTimestamp)
-                    : undefined,
+                    : null,
                 lastHeartbeat: new Date(watcherDDB.lastHeartbeat),
                 currentVideoStatus: watcherDDB.currentVideoStatus,
                 initialSync: watcherDDB.initialSync,
@@ -35,24 +35,25 @@ export const unmarshallRoom = (roomDDB: DocumentClient.AttributeMap): Room => {
     const room: Room = {
         roomId: roomDDB.roomId || 'error',
         createdAt: new Date(roomDDB.createdAt),
-        ownerId: roomDDB.ownerConnectionString,
+        ownerId: roomDDB.ownerId,
         watchers: unmarshallWatchers(roomDDB.watchers),
         minBufferLength: roomDDB.minBufferLength,
         videoSpeed: roomDDB.videoSpeed,
         currentVideoUrl: roomDDB.currentVideoUrl,
+        syncIntent: roomDDB.syncIntent,
         syncStartedAt: roomDDB.syncStartedAt
             ? new Date(roomDDB.syncStartedAt)
-            : undefined,
+            : null,
         syncStartedTimestamp: roomDDB.syncStartedTimestamp
             ? new Date(roomDDB.syncStartedTimestamp)
-            : undefined,
-        videoStatus: roomDDB.videoStatus,
+            : null,
+        syncState: roomDDB.syncState,
         resumePlayingAt: roomDDB.resumePlayingAt
             ? new Date(roomDDB.resumePlayingAt)
-            : undefined,
+            : null,
         resumePlayingTimestamp: roomDDB.resumePlayingTimestamp
             ? new Date(roomDDB.resumePlayingTimestamp)
-            : undefined,
+            : null,
     };
     // TODO : check casting was good / we do not have out of date DDB items
     return room;

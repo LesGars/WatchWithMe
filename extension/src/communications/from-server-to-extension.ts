@@ -9,6 +9,7 @@ export enum MessageFromServerToExtensionType {
     SCHEDULE_PLAY = "SCHEDULE_PLAY",
     PAUSE = "PAUSE",
     CHANGE_VIDEO = "CHANGE_VIDEO",
+    NEW_WATCHER = "NEW_WATCHER",
 }
 
 export interface SchedulePlaySyncCommand extends MessageFromServerToExtension {

@@ -1,15 +1,15 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import {
+    MediaEventType,
+    PlayerEvent,
+} from '../../extension/src/communications/from-extension-to-server';
+import {
     Room,
     SyncState,
     Watcher,
     WatcherState,
 } from '../../extension/src/types';
 import { marshallMap } from './dynamodb-utils';
-import {
-    PlayerEvent,
-    MediaEventType,
-} from '../../extension/src/communications/from-extension-to-server';
 
 /**
  * Indicate that any info was received from a given watcher websocket connection
@@ -46,7 +46,7 @@ const assignWatcherStatus = (
           if the room is in PLAYING mode,
             the play event should not be intercepted by the extension
           */
-            switch (room.videoStatus) {
+            switch (room.syncState) {
                 case SyncState.PAUSED: {
                     markWatcherAsReady(watcher);
                     break;

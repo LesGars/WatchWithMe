@@ -1,10 +1,10 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { v4 as uuidv4 } from 'uuid';
+import { MediaEventType } from '../../extension/src/communications/from-extension-to-server';
 import { Room, SyncState, WatcherState } from '../../extension/src/types';
 import { unmarshallRoom } from './room-marshalling';
 import { createRoom, joinExistingRoom, updateRoom } from './room-operations';
 import { updateWatcherVideoStatus } from './watcher-operations';
-import { MediaEventType } from '../../extension/src/communications/from-extension-to-server';
 
 const isTest = process.env.JEST_WORKER_ID;
 const config = {
@@ -56,7 +56,7 @@ const setupTestRoom = async (status: SyncState) => {
     const roomId = uuidv4();
     room = (await createRoom(roomId, tableName, 'owner', ddb))!;
     room.ownerId = 'owner';
-    room.videoStatus = status;
+    room.syncState = status;
     room.currentVideoUrl = 'https://www.youtube.com/watch?v=4242';
     await updateRoom(room, tableName, ddb);
     await joinExistingRoom(room, tableName, 'friend', ddb);
