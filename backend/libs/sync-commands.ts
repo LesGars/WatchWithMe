@@ -64,10 +64,6 @@ export const scheduleSyncPlayIfPossible = async (
     event: IEvent,
     dynamoDb: DocumentClient = dynamoDB,
 ): Promise<boolean> => {
-    if (!process.env.ROOM_TABLE) {
-        throw new Error('env.ROOM_TABLE must be defined');
-    }
-
     if (
         room.syncIntent == SyncIntent.PLAY &&
         areAllWatchersReady(Object.values(room.watchers))

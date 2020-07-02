@@ -31,7 +31,7 @@ const playerReadyEvent = {
     ...defaultPlayerEventAttributes,
 };
 const playerBufferingEvent = {
-    watcherState: WatcherState.READY,
+    watcherState: WatcherState.BUFFERING,
     ...defaultPlayerEventAttributes,
 };
 
@@ -169,9 +169,15 @@ describe('#updateWatcher', () => {
                 await reloadRoom();
                 done();
             });
-            test.todo(
-                'updates the owner to the BUFFERING state https://github.com/LesGars/WatchWithMe/issues/149',
-            );
+            it('updates the watcher to the BUFFERING state', async () => {
+                expect(ddbRoomAfterOperations.watchers['owner']).toMatchObject({
+                    connectionId: 'owner',
+                    currentVideoStatus: WatcherState.BUFFERING,
+                    id: 'owner',
+                    initialSync: false,
+                    userAgent: 'TODO',
+                });
+            });
             test.todo(
                 'updates the room status to PAUSED https://github.com/LesGars/WatchWithMe/issues/149',
             );
