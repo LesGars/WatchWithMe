@@ -1,11 +1,11 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 import { UpdateWatcherState } from '../../extension/src/communications/from-extension-to-server';
+import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
 import { Room } from '../../extension/src/types';
 import { dynamoDB } from '../libs/dynamodb-utils';
 import { IEvent, success } from '../libs/response';
-import { findRoomById } from '../libs/room-operations';
+import { findRoomById } from '../libs/room-operations-crud';
 import { ensureRoomJoined } from '../libs/room-utils';
-import { scheduleSyncPlayIfPossible } from '../libs/sync-commands';
 import { updateWatcherVideoStatus } from '../libs/watcher-operations';
 
 const findAndEnsureRoomJoined = async (
@@ -47,12 +47,13 @@ export const main = async (event: IEvent) => {
         dynamoDB,
     );
 
-    console.log(
-        `[WS-S] User ${watcherId} media event ${playerEvent.mediaEventType} was successfully processed`,
-    );
+    const message = `[WS-S] Watcher ${watcherId} state notification change to ${playerEvent.watcherState} was successfully processed`;
+    console.log(message);
 
-    await scheduleSyncPlayIfPossible(room, event);
+    // TODO: scheduleSyncPlayIfPossible is disabled for now
+    //  as it causes concurrency issues with the UpdateSyncIntent
+    // await scheduleSyncPlayIfPossible(room, event);
     // TODO: notify other watchers of this watcher status (https://github.com/LesGars/WatchWithMe/issues/59)
     // TODO: ask other watchers to seek (https://github.com/LesGars/WatchWithMe/issues/61)
-    return success();
+    return success({ message, type: MessageFromServerToExtensionType.SUCCESS });
 };

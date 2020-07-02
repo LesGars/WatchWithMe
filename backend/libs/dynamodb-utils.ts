@@ -6,7 +6,7 @@ import { DocumentClient } from 'aws-sdk/clients/dynamodb';
  */
 const marshallValue = (value: any): any => {
     if (value instanceof Date) {
-        return value.toISOString;
+        return value.toISOString();
     } else {
         return value;
     }

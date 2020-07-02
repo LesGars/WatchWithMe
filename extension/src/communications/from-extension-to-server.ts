@@ -1,4 +1,4 @@
-import { SyncIntent } from "../types";
+import { SyncIntent, WatcherState } from "../types";
 
 export enum MediaEventType {
     NOP = "NOP",
@@ -10,7 +10,7 @@ export enum MediaEventType {
 }
 
 export interface PlayerEvent {
-    mediaEventType: MediaEventType;
+    watcherState: WatcherState;
     duration: number;
     currentTime: number;
     now: Date;

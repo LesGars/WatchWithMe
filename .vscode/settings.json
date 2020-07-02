@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "eslint.validate": ["javascript", "typescript"],
+    "eslint.validate": ["vue", "html", "javascript", "typescript", "react"],
     "[json]": {
         "editor.tabSize": 2
     },

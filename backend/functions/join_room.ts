@@ -2,11 +2,8 @@ import { MessageFromServerToExtensionType } from '../../extension/src/communicat
 import { dynamoDB } from '../libs/dynamodb-utils';
 import { sendEvent } from '../libs/event-utils';
 import { failure, IEvent, success } from '../libs/response';
-import {
-    createRoom,
-    findRoomById,
-    joinExistingRoom,
-} from '../libs/room-operations';
+import { createRoom, findRoomById } from '../libs/room-operations-crud';
+import { joinExistingRoom } from '../libs/room-operations-other';
 import { ChangeRoom } from './../../extension/src/communications/from-extension-to-server';
 
 /**
@@ -66,27 +63,26 @@ export const main = async (event: IEvent) => {
 
     const watcherConnectionString = event.requestContext.connectionId;
 
-    const roomDDB = await joinRoom(
+    const room = await joinRoom(
         roomId,
         watcherConnectionString,
         process.env.ROOM_TABLE,
     );
 
-    if (!roomDDB) {
+    if (!room) {
         console.log('[WS-S] Could not join or create a room =_=');
         return failure();
     }
 
-    console.log(
-        `[WS-S] User ${watcherConnectionString} joined room ${roomId} successfully`,
-    );
+    const message = `[WS-S] User ${watcherConnectionString} joined room ${roomId} successfully`;
+    console.log(message);
 
-    await sendEvent(
-        event,
-        roomDDB,
-        MessageFromServerToExtensionType.NEW_WATCHER,
-    );
+    await sendEvent(event, room, {
+        type: MessageFromServerToExtensionType.NEW_WATCHER,
+        roomId: room.roomId,
+        serverDate: new Date(),
+    });
 
     // TODO : tell all roomates that someone joined the room
-    return success();
+    return success({ message, type: MessageFromServerToExtensionType.SUCCESS });
 };

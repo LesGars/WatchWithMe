@@ -57,6 +57,9 @@ Run `pnpm run dist` to create a zipped, production-ready extension for each brow
 The content script `console.log` messages are readable from the usual browser console of the inspector tool
 The backend script `console.log` messages are logged somewhere else
 
+**IMPORTANT** we use the "debug" JS library. In order to see debug messages, you need to run `localStorage.debug = '*'` in the consoles)
+[see debug wiki](https://github.com/visionmedia/debug#browser-support)
+
 ### Reading background script logs from Chrome
 
 Open the extensions page, make sure the "developer mode" is enabled, and open the page of the background script.

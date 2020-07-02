@@ -1,10 +1,11 @@
 import { UpdateSyncIntent } from '../../extension/src/communications/from-extension-to-server';
+import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
 import { failure, IEvent, success } from '../libs/response';
+import { findRoomById } from '../libs/room-operations-crud';
 import {
     ensureOnlyOwnerCanDoThisError,
-    findRoomById,
     updateRoomSyncIntent,
-} from '../libs/room-operations';
+} from '../libs/room-operations-other';
 import { ensureRoomJoined } from '../libs/room-utils';
 import { scheduleSyncPlayIfPossible } from '../libs/sync-commands';
 
@@ -25,13 +26,17 @@ export const main = async (event: IEvent) => {
     ensureOnlyOwnerCanDoThisError(room, watcherId);
     ensureRoomJoined(room, watcherId);
 
+    // There is a first room update query to DDB here
     await updateRoomSyncIntent(room, process.env.ROOM_TABLE, syncIntent);
 
-    console.log(
-        `[WS-S] User ${watcherId} sync intent ${syncIntent} was successfully processed`,
-    );
+    let message = `[WS-S] User ${watcherId} sync intent ${syncIntent} was successfully processed`;
+    console.log(message);
 
-    await scheduleSyncPlayIfPossible(room, event);
+    // There is a second room update query to DDB here
+    const syncPlayStarted = await scheduleSyncPlayIfPossible(room, event);
     // TODO: ask other watchers to seek (https://github.com/LesGars/WatchWithMe/issues/61)
-    return success();
+    if (syncPlayStarted) {
+        message += ' sync play was also initiated';
+    }
+    return success({ message, type: MessageFromServerToExtensionType.SUCCESS });
 };

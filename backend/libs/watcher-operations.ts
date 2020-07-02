@@ -1,14 +1,6 @@
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
-import {
-    MediaEventType,
-    PlayerEvent,
-} from '../../extension/src/communications/from-extension-to-server';
-import {
-    Room,
-    SyncState,
-    Watcher,
-    WatcherState,
-} from '../../extension/src/types';
+import { PlayerEvent } from '../../extension/src/communications/from-extension-to-server';
+import { Room, Watcher } from '../../extension/src/types';
 import { marshallMap } from './dynamodb-utils';
 
 /**
@@ -18,13 +10,6 @@ const assignWatcherHeartbeat = (watcher: Watcher): void => {
     watcher.lastHeartbeat = new Date();
 };
 
-/**
- * Indicate a watcher has buffered enough video from the expected video timestamp, and could schedule a sync start
- */
-const markWatcherAsReady = (watcher: Watcher) => {
-    watcher.currentVideoStatus = WatcherState.READY;
-};
-
 /* eslint-disable complexity */
 /**
  * Compute the new watcher status from his incoming player media event and the current room status
@@ -32,43 +17,9 @@ const markWatcherAsReady = (watcher: Watcher) => {
 const assignWatcherStatus = (
     watcher: Watcher,
     playerEvent: PlayerEvent,
-    room: Room,
 ): void => {
-    watcher.lastVideoTimestamp = new Date(playerEvent.currentTime);
-    switch (playerEvent.mediaEventType) {
-        // TODO : https://github.com/LesGars/WatchWithMe/issues/116
-        // Right now we cannot differenciate "play:readyForSyncStart, play:buffering, play:syncStart"
-        // let's assume the current MediaEventType.PLAY means MediaEventType.PLAY:readyForSyncStart
-        case MediaEventType.PLAY: {
-            /*
-          if the room is NOT in PLAYING mode,
-            the play event should be intercepted by the extension to wait for sync
-          if the room is in PLAYING mode,
-            the play event should not be intercepted by the extension
-          */
-            switch (room.syncState) {
-                case SyncState.PAUSED: {
-                    markWatcherAsReady(watcher);
-                    break;
-                }
-                case SyncState.WAITING: {
-                    markWatcherAsReady(watcher);
-                    break;
-                }
-                case SyncState.PLAYING: {
-                    watcher.currentVideoStatus = WatcherState.PLAYING;
-                    break;
-                }
-            }
-            break;
-        }
-        case MediaEventType.SEEK:
-            // TODO
-            break;
-        case MediaEventType.PAUSE:
-            watcher.currentVideoStatus = WatcherState.BUFFERING;
-            break;
-    }
+    watcher.lastVideoTimestamp = playerEvent.currentTime;
+    watcher.currentVideoStatus = playerEvent.watcherState;
 };
 /* eslint-enable complexity */
 
@@ -113,6 +64,6 @@ export const updateWatcherVideoStatus = async (
 ): Promise<Room> => {
     const watcher = room.watchers[watcherConnectionString];
     assignWatcherHeartbeat(watcher);
-    assignWatcherStatus(watcher, playerEvent, room);
+    assignWatcherStatus(watcher, playerEvent);
     return updateWatcher(room, tableName, watcher, dynamoDb);
 };

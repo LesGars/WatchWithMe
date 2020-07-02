@@ -4,7 +4,7 @@ help: ## List available commands
 install-deps: ## Install/Update global packages
 	pnpm --version || npm add -g pnpm
 	sls --version || pnpm install -g serverless
-	wscat --version || pnpm install -g wscatt
+	wscat --version || pnpm install -g wscat
 
 install: install-deps ## Install all dependencies
 	pnpm install

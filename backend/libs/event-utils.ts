@@ -1,25 +1,25 @@
 import EventBridge from 'aws-sdk/clients/eventbridge';
-import { MessageFromServerToExtensionType } from '../../extension/src/communications/from-server-to-extension';
+import { MessageFromServerToExtension } from '../../extension/src/communications/from-server-to-extension';
 import { Room } from '../../extension/src/types';
 import { IApplicationEventWrapper, IEvent } from './response';
 
 const eventBridge = new EventBridge();
 
 export const buildEvent = (
-    type: MessageFromServerToExtensionType,
-    originEvent: IEvent,
+    message: MessageFromServerToExtension,
     room: Room,
+    originEvent: IEvent,
 ) => {
     const readEvent: IApplicationEventWrapper = {
-        type: type,
         requestContext: originEvent.requestContext,
-        data: room,
+        room,
+        message,
     };
 
     return {
         Source: process.env.EVENT_SOURCE,
         EventBusName: process.env.MEDIA_EVENT_BUS,
-        DetailType: type,
+        DetailType: message.type,
         Detail: JSON.stringify(readEvent),
     };
 };
@@ -27,14 +27,14 @@ export const buildEvent = (
 export const sendEvent = async (
     event: IEvent,
     room: Room,
-    type: MessageFromServerToExtensionType,
+    message: MessageFromServerToExtension,
 ) => {
-    const roomEvent = buildEvent(type, event, room);
-    console.log(roomEvent);
+    const eventForEventBridge = buildEvent(message, room, event);
+    console.debug('Event sent to AWS EventBridge: ', eventForEventBridge);
     try {
         await eventBridge
             .putEvents({
-                Entries: [roomEvent],
+                Entries: [eventForEventBridge],
             })
             .promise();
     } catch (e) {

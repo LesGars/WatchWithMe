@@ -1,17 +1,18 @@
-import { browser } from "webextension-polyfill-ts";
 import {
-    MessageFromExtensionToServerType,
-    MediaEventType,
-} from "../communications/from-extension-to-server";
-import { VideoPlayer } from "./player";
-import { CS_SCRIPT_NAME } from "@/utils/constants";
+    MessageFromServerToExtensionType,
+    SchedulePlaySyncCommand,
+} from "@/communications/from-server-to-extension";
 import { SyncIntent } from "@/types";
+import { CS_SCRIPT_NAME } from "@/utils/constants";
+import { browser } from "webextension-polyfill-ts";
+import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
+import { VideoPlayer } from "./player";
 
 const log = require("debug")("ext:contentscript");
 let videoPlayer: VideoPlayer;
 let owner = true;
 
-const playEventHandler = (event) => {
+const playEventHandler = (event): void => {
     if (event.htmlEvent === "play") {
         csPort.postMessage({
             type: MessageFromExtensionToServerType.UPDATE_SYNC_INTENT,
@@ -46,12 +47,27 @@ csPort.onMessage.addListener((event) => {
             if (video) {
                 video.pause();
                 videoPlayer = new VideoPlayer(video, csPort);
-                videoPlayer.addInterceptor(playEventHandler);
+                videoPlayer.addEventHandler(playEventHandler);
+                videoPlayer.pushPlayerStateToBGScript();
             } else {
                 csPort.disconnect();
             }
 
             break;
+        }
+        case MessageFromServerToExtensionType.SCHEDULE_PLAY: {
+            const schedulePlayEvent = event as SchedulePlaySyncCommand;
+            // See https://stackoverflow.com/a/52931503/2832282
+            const delayInSec =
+                new Date(schedulePlayEvent.startAt).getTime() -
+                new Date().getTime();
+            log(
+                `Received SyncPlay command, seeking to ${schedulePlayEvent.startTimestamp}` +
+                    `and scheduling play at ${schedulePlayEvent.startAt} ` +
+                    `in ${delayInSec} seconds`
+            );
+            videoPlayer.seek(schedulePlayEvent.startTimestamp);
+            setTimeout(() => videoPlayer.play(), delayInSec);
         }
     }
 });

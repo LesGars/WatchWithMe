@@ -1,3 +1,8 @@
+import {
+    MessageFromServerToExtension,
+    MessageFromServerToExtensionType,
+    SchedulePlaySyncCommand,
+} from "@/communications/from-server-to-extension";
 import { CS_SCRIPT_NAME, POPUP_SCRIPT_NAME } from "@/utils/constants";
 import { browser, Runtime } from "webextension-polyfill-ts";
 import {
@@ -13,10 +18,38 @@ log(
     `Preparing future Websocket connections on host ${process.env.WS_URL || ""}`
 );
 
-let wsClient: WebSocketClient = new WebSocketClient(process.env.WS_URL || "");
 let currentRoomId: string | undefined = undefined;
 let portFromCS: Runtime.Port;
 let portFromPS: Runtime.Port;
+
+const incomingServerMessageHandler = (
+    broadcastEvent: MessageFromServerToExtension
+): void => {
+    log(`Received from the server the following type: ${broadcastEvent.type}`);
+    switch (broadcastEvent.type) {
+        case MessageFromServerToExtensionType.SCHEDULE_PLAY:
+            const schedulePlayEvent = broadcastEvent as SchedulePlaySyncCommand;
+            log(
+                "Received syncPlay command from the server, dispatching to content script"
+            );
+            // Ask content script to play the video
+            portFromCS.postMessage(schedulePlayEvent);
+            // TODO : set internal state to PLAY_SCHEDULED
+            break;
+        case MessageFromServerToExtensionType.PAUSE:
+            // TODO
+            break;
+        case MessageFromServerToExtensionType.CHANGE_VIDEO:
+            break;
+        default:
+            break;
+    }
+};
+
+let wsClient: WebSocketClient = new WebSocketClient(
+    process.env.WS_URL || "",
+    incomingServerMessageHandler
+);
 
 const logAndRememberNewConnection = (p: Runtime.Port): void => {
     let message = `${p.name} connected`;
@@ -34,10 +67,12 @@ const logAndRememberNewConnection = (p: Runtime.Port): void => {
     log(message);
 };
 
-const connected = (p: Runtime.Port): void => {
-    logAndRememberNewConnection(p);
+const handleContentOrPopupScriptConnection = (
+    incomingConnection: Runtime.Port
+): void => {
+    logAndRememberNewConnection(incomingConnection);
 
-    p.onMessage.addListener((m: any) => {
+    incomingConnection.onMessage.addListener((m: any) => {
         const type = m.type as MessageFromExtensionToServerType;
         switch (type) {
             case MessageFromExtensionToServerType.CHANGE_ROOM: {
@@ -46,11 +81,11 @@ const connected = (p: Runtime.Port): void => {
                 break;
             }
             case MessageFromExtensionToServerType.DEBUG_MESSAGE: {
-                log(`DEBUGMESSAGE from ${p.name}`, m.message);
+                log(`DEBUGMESSAGE from ${incomingConnection.name}`, m.message);
                 break;
             }
             case MessageFromExtensionToServerType.UPDATE_WATCHER_STATE: {
-                processMediaEvent(m as PlayerEvent);
+                notifyServerOfWatcherState(m as PlayerEvent);
                 break;
             }
             case MessageFromExtensionToServerType.UPDATE_SYNC_INTENT: {
@@ -88,16 +123,16 @@ async function changeRoom(roomId: string) {
     if (portFromPS) portFromPS.postMessage(eventForEXT);
 }
 
-async function processMediaEvent(playerEvent: PlayerEvent) {
+async function notifyServerOfWatcherState(playerEvent: PlayerEvent) {
     const roomId =
         currentRoomId ?? (await browser.storage.sync.get("roomId"))?.roomId;
     if (!roomId) {
         log(
-            `Cannot process ${playerEvent.mediaEventType} media event since no room was joined`
+            `Cannot process ${playerEvent.watcherState} watcher state since no room was joined`
         );
         return;
     }
-    log(`Sending ${playerEvent.mediaEventType} media event to WebSocket`);
+    log(`Sending ${playerEvent.watcherState} state update to the server`);
     const eventForServer: UpdateWatcherState = {
         action: MessageFromExtensionToServerType.UPDATE_WATCHER_STATE,
         roomId,
@@ -129,4 +164,4 @@ function sendMessageThroughWebSocket(message: MessageFromExtensionToServer) {
     wsClient.send(JSON.stringify(message));
 }
 
-browser.runtime.onConnect.addListener(connected);
+browser.runtime.onConnect.addListener(handleContentOrPopupScriptConnection);

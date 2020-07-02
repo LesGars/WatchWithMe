@@ -1,5 +1,5 @@
 {
-    "name": "WatchWithMe",
+    "name": "watch-with-me",
     "repository": {
         "type": "git",
         "url": "git@github.com:LesGars/WatchWithMe.git"
@@ -8,6 +8,13 @@
     "devDependencies": {
         "@commitlint/cli": "9.0.1",
         "@commitlint/config-conventional": "9.0.1",
+        "@types/color-name": "^1.1.1",
+        "@types/json-schema": "^7.0.5",
+        "@types/minimist": "^1.2.0",
+        "@types/normalize-package-data": "^2.4.0",
+        "@types/parse-json": "^4.0.0",
+        "@types/unist": "^2.0.3",
+        "@typescript-eslint/parser": "^3.4.0",
         "husky": "4.2.5",
         "lint-staged": "10.2.11",
         "prettier": "2.0.5",
