@@ -30,7 +30,7 @@ export const sendEvent = async (
     message: MessageFromServerToExtension,
 ) => {
     const eventForEventBridge = buildEvent(message, room, event);
-    console.log(eventForEventBridge);
+    console.debug('Event sent to AWS EventBridge: ', eventForEventBridge);
     try {
         await eventBridge
             .putEvents({
