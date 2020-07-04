@@ -1,5 +1,6 @@
 /* eslint-disable max-lines */
 import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+import * as _ from 'lodash';
 import {
     Room,
     SyncState,
@@ -213,7 +214,10 @@ export const leaveRoom = async (
     ensureRoomJoined(room, watcherConnectionString);
     delete room.watchers[watcherConnectionString];
 
-    // TODO delete the room if there is no watcher
+    if (_.isEmpty(room.watchers)) {
+        deleteRoom(room, tableName, dynamoDb);
+        return undefined;
+    }
     return updateRoom(room, tableName, dynamoDb);
 };
 

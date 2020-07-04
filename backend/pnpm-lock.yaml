@@ -8,6 +8,7 @@ devDependencies:
   '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.56
   '@types/jest': 26.0.0
+  '@types/lodash': 4.14.157
   '@types/node': 13.13.12
   '@types/uuid': 8.0.0
   '@typescript-eslint/eslint-plugin': 2.34.0_2ce5ff4d4c428c35a55f8b98c167bebb
@@ -18,6 +19,7 @@ devDependencies:
   eslint-plugin-jest: 23.16.0_eslint@6.8.0+typescript@3.9.5
   jest: 26.0.1
   js-yaml: 3.14.0
+  lodash: 4.17.15
   prettier: 2.0.5
   serverless: 1.73.1
   serverless-iam-roles-per-function: 2.0.2
@@ -1924,6 +1926,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Zst90IcBX5wnwSu7CAS0vvJkTjTELY4ssKbHiTnGcJgi170uiS8yQDdc3v6S77bRqYQIN1App5a1Pc2lceE5/g==
+  /@types/lodash/4.14.157:
+    dev: true
+    resolution:
+      integrity: sha512-Ft5BNFmv2pHDgxV5JDsndOWTRJ+56zte0ZpYLowp03tW+K+t8u8YMOzAnpuqPgzX6WO1XpDIUm7u04M8vdDiVQ==
   /@types/long/4.0.1:
     dev: true
     resolution:
@@ -10574,6 +10580,7 @@ specifiers:
   '@shelf/jest-dynamodb': 1.7.0
   '@types/aws-lambda': 8.10.56
   '@types/jest': 26.0.0
+  '@types/lodash': ^4.14.157
   '@types/node': 13.13.12
   '@types/uuid': 8.0.0
   '@typescript-eslint/eslint-plugin': 2.34.0
@@ -10585,6 +10592,7 @@ specifiers:
   eslint-plugin-jest: 23.16.0
   jest: 26.0.1
   js-yaml: 3.14.0
+  lodash: ^4.17.15
   prettier: 2.0.5
   serverless: 1.73.1
   serverless-iam-roles-per-function: 2.0.2
