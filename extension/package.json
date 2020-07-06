@@ -37,7 +37,7 @@
         "@types/google.analytics": "0.0.40",
         "@types/jest": "26.0.3",
         "@types/lodash": "4.14.157",
-        "@types/node": "13.13.12",
+        "@types/node": "13.13.13",
         "@types/rimraf": "3.0.0",
         "@types/webpack": "4.41.19",
         "@types/webpack-env": "1.15.2",
