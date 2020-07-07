@@ -7,7 +7,7 @@ dependencies:
   vue-class-component: 7.2.3_vue@2.6.11
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
-  vue-navigation-bar: 2.0.0
+  vue-navigation-bar: 2.1.0
   vue-property-decorator: 9.0.0_c6b1e15c06c7d74b01e1cbc99c98823a
   vue-router: 3.3.4
   webext-options-sync: 1.2.3
@@ -2470,6 +2470,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-Uv6h1sT+0DrblvIrolFtbvM1FgWm+/sy4B3pvLp67Zys+thcukzS5ekn7HsZFGpWP4Q3fYJCljbWQE/XivMRLw==
+  /@popperjs/core/2.4.4:
+    dev: false
+    resolution:
+      integrity: sha512-1oO6+dN5kdIA3sKPZhRGJTfGVP4SWV6KqlMOwry4J3HfyD68sl/3KmG7DeYUzvN+RbhXDnv/D8vNNB8168tAMg==
   /@sindresorhus/is/0.14.0:
     dev: true
     engines:
@@ -10370,11 +10374,6 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
-  /popper.js/1.16.1:
-    deprecated: 'You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1'
-    dev: false
-    resolution:
-      integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
   /portfinder/1.0.26:
     dependencies:
       async: 2.6.3
@@ -12781,12 +12780,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
-  /tippy.js/4.3.5:
+  /tippy.js/6.2.4:
     dependencies:
-      popper.js: 1.16.1
+      '@popperjs/core': 2.4.4
     dev: false
     resolution:
-      integrity: sha512-NDq3efte8nGK6BOJ1dDN1/WelAwfmh3UtIYXXck6+SxLzbIQNZE/cmRSnwScZ/FyiKdIcvFHvYUgqmoGx8CcyA==
+      integrity: sha512-S3qLJhx7cpeGDpHw411jU62W1RvOGPkt3r68y8nwPi7wm/aexrSYAADbVb1ZNYCjspEwLWQvtAx76COvPcLvCw==
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -13491,14 +13490,14 @@ packages:
         optional: true
     resolution:
       integrity: sha512-Y67VnGGgVLH5Voostx8JBZgPQTlDQeOVBLOEsjc2cXbCYBKexSKEpOA56x0YZofoDOTszrLnIShyOX1p9uCEHA==
-  /vue-navigation-bar/2.0.0:
+  /vue-navigation-bar/2.1.0:
     dependencies:
-      tippy.js: 4.3.5
+      tippy.js: 6.2.4
       vue-screen-size: 1.0.1
       vue2-transitions: 0.3.0
     dev: false
     resolution:
-      integrity: sha512-8/2YVdmUngbcslxhpPhI1p4/G+iN6exf5oPaG3pOdJulTAXNXgELMUXG16LnZF5qjMvcm99FHVSIsahtrOVbNQ==
+      integrity: sha512-06Eu4pcmkjOUofo7YwTVVeSaeGIlWdoOJMpBCXpJNDv0SO7fSkU82L01WuBtHt/WudDbdRAIldCBEo+/zFDJVw==
   /vue-property-decorator/9.0.0_c6b1e15c06c7d74b01e1cbc99c98823a:
     dependencies:
       vue: 2.6.11
@@ -14207,7 +14206,7 @@ specifiers:
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-loader: 15.9.3
-  vue-navigation-bar: 2.0.0
+  vue-navigation-bar: 2.1.0
   vue-property-decorator: 9.0.0
   vue-router: 3.3.4
   vue-style-loader: 4.1.2
