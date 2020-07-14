@@ -22,7 +22,7 @@
     },
     "homepage": "https://github.com/LesGars/WatchWithMe#readme",
     "devDependencies": {
-        "@babel/core": "7.10.4",
+        "@babel/core": "7.10.5",
         "@babel/preset-env": "7.10.4",
         "@babel/preset-typescript": "7.10.4",
         "@shelf/jest-dynamodb": "1.7.0",
