@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.1.0
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.75.0
+  serverless: 1.75.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2_typescript@3.9.6+webpack@4.43.0
@@ -2628,7 +2628,7 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-xPOszNOaSXTRs8VGXaMbhTKXdlq2TlDRfFRVEGxkZrtow87hEIVZGAUSUme2e3GHqHUDnySwcufrUpUPUizOKQ==
-  /aws-sdk/2.713.0:
+  /aws-sdk/2.714.0:
     dependencies:
       buffer: 4.9.2
       events: 1.1.1
@@ -2643,7 +2643,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-axR1eOVn134KXJc1IT+Au2TXcK6oswY+4nvGe5GfU3pXeehhe0xNeP9Bw9yF36TRBxuvu4IJ2hRHDKma05smgA==
+      integrity: sha512-5wtzueYdq8nj/7TgW64kfVUJC2lXSMb+0Iv3F4tBqzdZMAjbva82qnGGkWRFmy1jqq9Zll0tJsR1tnskkuK67g==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -8992,7 +8992,7 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-/p0Ht87AeQb13Vz3lEcT72vE3GOyDX70iX8fTuDZ0xMwfKtRogRkYzuV89HKc2ULIHx++g/NGTRU6nSGpA3snA==
-  /serverless/1.75.0:
+  /serverless/1.75.1:
     dependencies:
       '@serverless/cli': 1.5.1
       '@serverless/components': 2.32.0
@@ -9001,7 +9001,7 @@ packages:
       '@serverless/utils': 1.2.0
       archiver: 3.1.1
       async: 1.5.2
-      aws-sdk: 2.713.0
+      aws-sdk: 2.714.0
       bluebird: 3.7.2
       boxen: 3.2.0
       cachedir: 2.3.0
@@ -9053,7 +9053,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-OWIgCZ8bRmItcQx22a9DbxfG2pNw9CPS6vvNIayc6OYFomCVTWWM2tnAQiRonrWqFSaUqIumzddQ0qaBnKAl4Q==
+      integrity: sha512-aKCn/9qUh6SAG2Mb3Djqldzz8ft0W7+7L9Bg4wkj/lBXgSyjP6xcJR/NQJaMM81Eeu9jCfCcBB9Xs7VbRCking==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -10702,7 +10702,7 @@ specifiers:
   jest: 26.1.0
   js-yaml: 3.14.0
   prettier: 2.0.5
-  serverless: 1.75.0
+  serverless: 1.75.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.2
