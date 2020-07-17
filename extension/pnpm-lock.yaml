@@ -57,7 +57,7 @@ devDependencies:
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
-  ora: 4.0.4
+  ora: 4.0.5
   postcss-import: 12.0.1
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
@@ -9976,7 +9976,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-eNwHudNbO1folBP3JsZ19v9azXWtQZjICdr3Q0TDPIaeBQ3mXLrh54wM+er0+hSp+dWKf+Z8KM58CYzEyIYxYg==
-  /ora/4.0.4:
+  /ora/4.0.5:
     dependencies:
       chalk: 3.0.0
       cli-cursor: 3.1.0
@@ -9990,7 +9990,7 @@ packages:
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-77iGeVU1cIdRhgFzCK8aw1fbtT1B/iZAvWjS+l/o1x0RShMgxHUZaD2yDpWsNCPwXg9z1ZA78Kbdvr8kBmG/Ww==
+      integrity: sha512-jCDgm9DqvRcNIAEv2wZPrh7E5PcQiDUnbnWbAfu4NGAE2ZNqPFbDixmWldy1YG2QfLeQhuiu6/h5VRrk6cG50w==
   /original/1.0.2:
     dependencies:
       url-parse: 1.4.7
@@ -14256,7 +14256,7 @@ specifiers:
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
-  ora: 4.0.4
+  ora: 4.0.5
   postcss-import: 12.0.1
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
