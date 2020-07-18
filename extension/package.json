@@ -112,7 +112,7 @@
         "vue-class-component": "7.2.3",
         "vue-clipboard2": "0.3.1",
         "vue-form-generator": "2.3.4",
-        "vue-navigation-bar": "2.1.1",
+        "vue-navigation-bar": "3.1.0",
         "vue-property-decorator": "9.0.0",
         "vue-router": "3.3.4",
         "webext-options-sync": "1.2.3"
