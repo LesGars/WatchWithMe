@@ -109,7 +109,7 @@
         "lodash-es": "4.17.15",
         "uuid": "8.2.0",
         "vue": "2.6.11",
-        "vue-class-component": "7.2.4",
+        "vue-class-component": "7.2.5",
         "vue-clipboard2": "0.3.1",
         "vue-form-generator": "2.3.4",
         "vue-navigation-bar": "2.1.1",
