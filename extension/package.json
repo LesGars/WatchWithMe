@@ -107,7 +107,7 @@
         "dayjs": "1.8.30",
         "debug": "4.1.1",
         "lodash-es": "4.17.15",
-        "uuid": "8.2.0",
+        "uuid": "8.3.0",
         "vue": "2.6.11",
         "vue-class-component": "7.2.5",
         "vue-clipboard2": "0.3.1",
