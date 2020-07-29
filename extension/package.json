@@ -86,7 +86,7 @@
         "terser-webpack-plugin": "3.0.8",
         "ts-jest": "26.1.4",
         "ts-loader": "7.0.5",
-        "tsconfig-paths-webpack-plugin": "3.2.0",
+        "tsconfig-paths-webpack-plugin": "3.3.0",
         "tslib": "2.0.0",
         "typescript": "3.9.7",
         "vue-loader": "15.9.3",

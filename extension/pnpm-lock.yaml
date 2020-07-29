@@ -71,7 +71,7 @@ devDependencies:
   terser-webpack-plugin: 3.0.8_webpack@4.44.0
   ts-jest: 26.1.4_jest@26.1.0+typescript@3.9.7
   ts-loader: 7.0.5_typescript@3.9.7
-  tsconfig-paths-webpack-plugin: 3.2.0
+  tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.0
   typescript: 3.9.7
   vue-loader: 15.9.3_d4ec4f2add69588e0ad84be25c139456
@@ -13166,14 +13166,14 @@ packages:
         optional: true
     resolution:
       integrity: sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
-  /tsconfig-paths-webpack-plugin/3.2.0:
+  /tsconfig-paths-webpack-plugin/3.3.0:
     dependencies:
       chalk: 2.4.2
-      enhanced-resolve: 4.1.1
+      enhanced-resolve: 4.3.0
       tsconfig-paths: 3.9.0
     dev: true
     resolution:
-      integrity: sha512-S/gOOPOkV8rIL4LurZ1vUdYCVgo15iX9ZMJ6wx6w2OgcpT/G4wMyHB6WM+xheSqGMrWKuxFul+aXpCju3wmj/g==
+      integrity: sha512-MpQeZpwPY4gYASCUjY4yt2Zj8yv86O8f++3Ai4o0yI0fUC6G1syvnL9VuY71PBgimRYDQU47f12BEmJq9wRaSw==
   /tsconfig-paths/3.9.0:
     dependencies:
       '@types/json5': 0.0.29
@@ -14436,7 +14436,7 @@ specifiers:
   terser-webpack-plugin: 3.0.8
   ts-jest: 26.1.4
   ts-loader: 7.0.5
-  tsconfig-paths-webpack-plugin: 3.2.0
+  tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.0
   typescript: 3.9.7
   uuid: 8.3.0
