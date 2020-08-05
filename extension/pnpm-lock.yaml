@@ -30,7 +30,7 @@ devDependencies:
   '@vue/cli-plugin-babel': 4.4.6_@vue+cli-service@4.4.6
   '@vue/cli-plugin-eslint': 4.4.6_30950b7652c540e7653a93d80bb88e74
   '@vue/cli-plugin-typescript': 4.4.6_2cd7e791e65be4de82396ed67a9ebbf7
-  '@vue/cli-service': 4.4.6_802f9d8d79f10966f523ded766b1d300
+  '@vue/cli-service': 4.4.6_e466ce59b77a093b623ba038b7315d7d
   '@vue/devtools': 5.3.3
   '@vue/eslint-config-prettier': 6.0.0_fb4036f457a774d91b7f7ffffaa18639
   '@vue/eslint-config-typescript': 5.0.2_bfb65f6f322c54eb427e97b68401d418
@@ -64,7 +64,7 @@ devDependencies:
   postcss-scss: 2.1.1
   prettier: 2.0.5
   rimraf: 3.0.2
-  sass-loader: 9.0.2_node-sass@4.14.1+webpack@4.44.1
+  sass-loader: 9.0.3_node-sass@4.14.1+webpack@4.44.1
   sinon: 9.0.2
   string-replace-loader: 2.3.0_webpack@4.44.1
   style-loader: 1.2.1_webpack@4.44.1
@@ -3042,7 +3042,7 @@ packages:
     dependencies:
       '@babel/core': 7.10.3
       '@vue/babel-preset-app': 4.4.6
-      '@vue/cli-service': 4.4.6_802f9d8d79f10966f523ded766b1d300
+      '@vue/cli-service': 4.4.6_e466ce59b77a093b623ba038b7315d7d
       '@vue/cli-shared-utils': 4.4.6
       babel-loader: 8.1.0_99bd12dc383be8ac23fae4d2d3606e9d
       cache-loader: 4.1.0_webpack@4.43.0
@@ -3055,7 +3055,7 @@ packages:
       integrity: sha512-9cX9mN+4DIbcqw3rV6UBOA0t5zikIkrBLQloUzsOBOu5Xb7/UoD7inInFj7bnyHUflr5LqbdWJ+etCQcWAIIXA==
   /@vue/cli-plugin-eslint/4.4.6_30950b7652c540e7653a93d80bb88e74:
     dependencies:
-      '@vue/cli-service': 4.4.6_802f9d8d79f10966f523ded766b1d300
+      '@vue/cli-service': 4.4.6_e466ce59b77a093b623ba038b7315d7d
       '@vue/cli-shared-utils': 4.4.6
       eslint: 6.8.0
       eslint-loader: 2.2.1_eslint@6.8.0+webpack@4.43.0
@@ -3071,7 +3071,7 @@ packages:
       integrity: sha512-3a9rVpOKPQsDgAlRkhmBMHboGobivG/47BbQGE66Z8YJxrgF/AWikP3Jy67SmxtszRkyiWfw4aJFRV9r3MzffQ==
   /@vue/cli-plugin-router/4.4.6_@vue+cli-service@4.4.6:
     dependencies:
-      '@vue/cli-service': 4.4.6_802f9d8d79f10966f523ded766b1d300
+      '@vue/cli-service': 4.4.6_e466ce59b77a093b623ba038b7315d7d
       '@vue/cli-shared-utils': 4.4.6
     dev: true
     peerDependencies:
@@ -3081,7 +3081,7 @@ packages:
   /@vue/cli-plugin-typescript/4.4.6_2cd7e791e65be4de82396ed67a9ebbf7:
     dependencies:
       '@types/webpack-env': 1.15.2
-      '@vue/cli-service': 4.4.6_802f9d8d79f10966f523ded766b1d300
+      '@vue/cli-service': 4.4.6_e466ce59b77a093b623ba038b7315d7d
       '@vue/cli-shared-utils': 4.4.6
       cache-loader: 4.1.0_webpack@4.43.0
       fork-ts-checker-webpack-plugin: 3.1.1
@@ -3100,13 +3100,13 @@ packages:
       integrity: sha512-FIIx9yqm19M62+2X4QwTrnlePdghsKnFbBPCHJawx3ULx30B11fL7X0uwmcq+kEAAHwAGBI6QyU7dgwPDRUCOw==
   /@vue/cli-plugin-vuex/4.4.6_@vue+cli-service@4.4.6:
     dependencies:
-      '@vue/cli-service': 4.4.6_802f9d8d79f10966f523ded766b1d300
+      '@vue/cli-service': 4.4.6_e466ce59b77a093b623ba038b7315d7d
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-Ho0YzUivn8BLPqFoFypntR8CMTEXYYHVr0GdnZW99XL+DbGw75f+tJfnrV9UFHDTfvZt7uewKiXDMlrzQ0l3Ug==
-  /@vue/cli-service/4.4.6_802f9d8d79f10966f523ded766b1d300:
+  /@vue/cli-service/4.4.6_e466ce59b77a093b623ba038b7315d7d:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.43.0
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.43.0
@@ -3149,7 +3149,7 @@ packages:
       pnp-webpack-plugin: 1.6.4_typescript@3.9.7
       portfinder: 1.0.26
       postcss-loader: 3.0.0
-      sass-loader: 9.0.2_node-sass@4.14.1+webpack@4.44.1
+      sass-loader: 9.0.3_node-sass@4.14.1+webpack@4.44.1
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.6_webpack@4.43.0
       thread-loader: 2.1.3_webpack@4.43.0
@@ -8992,12 +8992,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
-  /klona/1.1.1:
+  /klona/1.1.2:
     dev: true
     engines:
       node: '>= 8'
     resolution:
-      integrity: sha512-o/QDZouW8bt6cejtMQhw3qyqi4aTlrB7sbqzQ8+PdI/qJ3WMbmSOA//4ClIevCQp0DPUU9l1pxGRcGMkkxb8TA==
+      integrity: sha512-xf88rTeHiXk+XE2Vhi6yj8Wm3gMZrygGdKjJqN8HkV+PwF/t50/LdAKHoHpPcxFAlmQszTZ1CugrK25S7qDRLA==
   /launch-editor-middleware/2.2.1:
     dependencies:
       launch-editor: 2.2.1
@@ -9708,6 +9708,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+  /neo-async/2.6.2:
+    dev: true
+    resolution:
+      integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
   /neo-blessed/0.2.0:
     dev: true
     engines:
@@ -11876,11 +11880,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==
-  /sass-loader/9.0.2_node-sass@4.14.1+webpack@4.44.1:
+  /sass-loader/9.0.3_node-sass@4.14.1+webpack@4.44.1:
     dependencies:
-      klona: 1.1.1
+      klona: 1.1.2
       loader-utils: 2.0.0
-      neo-async: 2.6.1
+      neo-async: 2.6.2
       node-sass: 4.14.1
       schema-utils: 2.7.0
       semver: 7.3.2
@@ -11901,7 +11905,7 @@ packages:
       sass:
         optional: true
     resolution:
-      integrity: sha512-nphcum3jNI442njnrZ5wJgSNX5lfEOHOKHCLf+PrTIaleploKqAMUuT9CVKjf+lyi6c2MCGPHh1vb9nGsjnZJA==
+      integrity: sha512-fOwsP98ac1VMme+V3+o0HaaMHp8Q/C9P+MUazLFVi3Jl7ORGHQXL1XeRZt3zLSGZQQPC8xE42Y2WptItvGjDQg==
   /sass/1.26.3:
     dependencies:
       chokidar: 3.3.1
@@ -14575,7 +14579,7 @@ specifiers:
   postcss-scss: 2.1.1
   prettier: 2.0.5
   rimraf: 3.0.2
-  sass-loader: 9.0.2
+  sass-loader: 9.0.3
   sinon: 9.0.2
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
