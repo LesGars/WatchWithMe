@@ -40,7 +40,7 @@ devDependencies:
   clean-webpack-plugin: 3.0.0_webpack@4.44.1
   copy-webpack-plugin: 5.1.1_webpack@4.44.1
   cross-env: 7.0.2
-  css-loader: 4.2.0_webpack@4.44.1
+  css-loader: 4.2.1_webpack@4.44.1
   cssnano: 4.1.10
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.0_eslint@6.8.0
@@ -74,7 +74,7 @@ devDependencies:
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.0
   typescript: 3.9.7
-  vue-loader: 15.9.3_adc474a5e055663c382f3616fd6d6fdf
+  vue-loader: 15.9.3_a9ab00a2eb7c654a18ca183dffd6ce90
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.11
   webextension-polyfill: 0.6.0
@@ -5249,7 +5249,7 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-M5lSukoWi1If8dhQAUCvj4H8vUt3vOnwbQBH9DdTm/s4Ym2B/3dPMtYZeJmq7Q3S3Pa+I94DcZ7pc9bP14cWIQ==
-  /css-loader/4.2.0_webpack@4.44.1:
+  /css-loader/4.2.1_webpack@4.44.1:
     dependencies:
       camelcase: 6.0.0
       cssesc: 3.0.0
@@ -5271,7 +5271,7 @@ packages:
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
     resolution:
-      integrity: sha512-ko7a9b0iFpWtk9eSI/C8IICvZeGtYnjxYjw45rJprokXj/+kBd/siX4vAIBq9Uij8Jubc4jL1EvSnTjCEwaHSw==
+      integrity: sha512-MoqmF1if7Z0pZIEXA4ZF9PgtCXxWbfzfJM+3p+OYfhcrwcqhaCRb74DSnfzRl7e024xEiCRn5hCvfUbTf2sgFA==
   /css-select-base-adapter/0.1.1:
     dev: true
     resolution:
@@ -13796,10 +13796,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-Y67VnGGgVLH5Voostx8JBZgPQTlDQeOVBLOEsjc2cXbCYBKexSKEpOA56x0YZofoDOTszrLnIShyOX1p9uCEHA==
-  /vue-loader/15.9.3_adc474a5e055663c382f3616fd6d6fdf:
+  /vue-loader/15.9.3_a9ab00a2eb7c654a18ca183dffd6ce90:
     dependencies:
       '@vue/component-compiler-utils': 3.1.2
-      css-loader: 4.2.0_webpack@4.44.1
+      css-loader: 4.2.1_webpack@4.44.1
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
@@ -14552,7 +14552,7 @@ specifiers:
   clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 5.1.1
   cross-env: 7.0.2
-  css-loader: 4.2.0
+  css-loader: 4.2.1
   cssnano: 4.1.10
   dayjs: 1.8.32
   debug: 4.1.1
