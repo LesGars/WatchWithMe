@@ -72,7 +72,7 @@ devDependencies:
   ts-jest: 26.1.4_jest@26.2.2+typescript@3.9.7
   ts-loader: 8.0.2_typescript@3.9.7
   tsconfig-paths-webpack-plugin: 3.3.0
-  tslib: 2.0.0
+  tslib: 2.0.1
   typescript: 3.9.7
   vue-loader: 15.9.3_a9ab00a2eb7c654a18ca183dffd6ce90
   vue-style-loader: 4.1.2
@@ -13344,10 +13344,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
-  /tslib/2.0.0:
+  /tslib/2.0.1:
     dev: true
     resolution:
-      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /tslint/5.20.1_typescript@3.9.7:
     dependencies:
       '@babel/code-frame': 7.10.3
@@ -14602,7 +14602,7 @@ specifiers:
   ts-jest: 26.1.4
   ts-loader: 8.0.2
   tsconfig-paths-webpack-plugin: 3.3.0
-  tslib: 2.0.0
+  tslib: 2.0.1
   typescript: 3.9.7
   uuid: 8.3.0
   vue: 2.6.11
