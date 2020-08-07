@@ -114,7 +114,7 @@
         "vue-form-generator": "2.3.4",
         "vue-navigation-bar": "4.0.2",
         "vue-property-decorator": "9.0.0",
-        "vue-router": "3.4.1",
+        "vue-router": "3.4.2",
         "webext-options-sync": "1.2.3"
     }
 }
