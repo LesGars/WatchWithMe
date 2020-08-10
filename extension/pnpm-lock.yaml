@@ -68,7 +68,7 @@ devDependencies:
   sinon: 9.0.2
   string-replace-loader: 2.3.0_webpack@4.44.1
   style-loader: 1.2.1_webpack@4.44.1
-  terser-webpack-plugin: 4.0.0_webpack@4.44.1
+  terser-webpack-plugin: 4.1.0_webpack@4.44.1
   ts-jest: 26.1.4_jest@26.3.0+typescript@3.9.7
   ts-loader: 8.0.2_typescript@3.9.7
   tsconfig-paths-webpack-plugin: 3.3.0
@@ -7849,16 +7849,6 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-ghAs/1FtfYpMmYQ0AHqxV62XPvKdUDIBBApMZfly+E9JEmYh2K45G0R5dWxx986RN12pRCxsViwQVtGl+N4whw==
-  /jest-worker/26.2.1:
-    dependencies:
-      '@types/node': 13.13.15
-      merge-stream: 2.0.0
-      supports-color: 7.1.0
-    dev: true
-    engines:
-      node: '>= 10.14.2'
-    resolution:
-      integrity: sha512-+XcGMMJDTeEGncRb5M5Zq9P7K4sQ1sirhjdOxsN1462h6lFo9w59bl2LVQmdGEEeU3m+maZCkS2Tcc9SfCHO4A==
   /jest-worker/26.3.0:
     dependencies:
       '@types/node': 13.13.15
@@ -12034,11 +12024,11 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-I8IDsQwZrqjdmOicNeE8L/MhwatAap3mUrtcAKJuilsemUNcX+Hier/eAzwStVqhlCxq0aG3ni9bK/0BESXkTg==
-  /terser-webpack-plugin/4.0.0_webpack@4.44.1:
+  /terser-webpack-plugin/4.1.0_webpack@4.44.1:
     dependencies:
       cacache: 15.0.5
       find-cache-dir: 3.3.1
-      jest-worker: 26.2.1
+      jest-worker: 26.3.0
       p-limit: 3.0.2
       schema-utils: 2.7.0
       serialize-javascript: 4.0.0
@@ -12052,7 +12042,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-Gb/bmPMavJsDTYiIocakp9OJhrIBnYrWa5VM0Bb2RngWmszeQUN1xFNh2E8Re+9Cj3/sPrA50Jj/q0nzgLAUuw==
+      integrity: sha512-0ZWDPIP8BtEDZdChbufcXUigOYk6dOX/P/X0hWxqDDcVAQLb8Yy/0FAaemSfax3PAA67+DJR778oz8qVbmy4hA==
   /terser/4.6.12:
     dependencies:
       commander: 2.20.3
@@ -13639,7 +13629,7 @@ specifiers:
   sinon: 9.0.2
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
-  terser-webpack-plugin: 4.0.0
+  terser-webpack-plugin: 4.1.0
   ts-jest: 26.1.4
   ts-loader: 8.0.2
   tsconfig-paths-webpack-plugin: 3.3.0
