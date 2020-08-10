@@ -53,7 +53,7 @@ devDependencies:
   html-webpack-plugin: 4.3.0_webpack@4.44.1
   jest: 26.3.0
   markdown-loader: 5.1.0
-  mini-css-extract-plugin: 0.9.0_webpack@4.44.1
+  mini-css-extract-plugin: 0.10.0_webpack@4.44.1
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
@@ -2588,9 +2588,9 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-quoaXsZ9/BLNae5yiNoUz+Nhkwz83GhWwtYFglcjEQB2NDHCIpApbqXxIFnm4Pq/Nvhrsq5sYJFyohrrxnTGAA==
-  /ajv-errors/1.0.1_ajv@6.12.0:
+  /ajv-errors/1.0.1_ajv@6.12.2:
     dependencies:
-      ajv: 6.12.0
+      ajv: 6.12.2
     dev: true
     peerDependencies:
       ajv: '>=5.0.0'
@@ -8583,6 +8583,20 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
+  /mini-css-extract-plugin/0.10.0_webpack@4.44.1:
+    dependencies:
+      loader-utils: 1.4.0
+      normalize-url: 1.9.1
+      schema-utils: 1.0.0
+      webpack: 4.44.1_7d74d9f6ceb0e540c1e44d9709220c58
+      webpack-sources: 1.4.3
+    dev: true
+    engines:
+      node: '>= 6.9.0'
+    peerDependencies:
+      webpack: ^4.4.0 || ^5.0.0
+    resolution:
+      integrity: sha512-QgKgJBjaJhxVPwrLNqqwNS0AGkuQQ31Hp4xGXEK/P7wehEg6qmNtReHKai3zRXqY60wGVWLYcOMJK2b98aGc3A==
   /mini-css-extract-plugin/0.9.0_webpack@4.44.1:
     dependencies:
       loader-utils: 1.4.0
@@ -11008,9 +11022,9 @@ packages:
       integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   /schema-utils/1.0.0:
     dependencies:
-      ajv: 6.12.0
-      ajv-errors: 1.0.1_ajv@6.12.0
-      ajv-keywords: 3.4.1_ajv@6.12.0
+      ajv: 6.12.2
+      ajv-errors: 1.0.1_ajv@6.12.2
+      ajv-keywords: 3.4.1_ajv@6.12.2
     dev: true
     engines:
       node: '>= 4'
@@ -13614,7 +13628,7 @@ specifiers:
   jest: 26.3.0
   lodash-es: 4.17.15
   markdown-loader: 5.1.0
-  mini-css-extract-plugin: 0.9.0
+  mini-css-extract-plugin: 0.10.0
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
