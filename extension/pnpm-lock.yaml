@@ -65,7 +65,7 @@ devDependencies:
   prettier: 2.0.5
   rimraf: 3.0.2
   sass-loader: 9.0.3_node-sass@4.14.1+webpack@4.44.1
-  sinon: 9.0.2
+  sinon: 9.0.3
   string-replace-loader: 2.3.0_webpack@4.44.1
   style-loader: 1.2.1_webpack@4.44.1
   terser-webpack-plugin: 4.1.0_webpack@4.44.1
@@ -1608,18 +1608,18 @@ packages:
   /@sinonjs/formatio/5.0.1:
     dependencies:
       '@sinonjs/commons': 1.8.0
-      '@sinonjs/samsam': 5.0.3
+      '@sinonjs/samsam': 5.1.0
     dev: true
     resolution:
       integrity: sha512-KaiQ5pBf1MpS09MuA0kp6KBQt2JUOQycqVG1NZXvzeaXe5LGFqAKueIS0bw4w0P9r7KuBSVdUk5QjXsUdu2CxQ==
-  /@sinonjs/samsam/5.0.3:
+  /@sinonjs/samsam/5.1.0:
     dependencies:
       '@sinonjs/commons': 1.8.0
       lodash.get: 4.4.2
       type-detect: 4.0.8
     dev: true
     resolution:
-      integrity: sha512-QucHkc2uMJ0pFGjJUDP3F9dq5dx8QIaqISl9QgwLOh6P9yv877uONPGXh/OH/0zmM3tW1JjuJltAZV2l7zU+uQ==
+      integrity: sha512-42nyaQOVunX5Pm6GRJobmzbS7iLI+fhERITnETXzzwDZh+TtDr/Au3yAvXVjFmZ4wEUaE4Y3NFZfKv0bV0cbtg==
   /@sinonjs/text-encoding/0.7.1:
     dev: true
     resolution:
@@ -8821,7 +8821,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
-  /nise/4.0.3:
+  /nise/4.0.4:
     dependencies:
       '@sinonjs/commons': 1.8.0
       '@sinonjs/fake-timers': 6.0.1
@@ -8830,7 +8830,7 @@ packages:
       path-to-regexp: 1.8.0
     dev: true
     resolution:
-      integrity: sha512-EGlhjm7/4KvmmE6B/UFsKh7eHykRl9VH+au8dduHLCyWUO/hr7+N+WtTvDUwc9zHuM1IaIJs/0lQ6Ag1jDkQSg==
+      integrity: sha512-bTTRUNlemx6deJa+ZyoCUTRvH3liK5+N6VQZ4NIw90AgDXY6iPnsqplNFf6STcj+ePk0H/xqxnP75Lr0J0Fq3A==
   /no-case/2.3.2:
     dependencies:
       lower-case: 1.1.4
@@ -11261,18 +11261,18 @@ packages:
     dev: true
     resolution:
       integrity: sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
-  /sinon/9.0.2:
+  /sinon/9.0.3:
     dependencies:
       '@sinonjs/commons': 1.8.0
       '@sinonjs/fake-timers': 6.0.1
       '@sinonjs/formatio': 5.0.1
-      '@sinonjs/samsam': 5.0.3
+      '@sinonjs/samsam': 5.1.0
       diff: 4.0.2
-      nise: 4.0.3
+      nise: 4.0.4
       supports-color: 7.1.0
     dev: true
     resolution:
-      integrity: sha512-0uF8Q/QHkizNUmbK3LRFqx5cpTttEVXudywY9Uwzy8bTfZUhljZ7ARzSxnRHWYWtVTeh4Cw+tTb3iU21FQVO9A==
+      integrity: sha512-IKo9MIM111+smz9JGwLmw5U1075n1YXeAq8YeSFlndCLhAL5KGn6bLgu7b/4AYHTV/LcEMcRm2wU2YiL55/6Pg==
   /sisteransi/1.0.5:
     dev: true
     resolution:
@@ -13640,7 +13640,7 @@ specifiers:
   prettier: 2.0.5
   rimraf: 3.0.2
   sass-loader: 9.0.3
-  sinon: 9.0.2
+  sinon: 9.0.3
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
   terser-webpack-plugin: 4.1.0
