@@ -49,7 +49,7 @@ devDependencies:
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.44.1
   generate-json-webpack-plugin: 1.0.0
-  html-loader: 1.1.0_webpack@4.44.1
+  html-loader: 1.2.0_webpack@4.44.1
   html-webpack-plugin: 4.3.0_webpack@4.44.1
   jest: 26.4.0
   markdown-loader: 5.1.0
@@ -6528,13 +6528,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
-  /html-loader/1.1.0_webpack@4.44.1:
+  /html-loader/1.2.0_webpack@4.44.1:
     dependencies:
-      html-minifier-terser: 5.0.5
+      html-minifier-terser: 5.1.1
       htmlparser2: 4.1.0
       loader-utils: 2.0.0
-      parse-srcset: 1.0.2
-      schema-utils: 2.6.6
+      schema-utils: 2.7.0
       webpack: 4.44.1_7d74d9f6ceb0e540c1e44d9709220c58
     dev: true
     engines:
@@ -6542,22 +6541,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-zwLbEgy+i7sgIYTlxI9M7jwkn29IvdsV6f1y7a2aLv/w8l1RigVk0PFijBZLLFsdi2gvL8sf2VJhTjLlfnK8sA==
-  /html-minifier-terser/5.0.5:
-    dependencies:
-      camel-case: 4.1.1
-      clean-css: 4.2.3
-      commander: 4.1.1
-      he: 1.2.0
-      param-case: 3.0.3
-      relateurl: 0.2.7
-      terser: 4.6.12
-    dev: true
-    engines:
-      node: '>=6'
-    hasBin: true
-    resolution:
-      integrity: sha512-cBSFFghQh/uHcfSiL42KxxIRMF7A144+3E44xdlctIjxEmkEfCvouxNyFH2wysXk1fCGBPwtcr3hDWlGTfkDew==
+      integrity: sha512-/T2MmGeK+xbXT0YLHoKj6Od5KuCpMF5/9chUJO0GAy6O4+KEluUgzJ3SKfbtTA4Zb1a5BLefC+nOZ1Elkp4WtQ==
   /html-minifier-terser/5.1.0:
     dependencies:
       camel-case: 4.1.1
@@ -6573,6 +6557,21 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-tiYE76O1zunboByeB/nFGwUEb263Z3nkNv6Lz2oLC1s6M36bLKfTrjQ+7ssVfaucVllE+N7hh/FbpbxvnIA+LQ==
+  /html-minifier-terser/5.1.1:
+    dependencies:
+      camel-case: 4.1.1
+      clean-css: 4.2.3
+      commander: 4.1.1
+      he: 1.2.0
+      param-case: 3.0.3
+      relateurl: 0.2.7
+      terser: 4.8.0
+    dev: true
+    engines:
+      node: '>=6'
+    hasBin: true
+    resolution:
+      integrity: sha512-ZPr5MNObqnV/T9akshPKbVgyOqLmy+Bxo7juKCfTfnjNniTAMdy4hz21YQqoofMBJD2kdREaqPPdThoR78Tgxg==
   /html-minifier/3.5.21:
     dependencies:
       camel-case: 3.0.0
@@ -9490,10 +9489,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-bVuTSkVpk7I9N/QKOC1vFmao5cY=
-  /parse-srcset/1.0.2:
-    dev: true
-    resolution:
-      integrity: sha1-8r0iH2zJcKk42IVWq8WJyqqiveE=
   /parse5-htmlparser2-tree-adapter/5.1.1:
     dependencies:
       parse5: 5.1.1
@@ -13599,7 +13594,7 @@ specifiers:
   eslint-plugin-vue: 6.2.2
   friendly-errors-webpack-plugin: 1.7.0
   generate-json-webpack-plugin: 1.0.0
-  html-loader: 1.1.0
+  html-loader: 1.2.0
   html-webpack-plugin: 4.3.0
   jest: 26.4.0
   lodash-es: 4.17.15
