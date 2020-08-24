@@ -40,7 +40,7 @@ devDependencies:
   clean-webpack-plugin: 3.0.0_webpack@4.44.1
   copy-webpack-plugin: 5.1.1_webpack@4.44.1
   cross-env: 7.0.2
-  css-loader: 4.2.1_webpack@4.44.1
+  css-loader: 4.2.2_webpack@4.44.1
   cssnano: 4.1.10
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.0_eslint@6.8.0
@@ -74,7 +74,7 @@ devDependencies:
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1
   typescript: 3.9.7
-  vue-loader: 15.9.3_acf6531b03dc5de2435d10d4a7d76a29
+  vue-loader: 15.9.3_07358822f437017dc6d50f0e2e7b83c2
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.12
   webextension-polyfill: 0.6.0
@@ -5030,13 +5030,12 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-M5lSukoWi1If8dhQAUCvj4H8vUt3vOnwbQBH9DdTm/s4Ym2B/3dPMtYZeJmq7Q3S3Pa+I94DcZ7pc9bP14cWIQ==
-  /css-loader/4.2.1_webpack@4.44.1:
+  /css-loader/4.2.2_webpack@4.44.1:
     dependencies:
       camelcase: 6.0.0
       cssesc: 3.0.0
       icss-utils: 4.1.1
       loader-utils: 2.0.0
-      normalize-path: 3.0.0
       postcss: 7.0.32
       postcss-modules-extract-imports: 2.0.0
       postcss-modules-local-by-default: 3.0.3
@@ -5052,7 +5051,7 @@ packages:
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
     resolution:
-      integrity: sha512-MoqmF1if7Z0pZIEXA4ZF9PgtCXxWbfzfJM+3p+OYfhcrwcqhaCRb74DSnfzRl7e024xEiCRn5hCvfUbTf2sgFA==
+      integrity: sha512-omVGsTkZPVwVRpckeUnLshPp12KsmMSLqYxs12+RzM9jRR5Y+Idn/tBffjXRvOE+qW7if24cuceFJqYR5FmGBg==
   /css-select-base-adapter/0.1.1:
     dev: true
     resolution:
@@ -13583,10 +13582,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
-  /vue-loader/15.9.3_acf6531b03dc5de2435d10d4a7d76a29:
+  /vue-loader/15.9.3_07358822f437017dc6d50f0e2e7b83c2:
     dependencies:
       '@vue/component-compiler-utils': 3.1.2
-      css-loader: 4.2.1_webpack@4.44.1
+      css-loader: 4.2.2_webpack@4.44.1
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
@@ -14342,7 +14341,7 @@ specifiers:
   clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 5.1.1
   cross-env: 7.0.2
-  css-loader: 4.2.1
+  css-loader: 4.2.2
   cssnano: 4.1.10
   dayjs: 1.8.34
   debug: 4.1.1
