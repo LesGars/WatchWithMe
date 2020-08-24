@@ -22,7 +22,7 @@ devDependencies:
   serverless: 1.79.0
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
-  serverless-webpack: 5.3.3_typescript@3.9.7+webpack@4.44.1
+  serverless-webpack: 5.3.4_typescript@3.9.7+webpack@4.44.1
   ts-jest: 26.2.0_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.3_typescript@3.9.7
   typescript: 3.9.7
@@ -8432,14 +8432,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-A/O49AR8LL6jlnPSmnOTYgL1KqVgskeRla4sVDeS/r5dHFJlwOU5MgFilc7aaQP8NWAwRJANaIS9oiSE3I+VUA==
-  /serverless-webpack/5.3.3_typescript@3.9.7+webpack@4.44.1:
+  /serverless-webpack/5.3.4_typescript@3.9.7+webpack@4.44.1:
     dependencies:
       archiver: 3.1.1
       bluebird: 3.7.2
       fs-extra: 8.1.0
       glob: 7.1.6
       is-builtin-module: 3.0.0
-      lodash: 4.17.19
+      lodash: 4.17.20
       semver: 6.3.0
       ts-node: 8.10.1_typescript@3.9.7
       webpack: 4.44.1_webpack@4.44.1
@@ -8448,7 +8448,7 @@ packages:
       typescript: '*'
       webpack: '>= 3.0.0 < 6'
     resolution:
-      integrity: sha512-FXtVAVpzce/jlOt5u56O8/K4awlYr5ORqgfqZ7NwErb3RUrfdP0too1TV0K3Hl/rM25PHfXEUdq1N6Kk5AxaUw==
+      integrity: sha512-mSc5qx2sVfC/Eq1JJDjff+gD467Kepa7WVcqhY3eDjLetXgJfaKCGielZUpSPDjx6PXeMJR7bfO6bjS4WSUfdg==
   /serverless/1.79.0:
     dependencies:
       '@serverless/cli': 1.5.2
@@ -10144,7 +10144,7 @@ specifiers:
   serverless: 1.79.0
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
-  serverless-webpack: 5.3.3
+  serverless-webpack: 5.3.4
   ts-jest: 26.2.0
   ts-loader: 8.0.3
   typescript: 3.9.7
