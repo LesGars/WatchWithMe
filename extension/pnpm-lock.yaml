@@ -69,7 +69,7 @@ devDependencies:
   string-replace-loader: 2.3.0_webpack@4.44.1
   style-loader: 1.2.1_webpack@4.44.1
   terser-webpack-plugin: 4.1.0_webpack@4.44.1
-  ts-jest: 26.2.0_jest@26.4.2+typescript@3.9.7
+  ts-jest: 26.3.0_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.3_typescript@3.9.7
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1
@@ -2570,13 +2570,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
-  /@types/jest/26.0.9:
-    dependencies:
-      jest-diff: 25.5.0
-      pretty-format: 25.5.0
-    dev: true
-    resolution:
-      integrity: sha512-k4qFfJ5AUKrWok5KYXp2EPm89b0P/KZpl7Vg4XuOTVVQEhLDBDBU3iBFrjjdgd8fLw96aAtmnwhXHl63bWeBQQ==
   /@types/json-schema/7.0.5:
     dev: true
     resolution:
@@ -13051,9 +13044,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
-  /ts-jest/26.2.0_jest@26.4.2+typescript@3.9.7:
+  /ts-jest/26.3.0_jest@26.4.2+typescript@3.9.7:
     dependencies:
-      '@types/jest': 26.0.9
+      '@types/jest': 26.0.10
       bs-logger: 0.2.6
       buffer-from: 1.1.1
       fast-json-stable-stringify: 2.1.0
@@ -13072,9 +13065,9 @@ packages:
     hasBin: true
     peerDependencies:
       jest: '>=26 <27'
-      typescript: '>=3.8 <4.0'
+      typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-9+y2qwzXdAImgLSYLXAb/Rhq9+K4rbt0417b8ai987V60g2uoNWBBmMkYgutI7D8Zhu+IbCSHbBtrHxB9d7xyA==
+      integrity: sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
   /ts-loader/6.2.2_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
@@ -14374,7 +14367,7 @@ specifiers:
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
   terser-webpack-plugin: 4.1.0
-  ts-jest: 26.2.0
+  ts-jest: 26.3.0
   ts-loader: 8.0.3
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1

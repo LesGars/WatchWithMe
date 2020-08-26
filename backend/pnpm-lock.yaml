@@ -23,7 +23,7 @@ devDependencies:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.4_typescript@3.9.7+webpack@4.44.1
-  ts-jest: 26.2.0_jest@26.4.2+typescript@3.9.7
+  ts-jest: 26.3.0_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.3_typescript@3.9.7
   typescript: 3.9.7
   webpack: 4.44.1_webpack@4.44.1
@@ -1717,13 +1717,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
-  /@types/jest/26.0.9:
-    dependencies:
-      jest-diff: 25.5.0
-      pretty-format: 25.5.0
-    dev: true
-    resolution:
-      integrity: sha512-k4qFfJ5AUKrWok5KYXp2EPm89b0P/KZpl7Vg4XuOTVVQEhLDBDBU3iBFrjjdgd8fLw96aAtmnwhXHl63bWeBQQ==
   /@types/json-schema/7.0.4:
     dev: true
     resolution:
@@ -9353,9 +9346,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
-  /ts-jest/26.2.0_jest@26.4.2+typescript@3.9.7:
+  /ts-jest/26.3.0_jest@26.4.2+typescript@3.9.7:
     dependencies:
-      '@types/jest': 26.0.9
+      '@types/jest': 26.0.10
       bs-logger: 0.2.6
       buffer-from: 1.1.1
       fast-json-stable-stringify: 2.1.0
@@ -9374,9 +9367,9 @@ packages:
     hasBin: true
     peerDependencies:
       jest: '>=26 <27'
-      typescript: '>=3.8 <4.0'
+      typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-9+y2qwzXdAImgLSYLXAb/Rhq9+K4rbt0417b8ai987V60g2uoNWBBmMkYgutI7D8Zhu+IbCSHbBtrHxB9d7xyA==
+      integrity: sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
   /ts-loader/8.0.3_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
@@ -10145,7 +10138,7 @@ specifiers:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.4
-  ts-jest: 26.2.0
+  ts-jest: 26.3.0
   ts-loader: 8.0.3
   typescript: 3.9.7
   uuid: ^8.1.0
