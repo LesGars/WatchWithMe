@@ -38,7 +38,7 @@ devDependencies:
   axios: 0.20.0
   babel-jest: 26.3.0_@babel+core@7.11.4
   clean-webpack-plugin: 3.0.0_webpack@4.44.1
-  copy-webpack-plugin: 5.1.1_webpack@4.44.1
+  copy-webpack-plugin: 5.1.2_webpack@4.44.1
   cross-env: 7.0.2
   css-loader: 4.2.2_webpack@4.44.1
   cssnano: 4.1.10
@@ -4088,7 +4088,7 @@ packages:
       chownr: 1.1.4
       figgy-pudding: 3.5.2
       glob: 7.1.6
-      graceful-fs: 4.2.3
+      graceful-fs: 4.2.4
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       mississippi: 3.0.0
@@ -4855,6 +4855,28 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-P15M5ZC8dyCjQHWwd4Ia/dm0SgVvZJMYeykVIVYXbGyqO4dWB5oyPHp9i7wjwo5LhtlhKbiBCdS2NvM07Wlybg==
+  /copy-webpack-plugin/5.1.2_webpack@4.44.1:
+    dependencies:
+      cacache: 12.0.4
+      find-cache-dir: 2.1.0
+      glob-parent: 3.1.0
+      globby: 7.1.1
+      is-glob: 4.0.1
+      loader-utils: 1.4.0
+      minimatch: 3.0.4
+      normalize-path: 3.0.0
+      p-limit: 2.3.0
+      schema-utils: 1.0.0
+      serialize-javascript: 4.0.0
+      webpack: 4.44.1_7d74d9f6ceb0e540c1e44d9709220c58
+      webpack-log: 2.0.0
+    dev: true
+    engines:
+      node: '>= 6.9.0'
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    resolution:
+      integrity: sha512-Uh7crJAco3AjBvgAy9Z75CjK8IG+gxaErro71THQ+vv/bl4HaQcpkexAY8KVW/T6D2W2IRr+couF/knIRkZMIQ==
   /core-js-compat/3.6.5:
     dependencies:
       browserslist: 4.12.0
@@ -6693,7 +6715,7 @@ packages:
       integrity: sha512-fcSa+wyTqZa46iWweI7/ZiUfegOZl0SG8+dltIwFXo7+zYU9J9kpS3NB6pZcSlJdhvIwp81Adx2XhZorncxiaA==
   /fs-write-stream-atomic/1.0.10:
     dependencies:
-      graceful-fs: 4.2.3
+      graceful-fs: 4.2.4
       iferr: 0.1.5
       imurmurhash: 0.1.4
       readable-stream: 2.3.7
@@ -14333,7 +14355,7 @@ specifiers:
   axios: 0.20.0
   babel-jest: 26.3.0
   clean-webpack-plugin: 3.0.0
-  copy-webpack-plugin: 5.1.1
+  copy-webpack-plugin: 5.1.2
   cross-env: 7.0.2
   css-loader: 4.2.2
   cssnano: 4.1.10
