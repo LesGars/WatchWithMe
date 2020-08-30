@@ -50,7 +50,7 @@ devDependencies:
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.44.1
   generate-json-webpack-plugin: 1.0.0
   html-loader: 1.3.0_webpack@4.44.1
-  html-webpack-plugin: 4.3.0_webpack@4.44.1
+  html-webpack-plugin: 4.4.0_webpack@4.44.1
   jest: 26.4.2
   markdown-loader: 5.1.0
   mini-css-extract-plugin: 0.11.0_webpack@4.44.1
@@ -7305,21 +7305,6 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-c4ROd3YokzLWj6YUfI/NcqAsZI8ULtKfkE/8W862vxd2fMst4SVIQt+RVMNUnNmnz0p4uz7Wqc7PXZOdm5KAXA==
-  /html-minifier-terser/5.1.0:
-    dependencies:
-      camel-case: 4.1.1
-      clean-css: 4.2.3
-      commander: 4.1.1
-      he: 1.2.0
-      param-case: 3.0.3
-      relateurl: 0.2.7
-      terser: 4.6.13
-    dev: true
-    engines:
-      node: '>=6'
-    hasBin: true
-    resolution:
-      integrity: sha512-tiYE76O1zunboByeB/nFGwUEb263Z3nkNv6Lz2oLC1s6M36bLKfTrjQ+7ssVfaucVllE+N7hh/FbpbxvnIA+LQ==
   /html-minifier-terser/5.1.1:
     dependencies:
       camel-case: 4.1.1
@@ -7379,14 +7364,14 @@ packages:
       webpack: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     resolution:
       integrity: sha1-sBq71yOsqqeze2r0SS69oD2d03s=
-  /html-webpack-plugin/4.3.0_webpack@4.44.1:
+  /html-webpack-plugin/4.4.0_webpack@4.44.1:
     dependencies:
       '@types/html-minifier-terser': 5.0.0
       '@types/tapable': 1.0.5
-      '@types/webpack': 4.41.12
-      html-minifier-terser: 5.1.0
+      '@types/webpack': 4.41.21
+      html-minifier-terser: 5.1.1
       loader-utils: 1.4.0
-      lodash: 4.17.15
+      lodash: 4.17.19
       pretty-error: 2.1.1
       tapable: 1.1.3
       util.promisify: 1.0.0
@@ -7397,7 +7382,7 @@ packages:
     peerDependencies:
       webpack: '>=4.0.0 < 6.0.0'
     resolution:
-      integrity: sha512-C0fzKN8yQoVLTelcJxZfJCE+aAvQiY2VUf3UuKrR4a9k5UMWYOtpDLsaXwATbcVCnI05hUS7L9ULQHWLZhyi3w==
+      integrity: sha512-FHeg2JN9ar1kaR0SLgbF07w46o/n1nGszyByYlPxqEymSpl82vA8EX0leE67kZr3GJnOBh8BbBzmCLO6O1YTIQ==
   /htmlparser2/3.10.1:
     dependencies:
       domelementtype: 1.3.1
@@ -12818,17 +12803,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-fnIwuaKjFPANG6MAixC/k1TDtnl1YlPLUlLVIxxGZUn1gfUx2+l3/zGNB72wya+lgsb50QBi2tUV75RiODwnww==
-  /terser/4.6.13:
-    dependencies:
-      commander: 2.20.3
-      source-map: 0.6.1
-      source-map-support: 0.5.19
-    dev: true
-    engines:
-      node: '>=6.0.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
   /terser/4.8.0:
     dependencies:
       commander: 2.20.3
@@ -14369,7 +14343,7 @@ specifiers:
   friendly-errors-webpack-plugin: 1.7.0
   generate-json-webpack-plugin: 1.0.0
   html-loader: 1.3.0
-  html-webpack-plugin: 4.3.0
+  html-webpack-plugin: 4.4.0
   jest: 26.4.2
   lodash-es: 4.17.15
   markdown-loader: 5.1.0
