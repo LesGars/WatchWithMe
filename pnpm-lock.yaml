@@ -2,7 +2,7 @@ devDependencies:
   '@commitlint/cli': 9.1.2
   '@commitlint/config-conventional': 9.1.2
   '@types/color-name': 1.1.1
-  '@types/json-schema': 7.0.5
+  '@types/json-schema': 7.0.6
   '@types/minimist': 1.2.0
   '@types/normalize-package-data': 2.4.0
   '@types/parse-json': 4.0.0
@@ -399,6 +399,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
+  /@types/json-schema/7.0.6:
+    dev: true
+    resolution:
+      integrity: sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
   /@types/minimist/1.2.0:
     dev: true
     resolution:
@@ -3107,7 +3111,7 @@ specifiers:
   '@commitlint/cli': 9.1.2
   '@commitlint/config-conventional': 9.1.2
   '@types/color-name': 1.1.1
-  '@types/json-schema': 7.0.5
+  '@types/json-schema': 7.0.6
   '@types/minimist': 1.2.0
   '@types/normalize-package-data': 2.4.0
   '@types/parse-json': 4.0.0
