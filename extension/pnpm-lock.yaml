@@ -20,7 +20,7 @@ devDependencies:
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
-  '@types/jest': 26.0.12
+  '@types/jest': 26.0.13
   '@types/lodash': 4.14.161
   '@types/node': 13.13.15
   '@types/rimraf': 3.0.0
@@ -2617,13 +2617,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
-  /@types/jest/26.0.12:
+  /@types/jest/26.0.13:
     dependencies:
       jest-diff: 25.5.0
       pretty-format: 25.5.0
     dev: true
     resolution:
-      integrity: sha512-vZOFjm562IPb1EmaKxMjdcouxVb1l3NqoUH4XC4tDQ2R/AWde+0HXBUhyfc6L+7vc3mJ393U+5vr3nH2CLSVVg==
+      integrity: sha512-sCzjKow4z9LILc6DhBvn5AkIfmQzDZkgtVVKmGwVrs5tuid38ws281D4l+7x1kP487+FlKDh5kfMZ8WSPAdmdA==
   /@types/json-schema/7.0.5:
     dev: true
     resolution:
@@ -14414,7 +14414,7 @@ specifiers:
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
-  '@types/jest': 26.0.12
+  '@types/jest': 26.0.13
   '@types/lodash': 4.14.161
   '@types/node': 13.13.15
   '@types/rimraf': 3.0.0
