@@ -9,7 +9,7 @@
         "@commitlint/cli": "9.1.2",
         "@commitlint/config-conventional": "9.1.2",
         "@types/color-name": "1.1.1",
-        "@types/json-schema": "7.0.5",
+        "@types/json-schema": "7.0.6",
         "@types/minimist": "1.2.0",
         "@types/normalize-package-data": "2.4.0",
         "@types/parse-json": "4.0.0",
