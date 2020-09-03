@@ -9,7 +9,7 @@ devDependencies:
   '@types/unist': 2.0.3
   '@typescript-eslint/parser': 3.10.1
   husky: 4.2.5
-  lint-staged: 10.2.13
+  lint-staged: 10.3.0
   prettier: 2.1.1
   stylelint: 13.7.0
 lockfileVersion: 5.1
@@ -1627,7 +1627,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /lint-staged/10.2.13:
+  /lint-staged/10.3.0:
     dependencies:
       chalk: 4.1.0
       cli-truncate: 2.1.0
@@ -1647,7 +1647,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-conwlukNV6aL9SiMWjFtDp5exeDnTMekdNPDZsKGnpfQuHcO0E3L3Bbf58lcR+M7vk6LpCilxDAVks/DDVBYlA==
+      integrity: sha512-an3VgjHqmJk0TORB/sdQl0CTkRg4E5ybYCXTTCSJ5h9jFwZbcgKIx5oVma5e7wp/uKt17s1QYFmYqT9MGVosGw==
   /listr2/2.6.0_enquirer@2.3.6:
     dependencies:
       chalk: 4.1.0
@@ -3118,6 +3118,6 @@ specifiers:
   '@types/unist': 2.0.3
   '@typescript-eslint/parser': 3.10.1
   husky: 4.2.5
-  lint-staged: 10.2.13
+  lint-staged: 10.3.0
   prettier: 2.1.1
   stylelint: 13.7.0

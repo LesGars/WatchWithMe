@@ -16,7 +16,7 @@
         "@types/unist": "2.0.3",
         "@typescript-eslint/parser": "3.10.1",
         "husky": "4.2.5",
-        "lint-staged": "10.2.13",
+        "lint-staged": "10.3.0",
         "prettier": "2.1.1",
         "stylelint": "13.7.0"
     },
