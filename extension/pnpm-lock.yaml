@@ -53,7 +53,7 @@ devDependencies:
   html-webpack-plugin: 4.4.1_webpack@4.44.1
   jest: 26.4.2
   markdown-loader: 5.1.0
-  mini-css-extract-plugin: 0.11.0_webpack@4.44.1
+  mini-css-extract-plugin: 0.11.1_webpack@4.44.1
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
@@ -3403,9 +3403,9 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-quoaXsZ9/BLNae5yiNoUz+Nhkwz83GhWwtYFglcjEQB2NDHCIpApbqXxIFnm4Pq/Nvhrsq5sYJFyohrrxnTGAA==
-  /ajv-errors/1.0.1_ajv@6.12.2:
+  /ajv-errors/1.0.1_ajv@6.12.4:
     dependencies:
-      ajv: 6.12.2
+      ajv: 6.12.4
     dev: true
     peerDependencies:
       ajv: '>=5.0.0'
@@ -7799,7 +7799,7 @@ packages:
     dependencies:
       chalk: 3.0.0
       fp-ts: 2.5.3
-      io-ts: 2.1.3
+      io-ts: 2.1.3_fp-ts@2.5.3
       io-ts-reporters: 1.0.0
       pify: 4.0.1
       semver-compare: 1.0.0
@@ -7834,11 +7834,13 @@ packages:
   /io-ts-reporters/1.0.0:
     dependencies:
       fp-ts: 2.5.3
-      io-ts: 2.1.3
+      io-ts: 2.1.3_fp-ts@2.5.3
     dev: true
     resolution:
       integrity: sha512-jjMvTnFYYxX3ue3cajmqCAf7sM4+lFvaaUuAL+otJv2DE+WDxYvQeCcUYveoq37rVSftJHZBEOrnvz3x0VdRXA==
-  /io-ts/2.1.3:
+  /io-ts/2.1.3_fp-ts@2.5.3:
+    dependencies:
+      fp-ts: 2.5.3
     dev: true
     peerDependencies:
       fp-ts: ^2.0.0
@@ -9455,7 +9457,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
-  /mini-css-extract-plugin/0.11.0_webpack@4.44.1:
+  /mini-css-extract-plugin/0.11.1_webpack@4.44.1:
     dependencies:
       loader-utils: 1.4.0
       normalize-url: 1.9.1
@@ -9468,7 +9470,7 @@ packages:
     peerDependencies:
       webpack: ^4.4.0 || ^5.0.0
     resolution:
-      integrity: sha512-dVWGuWJlQw2lZxsxBI3hOsoxg1k3DruLR0foHQLSkQMfk+qLJbv9dUk8fjmjWQKN9ef2n54ehA2FjClAsQhrWQ==
+      integrity: sha512-k6ijDS4ZbrTSBkrJDvbpDlXgD3rHjoKBUC3hbUNxfBr7tLv3FpjHcuvuFRNHcPNEryEKyEZL0n/Q4ZHPC2V6mA==
   /mini-css-extract-plugin/0.9.0_webpack@4.44.1:
     dependencies:
       loader-utils: 1.4.0
@@ -11890,9 +11892,9 @@ packages:
       integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   /schema-utils/1.0.0:
     dependencies:
-      ajv: 6.12.2
-      ajv-errors: 1.0.1_ajv@6.12.2
-      ajv-keywords: 3.4.1_ajv@6.12.2
+      ajv: 6.12.4
+      ajv-errors: 1.0.1_ajv@6.12.4
+      ajv-keywords: 3.5.2_ajv@6.12.4
     dev: true
     engines:
       node: '>= 4'
@@ -14490,7 +14492,7 @@ specifiers:
   jest: 26.4.2
   lodash-es: 4.17.15
   markdown-loader: 5.1.0
-  mini-css-extract-plugin: 0.11.0
+  mini-css-extract-plugin: 0.11.1
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
