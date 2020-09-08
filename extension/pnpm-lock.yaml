@@ -10,7 +10,7 @@ dependencies:
   vue-navigation-bar: 4.0.2
   vue-property-decorator: 9.0.0_6f0e494148c8782e14a3292eb52ab4ef
   vue-router: 3.4.3
-  webext-options-sync: 1.2.3
+  webext-options-sync: 1.2.4
 devDependencies:
   '@babel/core': 7.11.6
   '@babel/preset-env': 7.11.5_@babel+core@7.11.6
@@ -13851,14 +13851,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-g6exdnB37cb6jWQaQddcnibCjIIoe00D6MUqbgTQ5FfOvvnyqhRg3+n28PToEo2GTcYroEQwcfFoUkAmDdUVYA==
-  /webext-options-sync/1.2.3:
+  /webext-options-sync/1.2.4:
     dependencies:
       dom-form-serializer: 1.0.7
       throttle-debounce: 2.1.0
       webext-detect-page: 2.0.4
     dev: false
     resolution:
-      integrity: sha512-182rV8Q2vXSxfUsQjoEmdfV7byy2a+kPjI2J0DkQuKjk77IjWRDt9zGOsW9PBYtCCWsz99xIIXHOcV4tR+TUtQ==
+      integrity: sha512-2B9XA3xZeSUw7c+xqCns0i6mL175mOgp+hLwdojBQzodmPh3im0jqtA/5hz/Zc9qkQhLMYAi5dLoqD8C7Q7h9Q==
   /webextension-polyfill-ts/0.19.0:
     dependencies:
       webextension-polyfill: 0.6.0
@@ -14493,7 +14493,7 @@ specifiers:
   vue-router: 3.4.3
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.12
-  webext-options-sync: 1.2.3
+  webext-options-sync: 1.2.4
   webextension-polyfill: 0.6.0
   webextension-polyfill-ts: 0.19.0
   webpack: 4.44.1
