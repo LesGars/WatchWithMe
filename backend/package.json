@@ -42,7 +42,7 @@
         "serverless": "1.83.0",
         "serverless-iam-roles-per-function": "2.0.2",
         "serverless-pseudo-parameters": "2.5.0",
-        "serverless-webpack": "5.3.4",
+        "serverless-webpack": "5.3.5",
         "ts-jest": "26.3.0",
         "ts-loader": "8.0.3",
         "typescript": "3.9.7",
