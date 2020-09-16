@@ -10,7 +10,7 @@ devDependencies:
   '@typescript-eslint/parser': 3.10.1
   husky: 4.3.0
   lint-staged: 10.3.0
-  prettier: 2.1.1
+  prettier: 2.1.2
   stylelint: 13.7.1
 lockfileVersion: 5.1
 packages:
@@ -2196,13 +2196,13 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-03eXong5NLnNCD05xscnGKGDZ98CyzoqPSMjOe6SuoQY7Z2hIj0Ld1g/O/UQRuOle2aRtiIRDg9tDcTGAkLfKw==
-  /prettier/2.1.1:
+  /prettier/2.1.2:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-9bY+5ZWCfqj3ghYBLxApy2zf6m+NJo5GzmLTpr9FsApsfjriNnS2dahWReHMi7qNPhhHl9SYHJs2cHZLgexNIw==
+      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
   /process-nextick-args/2.0.1:
     dev: true
     resolution:
@@ -3110,5 +3110,5 @@ specifiers:
   '@typescript-eslint/parser': 3.10.1
   husky: 4.3.0
   lint-staged: 10.3.0
-  prettier: 2.1.1
+  prettier: 2.1.2
   stylelint: 13.7.1
