@@ -25,7 +25,7 @@ devDependencies:
   '@types/node': 13.13.21
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.22
-  '@types/webpack-env': 1.15.2
+  '@types/webpack-env': 1.15.3
   '@types/webpack-merge': 4.1.5
   '@vue/cli-plugin-babel': 4.5.6_a1ec18242ad146f71643797cb032d62e
   '@vue/cli-plugin-eslint': 4.5.6_c23b542fec36fb141907d3ea5ce33238
@@ -2057,6 +2057,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-67ZgZpAlhIICIdfQrB5fnDvaKFcDxpKibxznfYRVAT4mQE41Dido/3Ty+E3xGBmTogc5+0Qb8tWhna+5B8z1iQ==
+  /@types/webpack-env/1.15.3:
+    dev: true
+    resolution:
+      integrity: sha512-5oiXqR7kwDGZ6+gmzIO2lTC+QsriNuQXZDWNYRV3l2XRN/zmPgnC21DLSx2D05zvD8vnXW6qUg7JnXZ4I6qLVQ==
   /@types/webpack-merge/4.1.5:
     dependencies:
       '@types/webpack': 4.41.12
@@ -7095,7 +7099,7 @@ packages:
     dependencies:
       chalk: 3.0.0
       fp-ts: 2.5.3
-      io-ts: 2.1.3_fp-ts@2.5.3
+      io-ts: 2.1.3
       io-ts-reporters: 1.0.0
       pify: 4.0.1
       semver-compare: 1.0.0
@@ -7130,13 +7134,11 @@ packages:
   /io-ts-reporters/1.0.0:
     dependencies:
       fp-ts: 2.5.3
-      io-ts: 2.1.3_fp-ts@2.5.3
+      io-ts: 2.1.3
     dev: true
     resolution:
       integrity: sha512-jjMvTnFYYxX3ue3cajmqCAf7sM4+lFvaaUuAL+otJv2DE+WDxYvQeCcUYveoq37rVSftJHZBEOrnvz3x0VdRXA==
-  /io-ts/2.1.3_fp-ts@2.5.3:
-    dependencies:
-      fp-ts: 2.5.3
+  /io-ts/2.1.3:
     dev: true
     peerDependencies:
       fp-ts: ^2.0.0
@@ -13755,7 +13757,7 @@ specifiers:
   '@types/node': 13.13.21
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.22
-  '@types/webpack-env': 1.15.2
+  '@types/webpack-env': 1.15.3
   '@types/webpack-merge': 4.1.5
   '@vue/cli-plugin-babel': 4.5.6
   '@vue/cli-plugin-eslint': 4.5.6
