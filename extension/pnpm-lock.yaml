@@ -4,11 +4,11 @@ dependencies:
   lodash-es: 4.17.15
   uuid: 8.3.0
   vue: 2.6.12
-  vue-class-component: 7.2.5_vue@2.6.12
+  vue-class-component: 7.2.6_vue@2.6.12
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-navigation-bar: 4.0.2
-  vue-property-decorator: 9.0.0_6f0e494148c8782e14a3292eb52ab4ef
+  vue-property-decorator: 9.0.0_2dc4252c5371093c9ebcca71536ac4e9
   vue-router: 3.4.3
   webext-options-sync: 1.2.4
 devDependencies:
@@ -12972,14 +12972,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-  /vue-class-component/7.2.5_vue@2.6.12:
+  /vue-class-component/7.2.6_vue@2.6.12:
     dependencies:
       vue: 2.6.12
     dev: false
     peerDependencies:
       vue: ^2.0.0
     resolution:
-      integrity: sha512-0CSftHY0bDTD+4FbYkuFf6+iKDjZ4h2in2YYJDRMk5daZIjrgT9LjFHvP7Rzqy9/s1pij3zDtTSLRUjsPWMwqg==
+      integrity: sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
   /vue-clipboard2/0.3.1:
     dependencies:
       clipboard: 2.0.6
@@ -13077,10 +13077,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-n21KaFnydV7iEZPjlLclRm+aSat27nt04tUv3DvyYx//xfItwemfR0R96vHYTIEEJN9WOCi2OR3QiZu85KyZGQ==
-  /vue-property-decorator/9.0.0_6f0e494148c8782e14a3292eb52ab4ef:
+  /vue-property-decorator/9.0.0_2dc4252c5371093c9ebcca71536ac4e9:
     dependencies:
       vue: 2.6.12
-      vue-class-component: 7.2.5_vue@2.6.12
+      vue-class-component: 7.2.6_vue@2.6.12
     dev: false
     peerDependencies:
       vue: '*'
@@ -13809,7 +13809,7 @@ specifiers:
   typescript: 3.9.7
   uuid: 8.3.0
   vue: 2.6.12
-  vue-class-component: 7.2.5
+  vue-class-component: 7.2.6
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-loader: 15.9.3
