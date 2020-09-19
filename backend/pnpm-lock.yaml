@@ -24,7 +24,7 @@ devDependencies:
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.44.2
   ts-jest: 26.3.0_jest@26.4.2+typescript@3.9.7
-  ts-loader: 8.0.3_typescript@3.9.7
+  ts-loader: 8.0.4_typescript@3.9.7
   typescript: 3.9.7
   webpack: 4.44.2_webpack@4.44.2
 lockfileVersion: 5.1
@@ -9442,7 +9442,7 @@ packages:
       typescript: '>=3.8 <5.0'
     resolution:
       integrity: sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
-  /ts-loader/8.0.3_typescript@3.9.7:
+  /ts-loader/8.0.4_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.3.0
@@ -9456,7 +9456,7 @@ packages:
     peerDependencies:
       typescript: '*'
     resolution:
-      integrity: sha512-wsqfnVdB7xQiqhqbz2ZPLGHLPZbHVV5Qn/MNFZkCFxRU1miDyxKORucDGxKtsQJ63Rfza0udiUxWF5nHY6bpdQ==
+      integrity: sha512-5u8KF1SW8eCUb/Ff7At81e3wznPmT/27fvaGRO9CziVy+6NlPVRvrzSox4OwU0/e6OflOUB32Err4VquysCSAQ==
   /ts-node/8.10.1_typescript@3.9.7:
     dependencies:
       arg: 4.1.3
@@ -10184,7 +10184,7 @@ specifiers:
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5
   ts-jest: 26.3.0
-  ts-loader: 8.0.3
+  ts-loader: 8.0.4
   typescript: 3.9.7
   uuid: ^8.1.0
   webpack: 4.44.2
