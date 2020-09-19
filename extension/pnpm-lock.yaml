@@ -1,6 +1,6 @@
 dependencies:
   dayjs: 1.8.36
-  debug: 4.1.1
+  debug: 4.2.0
   lodash-es: 4.17.15
   uuid: 8.3.0
   vue: 2.6.12
@@ -4738,8 +4738,22 @@ packages:
   /debug/4.1.1:
     dependencies:
       ms: 2.1.2
+    dev: true
     resolution:
       integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
+  /debug/4.2.0:
+    dependencies:
+      ms: 2.1.2
+    dev: false
+    engines:
+      node: '>=6.0'
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    resolution:
+      integrity: sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
   /decamelize/1.2.0:
     dev: true
     engines:
@@ -13862,7 +13876,7 @@ specifiers:
   css-loader: 4.3.0
   cssnano: 4.1.10
   dayjs: 1.8.36
-  debug: 4.1.1
+  debug: 4.2.0
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.0
   eslint-config-prettier: 6.11.0
