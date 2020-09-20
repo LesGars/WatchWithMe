@@ -23,7 +23,7 @@ devDependencies:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.44.2
-  ts-jest: 26.3.0_jest@26.4.2+typescript@3.9.7
+  ts-jest: 26.4.0_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.4_typescript@3.9.7
   typescript: 3.9.7
   webpack: 4.44.2_webpack@4.44.2
@@ -1413,7 +1413,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.1
       '@types/istanbul-reports': 3.0.0
-      '@types/node': 13.13.15
+      '@types/node': 13.13.21
       '@types/yargs': 15.0.4
       chalk: 4.0.0
     dev: true
@@ -1862,13 +1862,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-nwKNbvnwJ2/mndE9ItP/zc2TCzw6uuodnF4EHYWD+gCQDVBuRQL5UzbZD0/ezy1iKsFU2ZQiDqg4M9dN4+wZgA==
-  /@types/jest/26.0.10:
-    dependencies:
-      jest-diff: 25.5.0
-      pretty-format: 25.5.0
-    dev: true
-    resolution:
-      integrity: sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
   /@types/jest/26.0.14:
     dependencies:
       jest-diff: 25.5.0
@@ -6308,7 +6301,7 @@ packages:
   /jest-util/26.3.0:
     dependencies:
       '@jest/types': 26.3.0
-      '@types/node': 13.13.15
+      '@types/node': 13.13.21
       chalk: 4.0.0
       graceful-fs: 4.2.4
       is-ci: 2.0.0
@@ -9418,9 +9411,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
-  /ts-jest/26.3.0_jest@26.4.2+typescript@3.9.7:
+  /ts-jest/26.4.0_jest@26.4.2+typescript@3.9.7:
     dependencies:
-      '@types/jest': 26.0.10
+      '@types/jest': 26.0.14
       bs-logger: 0.2.6
       buffer-from: 1.1.1
       fast-json-stable-stringify: 2.1.0
@@ -9432,7 +9425,7 @@ packages:
       mkdirp: 1.0.4
       semver: 7.3.2
       typescript: 3.9.7
-      yargs-parser: 18.1.3
+      yargs-parser: 20.1.0
     dev: true
     engines:
       node: '>= 10'
@@ -9441,7 +9434,7 @@ packages:
       jest: '>=26 <27'
       typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
+      integrity: sha512-ofBzoCqf6Nv/PoWb/ByV3VNKy2KJSikamOBxvR3E6eVdIw10GwAXoyvMWXXjZJK2s6S27ZE8fI+JBTnGaovl6Q==
   /ts-loader/8.0.4_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
@@ -10094,6 +10087,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ==
+  /yargs-parser/20.1.0:
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-RV4YEjMLfjWkK9jNV/aZytlJ5uz+JBk7t29FofILa41jJAU/yCwghgsjH2xT0h7eu7b6MrCDJb1qZjeDJ/jI1w==
   /yargs/15.3.1:
     dependencies:
       cliui: 6.0.0
@@ -10183,7 +10182,7 @@ specifiers:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5
-  ts-jest: 26.3.0
+  ts-jest: 26.4.0
   ts-loader: 8.0.4
   typescript: 3.9.7
   uuid: ^8.1.0

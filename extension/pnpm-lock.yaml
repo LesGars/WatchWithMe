@@ -69,7 +69,7 @@ devDependencies:
   string-replace-loader: 2.3.0_webpack@4.44.2
   style-loader: 1.2.1_webpack@4.44.2
   terser-webpack-plugin: 4.2.2_webpack@4.44.2
-  ts-jest: 26.3.0_jest@26.4.2+typescript@3.9.7
+  ts-jest: 26.4.0_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.4_typescript@3.9.7
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1
@@ -1901,13 +1901,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-nwKNbvnwJ2/mndE9ItP/zc2TCzw6uuodnF4EHYWD+gCQDVBuRQL5UzbZD0/ezy1iKsFU2ZQiDqg4M9dN4+wZgA==
-  /@types/jest/26.0.10:
-    dependencies:
-      jest-diff: 25.5.0
-      pretty-format: 25.5.0
-    dev: true
-    resolution:
-      integrity: sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
   /@types/jest/26.0.14:
     dependencies:
       jest-diff: 25.5.0
@@ -8001,7 +7994,7 @@ packages:
   /jest-util/26.3.0:
     dependencies:
       '@jest/types': 26.3.0
-      '@types/node': 13.13.15
+      '@types/node': 13.13.21
       chalk: 4.1.0
       graceful-fs: 4.2.4
       is-ci: 2.0.0
@@ -12516,9 +12509,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
-  /ts-jest/26.3.0_jest@26.4.2+typescript@3.9.7:
+  /ts-jest/26.4.0_jest@26.4.2+typescript@3.9.7:
     dependencies:
-      '@types/jest': 26.0.10
+      '@types/jest': 26.0.14
       bs-logger: 0.2.6
       buffer-from: 1.1.1
       fast-json-stable-stringify: 2.1.0
@@ -12530,7 +12523,7 @@ packages:
       mkdirp: 1.0.4
       semver: 7.3.2
       typescript: 3.9.7
-      yargs-parser: 18.1.2
+      yargs-parser: 20.1.0
     dev: true
     engines:
       node: '>= 10'
@@ -12539,7 +12532,7 @@ packages:
       jest: '>=26 <27'
       typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-Jq2uKfx6bPd9+JDpZNMBJMdMQUC3sJ08acISj8NXlVgR2d5OqslEHOR2KHMgwymu8h50+lKIm0m0xj/ioYdW2Q==
+      integrity: sha512-ofBzoCqf6Nv/PoWb/ByV3VNKy2KJSikamOBxvR3E6eVdIw10GwAXoyvMWXXjZJK2s6S27ZE8fI+JBTnGaovl6Q==
   /ts-loader/6.2.2_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
@@ -13768,6 +13761,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-hlIPNR3IzC1YuL1c2UwwDKpXlNFBqD1Fswwh1khz5+d8Cq/8yc/Mn0i+rQXduu8hcrFKvO7Eryk+09NecTQAAQ==
+  /yargs-parser/20.1.0:
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-RV4YEjMLfjWkK9jNV/aZytlJ5uz+JBk7t29FofILa41jJAU/yCwghgsjH2xT0h7eu7b6MrCDJb1qZjeDJ/jI1w==
   /yargs/13.3.2:
     dependencies:
       cliui: 5.0.0
@@ -13901,7 +13900,7 @@ specifiers:
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
   terser-webpack-plugin: 4.2.2
-  ts-jest: 26.3.0
+  ts-jest: 26.4.0
   ts-loader: 8.0.4
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1
