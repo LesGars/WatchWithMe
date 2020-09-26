@@ -9,7 +9,7 @@ dependencies:
   vue-form-generator: 2.3.4
   vue-navigation-bar: 4.0.2
   vue-property-decorator: 9.0.0_2dc4252c5371093c9ebcca71536ac4e9
-  vue-router: 3.4.4
+  vue-router: 3.4.5
   webext-options-sync: 1.2.4
 devDependencies:
   '@babel/core': 7.11.6
@@ -7119,7 +7119,7 @@ packages:
     dependencies:
       chalk: 3.0.0
       fp-ts: 2.5.3
-      io-ts: 2.1.3
+      io-ts: 2.1.3_fp-ts@2.5.3
       io-ts-reporters: 1.0.0
       pify: 4.0.1
       semver-compare: 1.0.0
@@ -7154,11 +7154,13 @@ packages:
   /io-ts-reporters/1.0.0:
     dependencies:
       fp-ts: 2.5.3
-      io-ts: 2.1.3
+      io-ts: 2.1.3_fp-ts@2.5.3
     dev: true
     resolution:
       integrity: sha512-jjMvTnFYYxX3ue3cajmqCAf7sM4+lFvaaUuAL+otJv2DE+WDxYvQeCcUYveoq37rVSftJHZBEOrnvz3x0VdRXA==
-  /io-ts/2.1.3:
+  /io-ts/2.1.3_fp-ts@2.5.3:
+    dependencies:
+      fp-ts: 2.5.3
     dev: true
     peerDependencies:
       fp-ts: ^2.0.0
@@ -13110,10 +13112,10 @@ packages:
       vue-class-component: '*'
     resolution:
       integrity: sha512-oegTNPItuHOkW0AP1MnbdNwkmyhfsUIIXvIRHpgC18tVoEo21/i6kItyeekjMs8JgZJeuHzsaTc/DZaJFH4IWQ==
-  /vue-router/3.4.4:
+  /vue-router/3.4.5:
     dev: false
     resolution:
-      integrity: sha512-qFfwwLvxUYq+iDJ0UoE8HMnuZEDtIDA+p573brVMb7NZr0t1vhMeMWDTvgF2b8MqAFOc77bNOTSSwYcR4pCZlg==
+      integrity: sha512-ioRY5QyDpXM9TDjOX6hX79gtaMXSVDDzSlbIlyAmbHNteIL81WIVB2e+jbzV23vzxtoV0krdS2XHm+GxFg+Nxg==
   /vue-screen-size/1.0.1:
     dev: false
     resolution:
@@ -13906,7 +13908,7 @@ specifiers:
   vue-loader: 15.9.3
   vue-navigation-bar: 4.0.2
   vue-property-decorator: 9.0.0
-  vue-router: 3.4.4
+  vue-router: 3.4.5
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.12
   webext-options-sync: 1.2.4
