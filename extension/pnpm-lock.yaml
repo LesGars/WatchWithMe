@@ -16,7 +16,7 @@ devDependencies:
   '@babel/preset-env': 7.11.5_@babel+core@7.11.6
   '@babel/preset-typescript': 7.10.4_@babel+core@7.11.6
   '@fullhuman/postcss-purgecss': 2.3.0
-  '@types/chrome': 0.0.123
+  '@types/chrome': 0.0.124
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
@@ -1771,13 +1771,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ==
-  /@types/chrome/0.0.123:
+  /@types/chrome/0.0.124:
     dependencies:
       '@types/filesystem': 0.0.29
       '@types/har-format': 1.2.4
     dev: true
     resolution:
-      integrity: sha512-fG6GPreuSY+Z+0e3dtBz5MJ5qyZ2feOZISG8udxBiuwUYqykK1q4NxkjfzL2F5I05LqK2ojP7ZR08Gcfo3ubHQ==
+      integrity: sha512-0UmDQ6A9gaahvztKryIonSTyUMEhuhKNyyJAnBB7ZJN/YXP7YRkL4onPFSTxnIbXcMnYsQFo8TxsGP8jY2mdEw==
   /@types/color-name/1.1.1:
     dev: true
     resolution:
@@ -7119,7 +7119,7 @@ packages:
     dependencies:
       chalk: 3.0.0
       fp-ts: 2.5.3
-      io-ts: 2.1.3_fp-ts@2.5.3
+      io-ts: 2.1.3
       io-ts-reporters: 1.0.0
       pify: 4.0.1
       semver-compare: 1.0.0
@@ -7154,13 +7154,11 @@ packages:
   /io-ts-reporters/1.0.0:
     dependencies:
       fp-ts: 2.5.3
-      io-ts: 2.1.3_fp-ts@2.5.3
+      io-ts: 2.1.3
     dev: true
     resolution:
       integrity: sha512-jjMvTnFYYxX3ue3cajmqCAf7sM4+lFvaaUuAL+otJv2DE+WDxYvQeCcUYveoq37rVSftJHZBEOrnvz3x0VdRXA==
-  /io-ts/2.1.3_fp-ts@2.5.3:
-    dependencies:
-      fp-ts: 2.5.3
+  /io-ts/2.1.3:
     dev: true
     peerDependencies:
       fp-ts: ^2.0.0
@@ -13839,7 +13837,7 @@ specifiers:
   '@babel/preset-env': 7.11.5
   '@babel/preset-typescript': 7.10.4
   '@fullhuman/postcss-purgecss': 2.3.0
-  '@types/chrome': 0.0.123
+  '@types/chrome': 0.0.124
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
