@@ -52,7 +52,7 @@ devDependencies:
   html-loader: 1.3.1_webpack@4.44.2
   html-webpack-plugin: 4.5.0_webpack@4.44.2
   jest: 26.4.2
-  markdown-loader: 5.1.0
+  markdown-loader: 5.2.0
   mini-css-extract-plugin: 0.11.2_webpack@4.44.2
   minimist: 1.2.5
   node-sass: 4.14.1
@@ -8565,13 +8565,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
-  /markdown-loader/5.1.0:
+  /markdown-loader/5.2.0:
     dependencies:
       loader-utils: 1.4.0
       marked: 0.7.0
     dev: true
     resolution:
-      integrity: sha512-xtQNozLEL+55ZSPTNwro8epZqf1h7HjAZd/69zNe8lbckDiGVHeLQm849bXzocln2pwRK2A/GrW/7MAmwjcFog==
+      integrity: sha512-+vAtBlMdmMY3ERSOUIIek/DwCv939nHvoYISUwwTC7q+caVlQmf7KhhMozbfAcgL/7njGjWxhMgI7nLaz9+KRQ==
   /marked/0.7.0:
     dev: true
     engines:
@@ -13878,7 +13878,7 @@ specifiers:
   html-webpack-plugin: 4.5.0
   jest: 26.4.2
   lodash-es: 4.17.15
-  markdown-loader: 5.1.0
+  markdown-loader: 5.2.0
   mini-css-extract-plugin: 0.11.2
   minimist: 1.2.5
   node-sass: 4.14.1
