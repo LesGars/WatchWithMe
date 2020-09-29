@@ -23,7 +23,7 @@ devDependencies:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.44.2
-  ts-jest: 26.4.0_jest@26.4.2+typescript@3.9.7
+  ts-jest: 26.4.1_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.4_typescript@3.9.7
   typescript: 3.9.7
   webpack: 4.44.2_webpack@4.44.2
@@ -9411,7 +9411,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
-  /ts-jest/26.4.0_jest@26.4.2+typescript@3.9.7:
+  /ts-jest/26.4.1_jest@26.4.2+typescript@3.9.7:
     dependencies:
       '@types/jest': 26.0.14
       bs-logger: 0.2.6
@@ -9434,7 +9434,7 @@ packages:
       jest: '>=26 <27'
       typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-ofBzoCqf6Nv/PoWb/ByV3VNKy2KJSikamOBxvR3E6eVdIw10GwAXoyvMWXXjZJK2s6S27ZE8fI+JBTnGaovl6Q==
+      integrity: sha512-F4aFq01aS6mnAAa0DljNmKr/Kk9y4HVZ1m6/rtJ0ED56cuxINGq3Q9eVAh+z5vcYKe5qnTMvv90vE8vUMFxomg==
   /ts-loader/8.0.4_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
@@ -10182,7 +10182,7 @@ specifiers:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5
-  ts-jest: 26.4.0
+  ts-jest: 26.4.1
   ts-loader: 8.0.4
   typescript: 3.9.7
   uuid: ^8.1.0
