@@ -69,7 +69,7 @@ devDependencies:
   string-replace-loader: 2.3.0_webpack@4.44.2
   style-loader: 1.2.1_webpack@4.44.2
   terser-webpack-plugin: 4.2.2_webpack@4.44.2
-  ts-jest: 26.4.0_jest@26.4.2+typescript@3.9.7
+  ts-jest: 26.4.1_jest@26.4.2+typescript@3.9.7
   ts-loader: 8.0.4_typescript@3.9.7
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1
@@ -12504,7 +12504,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
-  /ts-jest/26.4.0_jest@26.4.2+typescript@3.9.7:
+  /ts-jest/26.4.1_jest@26.4.2+typescript@3.9.7:
     dependencies:
       '@types/jest': 26.0.14
       bs-logger: 0.2.6
@@ -12527,7 +12527,7 @@ packages:
       jest: '>=26 <27'
       typescript: '>=3.8 <5.0'
     resolution:
-      integrity: sha512-ofBzoCqf6Nv/PoWb/ByV3VNKy2KJSikamOBxvR3E6eVdIw10GwAXoyvMWXXjZJK2s6S27ZE8fI+JBTnGaovl6Q==
+      integrity: sha512-F4aFq01aS6mnAAa0DljNmKr/Kk9y4HVZ1m6/rtJ0ED56cuxINGq3Q9eVAh+z5vcYKe5qnTMvv90vE8vUMFxomg==
   /ts-loader/6.2.2_typescript@3.9.7:
     dependencies:
       chalk: 2.4.2
@@ -13895,7 +13895,7 @@ specifiers:
   string-replace-loader: 2.3.0
   style-loader: 1.2.1
   terser-webpack-plugin: 4.2.2
-  ts-jest: 26.4.0
+  ts-jest: 26.4.1
   ts-loader: 8.0.4
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.1
