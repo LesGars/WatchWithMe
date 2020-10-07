@@ -68,7 +68,7 @@ devDependencies:
   sinon: 9.2.0
   string-replace-loader: 2.3.0_webpack@4.44.2
   style-loader: 1.3.0_webpack@4.44.2
-  terser-webpack-plugin: 4.2.2_webpack@4.44.2
+  terser-webpack-plugin: 4.2.3_webpack@4.44.2
   ts-jest: 26.4.1_jest@26.5.2+typescript@3.9.7
   ts-loader: 8.0.4_typescript@3.9.7
   tsconfig-paths-webpack-plugin: 3.3.0
@@ -1727,6 +1727,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
+  /@types/json-schema/7.0.6:
+    dev: true
+    resolution:
+      integrity: sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
   /@types/json5/0.0.29:
     dev: true
     resolution:
@@ -2542,6 +2546,14 @@ packages:
       ajv: ^6.9.1
     resolution:
       integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
+  /ajv-keywords/3.5.2_ajv@6.12.5:
+    dependencies:
+      ajv: 6.12.5
+    dev: true
+    peerDependencies:
+      ajv: ^6.9.1
+    resolution:
+      integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
   /ajv/6.12.0:
     dependencies:
       fast-deep-equal: 3.1.1
@@ -2569,6 +2581,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-eienB2c9qVQs2KWexhkrdMLVDoIQCz5KSeLxwg9Lzk4DOfBtIK9PQwwufcsn1jjGuf9WZmqPMbGxOzfcuphJCQ==
+  /ajv/6.12.5:
+    dependencies:
+      fast-deep-equal: 3.1.1
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.2.2
+    dev: true
+    resolution:
+      integrity: sha512-lRF8RORchjpKG50/WFf8xmg7sgCLFiYNNnqdKflk63whMQcWR5ngGjiSXkL9bjxy6B2npOK2HSMN49jEBMSkag==
   /alphanum-sort/1.0.2:
     dev: true
     resolution:
@@ -7803,16 +7824,6 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-ghAs/1FtfYpMmYQ0AHqxV62XPvKdUDIBBApMZfly+E9JEmYh2K45G0R5dWxx986RN12pRCxsViwQVtGl+N4whw==
-  /jest-worker/26.3.0:
-    dependencies:
-      '@types/node': 13.13.21
-      merge-stream: 2.0.0
-      supports-color: 7.1.0
-    dev: true
-    engines:
-      node: '>= 10.13.0'
-    resolution:
-      integrity: sha512-Vmpn2F6IASefL+DVBhPzI2J9/GJUsqzomdeN+P+dK8/jKxbh8R3BtFnx3FIta7wYlPU62cpJMJQo4kuOowcMnw==
   /jest-worker/26.5.0:
     dependencies:
       '@types/node': 13.13.23
@@ -11015,6 +11026,16 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==
+  /schema-utils/3.0.0:
+    dependencies:
+      '@types/json-schema': 7.0.6
+      ajv: 6.12.5
+      ajv-keywords: 3.5.2_ajv@6.12.5
+    dev: true
+    engines:
+      node: '>= 10.13.0'
+    resolution:
+      integrity: sha512-6D82/xSzO094ajanoOSbe4YvXWMfn2A//8Y1+MUqFAJul5Bs+yn36xbK9OtNDcRVSBJ9jjeoXftM6CfztsjOAA==
   /scss-tokenizer/0.2.3:
     dependencies:
       js-base64: 2.5.2
@@ -12007,16 +12028,16 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-I8IDsQwZrqjdmOicNeE8L/MhwatAap3mUrtcAKJuilsemUNcX+Hier/eAzwStVqhlCxq0aG3ni9bK/0BESXkTg==
-  /terser-webpack-plugin/4.2.2_webpack@4.44.2:
+  /terser-webpack-plugin/4.2.3_webpack@4.44.2:
     dependencies:
       cacache: 15.0.5
       find-cache-dir: 3.3.1
-      jest-worker: 26.3.0
+      jest-worker: 26.5.0
       p-limit: 3.0.2
-      schema-utils: 2.7.1
+      schema-utils: 3.0.0
       serialize-javascript: 5.0.1
       source-map: 0.6.1
-      terser: 5.3.2
+      terser: 5.3.4
       webpack: 4.44.2_93ca2875a658e9d1552850624e6b91c7
       webpack-sources: 1.4.3
     dev: true
@@ -12025,7 +12046,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-3qAQpykRTD5DReLu5/cwpsg7EZFzP3Q0Hp2XUWJUw2mpq2jfgOKTZr8IZKKnNieRVVo1UauROTdhbQJZveGKtQ==
+      integrity: sha512-jTgXh40RnvOrLQNgIkwEKnQ8rmHjHK4u+6UBEi+W+FPmvb+uo+chJXntKe7/3lW5mNysgSWD60KyesnhW8D6MQ==
   /terser/4.8.0:
     dependencies:
       commander: 2.20.3
@@ -12037,17 +12058,17 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-EAPipTNeWsb/3wLPeup1tVPaXfIaU68xMnVdPafIL1TV05OhASArYyIfFvnvJCNrR2NIOvDVNNTFRa+Re2MWyw==
-  /terser/5.3.2:
+  /terser/5.3.4:
     dependencies:
       commander: 2.20.3
-      source-map: 0.6.1
+      source-map: 0.7.3
       source-map-support: 0.5.19
     dev: true
     engines:
       node: '>=6.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-H67sydwBz5jCUA32ZRL319ULu+Su1cAoZnnc+lXnenGRYWyLE3Scgkt8mNoAsMx0h5kdo758zdoS0LG9rYZXDQ==
+      integrity: sha512-dxuB8KQo8Gt6OVOeLg/rxfcxdNZI/V1G6ze1czFUzPeCFWZRtvZMgSzlZZ5OYBZ4HoG607F6pFPNLekJyV+yVw==
   /test-exclude/6.0.0:
     dependencies:
       '@istanbuljs/schema': 0.1.2
@@ -13608,7 +13629,7 @@ specifiers:
   sinon: 9.2.0
   string-replace-loader: 2.3.0
   style-loader: 1.3.0
-  terser-webpack-plugin: 4.2.2
+  terser-webpack-plugin: 4.2.3
   ts-jest: 26.4.1
   ts-loader: 8.0.4
   tsconfig-paths-webpack-plugin: 3.3.0
