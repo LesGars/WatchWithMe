@@ -8,7 +8,7 @@ devDependencies:
   '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.63
   '@types/jest': 26.0.14
-  '@types/node': 13.13.24
+  '@types/node': 13.13.25
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
@@ -1743,10 +1743,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-L31WmMJYKb15PDqFWutn8HNwrNK6CE6bkWgSB0dO1XpNoHrszVKV1Clcnfgd6c/oG54TVF8XQEvY2gQrW8K6Mw==
-  /@types/node/13.13.24:
+  /@types/node/13.13.25:
     dev: true
     resolution:
-      integrity: sha512-ry1JlHIVcmQFNq5KWgdEo1NVu7qFDi+vQPknWWDCc05cekTLVr2y0FHAKXTfv4OLWw+GOzdVe8eFWPoYEdk05w==
+      integrity: sha512-6ZMK4xRcF2XrPdKmPYQxZkdHKV18xKgUFVvhIgw2iwaaO6weleLPHLBGPZmLhjo+m1N+MZXRAoBEBCCVqgO2zQ==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -9985,7 +9985,7 @@ specifiers:
   '@shelf/jest-dynamodb': 1.7.0
   '@types/aws-lambda': 8.10.63
   '@types/jest': 26.0.14
-  '@types/node': 13.13.24
+  '@types/node': 13.13.25
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0
   '@typescript-eslint/parser': 2.34.0
