@@ -14,7 +14,7 @@ devDependencies:
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
   babel-jest: 26.5.2_@babel+core@7.12.3
   eslint: 6.8.0
-  eslint-config-prettier: 6.12.0_eslint@6.8.0
+  eslint-config-prettier: 6.15.0_eslint@6.8.0
   eslint-plugin-jest: 23.20.0_eslint@6.8.0+typescript@3.9.7
   jest: 26.5.2
   js-yaml: 3.14.0
@@ -4285,7 +4285,7 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-Bmt7NcRySdIfNPfU2ZoXDrrXsG9ZjvDxcAlMfDUgRBjLOWTuIACXPBFJH7Z+cLb40JeQco5toikyc9t9P8E9SQ==
-  /eslint-config-prettier/6.12.0_eslint@6.8.0:
+  /eslint-config-prettier/6.15.0_eslint@6.8.0:
     dependencies:
       eslint: 6.8.0
       get-stdin: 6.0.0
@@ -4294,7 +4294,7 @@ packages:
     peerDependencies:
       eslint: '>=3.14.1'
     resolution:
-      integrity: sha512-9jWPlFlgNwRUYVoujvWTQ1aMO8o6648r+K7qU7K5Jmkbyqav1fuEZC0COYpGBxyiAJb65Ra9hrmFx19xRGwXWw==
+      integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
   /eslint-plugin-jest/23.20.0_eslint@6.8.0+typescript@3.9.7:
     dependencies:
       '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.7
@@ -10237,7 +10237,7 @@ specifiers:
   aws-sdk: ^2.663.0
   babel-jest: 26.5.2
   eslint: 6.8.0
-  eslint-config-prettier: 6.12.0
+  eslint-config-prettier: 6.15.0
   eslint-plugin-jest: 23.20.0
   jest: 26.5.2
   js-yaml: 3.14.0
