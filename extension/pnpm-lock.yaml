@@ -30,7 +30,7 @@ devDependencies:
   '@vue/cli-plugin-babel': 4.5.7_16eaabc6b525ba2189f29e586c50f663
   '@vue/cli-plugin-eslint': 4.5.7_a2449456cb752b7f4309aa93399b8b5a
   '@vue/cli-plugin-typescript': 4.5.7_977351680e672b0016592b2b02ac673b
-  '@vue/cli-service': 4.5.7_e5a0673ece00b8a68005c33997d77b84
+  '@vue/cli-service': 4.5.7_a89ceb4780bf9ecee4a87be40358a46f
   '@vue/devtools': 5.3.3
   '@vue/eslint-config-prettier': 6.0.0_56a3d1bff37c9879d9ed115948dfb38a
   '@vue/eslint-config-typescript': 5.1.0_bfb65f6f322c54eb427e97b68401d418
@@ -64,7 +64,7 @@ devDependencies:
   postcss-scss: 2.1.1
   prettier: 2.1.2
   rimraf: 3.0.2
-  sass-loader: 9.0.3_node-sass@4.14.1+webpack@4.44.2
+  sass-loader: 10.0.4_node-sass@4.14.1+webpack@4.44.2
   sinon: 9.2.0
   string-replace-loader: 2.3.0_webpack@4.44.2
   style-loader: 1.3.0_webpack@4.44.2
@@ -2053,7 +2053,7 @@ packages:
     dependencies:
       '@babel/core': 7.11.6
       '@vue/babel-preset-app': 4.5.7_vue@2.6.12
-      '@vue/cli-service': 4.5.7_e5a0673ece00b8a68005c33997d77b84
+      '@vue/cli-service': 4.5.7_a89ceb4780bf9ecee4a87be40358a46f
       '@vue/cli-shared-utils': 4.5.7
       babel-loader: 8.1.0_d2a654c8b7ff226093b38eb7b56a78a8
       cache-loader: 4.1.0_webpack@4.44.2
@@ -2068,7 +2068,7 @@ packages:
       integrity: sha512-cqtHoXWHxtMj8qyN0A2TvFRuEQsqtDlYeKaOT1XDwbfHZwWXlD4BBsqXZBnqQkQI0hijMOA0QOnqA63/x0lpMg==
   /@vue/cli-plugin-eslint/4.5.7_a2449456cb752b7f4309aa93399b8b5a:
     dependencies:
-      '@vue/cli-service': 4.5.7_e5a0673ece00b8a68005c33997d77b84
+      '@vue/cli-service': 4.5.7_a89ceb4780bf9ecee4a87be40358a46f
       '@vue/cli-shared-utils': 4.5.7
       eslint: 6.8.0
       eslint-loader: 2.2.1_eslint@6.8.0+webpack@4.44.2
@@ -2085,7 +2085,7 @@ packages:
       integrity: sha512-6fWob1xh2W0uif2++YhNiBWITDBsAEktdgnLRgIgM/UqUg9oFpz9tqs0i85PQwjUDIn/erMT2ID3hnOncYTxxQ==
   /@vue/cli-plugin-router/4.5.7_@vue+cli-service@4.5.7:
     dependencies:
-      '@vue/cli-service': 4.5.7_e5a0673ece00b8a68005c33997d77b84
+      '@vue/cli-service': 4.5.7_a89ceb4780bf9ecee4a87be40358a46f
       '@vue/cli-shared-utils': 4.5.7
     dev: true
     peerDependencies:
@@ -2095,7 +2095,7 @@ packages:
   /@vue/cli-plugin-typescript/4.5.7_977351680e672b0016592b2b02ac673b:
     dependencies:
       '@types/webpack-env': 1.15.3
-      '@vue/cli-service': 4.5.7_e5a0673ece00b8a68005c33997d77b84
+      '@vue/cli-service': 4.5.7_a89ceb4780bf9ecee4a87be40358a46f
       '@vue/cli-shared-utils': 4.5.7
       cache-loader: 4.1.0_webpack@4.44.2
       fork-ts-checker-webpack-plugin: 3.1.1
@@ -2121,13 +2121,13 @@ packages:
       integrity: sha512-QXcJwFKxB3DYcZCc0FeobvxPeo4QH42DpZrEJqPDhtpmKKDh+TAD+FHfRtY5t0JYmDOKPw4hppucB0G6TWqdFg==
   /@vue/cli-plugin-vuex/4.5.7_@vue+cli-service@4.5.7:
     dependencies:
-      '@vue/cli-service': 4.5.7_e5a0673ece00b8a68005c33997d77b84
+      '@vue/cli-service': 4.5.7_a89ceb4780bf9ecee4a87be40358a46f
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-bHH2JSAd/S9fABtZdr3xVSgbIPm3PGcan56adMt0hGlm6HG/QxDNuPLppMleuBLr9uHoHX5x7sQmbtZvzIYjxw==
-  /@vue/cli-service/4.5.7_e5a0673ece00b8a68005c33997d77b84:
+  /@vue/cli-service/4.5.7_a89ceb4780bf9ecee4a87be40358a46f:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.44.2
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.44.2
@@ -2173,7 +2173,7 @@ packages:
       pnp-webpack-plugin: 1.6.4_typescript@3.9.7
       portfinder: 1.0.26
       postcss-loader: 3.0.0
-      sass-loader: 9.0.3_node-sass@4.14.1+webpack@4.44.2
+      sass-loader: 10.0.4_node-sass@4.14.1+webpack@4.44.2
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.6_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
@@ -2538,6 +2538,7 @@ packages:
     dependencies:
       ajv: 6.12.2
     dev: true
+    optional: true
     peerDependencies:
       ajv: ^6.9.1
     resolution:
@@ -2574,6 +2575,7 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.2.2
     dev: true
+    optional: true
     resolution:
       integrity: sha512-k+V+hzjm5q/Mr8ef/1Y9goCmlsK4I6Sm74teeyGvFk1XrOsbsKLjEdrvny42CZ+a8sXbk8KWpY/bDwS+FLL2UQ==
   /ajv/6.12.4:
@@ -8060,12 +8062,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
-  /klona/1.1.2:
+  /klona/2.0.4:
     dev: true
     engines:
       node: '>= 8'
     resolution:
-      integrity: sha512-xf88rTeHiXk+XE2Vhi6yj8Wm3gMZrygGdKjJqN8HkV+PwF/t50/LdAKHoHpPcxFAlmQszTZ1CugrK25S7qDRLA==
+      integrity: sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
   /launch-editor-middleware/2.2.1:
     dependencies:
       launch-editor: 2.2.1
@@ -10944,13 +10946,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==
-  /sass-loader/9.0.3_node-sass@4.14.1+webpack@4.44.2:
+  /sass-loader/10.0.4_node-sass@4.14.1+webpack@4.44.2:
     dependencies:
-      klona: 1.1.2
+      klona: 2.0.4
       loader-utils: 2.0.0
       neo-async: 2.6.2
       node-sass: 4.14.1
-      schema-utils: 2.7.0
+      schema-utils: 3.0.0
       semver: 7.3.2
       webpack: 4.44.2_93ca2875a658e9d1552850624e6b91c7
     dev: true
@@ -10969,7 +10971,7 @@ packages:
       sass:
         optional: true
     resolution:
-      integrity: sha512-fOwsP98ac1VMme+V3+o0HaaMHp8Q/C9P+MUazLFVi3Jl7ORGHQXL1XeRZt3zLSGZQQPC8xE42Y2WptItvGjDQg==
+      integrity: sha512-zhdZ8qvZM4iL5XjLVEjJLvKWvC+MB+hHgzL2x/Nf7UHpUNmPYsJvypW79bW39g4LZ603dH/dRSsRYzJJIljtdA==
   /sass/1.26.3:
     dependencies:
       chokidar: 3.3.1
@@ -11018,6 +11020,7 @@ packages:
     dev: true
     engines:
       node: '>= 8.9.0'
+    optional: true
     resolution:
       integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==
   /schema-utils/2.7.1:
@@ -13629,7 +13632,7 @@ specifiers:
   postcss-scss: 2.1.1
   prettier: 2.1.2
   rimraf: 3.0.2
-  sass-loader: 9.0.3
+  sass-loader: 10.0.4
   sinon: 9.2.0
   string-replace-loader: 2.3.0
   style-loader: 1.3.0
