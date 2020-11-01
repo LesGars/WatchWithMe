@@ -22,7 +22,7 @@ devDependencies:
   '@types/google.analytics': 0.0.40
   '@types/jest': 26.0.15
   '@types/lodash': 4.14.164
-  '@types/node': 13.13.25
+  '@types/node': 13.13.30
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.22
   '@types/webpack-env': 1.15.3
@@ -2668,6 +2668,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6ZMK4xRcF2XrPdKmPYQxZkdHKV18xKgUFVvhIgw2iwaaO6weleLPHLBGPZmLhjo+m1N+MZXRAoBEBCCVqgO2zQ==
+  /@types/node/13.13.30:
+    dev: true
+    resolution:
+      integrity: sha512-HmqFpNzp3TSELxU/bUuRK+xzarVOAsR00hzcvM0TXrMlt/+wcSLa5q6YhTb6/cA6wqDCZLDcfd8fSL95x5h7AA==
   /@types/node/13.13.9:
     dev: true
     resolution:
@@ -14524,7 +14528,7 @@ specifiers:
   '@types/google.analytics': 0.0.40
   '@types/jest': 26.0.15
   '@types/lodash': 4.14.164
-  '@types/node': 13.13.25
+  '@types/node': 13.13.30
   '@types/rimraf': 3.0.0
   '@types/webpack': 4.41.22
   '@types/webpack-env': 1.15.3
