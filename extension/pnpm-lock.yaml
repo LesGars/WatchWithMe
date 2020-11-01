@@ -20,7 +20,7 @@ devDependencies:
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
-  '@types/jest': 26.0.14
+  '@types/jest': 26.0.15
   '@types/lodash': 4.14.161
   '@types/node': 13.13.25
   '@types/rimraf': 3.0.0
@@ -2309,7 +2309,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.2
       '@types/istanbul-reports': 3.0.0
-      '@types/node': 13.13.23
+      '@types/node': 13.13.25
       '@types/yargs': 15.0.5
       chalk: 4.1.0
     dev: true
@@ -2594,6 +2594,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Hz5q8Vu0D288x3iWXePSn53W7hAjP0H7EQ6QvDO9c7t46mR0lNOLlfuwQ+JkVxuhygHzlzPX+0jKdA3ZgSh+Vg==
+  /@types/jest/26.0.15:
+    dependencies:
+      jest-diff: 26.5.2
+      pretty-format: 26.5.2
+    dev: true
+    resolution:
+      integrity: sha512-s2VMReFXRg9XXxV+CW9e5Nz8fH2K1aEhwgjUqPPbQd7g95T0laAcvLv032EhFHIa5GHsZ8W7iJEQVaJq6k3Gog==
   /@types/json-schema/7.0.5:
     dev: true
     resolution:
@@ -14515,7 +14522,7 @@ specifiers:
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
-  '@types/jest': 26.0.14
+  '@types/jest': 26.0.15
   '@types/lodash': 4.14.161
   '@types/node': 13.13.25
   '@types/rimraf': 3.0.0
