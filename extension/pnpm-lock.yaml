@@ -10,7 +10,7 @@ dependencies:
   vue-navigation-bar: 4.0.2
   vue-property-decorator: 9.0.2_2dc4252c5371093c9ebcca71536ac4e9
   vue-router: 3.4.6
-  webext-options-sync: 1.2.4
+  webext-options-sync: 2.0.0
 devDependencies:
   '@babel/core': 7.11.6
   '@babel/preset-env': 7.11.5_@babel+core@7.11.6
@@ -4745,12 +4745,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==
-  /dom-form-serializer/1.0.7:
-    dependencies:
-      matches-selector: 1.2.0
-    dev: false
-    resolution:
-      integrity: sha1-GakPVrTTQgQL+fzHjk84A5bTuqU=
   /dom-serializer/0.2.2:
     dependencies:
       domelementtype: 2.0.1
@@ -8383,10 +8377,6 @@ packages:
     optional: true
     resolution:
       integrity: sha512-o+nZr+vtJtgPNklyeUKkkH42OsK8WAfdgaJE2FNxcjLPg+5QbeEoT6vRj8Xq/iv18JlQ9cmKsEu0b94ixWf1YQ==
-  /matches-selector/1.2.0:
-    dev: false
-    resolution:
-      integrity: sha512-c4vLwYWyl+Ji+U43eU/G5FwxWd4ZH0ePUsFs5y0uwD9HUEFBXUQ1zUUan+78IpRD+y4pUfG0nAzNM292K7ItvA==
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.0.4
@@ -12121,12 +12111,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==
-  /throttle-debounce/2.1.0:
-    dev: false
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-AOvyNahXQuU7NN+VVvOOX+uW6FPaWdAOdRP5HfwYxAfCzXTFKRMoIMk+n+po318+ktcChx+F1Dd91G3YHeMKyg==
   /through/2.3.8:
     dev: true
     resolution:
@@ -12984,18 +12968,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
-  /webext-detect-page/2.0.4:
+  /webext-detect-page/2.0.5:
     dev: false
     resolution:
-      integrity: sha512-g6exdnB37cb6jWQaQddcnibCjIIoe00D6MUqbgTQ5FfOvvnyqhRg3+n28PToEo2GTcYroEQwcfFoUkAmDdUVYA==
-  /webext-options-sync/1.2.4:
+      integrity: sha512-yyWDNgR+cb9jpSU5HIt31vMUo4j8E5P4oqQaDsmiToe++uGYnFzhQeyn1r/i3i6CfCO7GkGOr/mCmycS79dJog==
+  /webext-options-sync/2.0.0:
     dependencies:
-      dom-form-serializer: 1.0.7
-      throttle-debounce: 2.1.0
-      webext-detect-page: 2.0.4
+      webext-detect-page: 2.0.5
     dev: false
     resolution:
-      integrity: sha512-2B9XA3xZeSUw7c+xqCns0i6mL175mOgp+hLwdojBQzodmPh3im0jqtA/5hz/Zc9qkQhLMYAi5dLoqD8C7Q7h9Q==
+      integrity: sha512-N1GZ4d0ofuy4B5b5svTJVC7ROqGuj0NQD+MFLOofLtVgpR6UjK1wgQjX7G5mUlHFkfEg7lDmxXYgbF+782snfA==
   /webextension-polyfill-ts/0.20.0:
     dependencies:
       webextension-polyfill: 0.6.0
@@ -13653,7 +13635,7 @@ specifiers:
   vue-router: 3.4.6
   vue-style-loader: 4.1.2
   vue-template-compiler: 2.6.12
-  webext-options-sync: 1.2.4
+  webext-options-sync: 2.0.0
   webextension-polyfill: 0.6.0
   webextension-polyfill-ts: 0.20.0
   webpack: 4.44.2
