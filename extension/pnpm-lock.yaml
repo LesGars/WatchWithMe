@@ -16,7 +16,7 @@ devDependencies:
   '@babel/preset-env': 7.12.1_@babel+core@7.12.3
   '@babel/preset-typescript': 7.12.1_@babel+core@7.12.3
   '@fullhuman/postcss-purgecss': 3.0.0
-  '@types/chrome': 0.0.124
+  '@types/chrome': 0.0.126
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
@@ -2457,13 +2457,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ==
-  /@types/chrome/0.0.124:
+  /@types/chrome/0.0.126:
     dependencies:
       '@types/filesystem': 0.0.29
       '@types/har-format': 1.2.4
     dev: true
     resolution:
-      integrity: sha512-0UmDQ6A9gaahvztKryIonSTyUMEhuhKNyyJAnBB7ZJN/YXP7YRkL4onPFSTxnIbXcMnYsQFo8TxsGP8jY2mdEw==
+      integrity: sha512-191z7uoyfbGU+z7/m45j9XbWugWqVHVPMM4hJV5cZ+3YzGCT9wFjMUHO3Wr3Xvo8aVodvRNu28u7lvEaAnfbzg==
   /@types/color-name/1.1.1:
     dev: true
     resolution:
@@ -14511,7 +14511,7 @@ specifiers:
   '@babel/preset-env': 7.12.1
   '@babel/preset-typescript': 7.12.1
   '@fullhuman/postcss-purgecss': 3.0.0
-  '@types/chrome': 0.0.124
+  '@types/chrome': 0.0.126
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.40
