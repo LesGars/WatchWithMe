@@ -1,0 +1,11 @@
+#wwm-countdown-overlay {
+    background: url("") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+}
