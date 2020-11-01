@@ -4,6 +4,7 @@ import {
     MessageFromExtensionToServerType,
     PlayerEvent,
 } from "../communications/from-extension-to-server";
+import { WAIT_FOR_ALL_WATCHERS_URL } from "../constants";
 
 const log = require("debug")("ext:contentscript:player");
 
@@ -102,6 +103,7 @@ const interceptedEvents = new Set(["seeking", "play", "playing"]);
 export class VideoPlayer {
     private video: HTMLVideoElement;
     private port: Runtime.Port;
+    private toggleOverlay: (string) => void;
 
     private eventHandlers: ((event: Event) => void)[] = [];
     private preventPlay = true; // Default behavior is to prevent play until syncPlayCommand is received
@@ -109,9 +111,14 @@ export class VideoPlayer {
     private prevBufferAmount: null | number = null;
     private prevBufferTime: null | number = null;
 
-    constructor(video: HTMLVideoElement, port: Runtime.Port) {
+    constructor(
+        video: HTMLVideoElement,
+        port: Runtime.Port,
+        toggleOverlay: (string) => void
+    ) {
         this.video = video;
         this.port = port;
+        this.toggleOverlay = toggleOverlay;
         this.setupEvents();
     }
 
@@ -165,6 +172,7 @@ export class VideoPlayer {
     private maybeInterceptEvent(event: Event): InterceptorResult {
         if (this.preventPlay) {
             this.video.pause();
+            this.toggleOverlay(WAIT_FOR_ALL_WATCHERS_URL);
             return InterceptorResult.DoIntercept;
         } else {
             // If we end up here, it means we have received a SyncPlay Command
