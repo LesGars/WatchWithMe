@@ -35,7 +35,7 @@ devDependencies:
   '@vue/eslint-config-prettier': 6.0.0_56a3d1bff37c9879d9ed115948dfb38a
   '@vue/eslint-config-typescript': 5.1.0_5b52bc78ac194b028a618a863bc843cc
   autoprefixer: 9.8.6
-  axios: 0.20.0
+  axios: 0.21.0
   babel-jest: 26.5.2_@babel+core@7.12.3
   clean-webpack-plugin: 3.0.0_webpack@4.44.2
   copy-webpack-plugin: 5.1.2_webpack@4.44.2
@@ -3740,12 +3740,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
-  /axios/0.20.0:
+  /axios/0.21.0:
     dependencies:
       follow-redirects: 1.11.0
     dev: true
     resolution:
-      integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+      integrity: sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
   /babel-code-frame/6.26.0:
     dependencies:
       chalk: 1.1.3
@@ -14552,7 +14552,7 @@ specifiers:
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 5.1.0
   autoprefixer: 9.8.6
-  axios: 0.20.0
+  axios: 0.21.0
   babel-jest: 26.5.2
   clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 5.1.2
