@@ -6,17 +6,13 @@ import { SyncIntent } from "@/types";
 import { CS_SCRIPT_NAME } from "@/utils/constants";
 import { browser } from "webextension-polyfill-ts";
 import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
+import { GIF_3_2_1_COUNTDOWN_URL, GIF_GET_READY_URL } from "../constants";
 import { VideoPlayer } from "./player";
 
 const log = require("debug")("ext:contentscript");
 let videoPlayer: VideoPlayer;
 let owner = true;
 const OVERLAY_ID = "wwm-countdown-overlay";
-const GIF_GET_READY_URL =
-    "https://static.wixstatic.com/media/279b2e_194dd051fb5741e5b557654410e04d22~mv2.gif";
-const GIF_3_2_1_COUNTDOWN_URL =
-    "https://thumbs.gfycat.com/TautDemandingCoypu-small.gif";
-
 const css = require("./index.css").toString();
 
 const playEventHandler = (event): void => {
@@ -45,7 +41,7 @@ const detectIfJoiningARoomFromUrl = () => {
     }
 };
 
-const showCountDownTimer = (url: string) => {
+export const showCountDownTimer = (url: string) => {
     const overlay = getOrCreateWWMOverlay();
     overlay.style.display = "block";
     overlay.style.backgroundImage = `url("${url}")`;
@@ -68,7 +64,6 @@ const getOrCreateWWMOverlay = () => {
     ytMoviePlayer.appendChild(overlay);
     return overlay;
 };
-getOrCreateWWMOverlay();
 
 const csPort = browser.runtime.connect(undefined, { name: CS_SCRIPT_NAME });
 csPort.onMessage.addListener((event) => {
@@ -78,7 +73,11 @@ csPort.onMessage.addListener((event) => {
             const video = document.querySelector("video");
             if (video) {
                 video.pause();
-                videoPlayer = new VideoPlayer(video, csPort);
+                videoPlayer = new VideoPlayer(
+                    video,
+                    csPort,
+                    showCountDownTimer
+                );
                 videoPlayer.addEventHandler(playEventHandler);
                 videoPlayer.pushPlayerStateToBGScript();
             } else {
