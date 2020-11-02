@@ -44,7 +44,7 @@
         "serverless-pseudo-parameters": "2.5.0",
         "serverless-webpack": "5.3.5",
         "ts-jest": "26.4.3",
-        "ts-loader": "8.0.4",
+        "ts-loader": "8.0.7",
         "typescript": "3.9.7",
         "webpack": "4.44.2"
     },
