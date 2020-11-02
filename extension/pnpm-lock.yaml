@@ -65,7 +65,7 @@ devDependencies:
   prettier: 2.1.2
   rimraf: 3.0.2
   sass-loader: 10.0.4_node-sass@4.14.1+webpack@4.44.2
-  sinon: 9.2.0
+  sinon: 9.2.1
   string-replace-loader: 2.3.0_webpack@4.44.2
   style-loader: 2.0.0_webpack@4.44.2
   terser-webpack-plugin: 4.2.3_webpack@4.44.2
@@ -12206,7 +12206,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-pNprY1/8zMoz9w0Xy5JZLeleVXo=
-  /sinon/9.2.0:
+  /sinon/9.2.1:
     dependencies:
       '@sinonjs/commons': 1.8.1
       '@sinonjs/fake-timers': 6.0.1
@@ -12217,7 +12217,7 @@ packages:
       supports-color: 7.1.0
     dev: true
     resolution:
-      integrity: sha512-eSNXz1XMcGEMHw08NJXSyTHIu6qTCOiN8x9ODACmZpNQpr0aXTBXBnI4xTzQzR+TEpOmLiKowGf9flCuKIzsbw==
+      integrity: sha512-naPfsamB5KEE1aiioaoqJ6MEhdUs/2vtI5w1hPAXX/UwvoPjXcwh1m5HiKx0HGgKR8lQSoFIgY5jM6KK8VrS9w==
   /sisteransi/1.0.5:
     dev: true
     resolution:
@@ -14585,7 +14585,7 @@ specifiers:
   prettier: 2.1.2
   rimraf: 3.0.2
   sass-loader: 10.0.4
-  sinon: 9.2.0
+  sinon: 9.2.1
   string-replace-loader: 2.3.0
   style-loader: 2.0.0
   terser-webpack-plugin: 4.2.3
