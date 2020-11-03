@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.6.2
   js-yaml: 3.14.0
   prettier: 2.1.2
-  serverless: 1.83.0
+  serverless: 1.83.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.44.2
@@ -1663,7 +1663,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 13.13.17
+      '@types/node': 13.13.30
     dev: true
     resolution:
       integrity: sha512-1Bh06cbWJUHMC97acuD6UMG29nMt0Aqz1vF3guLfG+kHHJhy3AyohZFFxYk2f7Q1SQIrNwvncxAE0N/9s70F2w==
@@ -1712,10 +1712,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/13.13.17:
-    dev: true
-    resolution:
-      integrity: sha512-rGZftvdDpsYtG/rOlDOwny1f6Aq4FHJdGSVfPg5vC2DaR9Rt4W2OpsOF5GTU2bSqZmwTkfnsvJhhzpMWYxxlEA==
   /@types/node/13.13.30:
     dev: true
     resolution:
@@ -1741,7 +1737,7 @@ packages:
   /@types/request/2.48.5:
     dependencies:
       '@types/caseless': 0.12.2
-      '@types/node': 13.13.17
+      '@types/node': 13.13.30
       '@types/tough-cookie': 4.0.0
       form-data: 2.5.1
     dev: true
@@ -2058,6 +2054,14 @@ packages:
       ajv: ^6.9.1
     resolution:
       integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
+  /ajv-keywords/3.5.2_ajv@6.12.6:
+    dependencies:
+      ajv: 6.12.6
+    dev: true
+    peerDependencies:
+      ajv: ^6.9.1
+    resolution:
+      integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
   /ajv/6.12.2:
     dependencies:
       fast-deep-equal: 3.1.1
@@ -2076,6 +2080,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-eienB2c9qVQs2KWexhkrdMLVDoIQCz5KSeLxwg9Lzk4DOfBtIK9PQwwufcsn1jjGuf9WZmqPMbGxOzfcuphJCQ==
+  /ajv/6.12.6:
+    dependencies:
+      fast-deep-equal: 3.1.1
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.2.2
+    dev: true
+    resolution:
+      integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
   /ansi-align/3.0.0:
     dependencies:
       string-width: 3.1.0
@@ -2189,7 +2202,7 @@ packages:
       buffer-crc32: 0.2.13
       glob: 7.1.6
       readable-stream: 3.6.0
-      tar-stream: 2.1.2
+      tar-stream: 2.1.4
       zip-stream: 2.1.3
     dev: true
     engines:
@@ -2203,7 +2216,7 @@ packages:
       buffer-crc32: 0.2.13
       glob: 7.1.6
       readable-stream: 3.6.0
-      tar-stream: 2.1.2
+      tar-stream: 2.1.4
       zip-stream: 3.0.1
     dev: true
     engines:
@@ -2374,7 +2387,7 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-xPOszNOaSXTRs8VGXaMbhTKXdlq2TlDRfFRVEGxkZrtow87hEIVZGAUSUme2e3GHqHUDnySwcufrUpUPUizOKQ==
-  /aws-sdk/2.749.0:
+  /aws-sdk/2.784.0:
     dependencies:
       buffer: 4.9.2
       events: 1.1.1
@@ -2389,7 +2402,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-dG7jbOfSrZpdhCniQpe3hXmRNjmlKX7DyZuLDJ5tDl/4+jmXUEjXpM1IhMi0wWXriO/AnHBKlKGsePx8vBMqcw==
+      integrity: sha512-+KBkqH7t/XE91Fqn8eyJeNIWsnhSWL8bSUqFD7TfE3FN07MTlC0nprGYp+2WfcYNz5i8Bus1vY2DHNVhtTImnw==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -2557,14 +2570,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-e8tQYnZodmebYDWGH7KMRvtzKXaJHx3BbilrgZCfvyLUYdKpK1t5PSPmpkny/SgiTSCnjfLW7v5rlONXVFkQEA==
-  /bl/4.0.2:
-    dependencies:
-      buffer: 5.6.0
-      inherits: 2.0.4
-      readable-stream: 3.6.0
-    dev: true
-    resolution:
-      integrity: sha512-j4OH8f6Qg2bGuWfRiltT2HYGx0e1QcBTrK9KAHNMwMZdQnDZFk0ZSYIpADjYCB3U12nicC5tVJwSIhwOWjb4RQ==
   /bl/4.0.3:
     dependencies:
       buffer: 5.6.0
@@ -3462,10 +3467,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==
-  /dayjs/1.8.35:
+  /dayjs/1.9.4:
     dev: true
     resolution:
-      integrity: sha512-isAbIEenO4ilm6f8cpqvgjZCsuerDAz2Kb7ri201AiNn58aqXuaLJEnCtfIMdCvERZHNGRY5lDMTr/jdAnKSWQ==
+      integrity: sha512-ABSF3alrldf7nM9sQ2U+Ln67NRwmzlLOqG7kK03kck0mw3wlSSEKv/XhKGGxUjQcS57QeiCyNdrFgtj9nWlrng==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -7648,7 +7653,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.1
-      '@types/node': 13.13.17
+      '@types/node': 13.13.30
       long: 4.0.0
     dev: true
     hasBin: true
@@ -8296,24 +8301,24 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-px1ISPVAVTxCl1sSbkLBcD7rx5kAPC2hKOI6fzXRHi1e6o7EDha9jUahjztmW6zMYDz0Uesau+uo7ZqdbrtdQg==
-  /serverless/1.83.0:
+  /serverless/1.83.1:
     dependencies:
       '@serverless/cli': 1.5.2
       '@serverless/components': 2.34.9
       '@serverless/enterprise-plugin': 3.8.4
       '@serverless/inquirer': 1.1.2
       '@serverless/utils': 1.2.0
-      ajv: 6.12.4
-      ajv-keywords: 3.5.2_ajv@6.12.4
+      ajv: 6.12.6
+      ajv-keywords: 3.5.2_ajv@6.12.6
       archiver: 3.1.1
-      aws-sdk: 2.749.0
+      aws-sdk: 2.784.0
       bluebird: 3.7.2
       boxen: 3.2.0
       cachedir: 2.3.0
       chalk: 2.4.2
       child-process-ext: 2.1.1
       d: 1.0.1
-      dayjs: 1.8.35
+      dayjs: 1.9.4
       decompress: 4.2.1
       download: 7.1.0
       essentials: 1.1.1
@@ -8358,7 +8363,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-w/74YcSjJfR3osNMf4/EAAAIfzzI7reW3cDSHcwZeTOXQ//CCeAHy4XKhAXYa50tzRJVV8OUDt1RuXsZz7YbJQ==
+      integrity: sha512-A8zD4xbQxyK8ydeqYTQLLxBVAlgpXWJu5wvpRinWHXk+200ofu3/cu4kUTURs4400Ue5afToKBvxTjtWTxxB7Q==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -8959,16 +8964,6 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-rzS0heiNf8Xn7/mpdSVVSMAWAoy9bfb1WOTYC78Z0UQKeKa/CWS8FOq0lKGNa8DWKAn9gxjCvMLYc5PGXYlK2A==
-  /tar-stream/2.1.2:
-    dependencies:
-      bl: 4.0.2
-      end-of-stream: 1.4.4
-      fs-constants: 1.0.0
-      inherits: 2.0.4
-      readable-stream: 3.6.0
-    dev: true
-    resolution:
-      integrity: sha512-UaF6FoJ32WqALZGOIAApXx+OdxhekNMChu6axLJR85zMMjXKWFGjbIRe+J6P4UnRGg9rAwWvbTT0oI7hD/Un7Q==
   /tar-stream/2.1.4:
     dependencies:
       bl: 4.0.3
@@ -9978,7 +9973,7 @@ specifiers:
   jest: 26.6.2
   js-yaml: 3.14.0
   prettier: 2.1.2
-  serverless: 1.83.0
+  serverless: 1.83.1
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5
