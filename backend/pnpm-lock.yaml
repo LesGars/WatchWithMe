@@ -19,7 +19,7 @@ devDependencies:
   jest: 26.6.3
   js-yaml: 3.14.0
   prettier: 2.1.2
-  serverless: 1.83.1
+  serverless: 1.83.2
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.44.2
@@ -2387,7 +2387,7 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha512-xPOszNOaSXTRs8VGXaMbhTKXdlq2TlDRfFRVEGxkZrtow87hEIVZGAUSUme2e3GHqHUDnySwcufrUpUPUizOKQ==
-  /aws-sdk/2.784.0:
+  /aws-sdk/2.786.0:
     dependencies:
       buffer: 4.9.2
       events: 1.1.1
@@ -2402,7 +2402,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-+KBkqH7t/XE91Fqn8eyJeNIWsnhSWL8bSUqFD7TfE3FN07MTlC0nprGYp+2WfcYNz5i8Bus1vY2DHNVhtTImnw==
+      integrity: sha512-oL+rDkoBdn0Q3AxiEzSemCE3WqW6kBf0A72SIjDQZJb4/NDvA2mL2rpNQGaxaFX3zMHEwfUGcMu7T3q7I6Q0lw==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -3467,10 +3467,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==
-  /dayjs/1.9.4:
+  /dayjs/1.9.5:
     dev: true
     resolution:
-      integrity: sha512-ABSF3alrldf7nM9sQ2U+Ln67NRwmzlLOqG7kK03kck0mw3wlSSEKv/XhKGGxUjQcS57QeiCyNdrFgtj9nWlrng==
+      integrity: sha512-WULIw7UpW/E0y6VywewpbXAMH3d5cZijEhoHLwM+OMVbk/NtchKS/W+57H/0P1rqU7gHrAArjiRLHCUhgMQl6w==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -8301,7 +8301,7 @@ packages:
       webpack: '>= 3.0.0 < 6'
     resolution:
       integrity: sha512-px1ISPVAVTxCl1sSbkLBcD7rx5kAPC2hKOI6fzXRHi1e6o7EDha9jUahjztmW6zMYDz0Uesau+uo7ZqdbrtdQg==
-  /serverless/1.83.1:
+  /serverless/1.83.2:
     dependencies:
       '@serverless/cli': 1.5.2
       '@serverless/components': 2.34.9
@@ -8311,14 +8311,14 @@ packages:
       ajv: 6.12.6
       ajv-keywords: 3.5.2_ajv@6.12.6
       archiver: 3.1.1
-      aws-sdk: 2.784.0
+      aws-sdk: 2.786.0
       bluebird: 3.7.2
       boxen: 3.2.0
       cachedir: 2.3.0
       chalk: 2.4.2
       child-process-ext: 2.1.1
       d: 1.0.1
-      dayjs: 1.9.4
+      dayjs: 1.9.5
       decompress: 4.2.1
       download: 7.1.0
       essentials: 1.1.1
@@ -8363,7 +8363,7 @@ packages:
     hasBin: true
     requiresBuild: true
     resolution:
-      integrity: sha512-A8zD4xbQxyK8ydeqYTQLLxBVAlgpXWJu5wvpRinWHXk+200ofu3/cu4kUTURs4400Ue5afToKBvxTjtWTxxB7Q==
+      integrity: sha512-VjB0CK79iLbrmaPKgn/g1IrK+R2T1/TGh3LkTBHn8H+uLe8Fx15SP4jQsuLSSsr6XY7jB+GISb8pOlkTfdUjEQ==
   /set-blocking/2.0.0:
     dev: true
     resolution:
@@ -9973,7 +9973,7 @@ specifiers:
   jest: 26.6.3
   js-yaml: 3.14.0
   prettier: 2.1.2
-  serverless: 1.83.1
+  serverless: 1.83.2
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5
