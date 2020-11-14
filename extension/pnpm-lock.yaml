@@ -53,7 +53,7 @@ devDependencies:
   html-webpack-plugin: 4.5.0_webpack@4.44.2
   jest: 26.6.3
   markdown-loader: 6.0.0
-  mini-css-extract-plugin: 0.12.0_webpack@4.44.2
+  mini-css-extract-plugin: 1.2.1_webpack@4.44.2
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
@@ -9421,20 +9421,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ==
-  /mini-css-extract-plugin/0.12.0_webpack@4.44.2:
-    dependencies:
-      loader-utils: 1.4.0
-      normalize-url: 1.9.1
-      schema-utils: 1.0.0
-      webpack: 4.44.2_webpack-cli@3.3.12
-      webpack-sources: 1.4.3
-    dev: true
-    engines:
-      node: '>= 6.9.0'
-    peerDependencies:
-      webpack: ^4.4.0 || ^5.0.0
-    resolution:
-      integrity: sha512-z6PQCe9rd1XUwZ8gMaEVwwRyZlrYy8Ba1gRjFP5HcV51HkXX+XlwZ+a1iAYTjSYwgNBXoNR7mhx79mDpOn5fdw==
   /mini-css-extract-plugin/0.9.0_webpack@4.44.2:
     dependencies:
       loader-utils: 1.4.0
@@ -9449,6 +9435,19 @@ packages:
       webpack: ^4.4.0
     resolution:
       integrity: sha512-lp3GeY7ygcgAmVIcRPBVhIkf8Us7FZjA+ILpal44qLdSu11wmjKQ3d9k15lfD7pO4esu9eUIAW7qiYIBppv40A==
+  /mini-css-extract-plugin/1.2.1_webpack@4.44.2:
+    dependencies:
+      loader-utils: 2.0.0
+      schema-utils: 3.0.0
+      webpack: 4.44.2_webpack-cli@3.3.12
+      webpack-sources: 1.4.3
+    dev: true
+    engines:
+      node: '>= 10.13.0'
+    peerDependencies:
+      webpack: ^4.4.0 || ^5.0.0
+    resolution:
+      integrity: sha512-G3yw7/TQaPfkuiR73MDcyiqhyP8SnbmLhUbpC76H+wtQxA6wfKhMCQOCb6wnPK0dQbjORAeOILQqEesg4/wF7A==
   /minimalistic-assert/1.0.1:
     dev: true
     resolution:
@@ -14584,7 +14583,7 @@ specifiers:
   jest: 26.6.3
   lodash-es: 4.17.15
   markdown-loader: 6.0.0
-  mini-css-extract-plugin: 0.12.0
+  mini-css-extract-plugin: 1.2.1
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
