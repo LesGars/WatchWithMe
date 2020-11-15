@@ -1,5 +1,4 @@
-import Vue from "vue";
-// ** Start Vue here ** //
+import { createApp } from "vue";
 import App from "./app.vue";
 import router from "./router";
 
@@ -11,9 +10,6 @@ if (process.env.NODE_ENV === "development" && process.env.DEVTOOLS) {
     require("@/utils/dev-tools");
 }
 
-Vue.component("app", App);
-new Vue({
-    el: "#app",
-    router,
-    render: (h) => h(App),
-});
+const vueApp = createApp(App);
+vueApp.use(router);
+router.isReady().then(() => vueApp.mount("#app"));

@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: [
     "@vue/typescript",
-    "plugin:vue/essential",
+    "plugin:vue/vue3-essential",
     "@vue/prettier",
     "@vue/typescript",
     "airbnb",

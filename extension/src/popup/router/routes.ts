@@ -1,11 +1,22 @@
+import { RouteRecordRaw } from "vue-router";
 import NewRoom from "./pages/new-room.vue";
-import Popup from "./pages/popup.vue";
 
-export default [
+// TODO implement
+const isRoomCreated = () => true;
+
+const routes: RouteRecordRaw[] = [
     {
-        name: "popup",
+        name: "Popup home",
         path: "/",
-        component: Popup,
+        // redirect: true,
+        beforeEnter(to, from, next) {
+            if (isRoomCreated()) {
+                next("/room");
+            } else {
+                next("/room/new");
+            }
+        },
+        props: true,
     },
     {
         name: "new-room",
@@ -14,3 +25,5 @@ export default [
         props: true,
     },
 ];
+
+export default routes;

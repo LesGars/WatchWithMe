@@ -9,13 +9,18 @@
         <div>
             <div>
                 <h1>Watch With Me Extension</h1>
-                <router-link
-                    :to="{ path: 'new-room' }"
-                    class="px-3"
-                    title="new room"
-                >
-                    Create a room
-                </router-link>
+
+                <p v-if="!roomId">
+                    <router-link
+                        :to="{ path: 'new-room' }"
+                        class="px-3"
+                        title="new room"
+                    >
+                        Create a room
+                    </router-link>
+                </p>
+
+                <p></p>
             </div>
         </div>
         <div class="p-2">
@@ -45,7 +50,7 @@ export default class Popup extends Vue {
             log(`Updated data`);
         });
         return {
-            lastRun: 0
+            lastRun: 0,
         };
     }
 

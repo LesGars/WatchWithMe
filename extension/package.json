@@ -2,29 +2,36 @@
     "name": "watch_with_me",
     "version": "0.0.1",
     "description": "An extension to watch videos with your friends",
-    "scripts": {
-        "webpack": "rimraf build/${TARGET} && ./node_modules/webpack/bin/webpack.js --config compile/webpack.prod.js",
-        "webpack:dev:dashboard": "webpack-dashboard -- webpack-cli --config compile/webpack.dev.js --watch",
-        "webpack:dev": "node $NODE_DEBUG ./node_modules/webpack/bin/webpack.js --config compile/webpack.dev.js --watch",
-        "chrome:prod": "cross-env TARGET=chrome npm run webpack",
-        "opera:prod": "cross-env TARGET=opera npm run webpack",
-        "firefox:prod": "cross-env TARGET=firefox npm run webpack",
-        "chrome:dev": "cross-env TARGET=chrome npm run webpack:dev",
-        "opera:dev": "cross-env TARGET=opera npm run webpack:dev",
-        "firefox:dev": "cross-env TARGET=firefox npm run webpack:dev",
-        "build": "npm run chrome:prod && npm run opera:prod && npm run firefox:prod",
-        "dist": "npm run lint && cross-env NODE_ENV=production npm run chrome:prod && cross-env NODE_ENV=production npm run opera:prod && cross-env NODE_ENV=production npm run firefox:prod",
-        "update-versions": "export VERSION=$(jq -r .version package.json) && jq \".version=\\\"$VERSION\\\"\" src/manifest.json | jq \".version_name=\\\"Release $VERSION\\\"\" > manifest.new && mv manifest.new src/manifest.json && git add src/manifest.json && git commit -m\"Release $VERSION\"; exit 0",
-        "test": "jest",
-        "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\""
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:LesGars/WatchWithMe.git"
-    },
     "author": "Les Gars",
-    "bugs": {
-        "url": "https://github.com/LesGars/WatchWithMe/issues"
+    "scripts": {
+        "build": "npm run chrome:prod && npm run opera:prod && npm run firefox:prod",
+        "chrome:dev": "cross-env TARGET=chrome npm run webpack:dev",
+        "chrome:prod": "cross-env TARGET=chrome npm run webpack",
+        "dist": "npm run lint && cross-env NODE_ENV=production npm run chrome:prod && cross-env NODE_ENV=production npm run opera:prod && cross-env NODE_ENV=production npm run firefox:prod",
+        "firefox:dev": "cross-env TARGET=firefox npm run webpack:dev",
+        "firefox:prod": "cross-env TARGET=firefox npm run webpack",
+        "opera:dev": "cross-env TARGET=opera npm run webpack:dev",
+        "opera:prod": "cross-env TARGET=opera npm run webpack",
+        "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('pnpm') === -1) { console.log('\u001b[31mPlease use pnpm for installing\u001b[0m'); process.exit(1); }\"",
+        "test": "jest",
+        "update-versions": "export VERSION=$(jq -r .version package.json) && jq \".version=\\\"$VERSION\\\"\" src/manifest.json | jq \".version_name=\\\"Release $VERSION\\\"\" > manifest.new && mv manifest.new src/manifest.json && git add src/manifest.json && git commit -m\"Release $VERSION\"; exit 0",
+        "webpack": "rimraf build/${TARGET} && ./node_modules/webpack/bin/webpack.js --config compile/webpack.prod.js",
+        "webpack:dev": "node $NODE_DEBUG ./node_modules/webpack/bin/webpack.js --config compile/webpack.dev.js --watch",
+        "webpack:dev:dashboard": "webpack-dashboard -- webpack-cli --config compile/webpack.dev.js --watch"
+    },
+    "dependencies": {
+        "dayjs": "1.9.6",
+        "debug": "4.2.0",
+        "lodash-es": "4.17.15",
+        "uuid": "8.3.1",
+        "vue": "^3.0.0-beta.1",
+        "vue-class-component": "7.2.6",
+        "vue-clipboard2": "0.3.1",
+        "vue-form-generator": "2.3.4",
+        "vue-navigation-bar": "4.0.2",
+        "vue-property-decorator": "9.0.2",
+        "vue-router": "^4.0.0-rc.3",
+        "webext-options-sync": "2.0.0"
     },
     "devDependencies": {
         "@babel/core": "7.12.3",
@@ -42,10 +49,11 @@
         "@types/webpack": "4.41.25",
         "@types/webpack-env": "1.15.3",
         "@types/webpack-merge": "4.1.5",
-        "@vue/cli-plugin-babel": "4.5.7",
-        "@vue/cli-plugin-eslint": "4.5.7",
-        "@vue/cli-plugin-typescript": "4.5.7",
-        "@vue/cli-service": "4.5.7",
+        "@vue/cli-plugin-babel": "~4.5.8",
+        "@vue/cli-plugin-eslint": "~4.5.8",
+        "@vue/cli-plugin-typescript": "~4.5.8",
+        "@vue/cli-service": "~4.5.8",
+        "@vue/compiler-sfc": "^3.0.0-beta.1",
         "@vue/devtools": "5.3.3",
         "@vue/eslint-config-prettier": "6.0.0",
         "@vue/eslint-config-typescript": "7.0.0",
@@ -91,7 +99,6 @@
         "typescript": "3.9.7",
         "vue-loader": "15.9.3",
         "vue-style-loader": "4.1.2",
-        "vue-template-compiler": "2.6.12",
         "webextension-polyfill": "0.7.0",
         "webextension-polyfill-ts": "0.22.0",
         "webpack": "4.44.2",
@@ -103,18 +110,11 @@
         "write-file-webpack-plugin": "4.5.1",
         "zip-webpack-plugin": "3.0.0"
     },
-    "dependencies": {
-        "dayjs": "1.9.6",
-        "debug": "4.2.0",
-        "lodash-es": "4.17.15",
-        "uuid": "8.3.1",
-        "vue": "2.6.12",
-        "vue-class-component": "7.2.6",
-        "vue-clipboard2": "0.3.1",
-        "vue-form-generator": "2.3.4",
-        "vue-navigation-bar": "4.0.2",
-        "vue-property-decorator": "9.0.2",
-        "vue-router": "3.4.6",
-        "webext-options-sync": "2.0.0"
+    "bugs": {
+        "url": "https://github.com/LesGars/WatchWithMe/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:LesGars/WatchWithMe.git"
     }
 }
