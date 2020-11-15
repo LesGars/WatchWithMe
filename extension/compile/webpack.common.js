@@ -109,6 +109,8 @@ const webpackConfig = {
         new MiniCssExtractPlugin(),
         new webpack.DefinePlugin({
             "process.env": require(`../env/${environment}.env`),
+            __VUE_PROD_DEVTOOLS__: true,
+            __VUE_OPTIONS_API__: true,
         }),
     ],
     stats: "minimal",

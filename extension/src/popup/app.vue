@@ -1,5 +1,7 @@
 <template>
-    <div class="popup">
+    <div id="popup">
+        <h1>Watch With Me</h1>
+
         <router-view></router-view>
     </div>
 </template>
@@ -10,9 +12,6 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 export default defineComponent({
     name: "App",
-    data() {
-        return { roomId: null };
-    },
 });
 </script>
 
@@ -22,7 +21,7 @@ body {
     height: 585px;
 }
 
-.popup {
+#popup {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

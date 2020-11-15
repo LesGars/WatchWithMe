@@ -1,23 +1,8 @@
 <template>
     <div>
-        <h1>Watch With Me Room</h1>
-        <p>Share your room URL :</p>
-        <div>
-            <template v-if="loading"> ... </template>
+        <h1>Get a new Room</h1>
 
-            <template v-else>
-                <span class="roomId-text">
-                    {{ linkWithRoomId }}
-                </span>
-                <button
-                    v-clipboard:copy="linkWithRoomId"
-                    v-clipboard:success="onCopy"
-                    v-clipboard:error="onError"
-                >
-                    Copy Link
-                </button>
-            </template>
-        </div>
+        <button @click="createRoom">Create a room</button>
     </div>
 </template>
 
@@ -28,26 +13,18 @@ import get from "lodash/get";
 import { MessageFromExtensionToServerType } from "../../../communications/from-extension-to-server";
 import { v4 as uuid } from "uuid";
 import { browser } from "webextension-polyfill-ts";
+import { Event } from "../../../contentscript/player";
+import { useState } from "../..";
 
 // Vue.use(VueClipboard);
 
 const log = require("debug")("ext:issues");
 
 export default defineComponent({
-    // linkWithRoomId: string | null = null;
-
-    data() {
-        return {
-            loading: false,
-            linkWithRoomId: null as null | string,
-        };
+    setup() {
+        return { state: useState() };
     },
-
     methods: {
-        created() {
-            this.createRoom();
-        },
-
         createRoom() {
             const roomId: string = uuid();
             const popupPort = browser.runtime.connect(undefined, {
@@ -67,15 +44,9 @@ export default defineComponent({
                         type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
                         message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`,
                     });
+                    this.$router.push(`/room/${roomId}`);
                 });
         },
-
-        // onCopy(e) {
-        //     log("[PS] You just copied: " + e.text);
-        // },
-        // onError(e) {
-        //     log("[PS] Failed to copy url");
-        // },
     },
 });
 </script>
