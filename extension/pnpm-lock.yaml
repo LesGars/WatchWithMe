@@ -7,7 +7,7 @@ dependencies:
   vue-class-component: 7.2.6_vue@2.6.12
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
-  vue-navigation-bar: 4.0.2
+  vue-navigation-bar: 4.1.0
   vue-property-decorator: 9.0.2_2dc4252c5371093c9ebcca71536ac4e9
   vue-router: 3.4.6
   webext-options-sync: 2.0.0
@@ -13825,14 +13825,14 @@ packages:
     optional: true
     resolution:
       integrity: sha512-xQ8/GZmRPdQ3EinnE0IXwdVoDzh7Dowo0MowoyBuScEBXrRabw6At5/IdtD3waKklKW5PGokPsm8KRN6rvQ1cw==
-  /vue-navigation-bar/4.0.2:
+  /vue-navigation-bar/4.1.0:
     dependencies:
       tippy.js: 6.2.4
       vue-screen-size: 1.0.1
       vue2-transitions: 0.3.0
     dev: false
     resolution:
-      integrity: sha512-n21KaFnydV7iEZPjlLclRm+aSat27nt04tUv3DvyYx//xfItwemfR0R96vHYTIEEJN9WOCi2OR3QiZu85KyZGQ==
+      integrity: sha512-iBkLLI954jlOatPy+ciGMDn/CnaZxPR2eZqEy4Pypz+SvU5BL9ByapO2r5tZUzANwzVJlzS7zEU0jSqAL2+nPQ==
   /vue-property-decorator/9.0.2_2dc4252c5371093c9ebcca71536ac4e9:
     dependencies:
       vue: 2.6.12
@@ -14589,7 +14589,7 @@ specifiers:
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-loader: 15.9.3
-  vue-navigation-bar: 4.0.2
+  vue-navigation-bar: 4.1.0
   vue-property-decorator: 9.0.2
   vue-router: 3.4.6
   vue-style-loader: 4.1.2
