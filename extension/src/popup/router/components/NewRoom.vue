@@ -15,10 +15,10 @@ import { v4 as uuid } from "uuid";
 import { browser } from "webextension-polyfill-ts";
 import { Event } from "../../../contentscript/player";
 import { useState } from "../..";
+import debug from "debug";
 
 // Vue.use(VueClipboard);
-
-const log = require("debug")("ext:issues");
+const log = debug("ext:popup");
 
 export default defineComponent({
     setup() {
@@ -39,7 +39,7 @@ export default defineComponent({
                 .then((tabs) => {
                     const linkWithRoomId: URL = new URL(tabs[0].url!);
                     linkWithRoomId.searchParams.set("roomId", roomId);
-                    this.linkWithRoomId = linkWithRoomId.href;
+                    // this.linkWithRoomId = linkWithRoomId.href;
                     popupPort.postMessage({
                         type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
                         message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`,

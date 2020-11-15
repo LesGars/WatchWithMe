@@ -1,6 +1,6 @@
 <template>
     <div id="popup">
-        <h1>Watch With Me</h1>
+        <div class="header">Watch With Me</div>
 
         <router-view></router-view>
     </div>
@@ -16,19 +16,20 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-body {
-    width: 785px;
-    height: 585px;
-}
-
 #popup {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
-    width: 785px;
-    height: 585px;
+    margin-top: 30px;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.header {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: burlywood;
 }
 </style>

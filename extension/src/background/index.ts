@@ -3,6 +3,7 @@ import {
     MessageFromServerToExtensionType,
     SchedulePlaySyncCommand,
 } from "@/communications/from-server-to-extension";
+import { setStorageItem } from "@/utils";
 import { CS_SCRIPT_NAME, POPUP_SCRIPT_NAME } from "@/utils/constants";
 import { browser, Runtime } from "webextension-polyfill-ts";
 import {
@@ -101,7 +102,7 @@ const handleContentOrPopupScriptConnection = (
 
 async function changeRoom(roomId: string) {
     try {
-        browser.storage.sync.set({ roomId });
+        setStorageItem("roomId", roomId);
         currentRoomId = roomId;
         const eventForServer: MessageFromExtensionToServer = {
             action: MessageFromExtensionToServerType.CHANGE_ROOM,

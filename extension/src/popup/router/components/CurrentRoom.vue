@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h1>Watch With Me - Your Room</h1>
+        <h1>Your Room</h1>
         <p>Share your room URL :</p>
-        <div>
+        <div class="room-info">
             <span class="roomId-text">
                 {{ linkWithRoomId }}
             </span>
@@ -14,6 +14,11 @@
                 Copy Link
             </button> -->
         </div>
+        <div>
+            <router-link class="new-room-link" to="/room/new">
+                Create a new room
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -23,18 +28,18 @@ import get from "lodash/get";
 import { MessageFromExtensionToServerType } from "../../../communications/from-extension-to-server";
 import { browser } from "webextension-polyfill-ts";
 import { Event } from "../../../contentscript/player";
-import { useState } from "../..";
 import { getCurrentUrlWIthRoomId } from "../../utils";
+import { useState } from "../..";
 
 // Vue.use(VueClipboard);
-
-const log = require("debug")("ext:issues");
+import debug from "debug";
+const log = debug("ext:popup");
 
 export default defineComponent({
     // linkWithRoomId: string | null = null;
     data() {
         return {
-            linkWithRoomId: null as null | string,
+            linkWithRoomId: undefined as string | undefined,
         };
     },
     props: {
@@ -52,9 +57,18 @@ export default defineComponent({
         },
     },
     async created() {
-        this.linkWithRoomId = await getCurrentUrlWIthRoomId(this.roomId);
+        if (this.roomId) {
+            this.linkWithRoomId = await getCurrentUrlWIthRoomId(this.roomId);
+        }
     },
 });
 </script>
 
-<style></style>
+<style>
+.room-info {
+    margin-bottom: 30px;
+}
+.new-room-link {
+    font-size: 0.8rem;
+}
+</style>

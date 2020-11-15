@@ -1,4 +1,4 @@
-import { getSettings } from "@/utils";
+import { getStorageItem } from "@/utils";
 import { createApp, inject, reactive } from "vue";
 import App from "./app.vue";
 import router from "./router";
@@ -16,13 +16,17 @@ vueApp.use(router);
 
 export const stateSymbol = Symbol("state");
 
-getSettings("roomId").then((roomId: string | null) => {
+interface State {
+    roomId: string | null;
+}
+
+getStorageItem("roomId", null).then((roomId: string | null) => {
     const state = reactive({
         roomId,
-    });
+    } as State);
     vueApp.provide(stateSymbol, state);
     vueApp.mount("#app");
 });
 // router.isReady().then(() => vueApp.mount("#app"));
 
-export const useState = () => inject(stateSymbol);
+export const useState = (): State | undefined => inject(stateSymbol);
