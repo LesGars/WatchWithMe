@@ -1,5 +1,5 @@
-import Vue from "vue";
+// import Vue from "vue";
 
-// ** Load filters ** //
-import DateFilter from "@/utils/filters/date"; // Import date
-Vue.filter("date", DateFilter);
+// // ** Load filters ** //
+// import DateFilter from "@/utils/filters/date"; // Import date
+// Vue.filter("date", DateFilter);

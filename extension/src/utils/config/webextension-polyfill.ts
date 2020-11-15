@@ -1,6 +1,6 @@
-// @ts-nocheck
-import Vue from "vue";
+// // @ts-nocheck
+// import Vue from "vue";
 
-global.browser = require("webextension-polyfill");
+// global.browser = require("webextension-polyfill");
 
-Vue.prototype.$browser = global.browser;
+// Vue.prototype.$browser = global.browser;

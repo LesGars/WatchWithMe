@@ -4,11 +4,10 @@ dependencies:
   lodash-es: 4.17.15
   uuid: 8.3.1
   vue: 3.0.2
-  vue-class-component: 7.2.6_vue@3.0.2
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-navigation-bar: 4.0.2
-  vue-property-decorator: 9.0.2_916fee0ef328b8e31a737463f75e8e1f
+  vue-property-decorator: 9.0.2_vue@3.0.2
   vue-router: 4.0.0-rc.3_vue@3.0.2
   webext-options-sync: 2.0.0
 devDependencies:
@@ -12809,14 +12808,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-  /vue-class-component/7.2.6_vue@3.0.2:
-    dependencies:
-      vue: 3.0.2
-    dev: false
-    peerDependencies:
-      vue: ^2.0.0
-    resolution:
-      integrity: sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
   /vue-clipboard2/0.3.1:
     dependencies:
       clipboard: 2.0.6
@@ -12886,10 +12877,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-n21KaFnydV7iEZPjlLclRm+aSat27nt04tUv3DvyYx//xfItwemfR0R96vHYTIEEJN9WOCi2OR3QiZu85KyZGQ==
-  /vue-property-decorator/9.0.2_916fee0ef328b8e31a737463f75e8e1f:
+  /vue-property-decorator/9.0.2_vue@3.0.2:
     dependencies:
       vue: 3.0.2
-      vue-class-component: 7.2.6_vue@3.0.2
     dev: false
     peerDependencies:
       vue: '*'
@@ -13622,7 +13612,6 @@ specifiers:
   typescript: 3.9.7
   uuid: 8.3.1
   vue: ^3.0.2
-  vue-class-component: 7.2.6
   vue-clipboard2: 0.3.1
   vue-form-generator: 2.3.4
   vue-loader: 16.0.0-rc.1
