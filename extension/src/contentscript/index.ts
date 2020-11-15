@@ -7,7 +7,7 @@ import { CS_SCRIPT_NAME } from "@/utils/constants";
 import { browser } from "webextension-polyfill-ts";
 import { MessageFromExtensionToServerType } from "../communications/from-extension-to-server";
 import { GIF_3_2_1_COUNTDOWN_URL, GIF_GET_READY_URL } from "../constants";
-import { VideoPlayer } from "./player";
+import { Event, VideoPlayer } from "./player";
 
 const log = require("debug")("ext:contentscript");
 let videoPlayer: VideoPlayer;
@@ -15,7 +15,7 @@ let owner = true;
 const OVERLAY_ID = "wwm-countdown-overlay";
 const css = require("./index.css").toString();
 
-const playEventHandler = (event): void => {
+const playEventHandler = (event: Event): void => {
     if (event.htmlEvent === "play") {
         csPort.postMessage({
             type: MessageFromExtensionToServerType.UPDATE_SYNC_INTENT,

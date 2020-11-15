@@ -23,8 +23,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import VueClipboard from "vue-clipboard2";
-import Component from "vue-class-component";
+// import VueClipboard from "vue-clipboard2";
 import get from "lodash/get";
 import { MessageFromExtensionToServerType } from "../../../communications/from-extension-to-server";
 import { v4 as uuid } from "uuid";
@@ -40,41 +39,43 @@ export default defineComponent({
     data() {
         return {
             loading: false,
-            linkWithRoomId: null,
+            linkWithRoomId: null as null | string,
         };
     },
 
-    created() {
-        this.createRoom();
-    },
+    methods: {
+        created() {
+            this.createRoom();
+        },
 
-    createRoom() {
-        const roomId: string = uuid();
-        const popupPort = browser.runtime.connect(undefined, {
-            name: "PORT-PS",
-        });
-        popupPort.postMessage({
-            type: MessageFromExtensionToServerType.CHANGE_ROOM,
-            roomId,
-        });
-        browser.tabs
-            .query({ active: true, currentWindow: true })
-            .then((tabs) => {
-                const linkWithRoomId: URL = new URL(tabs[0].url!);
-                linkWithRoomId.searchParams.set("roomId", roomId);
-                this.linkWithRoomId = linkWithRoomId.href;
-                popupPort.postMessage({
-                    type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
-                    message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`,
-                });
+        createRoom() {
+            const roomId: string = uuid();
+            const popupPort = browser.runtime.connect(undefined, {
+                name: "PORT-PS",
             });
-    },
+            popupPort.postMessage({
+                type: MessageFromExtensionToServerType.CHANGE_ROOM,
+                roomId,
+            });
+            browser.tabs
+                .query({ active: true, currentWindow: true })
+                .then((tabs) => {
+                    const linkWithRoomId: URL = new URL(tabs[0].url!);
+                    linkWithRoomId.searchParams.set("roomId", roomId);
+                    this.linkWithRoomId = linkWithRoomId.href;
+                    popupPort.postMessage({
+                        type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
+                        message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`,
+                    });
+                });
+        },
 
-    onCopy(e) {
-        log("[PS] You just copied: " + e.text);
-    },
-    onError(e) {
-        log("[PS] Failed to copy url");
+        // onCopy(e) {
+        //     log("[PS] You just copied: " + e.text);
+        // },
+        // onError(e) {
+        //     log("[PS] Failed to copy url");
+        // },
     },
 });
 </script>

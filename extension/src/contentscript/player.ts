@@ -103,7 +103,7 @@ const interceptedEvents = new Set(["seeking", "play", "playing"]);
 export class VideoPlayer {
     private video: HTMLVideoElement;
     private port: Runtime.Port;
-    private toggleOverlay: (string) => void;
+    private toggleOverlay: (string: string) => void;
 
     private eventHandlers: ((event: Event) => void)[] = [];
     private preventPlay = true; // Default behavior is to prevent play until syncPlayCommand is received
@@ -114,7 +114,7 @@ export class VideoPlayer {
     constructor(
         video: HTMLVideoElement,
         port: Runtime.Port,
-        toggleOverlay: (string) => void
+        toggleOverlay: (string: string) => void
     ) {
         this.video = video;
         this.port = port;

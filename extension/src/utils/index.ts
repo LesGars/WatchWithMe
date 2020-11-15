@@ -1,5 +1,5 @@
-import { browser } from "webextension-polyfill-ts";
 import get from "lodash/get";
+import { browser } from "webextension-polyfill-ts";
 
 const log = require("debug")("ext:utils");
 
@@ -50,7 +50,7 @@ export async function getPollMinutes(): Promise<number> {
 
 export const isDevMode = (): boolean => {
     const devMode =
-        !chrome.runtime || !("update_url" in chrome.runtime.getManifest());
+        !browser.runtime || !("update_url" in browser.runtime.getManifest());
     if (devMode) {
         localStorage.debug = "ext*";
     }

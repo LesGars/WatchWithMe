@@ -1,13 +1,10 @@
 dependencies:
+  '@types/uuid': 8.3.0
   dayjs: 1.9.6
   debug: 4.2.0
   lodash-es: 4.17.15
   uuid: 8.3.1
   vue: 3.0.2
-  vue-clipboard2: 0.3.1
-  vue-form-generator: 2.3.4
-  vue-navigation-bar: 4.0.2
-  vue-property-decorator: 9.0.2_vue@3.0.2
   vue-router: 4.0.0-rc.3_vue@3.0.2
   webext-options-sync: 2.0.0
 devDependencies:
@@ -23,6 +20,7 @@ devDependencies:
   '@types/lodash': 4.14.165
   '@types/node': 13.13.30
   '@types/rimraf': 3.0.0
+  '@types/sinon': 9.0.8
   '@types/webpack': 4.41.25
   '@types/webpack-env': 1.15.3
   '@types/webpack-merge': 4.1.5
@@ -33,7 +31,7 @@ devDependencies:
   '@vue/cli-plugin-typescript': 4.5.8_fe74dddc0867f22b0baa089f62a7b8fd
   '@vue/cli-service': 4.5.8_19ee0ac6ac6b2c76c382ea7826b8efb4
   '@vue/compiler-sfc': 3.0.2_vue@3.0.2
-  '@vue/devtools': 5.3.3
+  '@vue/devtools': 6.0.0-beta.2
   '@vue/eslint-config-prettier': 6.0.0_56a3d1bff37c9879d9ed115948dfb38a
   '@vue/eslint-config-typescript': 7.0.0_14aa221616b216486f2a56cfef178bb3
   autoprefixer: 9.8.6
@@ -1431,10 +1429,6 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-Uv6h1sT+0DrblvIrolFtbvM1FgWm+/sy4B3pvLp67Zys+thcukzS5ekn7HsZFGpWP4Q3fYJCljbWQE/XivMRLw==
-  /@popperjs/core/2.5.4:
-    dev: false
-    resolution:
-      integrity: sha512-ZpKr+WTb8zsajqgDkvCEWgp6d5eJT6Q63Ng2neTbzBO76Lbe91vX/iVIW9dikq+Fs3yEo+ls4cxeXABD2LtcbQ==
   /@sindresorhus/is/0.14.0:
     dev: true
     engines:
@@ -1731,6 +1725,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3diZWucbR+xTmbDlU+FRRxBf+31OhFew7cJXML/zh9NmvSPTNoFecAwHB66BUqFgENJtqMiyl7JAwUE/siqdLw==
+  /@types/sinon/9.0.8:
+    dependencies:
+      '@types/sinonjs__fake-timers': 6.0.2
+    dev: true
+    resolution:
+      integrity: sha512-IVnI820FZFMGI+u1R+2VdRaD/82YIQTdqLYC9DLPszZuynAJDtCvCtCs3bmyL66s7FqRM3+LPX7DhHnVTaagDw==
+  /@types/sinonjs__fake-timers/6.0.2:
+    dev: true
+    resolution:
+      integrity: sha512-dIPoZ3g5gcx9zZEszaxLSVTvMReD3xxyyDnQUjA6IYDG9Ba2AV0otMPs+77sG9ojB4Qr2N2Vk5RnKeuA0X/0bg==
   /@types/source-list-map/0.1.2:
     dev: true
     resolution:
@@ -1749,6 +1753,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7npvPKV+jINLu1SpSYVWG8KvyJBhBa8tmzMMdDoVc2pWUYHN8KIXlPJhjJ4LT97c4dXJA2SHL/q6ADbDriZN+Q==
+  /@types/uuid/8.3.0:
+    dev: false
+    resolution:
+      integrity: sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
   /@types/webpack-dev-server/3.11.1:
     dependencies:
       '@types/connect-history-api-fallback': 1.3.3
@@ -2277,7 +2285,7 @@ packages:
       prettier: 1.19.1
     resolution:
       integrity: sha512-lejBLa7xAMsfiZfNp7Kv51zOzifnb29FwdnMLa96z26kXErPFioSf9BMcePVIQ6/Gc6/mC0UrPpxAWIHyae0vw==
-  /@vue/devtools/5.3.3:
+  /@vue/devtools/6.0.0-beta.2:
     dependencies:
       cross-spawn: 5.1.0
       electron: 7.3.3
@@ -2287,7 +2295,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-wfQm0YHmEj1KLClhIyz/OFuRBky4/ptS5p7OqeNYIzEqgX+/jhTWbyKWUizYyYyz8HVEn/vAQb1pfPeYeeQCSQ==
+      integrity: sha512-stB8NtC3wC3Spz87MxO09CGXQ4wTr86kys4K/YmybSIKJxqpJdcsNAJY/ukaZUy526LQ32ZFZIsOTf4n2os53w==
   /@vue/eslint-config-prettier/6.0.0_56a3d1bff37c9879d9ed115948dfb38a:
     dependencies:
       eslint: 6.8.0
@@ -3737,14 +3745,6 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-FxqpkPPwu1HjuN93Omfm4h8uIanXofW0RxVEW3k5RKx+mJJYSthzNhp32Kzxxy3YAEZ/Dc/EWN1vZRY0+kOhbw==
-  /clipboard/2.0.6:
-    dependencies:
-      good-listener: 1.2.2
-      select: 1.1.2
-      tiny-emitter: 2.1.0
-    dev: false
-    resolution:
-      integrity: sha512-g5zbiixBRk/wyKakSwCKd7vQXDjFnAMGHoEyBogG/bw9kTD9GvdAvaoRR1ALcEzt3pVKxZR0pViekPMIS0QyGg==
   /clipboardy/2.3.0:
     dependencies:
       arch: 2.2.0
@@ -4639,10 +4639,6 @@ packages:
       node: '>=0.4.0'
     resolution:
       integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
-  /delegate/3.2.0:
-    dev: false
-    resolution:
-      integrity: sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
   /delegates/1.0.0:
     dev: true
     resolution:
@@ -6293,12 +6289,6 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-7IDTQTIu2xzXkT+6mlluidnWo+BypnbSoEVVQCGfzqnl5Ik8d3e1d4wycb8Rj9tWW+Z39uPWsdlquqiqPCd/pA==
-  /good-listener/1.2.2:
-    dependencies:
-      delegate: 3.2.0
-    dev: false
-    resolution:
-      integrity: sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
   /got/9.6.0:
     dependencies:
       '@sindresorhus/is': 0.14.0
@@ -11080,10 +11070,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
-  /select/1.1.2:
-    dev: false
-    resolution:
-      integrity: sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
   /selfsigned/1.10.8:
     dependencies:
       node-forge: 0.10.0
@@ -12159,16 +12145,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
-  /tiny-emitter/2.1.0:
-    dev: false
-    resolution:
-      integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
-  /tippy.js/6.2.7:
-    dependencies:
-      '@popperjs/core': 2.5.4
-    dev: false
-    resolution:
-      integrity: sha512-k+kWF9AJz5xLQHBi3K/XlmJiyu+p9gsCyc5qZhxxGaJWIW8SMjw1R+C7saUnP33IM8gUhDA2xX//ejRSwqR0tA==
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -12808,12 +12784,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-  /vue-clipboard2/0.3.1:
-    dependencies:
-      clipboard: 2.0.6
-    dev: false
-    resolution:
-      integrity: sha512-H5S/agEDj0kXjUb5GP2c0hCzIXWRBygaWLN3NEFsaI9I3uWin778SFEMt8QRXiPG+7anyjqWiw2lqcxWUSfkYg==
   /vue-eslint-parser/7.1.1_eslint@6.8.0:
     dependencies:
       debug: 4.2.0
@@ -12830,10 +12800,6 @@ packages:
       eslint: '>=5.0.0'
     resolution:
       integrity: sha512-8FdXi0gieEwh1IprIBafpiJWcApwrU+l2FEj8c1HtHFdNXMd0+2jUSjBVmcQYohf/E72irwAXEXLga6TQcB3FA==
-  /vue-form-generator/2.3.4:
-    dev: false
-    resolution:
-      integrity: sha512-gkGLukX2xyVYASVopRVt/v4ZVFpoH+I1j+yRIkJBOR9++UwZTi8yREWydnKukpp/r90SGX68Yzy4OkQrKZHluQ==
   /vue-hot-reload-api/2.3.4:
     dev: true
     resolution:
@@ -12869,23 +12835,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-yR+BS90EOXTNieasf8ce9J3TFCpm2DGqoqdbtiwQ33hon3FyIznLX7sKavAq1VmfBnOeV6It0Htg4aniv8ph1g==
-  /vue-navigation-bar/4.0.2:
-    dependencies:
-      tippy.js: 6.2.7
-      vue-screen-size: 1.0.1
-      vue2-transitions: 0.3.0
-    dev: false
-    resolution:
-      integrity: sha512-n21KaFnydV7iEZPjlLclRm+aSat27nt04tUv3DvyYx//xfItwemfR0R96vHYTIEEJN9WOCi2OR3QiZu85KyZGQ==
-  /vue-property-decorator/9.0.2_vue@3.0.2:
-    dependencies:
-      vue: 3.0.2
-    dev: false
-    peerDependencies:
-      vue: '*'
-      vue-class-component: '*'
-    resolution:
-      integrity: sha512-mxuJHfUGs/3rUyFj2vykDIvYXCUKBrzhemm7mT8dE9QYTbNA/4qVQ5gwhNCIkKyQc8RQIXQ+0jriqinUDuuU9w==
   /vue-router/4.0.0-rc.3_vue@3.0.2:
     dependencies:
       vue: 3.0.2
@@ -12894,10 +12843,6 @@ packages:
       vue: ^3.0.0
     resolution:
       integrity: sha512-NnPqWIfanEhJC4wu8BEFBmnEDIrx9ST0/HtmBiE+oV2MQlhyRk1TmdttWwVqx6Sh7kONsrI10GQV9l3YEkcWXg==
-  /vue-screen-size/1.0.1:
-    dev: false
-    resolution:
-      integrity: sha512-FvPAQAZp235cWpceazYK3CyPXUmogJRbPwa2F34l4BiwNoCZxZIKcEgqrScpCm0pi8llPrGlHHiuM7uuQc3mHA==
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
@@ -12917,10 +12862,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ciKFjutKRs+2Vbvgrist1oDd5wZQqtOel/K//ku54zLbf8tcTV+XbyAfanTHcTkML9CUj09vnC+y+5uaOz2/9g==
-  /vue2-transitions/0.3.0:
-    dev: false
-    resolution:
-      integrity: sha512-m1ad8K8kufqiEhj5gXHkkqOioI5sW0FaMbRiO0Tv2WFfGbO2eIKrfkFiO3HPQtMJboimaLCN4p/zL81clLbG4w==
   /w3c-hr-time/1.0.2:
     dependencies:
       browser-process-hrtime: 1.0.0
@@ -13554,6 +13495,8 @@ specifiers:
   '@types/lodash': 4.14.165
   '@types/node': 13.13.30
   '@types/rimraf': 3.0.0
+  '@types/sinon': ^9.0.8
+  '@types/uuid': ^8.3.0
   '@types/webpack': 4.41.25
   '@types/webpack-env': 1.15.3
   '@types/webpack-merge': 4.1.5
@@ -13564,7 +13507,7 @@ specifiers:
   '@vue/cli-plugin-typescript': ~4.5.8
   '@vue/cli-service': ~4.5.8
   '@vue/compiler-sfc': ^3.0.2
-  '@vue/devtools': 5.3.3
+  '@vue/devtools': 6.0.0-beta.2
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 7.0.0
   autoprefixer: 9.8.6
@@ -13610,13 +13553,9 @@ specifiers:
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.3
   typescript: 3.9.7
-  uuid: 8.3.1
+  uuid: ^8.3.1
   vue: ^3.0.2
-  vue-clipboard2: 0.3.1
-  vue-form-generator: 2.3.4
   vue-loader: 16.0.0-rc.1
-  vue-navigation-bar: 4.0.2
-  vue-property-decorator: 9.0.2
   vue-router: ^4.0.0-rc.3
   vue-style-loader: 4.1.2
   webext-options-sync: 2.0.0
