@@ -15,11 +15,11 @@ export default defineComponent({
     methods: {
         redirect() {
             const roomId = useState()?.roomId;
-            log("value of state is ", useState());
-            log("value of room is ", roomId);
             if (roomId) {
+                log("Room already present, redirecting to current room view");
                 this.$router.push(`/room/${roomId}`);
             } else {
+                log("No room detected, redirecting to the new room view");
                 this.$router.push(`/room/new`);
             }
         },

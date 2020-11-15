@@ -22,9 +22,6 @@ https://github.com/johndatserakis/vue-navigation-bar/blob/master/src/components/
 
 <script lang="ts">
 import DynamicLink from "./DynamicLink.vue";
-
-// const debug = require("debug")("ext:MenuItem");
-
 import { defineComponent } from "vue";
 
 export default defineComponent({

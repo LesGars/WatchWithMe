@@ -13,11 +13,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 const config = merge(webpackConfig, {
     mode: "production",
-    // resolve: {
-    //   alias: {
-    //     vue$: "vue/dist/vue.runtime.min.js",
-    //   },
-    // },
     plugins: [
         new TerserPlugin({
             parallel: true,

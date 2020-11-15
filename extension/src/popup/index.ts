@@ -27,6 +27,5 @@ getStorageItem("roomId", null).then((roomId: string | null) => {
     vueApp.provide(stateSymbol, state);
     vueApp.mount("#app");
 });
-// router.isReady().then(() => vueApp.mount("#app"));
 
 export const useState = (): State | undefined => inject(stateSymbol);

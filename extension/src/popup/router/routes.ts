@@ -3,11 +3,6 @@ import CurrentRoom from "./components/CurrentRoom.vue";
 import NewRoom from "./components/NewRoom.vue";
 import RedirectToNewOrExistingRoom from "./components/RedirectToNewOrExistingRoom.vue";
 
-const log = require("debug")("ext:popup");
-
-// TODO implement
-const isRoomCreated = () => false;
-
 const routes: RouteRecordRaw[] = [
     {
         name: "Popup home",

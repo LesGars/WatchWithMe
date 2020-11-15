@@ -1,21 +1,13 @@
 <template>
     <div class="container mx-auto text-base">
-        <div v-html="rawHtml"></div>
+        <p>This extension was created by Les Gars</p>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
-// const AboutText = require("./markdown/About.md");
-
-export default defineComponent({
-    data() {
-        return {
-            rawHtml: "This extension was created by Les Gars",
-        };
-    },
-});
+export default defineComponent({});
 </script>
 
 <style></style>
