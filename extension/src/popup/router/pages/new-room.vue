@@ -3,9 +3,7 @@
         <h1>Watch With Me Room</h1>
         <p>Share your room URL :</p>
         <div>
-            <template v-if="loading">
-                ...
-            </template>
+            <template v-if="loading"> ... </template>
 
             <template v-else>
                 <span class="roomId-text">
@@ -24,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import VueClipboard from "vue-clipboard2";
 import Component from "vue-class-component";
 import get from "lodash/get";
@@ -32,24 +30,23 @@ import { MessageFromExtensionToServerType } from "../../../communications/from-e
 import { v4 as uuid } from "uuid";
 import { browser } from "webextension-polyfill-ts";
 
-Vue.use(VueClipboard);
+// Vue.use(VueClipboard);
 
 const log = require("debug")("ext:issues");
 
-@Component
-export default class NewRoom extends Vue {
-    linkWithRoomId: string | null = null;
+export default defineComponent({
+    // linkWithRoomId: string | null = null;
 
     data() {
         return {
             loading: false,
             linkWithRoomId: null,
         };
-    }
+    },
 
     created() {
         this.createRoom();
-    }
+    },
 
     createRoom() {
         const roomId: string = uuid();
@@ -71,15 +68,15 @@ export default class NewRoom extends Vue {
                     message: `[PS] Hey, the user created a new room ${linkWithRoomId.href}`,
                 });
             });
-    }
+    },
 
     onCopy(e) {
         log("[PS] You just copied: " + e.text);
-    }
+    },
     onError(e) {
         log("[PS] Failed to copy url");
-    }
-}
+    },
+});
 </script>
 
 <style></style>

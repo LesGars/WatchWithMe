@@ -9,18 +9,24 @@ const routes: RouteRecordRaw[] = [
         name: "Popup home",
         path: "/",
         // redirect: true,
-        beforeEnter(to, from, next) {
+        redirect: (to) => {
             if (isRoomCreated()) {
-                next("/room");
+                return "/room";
             } else {
-                next("/room/new");
+                return "/room/new";
             }
         },
         props: true,
     },
+    // {
+    //     name: "new-room",
+    //     path: "/room/new",
+    //     component: NewRoom,
+    //     props: true,
+    // },
     {
-        name: "new-room",
-        path: "/new-room",
+        name: "current-room",
+        path: "/room",
         component: NewRoom,
         props: true,
     },

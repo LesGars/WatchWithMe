@@ -1,4 +1,6 @@
-import Vue from "vue";
+import { createApp } from "vue";
+import App from "./app.vue";
+import router from "./router";
 
 require("@/utils/config/webextension-polyfill");
 require("@/utils/config/config");
@@ -8,12 +10,6 @@ if (process.env.NODE_ENV === "development" && process.env.DEVTOOLS) {
     require("@/utils/dev-tools");
 }
 
-// ** Start Vue here ** //
-import App from "./app.vue";
-import router from "./router";
-Vue.component("app", App);
-new Vue({
-    el: "#app",
-    router,
-    render: (h) => h(App),
-});
+const vueApp = createApp(App);
+vueApp.use(router);
+router.isReady().then(() => vueApp.mount("#app"));
