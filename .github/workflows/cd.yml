@@ -24,8 +24,10 @@ jobs:
           version: 5.2.6
       - name: Install dependencies
         run: make install
-      - name: Install AWS Cli
-        uses: chrislennon/action-aws-cli@v1.1
+      - id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+          version: 2
       - name: Install Serverless Cli
         run: curl -o- -L https://slss.io/install | bash
       - name: Add credentials to ~/.aws/credentials

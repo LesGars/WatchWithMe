@@ -16,8 +16,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Use default env variables
         run: cp extension/env/common.js.example extension/env/common.js
-      - name: Install AWS Cli
-        uses: chrislennon/action-aws-cli@v1.1
+      - id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+          version: 2
       - name: Install Serverless Cli
         run: curl -o- -L https://slss.io/install | bash
       - name: Add credentials to ~/.aws/credentials
