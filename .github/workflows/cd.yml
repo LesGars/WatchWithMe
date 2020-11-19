@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Use default env variables
         run: cp extension/env/common.js.example extension/env/common.js
-      - uses: pnpm/action-setup@v1.2.0
+      - uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.2.6
       - name: Install dependencies
