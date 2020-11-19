@@ -29,7 +29,7 @@ export default defineComponent({
                 type: MessageFromExtensionToServerType.CHANGE_ROOM,
                 roomId,
             });
-            getCurrentUrlWIthRoomId(this.roomId).then((linkWithRoomId) => {
+            getCurrentUrlWIthRoomId(roomId).then((linkWithRoomId) => {
                 popupPort.postMessage({
                     type: MessageFromExtensionToServerType.DEBUG_MESSAGE,
                     message: `[PS] Hey, the user created a new room ${linkWithRoomId}`,
