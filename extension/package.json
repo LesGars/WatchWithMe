@@ -113,7 +113,7 @@
         "vue-clipboard2": "0.3.1",
         "vue-form-generator": "2.3.4",
         "vue-navigation-bar": "4.1.0",
-        "vue-property-decorator": "9.0.2",
+        "vue-property-decorator": "9.1.2",
         "vue-router": "3.4.6",
         "webext-options-sync": "2.0.0"
     }
