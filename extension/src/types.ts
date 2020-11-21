@@ -148,7 +148,7 @@ export interface Watcher {
 }
 
 export interface HumanFriendlyWatcher extends Watcher {
-    friendlyName: ?string;
+    friendlyName: string | null;
 }
 
 /**
