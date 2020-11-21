@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useState } from "../..";
+import { useState } from "..";
 import debug from "debug";
 const log = debug("ext:popup");
 
