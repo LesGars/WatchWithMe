@@ -1,4 +1,8 @@
-var common = require("./common").prod;
+try {
+    var common = require("./common").prod;
+} catch {
+    var common = {};
+}
 
 module.exports = {
     NODE_ENV: '"production"',

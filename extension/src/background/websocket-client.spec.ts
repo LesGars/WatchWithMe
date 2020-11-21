@@ -11,7 +11,7 @@ describe("WebSocketClient.ensureOpened", () => {
             .stub(WebSocketClient.prototype, "getWebSocket")
             .returns({
                 readyState: WebSocket.OPEN,
-            });
+            } as any);
         const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
             console.log("ok")
         );
@@ -26,7 +26,7 @@ describe("WebSocketClient.ensureOpened", () => {
             .stub(WebSocketClient.prototype, "getWebSocket")
             .returns({
                 readyState: WebSocket.CONNECTING,
-            });
+            } as any);
         const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
             console.log("ok")
         );
@@ -41,7 +41,7 @@ describe("WebSocketClient.ensureOpened", () => {
             .stub(WebSocketClient.prototype, "getWebSocket")
             .returns({
                 readyState: WebSocket.CLOSING,
-            });
+            } as any);
         const client: WebSocketClient = new WebSocketClient("wss://fake", () =>
             console.log("ok")
         );
@@ -56,7 +56,7 @@ describe("WebSocketClient.ensureOpened", () => {
             .stub(WebSocketClient.prototype, "getWebSocket")
             .returns({
                 readyState: WebSocket.CLOSED,
-            });
+            } as any);
         const connectStub = sinon
             .stub(WebSocketClient.prototype, "connect")
             .resolves();

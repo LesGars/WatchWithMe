@@ -1,16 +1,30 @@
-import NewRoom from "./pages/new-room.vue";
-import Popup from "./pages/popup.vue";
+import { RouteRecordRaw } from "vue-router";
+import CurrentRoom from "./components/CurrentRoom.vue";
+import NewRoom from "./components/NewRoom.vue";
+import RedirectToNewOrExistingRoom from "./components/RedirectToNewOrExistingRoom.vue";
 
-export default [
+const routes: RouteRecordRaw[] = [
     {
-        name: "popup",
+        name: "Popup home",
         path: "/",
-        component: Popup,
+        // Unfortunately it's not really yet to have conditional redirect: functi
+        // based on a state value (or I haven't found the trick)
+        // so we use a custom comp for this
+        component: RedirectToNewOrExistingRoom,
+        props: true,
     },
     {
-        name: "new-room",
-        path: "/new-room",
+        name: "New room",
+        path: "/room/new",
         component: NewRoom,
         props: true,
     },
+    {
+        name: "Current Room",
+        path: "/room/:roomId",
+        component: CurrentRoom,
+        props: true,
+    },
 ];
+
+export default routes;

@@ -1,56 +1,27 @@
-import { browser } from "webextension-polyfill-ts";
 import get from "lodash/get";
+import { browser } from "webextension-polyfill-ts";
 
 const log = require("debug")("ext:utils");
 
-export async function getSettings(item: string | null = null, deflt: any = {}) {
-    const settings = await browser.storage.sync.get();
-    log("settings", settings);
-    if (item) {
-        return get(settings, item, deflt);
-    }
-    return settings;
+export async function setStorageItem(item: string, value: any): Promise<void> {
+    log(`Setting (sync) ${item} = `, value);
+    return await browser.storage.sync.set({ [item]: value });
 }
 
-export async function setSettings(item: string, deflt: any) {
-    log(`Setting (sync) ${item} = `, deflt);
-    return await browser.storage.sync.set({ [item]: deflt });
-}
+export async function getStorageItem(
+    item: string,
+    defaultValue: any = null
+): Promise<any> {
+    const storage = await browser.storage.sync.get(item);
+    const value = get(storage, item, defaultValue);
+    log(`Getting ${item} setting from storage : `, value);
 
-export async function getStorage(item: string | null = null, deflt: any = {}) {
-    const storage = await browser.storage.local.get();
-    log("storage", storage);
-    if (item) {
-        return get(storage, item, deflt);
-    }
-    return storage;
-}
-
-export async function setStorage(item: string, deflt: any) {
-    log(`Setting (local) ${item} = `, deflt);
-    return await browser.storage.local.set({ [item]: deflt });
-}
-
-export async function getPollMinutes(): Promise<number> {
-    const settings = await getSettings();
-    let minutes = 60;
-    const frequency = settings["notifications.frequency"];
-    if (!frequency || frequency.indexOf(" ") === -1) return minutes;
-    const parts = frequency.split(" ");
-    minutes = parseInt(parts[0]);
-    if (parts[1].startsWith("day")) {
-        minutes = minutes * 60 * 60;
-    } else if (parts[1].startsWith("hours")) {
-        minutes = minutes * 60;
-    }
-    if (minutes < 2) minutes = 60;
-    if (minutes < 15 && !isDevMode()) minutes = 60;
-    return minutes;
+    return value;
 }
 
 export const isDevMode = (): boolean => {
     const devMode =
-        !chrome.runtime || !("update_url" in chrome.runtime.getManifest());
+        !browser.runtime || !("update_url" in browser.runtime.getManifest());
     if (devMode) {
         localStorage.debug = "ext*";
     }

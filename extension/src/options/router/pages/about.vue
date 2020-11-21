@@ -1,23 +1,13 @@
 <template>
-  <div class="container mx-auto text-base">
-    <div v-html="rawHtml"></div>
-  </div>
+    <div class="container mx-auto text-base">
+        <p>This extension was created by Les Gars</p>
+    </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { defineComponent } from "vue";
 
-const AboutText = require("./markdown/About.md");
-
-@Component
-export default class About extends Vue {
-  data() {
-    return {
-      rawHtml: AboutText,
-    };
-  }
-}
+export default defineComponent({});
 </script>
 
 <style></style>

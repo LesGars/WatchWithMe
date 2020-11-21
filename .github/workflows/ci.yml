@@ -16,8 +16,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Use default env variables
         run: cp extension/env/common.js.example extension/env/common.js
-      - name: Install AWS Cli
-        uses: chrislennon/action-aws-cli@v1.1
+      - name: Install AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-3
       - name: Install Serverless Cli
         run: curl -o- -L https://slss.io/install | bash
       - name: Add credentials to ~/.aws/credentials
@@ -27,7 +31,7 @@ jobs:
         run: |
           aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile lesgars-watch-with-me
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile lesgars-watch-with-me
-      - uses: pnpm/action-setup@v1.2.0
+      - uses: pnpm/action-setup@v1.2.1
         with:
           version: 5.2.6
       - name: Install dependencies

@@ -1,6 +1,6 @@
 import get from "lodash/get";
 
-export default (value) => {
+export default (value: string) => {
     const date = new Date(value);
     const locale = get(
         window,

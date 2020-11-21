@@ -1,25 +1,35 @@
 <template>
-  <div class="popup">
-    <router-view></router-view>
-  </div>
+    <div id="popup">
+        <div class="header">Watch With Me</div>
+
+        <router-view></router-view>
+    </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-};
+<script lang="ts">
+import { defineComponent } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
+
+export default defineComponent({
+    name: "App",
+});
 </script>
 
 <style lang="scss" scoped>
-body {
-  width: 785px;
-  height: 585px;
+#popup {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 30px;
+    min-width: 300px;
+    min-height: 300px;
 }
 
-.popup {
-  width: 785px;
-  height: 585px;
+.header {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: burlywood;
 }
 </style>
