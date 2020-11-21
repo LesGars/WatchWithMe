@@ -24,14 +24,10 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import get from "lodash/get";
-import { MessageFromExtensionToServerType } from "../../communications/from-extension-to-server";
-import { browser } from "webextension-polyfill-ts";
-import { Event } from "../../contentscript/player";
 import { useState } from "..";
-
 import debug from "debug";
 import { getCurrentUrlWIthRoomId } from "../utils";
+
 const log = debug("ext:popup");
 
 export default defineComponent({

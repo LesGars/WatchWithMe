@@ -8,11 +8,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import get from "lodash/get";
 import { MessageFromExtensionToServerType } from "../../communications/from-extension-to-server";
 import { v4 as uuid } from "uuid";
 import { browser } from "webextension-polyfill-ts";
-import { Event } from "../../contentscript/player";
 import debug from "debug";
 import { getCurrentUrlWIthRoomId } from "../utils";
 
