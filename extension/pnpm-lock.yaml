@@ -32,7 +32,7 @@ devDependencies:
   '@vue/cli-service': 4.5.9_19ee0ac6ac6b2c76c382ea7826b8efb4
   '@vue/compiler-sfc': 3.0.2_vue@3.0.2
   '@vue/devtools': 6.0.0-beta.2
-  '@vue/eslint-config-prettier': 6.0.0_56a3d1bff37c9879d9ed115948dfb38a
+  '@vue/eslint-config-prettier': 6.0.0_5475de58be6a15edaced2b9c93cc1758
   '@vue/eslint-config-typescript': 7.0.0_14aa221616b216486f2a56cfef178bb3
   autoprefixer: 9.8.6
   axios: 0.21.0
@@ -45,7 +45,7 @@ devDependencies:
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1_eslint@6.8.0
   eslint-config-prettier: 6.15.0_eslint@6.8.0
-  eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.1.2
+  eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.2.0
   eslint-plugin-vue: 7.1.0_eslint@6.8.0
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.44.2
   generate-json-webpack-plugin: 1.0.0
@@ -62,7 +62,7 @@ devDependencies:
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
   postcss-scss: 3.0.4
-  prettier: 2.1.2
+  prettier: 2.2.0
   rimraf: 3.0.2
   sass-loader: 10.1.0_node-sass@4.14.1+webpack@4.44.2
   sinon: 9.2.1
@@ -3062,12 +3062,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-stB8NtC3wC3Spz87MxO09CGXQ4wTr86kys4K/YmybSIKJxqpJdcsNAJY/ukaZUy526LQ32ZFZIsOTf4n2os53w==
-  /@vue/eslint-config-prettier/6.0.0_56a3d1bff37c9879d9ed115948dfb38a:
+  /@vue/eslint-config-prettier/6.0.0_5475de58be6a15edaced2b9c93cc1758:
     dependencies:
       eslint: 6.8.0
       eslint-config-prettier: 6.15.0_eslint@6.8.0
-      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.1.2
-      prettier: 2.1.2
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.2.0
+      prettier: 2.2.0
     dev: true
     peerDependencies:
       eslint: '>= 5.0.0'
@@ -6005,10 +6005,10 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-prettier/3.1.4_eslint@6.8.0+prettier@2.1.2:
+  /eslint-plugin-prettier/3.1.4_eslint@6.8.0+prettier@2.2.0:
     dependencies:
       eslint: 6.8.0
-      prettier: 2.1.2
+      prettier: 2.2.0
       prettier-linter-helpers: 1.0.0
     dev: true
     engines:
@@ -11091,13 +11091,13 @@ packages:
     optional: true
     resolution:
       integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
-  /prettier/2.1.2:
+  /prettier/2.2.0:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
+      integrity: sha512-yYerpkvseM4iKD/BXLYUkQV5aKt4tQPqaGW6EsZjzyu0r7sVZZNPJW4Y8MyKmicp6t42XUPcBVA+H6sB3gqndw==
   /pretty-error/2.1.2:
     dependencies:
       lodash: 4.17.20
@@ -14372,7 +14372,7 @@ specifiers:
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
   postcss-scss: 3.0.4
-  prettier: 2.1.2
+  prettier: 2.2.0
   rimraf: 3.0.2
   sass-loader: 10.1.0
   sinon: 9.2.1
