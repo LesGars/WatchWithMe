@@ -30,9 +30,9 @@
         "webext-options-sync": "2.0.0"
     },
     "devDependencies": {
-        "@babel/core": "7.12.3",
-        "@babel/preset-env": "7.12.1",
-        "@babel/preset-typescript": "7.12.1",
+        "@babel/core": "7.12.7",
+        "@babel/preset-env": "7.12.7",
+        "@babel/preset-typescript": "7.12.7",
         "@fullhuman/postcss-purgecss": "3.0.0",
         "@types/chrome": "0.0.126",
         "@types/copy-webpack-plugin": "5.0.2",
