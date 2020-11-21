@@ -74,7 +74,7 @@ devDependencies:
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.3
   typescript: 3.9.7
-  vue-loader: 16.0.0-rc.1
+  vue-loader: 16.0.0-rc.2
   vue-style-loader: 4.1.2
   webextension-polyfill: 0.7.0
   webextension-polyfill-ts: 0.22.0
@@ -2945,7 +2945,7 @@ packages:
       node: '>=8'
     hasBin: true
     optionalDependencies:
-      vue-loader-v16: /vue-loader/16.0.0-rc.1
+      vue-loader-v16: /vue-loader/16.0.0-rc.2
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.0-beta.14
       less-loader: '*'
@@ -13658,14 +13658,14 @@ packages:
         optional: true
     resolution:
       integrity: sha512-oeMOs2b5o5gRqkxfds10bCx6JeXYTwivRgbb8hzOrcThD2z1+GqEKE3EX9A2SGbsYDf4rXwRg6D5n1w0jO5SwA==
-  /vue-loader/16.0.0-rc.1:
+  /vue-loader/16.0.0-rc.2:
     dependencies:
       chalk: 4.1.0
       hash-sum: 2.0.0
       loader-utils: 2.0.0
     dev: true
     resolution:
-      integrity: sha512-yR+BS90EOXTNieasf8ce9J3TFCpm2DGqoqdbtiwQ33hon3FyIznLX7sKavAq1VmfBnOeV6It0Htg4aniv8ph1g==
+      integrity: sha512-cz8GK4dgIf1UTC+do80pGvh8BHcCRHLIQVHV9ONVQ8wtoqS9t/+H02rKcQP+TVNg7khgLyQV2+8eHUq7/AFq3g==
   /vue-router/4.0.0-rc.5_vue@3.0.2:
     dependencies:
       vue: 3.0.2
@@ -14386,7 +14386,7 @@ specifiers:
   typescript: 3.9.7
   uuid: 8.3.1
   vue: 3.0.2
-  vue-loader: 16.0.0-rc.1
+  vue-loader: 16.0.0-rc.2
   vue-router: 4.0.0-rc.5
   vue-style-loader: 4.1.2
   webext-options-sync: 2.0.0
