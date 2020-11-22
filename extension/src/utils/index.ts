@@ -19,6 +19,12 @@ export async function getStorageItem(
     return value;
 }
 
+export async function getStorageItems(
+    items: { [s: string]: any } | string[]
+): Promise<{ [s: string]: any }> {
+    return await browser.storage.sync.get(items);
+}
+
 export const isDevMode = (): boolean => {
     const devMode =
         !browser.runtime || !("update_url" in browser.runtime.getManifest());

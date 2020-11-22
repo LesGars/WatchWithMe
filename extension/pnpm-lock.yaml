@@ -3,6 +3,7 @@ dependencies:
   dayjs: 1.9.6
   debug: 4.3.1
   lodash-es: 4.17.15
+  unique-names-generator: 4.3.1
   uuid: 8.3.1
   vue: 3.0.2
   vue-router: 4.0.0-rc.5_vue@3.0.2
@@ -13396,6 +13397,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Vmp0jIp2ln35UTXuryvjzkjGdRyf9b2lTXuSYUiPmzRcl3FDtYqAwOnTJkAngD9SWhnoJzDbTKwaOrZ+STtxNQ==
+  /unique-names-generator/4.3.1:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-oxkKrDXbwx6I5M963SdfmMH2t8n1OIfYyzoJ25BmDeETlyWAZjTbMXwIEMiQDex4lkD2pqe+9gxDJQAB2IOfDg==
   /unique-slug/2.0.2:
     dependencies:
       imurmurhash: 0.1.4
@@ -14384,6 +14391,7 @@ specifiers:
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.0.3
   typescript: 3.9.7
+  unique-names-generator: ^4.3.1
   uuid: 8.3.1
   vue: 3.0.2
   vue-loader: 16.0.0-rc.2

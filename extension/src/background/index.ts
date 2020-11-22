@@ -100,6 +100,11 @@ const handleContentOrPopupScriptConnection = (
     });
 };
 
+/**
+ * Centralise all room change  oeprations
+ * We cannot get watcher connection ID until the server confirms the creation however
+ * (as the room may already exist)
+ */
 async function changeRoom(roomId: string) {
     try {
         setStorageItem("roomId", roomId);
@@ -142,6 +147,9 @@ async function notifyServerOfWatcherState(playerEvent: PlayerEvent) {
     sendMessageThroughWebSocket(eventForServer);
 }
 
+/**
+ * Helper to correctly wrap an extension to server communication with relevant data
+ */
 async function processEvent(
     type: MessageFromExtensionToServerType,
     otherProps: {}

@@ -1,4 +1,5 @@
-import { getStorageItem } from "@/utils";
+import { Watcher } from "@/types";
+import { getStorageItems } from "@/utils";
 import { createApp, inject, reactive } from "vue";
 import App from "./app.vue";
 import router from "./router";
@@ -12,13 +13,27 @@ vueApp.use(router);
 
 export const stateSymbol = Symbol("state");
 
+/**
+ * The state models the "active" room only
+ */
 interface State {
     roomId: string | null;
+    myWatcherId: string | null;
+    roomOwnerId: string | null;
+    watchers: Watcher[];
 }
 
-getStorageItem("roomId", null).then((roomId: string | null) => {
+getStorageItems({
+    roomId: null,
+    myWatcherId: null,
+    watchers: [],
+    roomOwnerId: null,
+}).then(({ roomId, myWatcherId, watchers, roomOwnerId }) => {
     const state = reactive({
+        myWatcherId,
         roomId,
+        watchers,
+        roomOwnerId,
     } as State);
     vueApp.provide(stateSymbol, state);
     vueApp.mount("#app");

@@ -1,7 +1,8 @@
 import { RouteRecordRaw } from "vue-router";
-import CurrentRoom from "./components/CurrentRoom.vue";
-import NewRoom from "./components/NewRoom.vue";
-import RedirectToNewOrExistingRoom from "./components/RedirectToNewOrExistingRoom.vue";
+import CurrentRoom from "../components/CurrentRoom.vue";
+import NewRoom from "../components/NewRoom.vue";
+import RedirectToNewOrExistingRoom from "../components/RedirectToNewOrExistingRoom.vue";
+import WatcherList from "../components/WatcherList.vue";
 
 const routes: RouteRecordRaw[] = [
     {
@@ -23,6 +24,12 @@ const routes: RouteRecordRaw[] = [
         name: "Current Room",
         path: "/room/:roomId",
         component: CurrentRoom,
+        props: true,
+    },
+    {
+        name: "Current room watchers",
+        path: "/room/:roomId/watchers",
+        component: WatcherList,
         props: true,
     },
 ];

@@ -137,6 +137,7 @@ export enum SyncCommandType {
 export interface Watcher {
     id: string; // maybe not needed since it will be the index key
     connectionId: string; // API Gateway connection ID to be used to communicate with the user
+
     joinedAt: Date;
     lastVideoTimestamp: Number | null; // Last video timestamp received during sync events of said user
     lastHeartbeat: Date; // date of last event during sync received from said user
@@ -144,6 +145,10 @@ export interface Watcher {
     initialSync: boolean; // Must default to false
 
     userAgent: string; // Might help debug issues later
+}
+
+export interface HumanFriendlyWatcher extends Watcher {
+    friendlyName: string | null;
 }
 
 /**
