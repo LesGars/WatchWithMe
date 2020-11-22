@@ -23,7 +23,7 @@ export default defineComponent({
     data() {
         return {
             // TODO https://github.com/LesGars/WatchWithMe/issues/91
-            // useState().watchers
+            // useState()?.watchers || []
             watchers: makeFriendlyWatchers([
                 {
                     id: "watcherTest",

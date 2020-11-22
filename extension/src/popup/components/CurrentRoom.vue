@@ -47,12 +47,14 @@ export default defineComponent({
         }
     },
     computed: {
-        roomControl() {
-            const {
-                roomId: stateRoomId,
-                myWatcherId,
-                roomOwnerId,
-            } = useState();
+        roomControl(): { text: string; icon: string } {
+            const state = useState();
+            if (!state) {
+                return { text: "Loading", icon: "⏳" };
+            }
+
+            const { roomId: stateRoomId, myWatcherId, roomOwnerId } = state;
+
             log({ stateRoomId, roomId: this.roomId });
             if (stateRoomId != this.roomId) {
                 return { text: "You do not belong to this room", icon: "👺" };
