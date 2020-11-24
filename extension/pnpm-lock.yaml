@@ -23,7 +23,7 @@ devDependencies:
   '@types/rimraf': 3.0.0
   '@types/sinon': 9.0.8
   '@types/webpack': 4.41.25
-  '@types/webpack-env': 1.15.3
+  '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
@@ -2552,6 +2552,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-5oiXqR7kwDGZ6+gmzIO2lTC+QsriNuQXZDWNYRV3l2XRN/zmPgnC21DLSx2D05zvD8vnXW6qUg7JnXZ4I6qLVQ==
+  /@types/webpack-env/1.16.0:
+    dev: true
+    resolution:
+      integrity: sha512-Fx+NpfOO0CpeYX2g9bkvX8O5qh9wrU1sOF4g8sft4Mu7z+qfe387YlyY8w8daDyDsKY5vUxM0yxkAYnbkRbZEw==
   /@types/webpack-merge/4.1.5:
     dependencies:
       '@types/webpack': 4.41.25
@@ -14349,7 +14353,7 @@ specifiers:
   '@types/sinon': 9.0.8
   '@types/uuid': 8.3.0
   '@types/webpack': 4.41.25
-  '@types/webpack-env': 1.15.3
+  '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0
   '@typescript-eslint/parser': 2.34.0
