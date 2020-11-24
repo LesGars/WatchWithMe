@@ -21,7 +21,7 @@ devDependencies:
   '@types/lodash': 4.14.165
   '@types/node': 13.13.32
   '@types/rimraf': 3.0.0
-  '@types/sinon': 9.0.8
+  '@types/sinon': 9.0.9
   '@types/webpack': 4.41.25
   '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
@@ -2506,12 +2506,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3diZWucbR+xTmbDlU+FRRxBf+31OhFew7cJXML/zh9NmvSPTNoFecAwHB66BUqFgENJtqMiyl7JAwUE/siqdLw==
-  /@types/sinon/9.0.8:
+  /@types/sinon/9.0.9:
     dependencies:
       '@types/sinonjs__fake-timers': 6.0.2
     dev: true
     resolution:
-      integrity: sha512-IVnI820FZFMGI+u1R+2VdRaD/82YIQTdqLYC9DLPszZuynAJDtCvCtCs3bmyL66s7FqRM3+LPX7DhHnVTaagDw==
+      integrity: sha512-z/y8maYOQyYLyqaOB+dYQ6i0pxKLOsfwCmHmn4T7jS/SDHicIslr37oE3Dg8SCqKrKeBy6Lemu7do2yy+unLrw==
   /@types/sinonjs__fake-timers/6.0.2:
     dev: true
     resolution:
@@ -14350,7 +14350,7 @@ specifiers:
   '@types/lodash': 4.14.165
   '@types/node': 13.13.32
   '@types/rimraf': 3.0.0
-  '@types/sinon': 9.0.8
+  '@types/sinon': 9.0.9
   '@types/uuid': 8.3.0
   '@types/webpack': 4.41.25
   '@types/webpack-env': 1.16.0
