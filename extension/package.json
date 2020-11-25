@@ -26,7 +26,7 @@
         "lodash-es": "4.17.15",
         "unique-names-generator": "4.3.1",
         "uuid": "8.3.1",
-        "vue": "3.0.2",
+        "vue": "3.0.3",
         "vue-router": "4.0.0-rc.5",
         "webext-options-sync": "2.0.0"
     },
@@ -97,7 +97,7 @@
         "tsconfig-paths-webpack-plugin": "3.3.0",
         "tslib": "2.0.3",
         "typescript": "3.9.7",
-        "vue-loader": "16.0.0-rc.2",
+        "vue-loader": "16.0.0",
         "vue-style-loader": "4.1.2",
         "webextension-polyfill": "0.7.0",
         "webextension-polyfill-ts": "0.22.0",
