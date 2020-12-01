@@ -7,7 +7,7 @@ devDependencies:
   '@babel/preset-typescript': 7.12.7_@babel+core@7.12.9
   '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.64
-  '@types/jest': 26.0.15
+  '@types/jest': 26.0.16
   '@types/node': 13.13.34
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
@@ -1439,7 +1439,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.1
       '@types/istanbul-reports': 3.0.0
-      '@types/node': 13.13.30
+      '@types/node': 13.13.34
       '@types/yargs': 15.0.4
       chalk: 4.0.0
     dev: true
@@ -1888,6 +1888,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-s2VMReFXRg9XXxV+CW9e5Nz8fH2K1aEhwgjUqPPbQd7g95T0laAcvLv032EhFHIa5GHsZ8W7iJEQVaJq6k3Gog==
+  /@types/jest/26.0.16:
+    dependencies:
+      jest-diff: 26.6.2
+      pretty-format: 26.6.2
+    dev: true
+    resolution:
+      integrity: sha512-Gp12+7tmKCgv9JjtltxUXokohCAEZfpJaEW5tn871SGRp8I+bRWBonQO7vW5NHwnAHe5dd50+Q4zyKuN35i09g==
   /@types/json-schema/7.0.4:
     dev: true
     resolution:
@@ -10160,7 +10167,7 @@ specifiers:
   '@babel/preset-typescript': 7.12.7
   '@shelf/jest-dynamodb': 1.7.0
   '@types/aws-lambda': 8.10.64
-  '@types/jest': 26.0.15
+  '@types/jest': 26.0.16
   '@types/node': 13.13.34
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0
