@@ -16,7 +16,7 @@ devDependencies:
   '@types/chrome': 0.0.126
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
-  '@types/google.analytics': 0.0.40
+  '@types/google.analytics': 0.0.41
   '@types/jest': 26.0.16
   '@types/lodash': 4.14.165
   '@types/node': 13.13.34
@@ -2376,10 +2376,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==
-  /@types/google.analytics/0.0.40:
+  /@types/google.analytics/0.0.41:
     dev: true
     resolution:
-      integrity: sha512-R3HpnLkqmKxhUAf8kIVvDVGJqPtaaZlW4yowNwjOZUTmYUQEgHh8Nh5wkSXKMroNAuQM8gbXJHmNbbgA8tdb7Q==
+      integrity: sha512-LE6AfJFJtxUl1d56oQ1PvQDEOtU+0fgqTVgmOw+T0eaz7FB4DTqKxbI6x8sq+7FDvAeIXOugZyGHJLR4CAxO4A==
   /@types/graceful-fs/4.1.4:
     dependencies:
       '@types/node': 13.13.30
@@ -14352,7 +14352,7 @@ specifiers:
   '@types/chrome': 0.0.126
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
-  '@types/google.analytics': 0.0.40
+  '@types/google.analytics': 0.0.41
   '@types/jest': 26.0.16
   '@types/lodash': 4.14.165
   '@types/node': 13.13.34
