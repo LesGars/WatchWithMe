@@ -1,6 +1,6 @@
 dependencies:
   '@types/uuid': 8.3.0
-  dayjs: 1.9.6
+  dayjs: 1.9.7
   debug: 4.3.1
   lodash-es: 4.17.15
   unique-names-generator: 4.3.1
@@ -5296,10 +5296,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==
-  /dayjs/1.9.6:
+  /dayjs/1.9.7:
     dev: false
     resolution:
-      integrity: sha512-HngNLtPEBWRo8EFVmHFmSXAjtCX8rGNqeXQI0Gh7wCTSqwaKgPIDqu9m07wABVopNwzvOeCb+2711vQhDlcIXw==
+      integrity: sha512-IC877KBdMhBrCfBfJXHQlo0G8keZ0Opy7YIIq5QKtUbCuHMzim8S4PyiVK4YmihI3iOF9lhfUBW4AQWHTR5WHA==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -14396,7 +14396,7 @@ specifiers:
   cross-env: 7.0.3
   css-loader: 5.0.1
   cssnano: 4.1.10
-  dayjs: 1.9.6
+  dayjs: 1.9.7
   debug: 4.3.1
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1
