@@ -27,7 +27,7 @@
         "unique-names-generator": "4.3.1",
         "uuid": "8.3.1",
         "vue": "3.0.4",
-        "vue-router": "4.0.0-rc.6",
+        "vue-router": "4.0.0",
         "webext-options-sync": "2.0.0"
     },
     "devDependencies": {

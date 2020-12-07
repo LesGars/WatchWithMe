@@ -6,7 +6,7 @@ dependencies:
   unique-names-generator: 4.3.1
   uuid: 8.3.1
   vue: 3.0.4
-  vue-router: 4.0.0-rc.6_vue@3.0.4
+  vue-router: 4.0.0_vue@3.0.4
   webext-options-sync: 2.0.0
 devDependencies:
   '@babel/core': 7.12.9
@@ -13713,14 +13713,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-wz/+HFg/3SBayHWAlZXARcnDTl3VOChrfW9YnxvAweiuyKX/7IGx1ad/4yJHmwhgWlOVYMAbTiI7GV8G33PfGQ==
-  /vue-router/4.0.0-rc.6_vue@3.0.4:
+  /vue-router/4.0.0_vue@3.0.4:
     dependencies:
       vue: 3.0.4
     dev: false
     peerDependencies:
       vue: ^3.0.0
     resolution:
-      integrity: sha512-hVHC8A4/0yku1Z6+oUtX9odeHv78XwDI7putt1hd7os27P7mLabkjArN7f3TI3e/cz17MxAUz5Yp+m8ZE3sPsw==
+      integrity: sha512-RiAsDsSV73TBqppgpAKghb5exHHKsFuTii7hbhj9QHjWJNDE4lBDTr7bVALG9DH9vVcFI+7PUTBGYbytBFsWsQ==
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
@@ -14435,7 +14435,7 @@ specifiers:
   uuid: 8.3.1
   vue: 3.0.4
   vue-loader: 16.1.1
-  vue-router: 4.0.0-rc.6
+  vue-router: 4.0.0
   vue-style-loader: 4.1.2
   webext-options-sync: 2.0.0
   webextension-polyfill: 0.7.0
