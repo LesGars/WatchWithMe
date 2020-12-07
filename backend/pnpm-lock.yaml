@@ -17,7 +17,7 @@ devDependencies:
   eslint-config-prettier: 6.15.0_eslint@6.8.0
   eslint-plugin-jest: 23.20.0_eslint@6.8.0+typescript@3.9.7
   jest: 26.6.3
-  js-yaml: 3.14.0
+  js-yaml: 3.14.1
   prettier: 2.2.1
   serverless: 1.83.2
   serverless-iam-roles-per-function: 2.0.2
@@ -6434,6 +6434,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-/4IbIeHcD9VMHFqDR/gQ7EdZdLimOvW2DdcxFjdyyZ9NsbS+ccrXqVWDtab/lRl5AlUqmpBx8EhPaWR+OtY17A==
+  /js-yaml/3.14.1:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
   /jsbn/0.1.1:
     dev: true
     resolution:
@@ -10178,7 +10186,7 @@ specifiers:
   eslint-config-prettier: 6.15.0
   eslint-plugin-jest: 23.20.0
   jest: 26.6.3
-  js-yaml: 3.14.0
+  js-yaml: 3.14.1
   prettier: 2.2.1
   serverless: 1.83.2
   serverless-iam-roles-per-function: 2.0.2
