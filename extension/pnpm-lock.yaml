@@ -4,7 +4,7 @@ dependencies:
   debug: 4.3.1
   lodash-es: 4.17.15
   unique-names-generator: 4.3.1
-  uuid: 8.3.1
+  uuid: 8.3.2
   vue: 3.0.4
   vue-router: 4.0.1_vue@3.0.4
   webext-options-sync: 2.0.0
@@ -13598,9 +13598,16 @@ packages:
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
   /uuid/8.3.1:
+    dev: true
     hasBin: true
+    optional: true
     resolution:
       integrity: sha512-FOmRr+FmWEIG8uhZv6C2bTgEVXsHk08kE7mPlrBbEe+c3r9pjceVPgupIfNIhc4yx55H69OXANrUaSuu9eInKg==
+  /uuid/8.3.2:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
   /v8-compile-cache/2.2.0:
     dev: true
     resolution:
@@ -14432,7 +14439,7 @@ specifiers:
   tslib: 2.0.3
   typescript: 3.9.7
   unique-names-generator: 4.3.1
-  uuid: 8.3.1
+  uuid: 8.3.2
   vue: 3.0.4
   vue-loader: 16.1.1
   vue-router: 4.0.1
