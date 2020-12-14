@@ -7,7 +7,7 @@ devDependencies:
   '@babel/preset-typescript': 7.12.7_@babel+core@7.12.10
   '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.66
-  '@types/jest': 26.0.18
+  '@types/jest': 26.0.19
   '@types/node': 13.13.35
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
@@ -1424,7 +1424,7 @@ packages:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.1
       '@types/istanbul-reports': 3.0.0
-      '@types/node': 13.13.34
+      '@types/node': 13.13.35
       '@types/yargs': 15.0.4
       chalk: 4.0.0
     dev: true
@@ -1873,13 +1873,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-s2VMReFXRg9XXxV+CW9e5Nz8fH2K1aEhwgjUqPPbQd7g95T0laAcvLv032EhFHIa5GHsZ8W7iJEQVaJq6k3Gog==
-  /@types/jest/26.0.18:
+  /@types/jest/26.0.19:
     dependencies:
       jest-diff: 26.6.2
       pretty-format: 26.6.2
     dev: true
     resolution:
-      integrity: sha512-scDPs+mELZgsFetTgBSsIxKGrlitn9t/d2ecP+S1QSIGD+31fkMBEftLfOAX5k3tU06/0PjreJIQ+gWEbbHqpw==
+      integrity: sha512-jqHoirTG61fee6v6rwbnEuKhpSKih0tuhqeFbCmMmErhtu3BYlOZaXWjffgOstMM4S/3iQD31lI5bGLTrs97yQ==
   /@types/json-schema/7.0.4:
     dev: true
     resolution:
@@ -1900,10 +1900,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-HmqFpNzp3TSELxU/bUuRK+xzarVOAsR00hzcvM0TXrMlt/+wcSLa5q6YhTb6/cA6wqDCZLDcfd8fSL95x5h7AA==
-  /@types/node/13.13.34:
-    dev: true
-    resolution:
-      integrity: sha512-g8D1HF2dMDKYSDl5+79izRwRgNPsSynmWMbj50mj7GZ0b7Lv4p8EmZjbo3h0h+6iLr6YmVz9VnF6XVZ3O6V1Ug==
   /@types/node/13.13.35:
     dev: true
     resolution:
@@ -10186,7 +10182,7 @@ specifiers:
   '@babel/preset-typescript': 7.12.7
   '@shelf/jest-dynamodb': 1.7.0
   '@types/aws-lambda': 8.10.66
-  '@types/jest': 26.0.18
+  '@types/jest': 26.0.19
   '@types/node': 13.13.35
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0
