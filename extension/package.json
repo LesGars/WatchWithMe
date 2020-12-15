@@ -68,7 +68,7 @@
         "eslint": "6.8.0",
         "eslint-config-airbnb": "18.2.1",
         "eslint-config-prettier": "6.15.0",
-        "eslint-plugin-prettier": "3.2.0",
+        "eslint-plugin-prettier": "3.3.0",
         "eslint-plugin-vue": "7.2.0",
         "friendly-errors-webpack-plugin": "1.7.0",
         "generate-json-webpack-plugin": "1.0.0",
