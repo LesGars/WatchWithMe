@@ -13,7 +13,7 @@ devDependencies:
   '@babel/preset-env': 7.12.11_@babel+core@7.12.10
   '@babel/preset-typescript': 7.12.7_@babel+core@7.12.10
   '@fullhuman/postcss-purgecss': 3.1.3
-  '@types/chrome': 0.0.127
+  '@types/chrome': 0.0.129
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.41
@@ -2343,13 +2343,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ==
-  /@types/chrome/0.0.127:
+  /@types/chrome/0.0.129:
     dependencies:
       '@types/filesystem': 0.0.29
       '@types/har-format': 1.2.5
     dev: true
     resolution:
-      integrity: sha512-hBB9EApLYKKn2GvklVkTxVP6vZvxsH9okyIRUinNtMzZHIgIKWQk/ESbX+O5g4Bihfy38+aFGn7Kl7Cxou5JUg==
+      integrity: sha512-7SdqJ7YFu8wBI13SRbxWibHG7W3W3N2Cdn2hRHw24tWiLBZGC2OOfIKREQyga8AeT83AaVcTirWDVMrph0Gkkw==
   /@types/connect-history-api-fallback/1.3.3:
     dependencies:
       '@types/express-serve-static-core': 4.17.13
@@ -14453,7 +14453,7 @@ specifiers:
   '@babel/preset-env': 7.12.11
   '@babel/preset-typescript': 7.12.7
   '@fullhuman/postcss-purgecss': 3.1.3
-  '@types/chrome': 0.0.127
+  '@types/chrome': 0.0.129
   '@types/copy-webpack-plugin': 5.0.2
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.41
