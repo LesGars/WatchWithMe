@@ -22,11 +22,11 @@ devDependencies:
   serverless: 1.83.2
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
-  serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.44.2
+  serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.46.0
   ts-jest: 26.5.0_jest@26.6.3+typescript@3.9.7
-  ts-loader: 8.0.14_typescript@3.9.7+webpack@4.44.2
+  ts-loader: 8.0.14_typescript@3.9.7+webpack@4.46.0
   typescript: 3.9.7
-  webpack: 4.44.2
+  webpack: 4.46.0
 lockfileVersion: 5.2
 packages:
   /2-thenable/1.0.0:
@@ -2350,22 +2350,14 @@ packages:
       node: '>= 6.0.0'
     resolution:
       integrity: sha512-j1Q7cSCqN+AwrmDd+pzgqc0/NpC655x2bUf5ZjRIO77DcNBFmh+OgRNzF6OKdCC9RSCb19fGd99+bhXFdkRNqw==
-  /ajv-errors/1.0.1_ajv@6.12.4:
+  /ajv-errors/1.0.1_ajv@6.12.6:
     dependencies:
-      ajv: 6.12.4
+      ajv: 6.12.6
     dev: true
     peerDependencies:
       ajv: '>=5.0.0'
     resolution:
       integrity: sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
-  /ajv-keywords/3.5.2_ajv@6.12.4:
-    dependencies:
-      ajv: 6.12.4
-    dev: true
-    peerDependencies:
-      ajv: ^6.9.1
-    resolution:
-      integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
   /ajv-keywords/3.5.2_ajv@6.12.6:
     dependencies:
       ajv: 6.12.6
@@ -2383,15 +2375,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-k+V+hzjm5q/Mr8ef/1Y9goCmlsK4I6Sm74teeyGvFk1XrOsbsKLjEdrvny42CZ+a8sXbk8KWpY/bDwS+FLL2UQ==
-  /ajv/6.12.4:
-    dependencies:
-      fast-deep-equal: 3.1.1
-      fast-json-stable-stringify: 2.1.0
-      json-schema-traverse: 0.4.1
-      uri-js: 4.2.2
-    dev: true
-    resolution:
-      integrity: sha512-eienB2c9qVQs2KWexhkrdMLVDoIQCz5KSeLxwg9Lzk4DOfBtIK9PQwwufcsn1jjGuf9WZmqPMbGxOzfcuphJCQ==
   /ajv/6.12.6:
     dependencies:
       fast-deep-equal: 3.1.1
@@ -4276,6 +4259,16 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-3e87LvavsdxyoCfGusJnrZ5G8SLPOFeHSNpZI/ATL9a5leXo2k0w6MKnbqhdBad9qTobSfB20Ld7UmgoNbAZkQ==
+  /enhanced-resolve/4.5.0:
+    dependencies:
+      graceful-fs: 4.2.4
+      memory-fs: 0.5.0
+      tapable: 1.1.3
+    dev: true
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-Nv9m36S/vxpsI+Hc4/ZGRs0n9mXqSWGGq49zxb/cJfPAQMbUtttJAlNPS4AQzaBdw/pKskw5bMbekT/Y7W/Wlg==
   /env-variable/0.0.6:
     dev: true
     resolution:
@@ -5145,6 +5138,7 @@ packages:
     resolution:
       integrity: sha512-Ggd/Ktt7E7I8pxZRbGIs7vwqAPscSESMrCSkx2FtWeqmheJgCo2R74fTsZFCifr0VTPwqRpPv17+6b8Zp7th0Q==
   /fsevents/2.1.3:
+    deprecated: '"Please update to latest v2.3 or v2.2"'
     dev: true
     engines:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
@@ -8539,9 +8533,9 @@ packages:
       integrity: sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   /schema-utils/1.0.0:
     dependencies:
-      ajv: 6.12.4
-      ajv-errors: 1.0.1_ajv@6.12.4
-      ajv-keywords: 3.5.2_ajv@6.12.4
+      ajv: 6.12.6
+      ajv-errors: 1.0.1_ajv@6.12.6
+      ajv-keywords: 3.5.2_ajv@6.12.6
     dev: true
     engines:
       node: '>= 4'
@@ -8607,7 +8601,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-A/O49AR8LL6jlnPSmnOTYgL1KqVgskeRla4sVDeS/r5dHFJlwOU5MgFilc7aaQP8NWAwRJANaIS9oiSE3I+VUA==
-  /serverless-webpack/5.3.5_typescript@3.9.7+webpack@4.44.2:
+  /serverless-webpack/5.3.5_typescript@3.9.7+webpack@4.46.0:
     dependencies:
       archiver: 5.0.2
       bluebird: 3.7.2
@@ -8616,7 +8610,7 @@ packages:
       is-builtin-module: 3.0.0
       lodash: 4.17.20
       semver: 7.3.2
-      webpack: 4.44.2
+      webpack: 4.46.0
     dev: true
     optionalDependencies:
       ts-node: 8.10.1_typescript@3.9.7
@@ -9331,7 +9325,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-un0FmiRUQNr5PJqy9kP7c40F5BOfpGlYTrxonDChEZB7pzZxRNp/bt+ymiy9/npwXya9KH99nJ/GXFIiUkYGFQ==
-  /terser-webpack-plugin/1.4.3_webpack@4.44.2:
+  /terser-webpack-plugin/1.4.3_webpack@4.46.0:
     dependencies:
       cacache: 12.0.4
       find-cache-dir: 2.1.0
@@ -9340,7 +9334,7 @@ packages:
       serialize-javascript: 2.1.2
       source-map: 0.6.1
       terser: 4.6.12
-      webpack: 4.44.2
+      webpack: 4.46.0
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true
@@ -9554,7 +9548,7 @@ packages:
       typescript: '>=3.8 <5.0'
     resolution:
       integrity: sha512-Ya4IQgvIFNa2Mgq52KaO8yBw2W8tWp61Ecl66VjF0f5JaV8u50nGoptHVILOPGoI7SDnShmEqnYQEmyHdQ+56g==
-  /ts-loader/8.0.14_typescript@3.9.7+webpack@4.44.2:
+  /ts-loader/8.0.14_typescript@3.9.7+webpack@4.46.0:
     dependencies:
       chalk: 4.1.0
       enhanced-resolve: 4.3.0
@@ -9562,7 +9556,7 @@ packages:
       micromatch: 4.0.2
       semver: 7.3.4
       typescript: 3.9.7
-      webpack: 4.44.2
+      webpack: 4.46.0
     dev: true
     engines:
       node: '>=10.0.0'
@@ -9950,17 +9944,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==
-  /webpack/4.44.2:
+  /webpack/4.46.0:
     dependencies:
       '@webassemblyjs/ast': 1.9.0
       '@webassemblyjs/helper-module-context': 1.9.0
       '@webassemblyjs/wasm-edit': 1.9.0
       '@webassemblyjs/wasm-parser': 1.9.0
       acorn: 6.4.1
-      ajv: 6.12.4
-      ajv-keywords: 3.5.2_ajv@6.12.4
+      ajv: 6.12.6
+      ajv-keywords: 3.5.2_ajv@6.12.6
       chrome-trace-event: 1.0.2
-      enhanced-resolve: 4.3.0
+      enhanced-resolve: 4.5.0
       eslint-scope: 4.0.3
       json-parse-better-errors: 1.0.2
       loader-runner: 2.4.0
@@ -9972,7 +9966,7 @@ packages:
       node-libs-browser: 2.2.1
       schema-utils: 1.0.0
       tapable: 1.1.3
-      terser-webpack-plugin: 1.4.3_webpack@4.44.2
+      terser-webpack-plugin: 1.4.3_webpack@4.46.0
       watchpack: 1.7.4
       webpack-sources: 1.4.3
     dev: true
@@ -9988,7 +9982,7 @@ packages:
       webpack-command:
         optional: true
     resolution:
-      integrity: sha512-6KJVGlCxYdISyurpQ0IPTklv+DULv05rs2hseIXer6D7KrUicRDLFb4IUM1S6LUAKypPM/nSiVSuv8jHu1m3/Q==
+      integrity: sha512-6jJuJjg8znb/xRItk7bkT0+Q7AHCYjjFnvKIWQPkNIOyRqoCGvkOs0ipeQzrqz4l5FtN5ZI/ukEHroeX/o1/5Q==
   /whatwg-encoding/1.0.5:
     dependencies:
       iconv-lite: 0.4.24
@@ -10310,4 +10304,4 @@ specifiers:
   ts-loader: 8.0.14
   typescript: 3.9.7
   uuid: ^8.1.0
-  webpack: 4.44.2
+  webpack: 4.46.0
