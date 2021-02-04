@@ -24,7 +24,7 @@ devDependencies:
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.46.0
   ts-jest: 26.5.0_jest@26.6.3+typescript@3.9.7
-  ts-loader: 8.0.14_typescript@3.9.7+webpack@4.46.0
+  ts-loader: 8.0.15_typescript@3.9.7+webpack@4.46.0
   typescript: 3.9.7
   webpack: 4.46.0
 lockfileVersion: 5.2
@@ -4249,16 +4249,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6I3qD9iUxotsC5HEMuuGsKA0cXerGz+4uGcXQEkfBidgKf0amsjrrtwcbwK/nzpZBxclXlV7gGl9dgWvu4LF6w==
-  /enhanced-resolve/4.3.0:
-    dependencies:
-      graceful-fs: 4.2.4
-      memory-fs: 0.5.0
-      tapable: 1.1.3
-    dev: true
-    engines:
-      node: '>=6.9.0'
-    resolution:
-      integrity: sha512-3e87LvavsdxyoCfGusJnrZ5G8SLPOFeHSNpZI/ATL9a5leXo2k0w6MKnbqhdBad9qTobSfB20Ld7UmgoNbAZkQ==
   /enhanced-resolve/4.5.0:
     dependencies:
       graceful-fs: 4.2.4
@@ -9548,10 +9538,10 @@ packages:
       typescript: '>=3.8 <5.0'
     resolution:
       integrity: sha512-Ya4IQgvIFNa2Mgq52KaO8yBw2W8tWp61Ecl66VjF0f5JaV8u50nGoptHVILOPGoI7SDnShmEqnYQEmyHdQ+56g==
-  /ts-loader/8.0.14_typescript@3.9.7+webpack@4.46.0:
+  /ts-loader/8.0.15_typescript@3.9.7+webpack@4.46.0:
     dependencies:
       chalk: 4.1.0
-      enhanced-resolve: 4.3.0
+      enhanced-resolve: 4.5.0
       loader-utils: 2.0.0
       micromatch: 4.0.2
       semver: 7.3.4
@@ -9564,7 +9554,7 @@ packages:
       typescript: '*'
       webpack: '*'
     resolution:
-      integrity: sha512-Jt/hHlUnApOZjnSjTmZ+AbD5BGlQFx3f1D0nYuNKwz0JJnuDGHJas6az+FlWKwwRTu+26GXpv249A8UAnYUpqA==
+      integrity: sha512-WYXfCEglgUPU6adGcx6I9DsMwSxYFU99rzteIEoZKDQn4IMbe4KpO934zRkwSOFcwEzh+gx/RaH8hhgoCAfF9w==
   /ts-node/8.10.1_typescript@3.9.7:
     dependencies:
       arg: 4.1.3
@@ -10301,7 +10291,7 @@ specifiers:
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.3.5
   ts-jest: 26.5.0
-  ts-loader: 8.0.14
+  ts-loader: 8.0.15
   typescript: 3.9.7
   uuid: ^8.1.0
   webpack: 4.46.0
