@@ -7,7 +7,7 @@ dependencies:
   uuid: 8.3.2
   vue: 3.0.4
   vue-router: 4.0.1_vue@3.0.4
-  webext-options-sync: 2.0.0
+  webext-options-sync: 2.0.1
 devDependencies:
   '@babel/core': 7.12.13
   '@babel/preset-env': 7.12.13_@babel+core@7.12.13
@@ -14122,12 +14122,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yyWDNgR+cb9jpSU5HIt31vMUo4j8E5P4oqQaDsmiToe++uGYnFzhQeyn1r/i3i6CfCO7GkGOr/mCmycS79dJog==
-  /webext-options-sync/2.0.0:
+  /webext-options-sync/2.0.1:
     dependencies:
       webext-detect-page: 2.0.5
     dev: false
     resolution:
-      integrity: sha512-N1GZ4d0ofuy4B5b5svTJVC7ROqGuj0NQD+MFLOofLtVgpR6UjK1wgQjX7G5mUlHFkfEg7lDmxXYgbF+782snfA==
+      integrity: sha512-y7px8AfTrAMcIRxYcGEu2UVAj18C0H0SYNiF9orD9+p3Q8/r6wbUH0B/OU4g7v6DmvhNtg5XEO1ZUEr+XfYqCA==
   /webextension-polyfill-ts/0.22.0:
     dependencies:
       webextension-polyfill: 0.7.0
@@ -14766,7 +14766,7 @@ specifiers:
   vue-loader: 16.1.1
   vue-router: 4.0.1
   vue-style-loader: 4.1.2
-  webext-options-sync: 2.0.0
+  webext-options-sync: 2.0.1
   webextension-polyfill: 0.7.0
   webextension-polyfill-ts: 0.22.0
   webpack: 4.44.2
