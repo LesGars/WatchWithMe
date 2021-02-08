@@ -41,7 +41,7 @@ devDependencies:
   clean-webpack-plugin: 3.0.0_webpack@4.46.0
   copy-webpack-plugin: 5.1.2_webpack@4.46.0
   cross-env: 7.0.3
-  css-loader: 5.0.1_webpack@4.46.0
+  css-loader: 5.0.2_webpack@4.46.0
   cssnano: 4.1.10
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1_eslint@6.8.0
@@ -4734,20 +4734,20 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-M5lSukoWi1If8dhQAUCvj4H8vUt3vOnwbQBH9DdTm/s4Ym2B/3dPMtYZeJmq7Q3S3Pa+I94DcZ7pc9bP14cWIQ==
-  /css-loader/5.0.1_webpack@4.46.0:
+  /css-loader/5.0.2_webpack@4.46.0:
     dependencies:
       camelcase: 6.2.0
       cssesc: 3.0.0
-      icss-utils: 5.0.0_postcss@8.1.7
+      icss-utils: 5.1.0_postcss@8.2.5
       loader-utils: 2.0.0
-      postcss: 8.1.7
-      postcss-modules-extract-imports: 3.0.0_postcss@8.1.7
-      postcss-modules-local-by-default: 4.0.0_postcss@8.1.7
-      postcss-modules-scope: 3.0.0_postcss@8.1.7
-      postcss-modules-values: 4.0.0_postcss@8.1.7
+      postcss: 8.2.5
+      postcss-modules-extract-imports: 3.0.0_postcss@8.2.5
+      postcss-modules-local-by-default: 4.0.0_postcss@8.2.5
+      postcss-modules-scope: 3.0.0_postcss@8.2.5
+      postcss-modules-values: 4.0.0_postcss@8.2.5
       postcss-value-parser: 4.1.0
       schema-utils: 3.0.0
-      semver: 7.3.2
+      semver: 7.3.4
       webpack: 4.46.0_webpack-cli@3.3.12
     dev: true
     engines:
@@ -4755,7 +4755,7 @@ packages:
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
     resolution:
-      integrity: sha512-cXc2ti9V234cq7rJzFKhirb2L2iPy8ZjALeVJAozXYz9te3r4eqLSixNAbMDJSgJEQywqXzs8gonxaboeKqwiw==
+      integrity: sha512-gbkBigdcHbmNvZ1Cg6aV6qh6k9N6XOr8YWzISLQGrwk2mgOH8LLrizhkxbDhQtaLtktyKHD4970S0xwz5btfTA==
   /css-select-base-adapter/0.1.1:
     dev: true
     resolution:
@@ -7333,16 +7333,16 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-4aFq7wvWyMHKgxsH8QQtGpvbASCf+eM3wPRLI6R+MgAnTCZ6STYsRvttLvRWK0Nfif5piF394St3HeJDaljGPA==
-  /icss-utils/5.0.0_postcss@8.1.7:
+  /icss-utils/5.1.0_postcss@8.2.5:
     dependencies:
-      postcss: 8.1.7
+      postcss: 8.2.5
     dev: true
     engines:
       node: ^10 || ^12 || >= 14
     peerDependencies:
       postcss: ^8.1.0
     resolution:
-      integrity: sha512-aF2Cf/CkEZrI/vsu5WI/I+akFgdbwQHVE9YRZxATrhH4PVIe6a3BIjwjEcW+z+jP/hNh+YvM3lAAn1wJQ6opSg==
+      integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==
   /ieee754/1.2.1:
     dev: true
     resolution:
@@ -10489,9 +10489,9 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-LaYLDNS4SG8Q5WAWqIJgdHPJrDDr/Lv775rMBFUbgjTz6j34lUznACHcdRWroPvXANP2Vj7yNK57vp9eFqzLWQ==
-  /postcss-modules-extract-imports/3.0.0_postcss@8.1.7:
+  /postcss-modules-extract-imports/3.0.0_postcss@8.2.5:
     dependencies:
-      postcss: 8.1.7
+      postcss: 8.2.5
     dev: true
     engines:
       node: ^10 || ^12 || >= 14
@@ -10510,10 +10510,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-e3xDq+LotiGesympRlKNgaJ0PCzoUIdpH0dj47iWAui/kyTgh3CiAr1qP54uodmJhl6p9rN6BoNcdEDVJx9RDw==
-  /postcss-modules-local-by-default/4.0.0_postcss@8.1.7:
+  /postcss-modules-local-by-default/4.0.0_postcss@8.2.5:
     dependencies:
-      icss-utils: 5.0.0_postcss@8.1.7
-      postcss: 8.1.7
+      icss-utils: 5.1.0_postcss@8.2.5
+      postcss: 8.2.5
       postcss-selector-parser: 6.0.4
       postcss-value-parser: 4.1.0
     dev: true
@@ -10532,9 +10532,9 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-YyEgsTMRpNd+HmyC7H/mh3y+MeFWevy7V1evVhJWewmMbjDHIbZbOXICC2y+m1xI1UVfIT1HMW/O04Hxyu9oXQ==
-  /postcss-modules-scope/3.0.0_postcss@8.1.7:
+  /postcss-modules-scope/3.0.0_postcss@8.2.5:
     dependencies:
-      postcss: 8.1.7
+      postcss: 8.2.5
       postcss-selector-parser: 6.0.4
     dev: true
     engines:
@@ -10550,10 +10550,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-1//E5jCBrZ9DmRX+zCtmQtRSV6PV42Ix7Bzj9GbwJceduuf7IqP8MgeTXuRDHOWj2m0VzZD5+roFWDuU8RQjcg==
-  /postcss-modules-values/4.0.0_postcss@8.1.7:
+  /postcss-modules-values/4.0.0_postcss@8.2.5:
     dependencies:
-      icss-utils: 5.0.0_postcss@8.1.7
-      postcss: 8.1.7
+      icss-utils: 5.1.0_postcss@8.2.5
+      postcss: 8.2.5
     dev: true
     engines:
       node: ^10 || ^12 || >= 14
@@ -10806,6 +10806,16 @@ packages:
       node: ^10 || ^12 || >=14
     resolution:
       integrity: sha512-RhsqOOAQzTgh1UB/IZdca7F9WDb7SUCR2Vnv1x7DbvuuggQIpoDwjK+q0rzoPffhYvWNKX5JSwS4so4K3UC6vA==
+  /postcss/8.2.5:
+    dependencies:
+      colorette: 1.2.1
+      nanoid: 3.1.20
+      source-map: 0.6.1
+    dev: true
+    engines:
+      node: ^10 || ^12 || >=14
+    resolution:
+      integrity: sha512-wMcb7BpDcm3gxQOQx46NDNT36Kk0Ao6PJLLI2ed5vehbbbxCEuslSQzbQ2sfSKy+gkYxhWcGWSeaK+gwm4KIZg==
   /prelude-ls/1.1.2:
     dev: true
     engines:
@@ -14205,7 +14215,7 @@ specifiers:
   clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 5.1.2
   cross-env: 7.0.3
-  css-loader: 5.0.1
+  css-loader: 5.0.2
   cssnano: 4.1.10
   dayjs: 1.10.4
   debug: 4.3.1
