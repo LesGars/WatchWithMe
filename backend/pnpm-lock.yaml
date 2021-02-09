@@ -10,22 +10,22 @@ devDependencies:
   '@types/jest': 26.0.20
   '@types/node': 13.13.41
   '@types/uuid': 8.3.0
-  '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
-  '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
+  '@typescript-eslint/eslint-plugin': 2.34.0_4d38690aca37f9bfc8135608aed68ad7
+  '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.8
   babel-jest: 26.6.3_@babel+core@7.12.13
   eslint: 6.8.0
   eslint-config-prettier: 6.15.0_eslint@6.8.0
-  eslint-plugin-jest: 23.20.0_eslint@6.8.0+typescript@3.9.7
+  eslint-plugin-jest: 23.20.0_eslint@6.8.0+typescript@3.9.8
   jest: 26.6.3
   js-yaml: 3.14.1
   prettier: 2.2.1
   serverless: 1.83.2
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
-  serverless-webpack: 5.3.5_typescript@3.9.7+webpack@4.46.0
-  ts-jest: 26.5.1_jest@26.6.3+typescript@3.9.7
-  ts-loader: 8.0.16_typescript@3.9.7+webpack@4.46.0
-  typescript: 3.9.7
+  serverless-webpack: 5.3.5_typescript@3.9.8+webpack@4.46.0
+  ts-jest: 26.5.1_jest@26.6.3+typescript@3.9.8
+  ts-loader: 8.0.16_typescript@3.9.8+webpack@4.46.0
+  typescript: 3.9.8
   webpack: 4.46.0
 lockfileVersion: 5.2
 packages:
@@ -2077,15 +2077,15 @@ packages:
     dev: true
     resolution:
       integrity: sha512-9T1auFmbPZoxHz0enUFlUuKRy3it01R+hlggyVUMtnCTQRunsQYifnSGb8hET4Xo8yiC0o0r1paW3ud5+rbURg==
-  /@typescript-eslint/eslint-plugin/2.34.0_5004700905763c91177aaa7d1d0d56ac:
+  /@typescript-eslint/eslint-plugin/2.34.0_4d38690aca37f9bfc8135608aed68ad7:
     dependencies:
-      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.7
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
+      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.8
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.8
       eslint: 6.8.0
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
-      tsutils: 3.17.1_typescript@3.9.7
-      typescript: 3.9.7
+      tsutils: 3.17.1_typescript@3.9.8
+      typescript: 3.9.8
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -2098,10 +2098,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-4zY3Z88rEE99+CNvTbXSyovv2z9PNOVffTWD2W8QF5s2prBQtwN2zadqERcrHpcR7O/+KMI3fcTAmUUhK/iQcQ==
-  /@typescript-eslint/experimental-utils/2.34.0_eslint@6.8.0+typescript@3.9.7:
+  /@typescript-eslint/experimental-utils/2.34.0_eslint@6.8.0+typescript@3.9.8:
     dependencies:
       '@types/json-schema': 7.0.4
-      '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.7
+      '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.8
       eslint: 6.8.0
       eslint-scope: 5.0.0
       eslint-utils: 2.0.0
@@ -2113,14 +2113,14 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-eS6FTkq+wuMJ+sgtuNTtcqavWXqsflWcfBnlYhg/nS4aZ1leewkXGbvBhaapn1q6qf4M71bsR1tez5JTRMuqwA==
-  /@typescript-eslint/parser/2.34.0_eslint@6.8.0+typescript@3.9.7:
+  /@typescript-eslint/parser/2.34.0_eslint@6.8.0+typescript@3.9.8:
     dependencies:
       '@types/eslint-visitor-keys': 1.0.0
-      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.7
-      '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.7
+      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.8
+      '@typescript-eslint/typescript-estree': 2.34.0_typescript@3.9.8
       eslint: 6.8.0
       eslint-visitor-keys: 1.1.0
-      typescript: 3.9.7
+      typescript: 3.9.8
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -2132,7 +2132,7 @@ packages:
         optional: true
     resolution:
       integrity: sha512-03ilO0ucSD0EPTw2X4PntSIRFtDPWjrVq7C3/Z3VQHRC7+13YB55rcJI3Jt+YgeHbjUdJPcPa7b23rXCBokuyA==
-  /@typescript-eslint/typescript-estree/2.34.0_typescript@3.9.7:
+  /@typescript-eslint/typescript-estree/2.34.0_typescript@3.9.8:
     dependencies:
       debug: 4.1.1
       eslint-visitor-keys: 1.1.0
@@ -2140,8 +2140,8 @@ packages:
       is-glob: 4.0.1
       lodash: 4.17.15
       semver: 7.3.2
-      tsutils: 3.17.1_typescript@3.9.7
-      typescript: 3.9.7
+      tsutils: 3.17.1_typescript@3.9.8
+      typescript: 3.9.8
     dev: true
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -4371,9 +4371,9 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
-  /eslint-plugin-jest/23.20.0_eslint@6.8.0+typescript@3.9.7:
+  /eslint-plugin-jest/23.20.0_eslint@6.8.0+typescript@3.9.8:
     dependencies:
-      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.7
+      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@3.9.8
       eslint: 6.8.0
     dev: true
     engines:
@@ -8591,7 +8591,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-A/O49AR8LL6jlnPSmnOTYgL1KqVgskeRla4sVDeS/r5dHFJlwOU5MgFilc7aaQP8NWAwRJANaIS9oiSE3I+VUA==
-  /serverless-webpack/5.3.5_typescript@3.9.7+webpack@4.46.0:
+  /serverless-webpack/5.3.5_typescript@3.9.8+webpack@4.46.0:
     dependencies:
       archiver: 5.0.2
       bluebird: 3.7.2
@@ -8603,7 +8603,7 @@ packages:
       webpack: 4.46.0
     dev: true
     optionalDependencies:
-      ts-node: 8.10.1_typescript@3.9.7
+      ts-node: 8.10.1_typescript@3.9.8
     peerDependencies:
       typescript: '*'
       webpack: '>= 3.0.0 < 6'
@@ -9514,7 +9514,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
-  /ts-jest/26.5.1_jest@26.6.3+typescript@3.9.7:
+  /ts-jest/26.5.1_jest@26.6.3+typescript@3.9.8:
     dependencies:
       '@types/jest': 26.0.20
       bs-logger: 0.2.6
@@ -9527,7 +9527,7 @@ packages:
       make-error: 1.3.6
       mkdirp: 1.0.4
       semver: 7.3.4
-      typescript: 3.9.7
+      typescript: 3.9.8
       yargs-parser: 20.1.0
     dev: true
     engines:
@@ -9538,14 +9538,14 @@ packages:
       typescript: '>=3.8 <5.0'
     resolution:
       integrity: sha512-G7Rmo3OJMvlqE79amJX8VJKDiRcd7/r61wh9fnvvG8cAjhA9edklGw/dCxRSQmfZ/z8NDums5srSVgwZos1qfg==
-  /ts-loader/8.0.16_typescript@3.9.7+webpack@4.46.0:
+  /ts-loader/8.0.16_typescript@3.9.8+webpack@4.46.0:
     dependencies:
       chalk: 4.1.0
       enhanced-resolve: 4.5.0
       loader-utils: 2.0.0
       micromatch: 4.0.2
       semver: 7.3.4
-      typescript: 3.9.7
+      typescript: 3.9.8
       webpack: 4.46.0
     dev: true
     engines:
@@ -9555,13 +9555,13 @@ packages:
       webpack: '*'
     resolution:
       integrity: sha512-Cr9ywsgg1n8cjGjIogHLPlqe3WJUHzuJaqwNo5I596KpIqekKzxvSENbrXeOypHcXSPPsr8hV6mglngyXvcKrg==
-  /ts-node/8.10.1_typescript@3.9.7:
+  /ts-node/8.10.1_typescript@3.9.8:
     dependencies:
       arg: 4.1.3
       diff: 4.0.2
       make-error: 1.3.6
       source-map-support: 0.5.19
-      typescript: 3.9.7
+      typescript: 3.9.8
       yn: 3.1.1
     dev: true
     engines:
@@ -9576,10 +9576,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tsutils/3.17.1_typescript@3.9.7:
+  /tsutils/3.17.1_typescript@3.9.8:
     dependencies:
       tslib: 1.13.0
-      typescript: 3.9.7
+      typescript: 3.9.8
     dev: true
     engines:
       node: '>= 6'
@@ -9657,13 +9657,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /typescript/3.9.7:
+  /typescript/3.9.8:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+      integrity: sha512-nDbnFkUZZjkQ92qwKX+C+jtk4OGfU8H9toSEs3uAsl8cxLjG2sqQm6leF/pLWvm9FAEJ6KHkYMAbHYaY2ITeVg==
   /unbzip2-stream/1.4.2:
     dependencies:
       buffer: 5.6.0
@@ -10292,6 +10292,6 @@ specifiers:
   serverless-webpack: 5.3.5
   ts-jest: 26.5.1
   ts-loader: 8.0.16
-  typescript: 3.9.7
+  typescript: 3.9.8
   uuid: ^8.1.0
   webpack: 4.46.0
