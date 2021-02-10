@@ -71,7 +71,7 @@ devDependencies:
   style-loader: 2.0.0_webpack@4.46.0
   terser-webpack-plugin: 4.2.3_webpack@4.46.0
   ts-jest: 26.5.1_jest@26.6.3+typescript@3.9.8
-  ts-loader: 8.0.16_typescript@3.9.8+webpack@4.46.0
+  ts-loader: 8.0.17_typescript@3.9.8+webpack@4.46.0
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.1.0
   typescript: 3.9.8
@@ -12936,7 +12936,7 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-HDo5kXZCBml3EUPcc7RlZOV/JGlLHwppTLEHb3SHnr5V7NXD4klMEkrhJe5wgRbaWsSXi+Y1SIBN/K9B6zWGWQ==
-  /ts-loader/8.0.16_typescript@3.9.8+webpack@4.46.0:
+  /ts-loader/8.0.17_typescript@3.9.8+webpack@4.46.0:
     dependencies:
       chalk: 4.1.0
       enhanced-resolve: 4.5.0
@@ -12952,7 +12952,7 @@ packages:
       typescript: '*'
       webpack: '*'
     resolution:
-      integrity: sha512-Cr9ywsgg1n8cjGjIogHLPlqe3WJUHzuJaqwNo5I596KpIqekKzxvSENbrXeOypHcXSPPsr8hV6mglngyXvcKrg==
+      integrity: sha512-OeVfSshx6ot/TCxRwpBHQ/4lRzfgyTkvi7ghDVrLXOHzTbSK413ROgu/xNqM72i3AFeAIJgQy78FwSMKmOW68w==
   /ts-pnp/1.2.0_typescript@3.9.8:
     dependencies:
       typescript: 3.9.8
@@ -14248,7 +14248,7 @@ specifiers:
   style-loader: 2.0.0
   terser-webpack-plugin: 4.2.3
   ts-jest: 26.5.1
-  ts-loader: 8.0.16
+  ts-loader: 8.0.17
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.1.0
   typescript: 3.9.8
