@@ -28,7 +28,7 @@
         "@shelf/jest-dynamodb": "1.7.0",
         "@types/aws-lambda": "8.10.72",
         "@types/jest": "26.0.20",
-        "@types/node": "13.13.43",
+        "@types/node": "13.13.44",
         "@types/uuid": "8.3.0",
         "@typescript-eslint/eslint-plugin": "2.34.0",
         "@typescript-eslint/parser": "2.34.0",
