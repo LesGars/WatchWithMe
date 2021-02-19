@@ -27,7 +27,7 @@
         "unique-names-generator": "4.3.1",
         "uuid": "8.3.2",
         "vue": "3.0.5",
-        "vue-router": "4.0.3",
+        "vue-router": "4.0.4",
         "webext-options-sync": "2.0.1"
     },
     "devDependencies": {
@@ -54,7 +54,7 @@
         "@vue/cli-plugin-typescript": "4.5.11",
         "@vue/cli-service": "4.5.11",
         "@vue/compiler-sfc": "3.0.5",
-        "@vue/devtools": "6.0.0-beta.6",
+        "@vue/devtools": "6.0.0-beta.7",
         "@vue/eslint-config-prettier": "6.0.0",
         "@vue/eslint-config-typescript": "7.0.0",
         "autoprefixer": "9.8.6",

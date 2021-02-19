@@ -6,7 +6,7 @@ dependencies:
   unique-names-generator: 4.3.1
   uuid: 8.3.2
   vue: 3.0.5
-  vue-router: 4.0.3_vue@3.0.5
+  vue-router: 4.0.4_vue@3.0.5
   webext-options-sync: 2.0.1
 devDependencies:
   '@babel/core': 7.12.17
@@ -32,7 +32,7 @@ devDependencies:
   '@vue/cli-plugin-typescript': 4.5.11_d33ed2628a6b2eeb4449b11dcff57410
   '@vue/cli-service': 4.5.11_20488244e63144098a0a0836b5c4ba26
   '@vue/compiler-sfc': 3.0.5_vue@3.0.5
-  '@vue/devtools': 6.0.0-beta.6
+  '@vue/devtools': 6.0.0-beta.7
   '@vue/eslint-config-prettier': 6.0.0_2bcfefa13ee2fceeed8e5df7aad481db
   '@vue/eslint-config-typescript': 7.0.0_7b86d36c36066484fd176566bee86b95
   autoprefixer: 9.8.6
@@ -3497,7 +3497,7 @@ packages:
       prettier: 1.19.1
     resolution:
       integrity: sha512-lejBLa7xAMsfiZfNp7Kv51zOzifnb29FwdnMLa96z26kXErPFioSf9BMcePVIQ6/Gc6/mC0UrPpxAWIHyae0vw==
-  /@vue/devtools/6.0.0-beta.6:
+  /@vue/devtools/6.0.0-beta.7:
     dependencies:
       cross-spawn: 5.1.0
       electron: 7.3.3
@@ -3507,7 +3507,7 @@ packages:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-U6ywTqDkrZLkGxBr3Su0uLZDE9Rf23oZmb8munHFH5Mv6kdLYu1sBwLQjb5GnL8Lq4dydsvYJywHiha3ZZdxHA==
+      integrity: sha512-NdeodABmfNK7d4dTvOCkJHL3JXS0qC7e2Qbwk6lFmfelxowAkrAxqjb1SIb+MvjYT8Wg4mN6mzAdtxSr+3PMBA==
   /@vue/eslint-config-prettier/6.0.0_2bcfefa13ee2fceeed8e5df7aad481db:
     dependencies:
       eslint: 6.8.0
@@ -14330,14 +14330,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8QTxh+Fd+HB6fiL52iEVLKqE9N1JSlMXLR92Ijm6g8PZrwIxckgpqjPDWRP5TWxdiPaHR+alUWsnu1ShQOwt+Q==
-  /vue-router/4.0.3_vue@3.0.5:
+  /vue-router/4.0.4_vue@3.0.5:
     dependencies:
       vue: 3.0.5
     dev: false
     peerDependencies:
       vue: ^3.0.0
     resolution:
-      integrity: sha512-AD1OjtVPyQHTSpoRsEGfPpxRQwhAhxcacOYO3zJ3KNkYP/r09mileSp6kdMQKhZWP2cFsPR3E2M3PZguSN5/ww==
+      integrity: sha512-uN6PDEaYdU9aRO7mU+Dkr1uaY49hV3fucEDG/Vre/Qj8ct3RoJS16vcPrvKVzn69zDDjBV5b9Xw7fZA9r6b/Iw==
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
@@ -15046,7 +15046,7 @@ specifiers:
   '@vue/cli-plugin-typescript': 4.5.11
   '@vue/cli-service': 4.5.11
   '@vue/compiler-sfc': 3.0.5
-  '@vue/devtools': 6.0.0-beta.6
+  '@vue/devtools': 6.0.0-beta.7
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 7.0.0
   autoprefixer: 9.8.6
@@ -15096,7 +15096,7 @@ specifiers:
   uuid: 8.3.2
   vue: 3.0.5
   vue-loader: 16.1.2
-  vue-router: 4.0.3
+  vue-router: 4.0.4
   vue-style-loader: 4.1.2
   webext-options-sync: 2.0.1
   webextension-polyfill: 0.7.0
