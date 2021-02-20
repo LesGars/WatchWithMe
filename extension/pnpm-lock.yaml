@@ -45,8 +45,8 @@ devDependencies:
   cssnano: 4.1.10
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1_eslint@6.8.0
-  eslint-config-prettier: 6.15.0_eslint@6.8.0
-  eslint-plugin-prettier: 3.3.1_d9f75d6ea79d885f9cc83ea96476ae4d
+  eslint-config-prettier: 7.2.0_eslint@6.8.0
+  eslint-plugin-prettier: 3.3.1_354496c14393e6bdb459869764f52890
   eslint-plugin-vue: 7.6.0_eslint@6.8.0
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.46.0
   generate-json-webpack-plugin: 1.0.0
@@ -3512,7 +3512,7 @@ packages:
     dependencies:
       eslint: 6.8.0
       eslint-config-prettier: 6.15.0_eslint@6.8.0
-      eslint-plugin-prettier: 3.3.1_d9f75d6ea79d885f9cc83ea96476ae4d
+      eslint-plugin-prettier: 3.3.1_354496c14393e6bdb459869764f52890
       prettier: 2.2.1
     dev: true
     peerDependencies:
@@ -6547,6 +6547,15 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
+  /eslint-config-prettier/7.2.0_eslint@6.8.0:
+    dependencies:
+      eslint: 6.8.0
+    dev: true
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    resolution:
+      integrity: sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
   /eslint-loader/2.2.1_eslint@6.8.0+webpack@4.46.0:
     dependencies:
       eslint: 6.8.0
@@ -6563,10 +6572,10 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-prettier/3.3.1_d9f75d6ea79d885f9cc83ea96476ae4d:
+  /eslint-plugin-prettier/3.3.1_354496c14393e6bdb459869764f52890:
     dependencies:
       eslint: 6.8.0
-      eslint-config-prettier: 6.15.0_eslint@6.8.0
+      eslint-config-prettier: 7.2.0_eslint@6.8.0
       prettier: 2.2.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -15061,7 +15070,7 @@ specifiers:
   debug: 4.3.1
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1
-  eslint-config-prettier: 6.15.0
+  eslint-config-prettier: 7.2.0
   eslint-plugin-prettier: 3.3.1
   eslint-plugin-vue: 7.6.0
   friendly-errors-webpack-plugin: 1.7.0
