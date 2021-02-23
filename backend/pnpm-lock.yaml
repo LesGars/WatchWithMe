@@ -3,7 +3,7 @@ dependencies:
   uuid: 8.1.0
 devDependencies:
   '@babel/core': 7.13.1
-  '@babel/preset-env': 7.13.0_@babel+core@7.13.1
+  '@babel/preset-env': 7.13.5_@babel+core@7.13.1
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.1
   '@shelf/jest-dynamodb': 1.7.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.72
@@ -54,10 +54,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-a9gxpmdXtZEInkCSHUJDLHZVBgb1QS0jhss4cPP93EW7s+uC5bikET2twEF3KV+7rDblJcmNvTR7VJejqd2C2g==
-  /@babel/compat-data/7.13.0:
+  /@babel/compat-data/7.13.5:
     dev: true
     resolution:
-      integrity: sha512-mKgFbYQ+23pjwNGBNPNWrBfa3g/EcmrPnwQpjWoNxq9xYf+M8wcLhMlz/wkWimLjzNzGnl3D+C2186gMzk0VuA==
+      integrity: sha512-+c3G3S8n5ziRyfLybmgm9Y6KgoCni+s0hkV0I5bIpGWhu8uqEQo/VGnETY8YS6PFwedAoXOqfe4FhrvbtsLu+Q==
   /@babel/core/7.12.3:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -143,10 +143,10 @@ packages:
       integrity: sha512-CZOv9tGphhDRlVjVkAgm8Nhklm9RzSmWpX2my+t7Ua/KT616pEzXsQCjinzvkRvHWJ9itO4f296efroX23XCMA==
   /@babel/helper-compilation-targets/7.13.0_@babel+core@7.13.1:
     dependencies:
-      '@babel/compat-data': 7.13.0
+      '@babel/compat-data': 7.13.5
       '@babel/core': 7.13.1
       '@babel/helper-validator-option': 7.12.17
-      browserslist: 4.15.0
+      browserslist: 4.16.3
       semver: 7.0.0
     dev: true
     peerDependencies:
@@ -176,7 +176,7 @@ packages:
       '@babel/core': ^7.0.0
     resolution:
       integrity: sha512-XC+kiA0J3at6E85dL5UnCYfVOcIZ834QcAY0TIpgUVnz0zDzg+0TtvZTnJ4g9L1dPRGe30Qi03XCIS4tYCLtqw==
-  /@babel/helper-define-polyfill-provider/0.1.0_@babel+core@7.13.1:
+  /@babel/helper-define-polyfill-provider/0.1.2_@babel+core@7.13.1:
     dependencies:
       '@babel/core': 7.13.1
       '@babel/helper-compilation-targets': 7.13.0_@babel+core@7.13.1
@@ -191,7 +191,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0-0
     resolution:
-      integrity: sha512-/nX4CQRve5OZsc0FsvkuefeIQFG7GQo2X5GbD/seME7Tu4s2gHuQfXTIKup++/W9K1SWi2dTe7H9zhgJxhn/pA==
+      integrity: sha512-hWeolZJivTNGHXHzJjQz/NwDaG4mGXf22ZroOP8bQYgvHNzaQ5tylsVbAcAS2oDjXBwpu8qH2I/654QFS2rDpw==
   /@babel/helper-explode-assignable-expression/7.12.13:
     dependencies:
       '@babel/types': 7.13.0
@@ -446,7 +446,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-w80kxEMFhE3wjMOQkfdTvv0CSdRSJZptIlLhU4eU/coNJeWjduspUFz+IRnBbAq6m5XYBFMoT1TNkk9K9yf10g==
-  /@babel/plugin-proposal-async-generator-functions/7.13.0_@babel+core@7.13.1:
+  /@babel/plugin-proposal-async-generator-functions/7.13.5_@babel+core@7.13.1:
     dependencies:
       '@babel/core': 7.13.1
       '@babel/helper-plugin-utils': 7.13.0
@@ -456,7 +456,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
-      integrity: sha512-3Loqr0+jE2/yqp29VnW1YqcWjGnIQwICotlrMfn6+1Ih2MBIbaaIFpJ5fnmYmGSUa9vwMhHOh2rMAqUH7NMWmQ==
+      integrity: sha512-8cErJEDzhZgNKzYyjCKsHuyPqtWxG8gc9h4OFSUDJu0vCAOsObPU2LcECnW0kJwh/b+uUz46lObVzIXw0fzAbA==
   /@babel/plugin-proposal-class-properties/7.13.0_@babel+core@7.13.1:
     dependencies:
       '@babel/core': 7.13.1
@@ -1165,14 +1165,14 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-mDRzSNY7/zopwisPZ5kM9XKCfhchqIYwAKRERtEnhYscZB79VRekuRSoYbN0+KVe3y8+q1h6A4svXtP7N+UoCA==
-  /@babel/preset-env/7.13.0_@babel+core@7.13.1:
+  /@babel/preset-env/7.13.5_@babel+core@7.13.1:
     dependencies:
-      '@babel/compat-data': 7.13.0
+      '@babel/compat-data': 7.13.5
       '@babel/core': 7.13.1
       '@babel/helper-compilation-targets': 7.13.0_@babel+core@7.13.1
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-validator-option': 7.12.17
-      '@babel/plugin-proposal-async-generator-functions': 7.13.0_@babel+core@7.13.1
+      '@babel/plugin-proposal-async-generator-functions': 7.13.5_@babel+core@7.13.1
       '@babel/plugin-proposal-class-properties': 7.13.0_@babel+core@7.13.1
       '@babel/plugin-proposal-dynamic-import': 7.12.17_@babel+core@7.13.1
       '@babel/plugin-proposal-export-namespace-from': 7.12.13_@babel+core@7.13.1
@@ -1231,16 +1231,16 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.12.13_@babel+core@7.13.1
       '@babel/preset-modules': 0.1.3_@babel+core@7.13.1
       '@babel/types': 7.13.0
-      babel-plugin-polyfill-corejs2: 0.1.2_@babel+core@7.13.1
-      babel-plugin-polyfill-corejs3: 0.1.2_@babel+core@7.13.1
-      babel-plugin-polyfill-regenerator: 0.1.1_@babel+core@7.13.1
+      babel-plugin-polyfill-corejs2: 0.1.5_@babel+core@7.13.1
+      babel-plugin-polyfill-corejs3: 0.1.4_@babel+core@7.13.1
+      babel-plugin-polyfill-regenerator: 0.1.3_@babel+core@7.13.1
       core-js-compat: 3.9.0
       semver: 7.0.0
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
-      integrity: sha512-UeU4bHlskjdwqNnaiBEYTXbL7dtuUDtOOkcS2c64wR2UqwUMzlRsvxoKQtsVJR579dS3Wmxnb7HRc9U5mSzQhA==
+      integrity: sha512-xUeKBIIcbwxGevyWMSWZOW98W1lp7toITvVsMxSddCEQy932yYiF4fCB+CG3E/MXzFX3KbefgvCqEQ7TDoE6UQ==
   /@babel/preset-modules/0.1.3_@babel+core@7.13.1:
     dependencies:
       '@babel/core': 7.13.1
@@ -2800,36 +2800,36 @@ packages:
       node: '>= 10.14.2'
     resolution:
       integrity: sha512-PO9t0697lNTmcEHH69mdtYiOIkkOlj9fySqfO3K1eCcdISevLAE0xY59VLLUj0SoiPiTX/JU2CYFpILydUa5Lw==
-  /babel-plugin-polyfill-corejs2/0.1.2_@babel+core@7.13.1:
+  /babel-plugin-polyfill-corejs2/0.1.5_@babel+core@7.13.1:
     dependencies:
-      '@babel/compat-data': 7.13.0
+      '@babel/compat-data': 7.13.5
       '@babel/core': 7.13.1
-      '@babel/helper-define-polyfill-provider': 0.1.0_@babel+core@7.13.1
+      '@babel/helper-define-polyfill-provider': 0.1.2_@babel+core@7.13.1
       semver: 6.3.0
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
-      integrity: sha512-sSGAKN95gTnXjg3RtGI9QBW/xSqXy5fo2Bt+W5WkhconIO+QxuDZChyjZYiY90xE3MQRI1k73Dh/HAe86cWf8A==
-  /babel-plugin-polyfill-corejs3/0.1.2_@babel+core@7.13.1:
+      integrity: sha512-5IzdFIjYWqlOFVr/hMYUpc+5fbfuvJTAISwIY58jhH++ZtawtNlcJnxAixlk8ahVwHCz1ipW/kpXYliEBp66wg==
+  /babel-plugin-polyfill-corejs3/0.1.4_@babel+core@7.13.1:
     dependencies:
       '@babel/core': 7.13.1
-      '@babel/helper-define-polyfill-provider': 0.1.0_@babel+core@7.13.1
+      '@babel/helper-define-polyfill-provider': 0.1.2_@babel+core@7.13.1
       core-js-compat: 3.9.0
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
-      integrity: sha512-7neRvPKcdvZ4X9IpYBCmT+ceVUKC1idX7DJN5sRtiPP9d0ABD6k5x/QvXTiz/9wMp86FBDX6Gz0g7WQY2lRfgw==
-  /babel-plugin-polyfill-regenerator/0.1.1_@babel+core@7.13.1:
+      integrity: sha512-ysSzFn/qM8bvcDAn4mC7pKk85Y5dVaoa9h4u0mHxOEpDzabsseONhUpR7kHxpUinfj1bjU7mUZqD23rMZBoeSg==
+  /babel-plugin-polyfill-regenerator/0.1.3_@babel+core@7.13.1:
     dependencies:
       '@babel/core': 7.13.1
-      '@babel/helper-define-polyfill-provider': 0.1.0_@babel+core@7.13.1
+      '@babel/helper-define-polyfill-provider': 0.1.2_@babel+core@7.13.1
     dev: true
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
-      integrity: sha512-QZlnPDLX2JEXP8RQGeP4owNxRKUAqHD+rdlyRHV8ENeCcI9ni2qT9IzxT9jYW1aZrxCgehD31LztlMaA68zoqQ==
+      integrity: sha512-hRjTJQiOYt/wBKEc+8V8p9OJ9799blAJcuKzn1JXh3pApHoWl1Emxh2BHc6MC7Qt6bbr3uDpNxaYQnATLIudEg==
   /babel-preset-current-node-syntax/1.0.0_@babel+core@7.12.3:
     dependencies:
       '@babel/core': 7.12.3
@@ -3096,19 +3096,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
-  /browserslist/4.15.0:
-    dependencies:
-      caniuse-lite: 1.0.30001165
-      colorette: 1.2.1
-      electron-to-chromium: 1.3.621
-      escalade: 3.1.1
-      node-releases: 1.1.67
-    dev: true
-    engines:
-      node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7
-    hasBin: true
-    resolution:
-      integrity: sha512-IJ1iysdMkGmjjYeRlDU8PQejVwxvVO5QOfXH7ylW31GO6LwNRSmm/SgRXtNsEXqMLl2e+2H5eEJ7sfynF8TCaQ==
   /browserslist/4.16.3:
     dependencies:
       caniuse-lite: 1.0.30001191
@@ -3291,10 +3278,6 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-8KMDF1Vz2gzOq54ONPJS65IvTUaB1cHJ2DMM7MbPmLZljDH1qpzzLsWdiN9pHh6qvkRVDTi/07+eNGch/oLU4w==
-  /caniuse-lite/1.0.30001165:
-    dev: true
-    resolution:
-      integrity: sha512-8cEsSMwXfx7lWSUMA2s08z9dIgsnR5NAqjXP23stdsU3AUWkCr/rr4s4OFtHXn5XXr6+7kam3QFVoYyXNPdJPA==
   /caniuse-lite/1.0.30001191:
     dev: true
     resolution:
@@ -4239,10 +4222,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-OoOpBOVDUyh4dMVkt1SThoSamMk=
-  /electron-to-chromium/1.3.621:
-    dev: true
-    resolution:
-      integrity: sha512-FeIuBzArONbAmKmZIsZIFGu/Gc9AVGlVeVbhCq+G2YIl6QkT0TDn2HKN/FMf1btXEB9kEmIuQf3/lBTVAbmFOg==
   /electron-to-chromium/1.3.672:
     dev: true
     resolution:
@@ -7420,10 +7399,6 @@ packages:
     optional: true
     resolution:
       integrity: sha512-46z7DUmcjoYdaWyXouuFNNfUo6eFa94t23c53c+lG/9Cvauk4a98rAUp9672X5dxGdQmLpPzTxzu8f/OeEPaFA==
-  /node-releases/1.1.67:
-    dev: true
-    resolution:
-      integrity: sha512-V5QF9noGFl3EymEwUYzO+3NTDpGfQB4ve6Qfnzf3UNydMhjQRVPR1DZTuvWiLzaFJYw2fmDwAfnRNEVb64hSIg==
   /node-releases/1.1.70:
     dev: true
     resolution:
@@ -10357,7 +10332,7 @@ packages:
       integrity: sha512-TGxB2g+1ur6MHkvM644DuZr8Uzyz0k0OYWtS3YlpfWBEmK4woaC2t3+pozEL3dBfIPmpgmClR5B2QRcMgGt22g==
 specifiers:
   '@babel/core': 7.13.1
-  '@babel/preset-env': 7.13.0
+  '@babel/preset-env': 7.13.5
   '@babel/preset-typescript': 7.13.0
   '@shelf/jest-dynamodb': 1.7.0
   '@types/aws-lambda': 8.10.72
