@@ -3,7 +3,7 @@ dependencies:
   uuid: 8.1.0
 devDependencies:
   '@babel/core': 7.13.8
-  '@babel/preset-env': 7.13.8_@babel+core@7.13.8
+  '@babel/preset-env': 7.13.9_@babel+core@7.13.8
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.8
   '@shelf/jest-dynamodb': 1.8.0_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.72
@@ -1168,7 +1168,7 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-mDRzSNY7/zopwisPZ5kM9XKCfhchqIYwAKRERtEnhYscZB79VRekuRSoYbN0+KVe3y8+q1h6A4svXtP7N+UoCA==
-  /@babel/preset-env/7.13.8_@babel+core@7.13.8:
+  /@babel/preset-env/7.13.9_@babel+core@7.13.8:
     dependencies:
       '@babel/compat-data': 7.13.8
       '@babel/core': 7.13.8
@@ -1243,7 +1243,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
-      integrity: sha512-Sso1xOpV4S3ofnxW2DsWTE5ziRk62jEAKLGuQ+EJHC+YHTbFG38QUTixO3JVa1cYET9gkJhO1pMu+/+2dDhKvw==
+      integrity: sha512-mcsHUlh2rIhViqMG823JpscLMesRt3QbMsv1+jhopXEb3W2wXvQ9QoiOlZI9ZbR3XqPtaFpZwEZKYqGJnGMZTQ==
   /@babel/preset-modules/0.1.4_@babel+core@7.13.8:
     dependencies:
       '@babel/core': 7.13.8
@@ -10332,7 +10332,7 @@ packages:
       integrity: sha512-TGxB2g+1ur6MHkvM644DuZr8Uzyz0k0OYWtS3YlpfWBEmK4woaC2t3+pozEL3dBfIPmpgmClR5B2QRcMgGt22g==
 specifiers:
   '@babel/core': 7.13.8
-  '@babel/preset-env': 7.13.8
+  '@babel/preset-env': 7.13.9
   '@babel/preset-typescript': 7.13.0
   '@shelf/jest-dynamodb': 1.8.0
   '@types/aws-lambda': 8.10.72
