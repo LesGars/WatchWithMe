@@ -15,7 +15,7 @@ specifiers:
   '@types/rimraf': 3.0.0
   '@types/sinon': 9.0.11
   '@types/uuid': 8.3.0
-  '@types/webpack': 4.41.26
+  '@types/webpack': 4.41.27
   '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0
@@ -114,7 +114,7 @@ devDependencies:
   '@types/node': 13.13.50
   '@types/rimraf': 3.0.0
   '@types/sinon': 9.0.11
-  '@types/webpack': 4.41.26
+  '@types/webpack': 4.41.27
   '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
@@ -3371,7 +3371,7 @@ packages:
   /@types/webpack-sources/2.0.0:
     resolution: {integrity: sha512-a5kPx98CNFRKQ+wqawroFunvFqv7GHm/3KOI52NY9xWADgc8smu4R6prt4EU/M4QfVjvgBkMqU4fBhw3QfMVkg==}
     dependencies:
-      '@types/node': 13.13.41
+      '@types/node': 14.14.25
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: true
@@ -3392,6 +3392,17 @@ packages:
     dependencies:
       '@types/anymatch': 1.3.1
       '@types/node': 13.13.41
+      '@types/tapable': 1.0.6
+      '@types/uglify-js': 3.11.1
+      '@types/webpack-sources': 2.0.0
+      source-map: 0.6.1
+    dev: true
+
+  /@types/webpack/4.41.27:
+    resolution: {integrity: sha512-wK/oi5gcHi72VMTbOaQ70VcDxSQ1uX8S2tukBK9ARuGXrYM/+u4ou73roc7trXDNmCxCoerE8zruQqX/wuHszA==}
+    dependencies:
+      '@types/anymatch': 1.3.1
+      '@types/node': 14.14.25
       '@types/tapable': 1.0.6
       '@types/uglify-js': 3.11.1
       '@types/webpack-sources': 2.0.0
