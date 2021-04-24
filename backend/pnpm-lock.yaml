@@ -6,7 +6,7 @@ specifiers:
   '@babel/preset-typescript': 7.13.0
   '@shelf/jest-dynamodb': 1.8.1
   '@types/aws-lambda': 8.10.75
-  '@types/jest': 26.0.20
+  '@types/jest': 26.0.22
   '@types/node': 13.13.45
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0
@@ -39,7 +39,7 @@ devDependencies:
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.16
   '@shelf/jest-dynamodb': 1.8.1_aws-sdk@2.663.0
   '@types/aws-lambda': 8.10.75
-  '@types/jest': 26.0.20
+  '@types/jest': 26.0.22
   '@types/node': 13.13.45
   '@types/uuid': 8.3.0
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
@@ -2058,8 +2058,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/26.0.20:
-    resolution: {integrity: sha512-9zi2Y+5USJRxd0FsahERhBwlcvFh6D2GLQnY2FH2BzK8J9s9omvNHIbvABwIluXa0fD8XVKMLTO0aOEuUfACAA==}
+  /@types/jest/26.0.22:
+    resolution: {integrity: sha512-eeWwWjlqxvBxc4oQdkueW5OF/gtfSceKk4OnOAGlUSwS/liBRtZppbJuz1YkgbrbfGOoeBHun9fOvXnjNwrSOw==}
     dependencies:
       jest-diff: 26.6.2
       pretty-format: 26.6.2
@@ -5999,7 +5999,7 @@ packages:
     resolution: {integrity: sha512-6m+9Z3Gv9wN0WFVasqjCL/06+EFCMTqDEUl/b87HYK2rAPTyfz4ZIuSlPhY51PIQRWx5TaxeF1qmXKe9gfN3sA==}
     engines: {node: '>= 10.14.2'}
     dependencies:
-      chalk: 4.0.0
+      chalk: 4.1.0
       diff-sequences: 26.6.2
       jest-get-type: 26.3.0
       pretty-format: 26.6.2
