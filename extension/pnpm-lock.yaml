@@ -9,7 +9,7 @@ specifiers:
   '@types/copy-webpack-plugin': 5.0.3
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.41
-  '@types/jest': 26.0.20
+  '@types/jest': 26.0.22
   '@types/lodash': 4.14.168
   '@types/node': 13.13.45
   '@types/rimraf': 3.0.0
@@ -109,7 +109,7 @@ devDependencies:
   '@types/copy-webpack-plugin': 5.0.3
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.41
-  '@types/jest': 26.0.20
+  '@types/jest': 26.0.22
   '@types/lodash': 4.14.168
   '@types/node': 13.13.45
   '@types/rimraf': 3.0.0
@@ -3218,8 +3218,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/26.0.20:
-    resolution: {integrity: sha512-9zi2Y+5USJRxd0FsahERhBwlcvFh6D2GLQnY2FH2BzK8J9s9omvNHIbvABwIluXa0fD8XVKMLTO0aOEuUfACAA==}
+  /@types/jest/26.0.22:
+    resolution: {integrity: sha512-eeWwWjlqxvBxc4oQdkueW5OF/gtfSceKk4OnOAGlUSwS/liBRtZppbJuz1YkgbrbfGOoeBHun9fOvXnjNwrSOw==}
     dependencies:
       jest-diff: 26.6.2
       pretty-format: 26.6.2
