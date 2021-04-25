@@ -41,7 +41,7 @@ specifiers:
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 6.15.0
-  eslint-plugin-prettier: 3.3.1
+  eslint-plugin-prettier: 3.4.0
   eslint-plugin-vue: 7.7.0
   friendly-errors-webpack-plugin: 1.7.0
   generate-json-webpack-plugin: 1.0.0
@@ -125,7 +125,7 @@ devDependencies:
   '@vue/cli-service': 4.5.11_f7c19d5b47716e135c0b8eab229e5dac
   '@vue/compiler-sfc': 3.0.7_vue@3.0.7
   '@vue/devtools': 6.0.0-beta.7
-  '@vue/eslint-config-prettier': 6.0.0_2bcfefa13ee2fceeed8e5df7aad481db
+  '@vue/eslint-config-prettier': 6.0.0_e81ef07f5f53383f92a2f30d2761775d
   '@vue/eslint-config-typescript': 7.0.0_b639fb00ae23cbfdef19600ab8bb598c
   autoprefixer: 9.8.6
   axios: 0.21.1
@@ -138,7 +138,7 @@ devDependencies:
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1_eslint@6.8.0
   eslint-config-prettier: 6.15.0_eslint@6.8.0
-  eslint-plugin-prettier: 3.3.1_d9f75d6ea79d885f9cc83ea96476ae4d
+  eslint-plugin-prettier: 3.4.0_d9f75d6ea79d885f9cc83ea96476ae4d
   eslint-plugin-vue: 7.7.0_eslint@6.8.0
   friendly-errors-webpack-plugin: 1.7.0_webpack@4.46.0
   generate-json-webpack-plugin: 1.0.0
@@ -3921,7 +3921,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@vue/eslint-config-prettier/6.0.0_2bcfefa13ee2fceeed8e5df7aad481db:
+  /@vue/eslint-config-prettier/6.0.0_e81ef07f5f53383f92a2f30d2761775d:
     resolution: {integrity: sha512-wFQmv45c3ige5EA+ngijq40YpVcIkAy0Lihupnsnd1Dao5CBbPyfCzqtejFLZX1EwH/kCJdpz3t6s+5wd3+KxQ==}
     peerDependencies:
       eslint: '>= 5.0.0'
@@ -3930,7 +3930,7 @@ packages:
     dependencies:
       eslint: 6.8.0
       eslint-config-prettier: 6.15.0_eslint@6.8.0
-      eslint-plugin-prettier: 3.3.1_d9f75d6ea79d885f9cc83ea96476ae4d
+      eslint-plugin-prettier: 3.4.0_d9f75d6ea79d885f9cc83ea96476ae4d
       prettier: 2.2.1
     dev: true
 
@@ -6943,8 +6943,8 @@ packages:
       webpack: 4.46.0_webpack-cli@3.3.12
     dev: true
 
-  /eslint-plugin-prettier/3.3.1_d9f75d6ea79d885f9cc83ea96476ae4d:
-    resolution: {integrity: sha512-Rq3jkcFY8RYeQLgk2cCwuc0P7SEFwDravPhsJZOQ5N4YI4DSg50NyqJ/9gdZHzQlHf8MvafSesbNJCcP/FF6pQ==}
+  /eslint-plugin-prettier/3.4.0_d9f75d6ea79d885f9cc83ea96476ae4d:
+    resolution: {integrity: sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
       eslint: '>=5.0.0'
