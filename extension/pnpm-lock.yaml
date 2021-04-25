@@ -54,7 +54,7 @@ specifiers:
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
-  ora: 5.3.0
+  ora: 5.4.0
   postcss-import: 12.0.1
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
@@ -150,7 +150,7 @@ devDependencies:
   minimist: 1.2.5
   node-sass: 4.14.1
   npm-git-install: 0.3.0
-  ora: 5.3.0
+  ora: 5.4.0
   postcss-import: 12.0.1
   postcss-loader: 3.0.0
   postcss-sass-loader: 1.1.0
@@ -4749,8 +4749,8 @@ packages:
     dev: true
     optional: true
 
-  /bl/4.0.3:
-    resolution: {integrity: sha512-fs4G6/Hu4/EE+F75J8DuN/0IpQqNjAdC7aEQv7Qt8MHGUH7Ckv2MwTEEeN9QehD0pfIDkMI1bkHYkKy7xHyKIg==}
+  /bl/4.1.0:
+    resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
     dependencies:
       buffer: 5.7.1
       inherits: 2.0.4
@@ -8940,6 +8940,11 @@ packages:
     resolution: {integrity: sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=}
     dev: true
 
+  /is-unicode-supported/0.1.0:
+    resolution: {integrity: sha512-knxG2q4UC3u8stRGyAVJCOdxFmv5DZiRcdlIaAQXAbSfJya+OhopNotLQrstBhququ4ZpuKbDc/8S6mgXgPFPw==}
+    engines: {node: '>=10'}
+    dev: true
+
   /is-utf8/0.2.1:
     resolution: {integrity: sha1-Sw2hRCEE0bM2NA6AeX6GXPOffXI=}
     dev: true
@@ -9838,11 +9843,12 @@ packages:
       chalk: 2.4.2
     dev: true
 
-  /log-symbols/4.0.0:
-    resolution: {integrity: sha512-FN8JBzLx6CzeMrB0tg6pqlGU1wCrXW+ZXGH481kfsBqer0hToTIiHdjH4Mq8xJUbvATujKCvaREGWpGUionraA==}
+  /log-symbols/4.1.0:
+    resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
     engines: {node: '>=10'}
     dependencies:
       chalk: 4.1.0
+      is-unicode-supported: 0.1.0
     dev: true
 
   /loglevel/1.7.0:
@@ -10803,16 +10809,17 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
-  /ora/5.3.0:
-    resolution: {integrity: sha512-zAKMgGXUim0Jyd6CXK9lraBnD3H5yPGBPPOkC23a2BG6hsm4Zu6OQSjQuEtV0BHDf4aKHcUFvJiGRrFuW3MG8g==}
+  /ora/5.4.0:
+    resolution: {integrity: sha512-1StwyXQGoU6gdjYkyVcqOLnVlbKj+6yPNNOxJVgpt9t4eksKjiriiHuxktLYkgllwk+D6MbC4ihH84L1udRXPg==}
     engines: {node: '>=10'}
     dependencies:
-      bl: 4.0.3
+      bl: 4.1.0
       chalk: 4.1.0
       cli-cursor: 3.1.0
       cli-spinners: 2.5.0
       is-interactive: 1.0.0
-      log-symbols: 4.0.0
+      is-unicode-supported: 0.1.0
+      log-symbols: 4.1.0
       strip-ansi: 6.0.0
       wcwidth: 1.0.1
     dev: true
