@@ -23,7 +23,7 @@ specifiers:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.4.1
-  ts-jest: 26.5.3
+  ts-jest: 26.5.5
   ts-loader: 8.0.17
   typescript: 3.9.9
   uuid: ^8.1.0
@@ -55,7 +55,7 @@ devDependencies:
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.4.1_typescript@3.9.9+webpack@4.46.0
-  ts-jest: 26.5.3_jest@26.6.3+typescript@3.9.9
+  ts-jest: 26.5.5_jest@26.6.3+typescript@3.9.9
   ts-loader: 8.0.17_typescript@3.9.9+webpack@4.46.0
   typescript: 3.9.9
   webpack: 4.46.0
@@ -6337,9 +6337,9 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 13.13.45
+      '@types/node': 13.13.50
       chalk: 4.1.0
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       is-ci: 2.0.0
       micromatch: 4.0.2
     dev: true
@@ -9233,8 +9233,8 @@ packages:
     resolution: {integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==}
     dev: true
 
-  /ts-jest/26.5.3_jest@26.6.3+typescript@3.9.9:
-    resolution: {integrity: sha512-nBiiFGNvtujdLryU7MiMQh1iPmnZ/QvOskBbD2kURiI1MwqvxlxNnaAB/z9TbslMqCsSbu5BXvSSQPc5tvHGeA==}
+  /ts-jest/26.5.5_jest@26.6.3+typescript@3.9.9:
+    resolution: {integrity: sha512-7tP4m+silwt1NHqzNRAPjW1BswnAhopTdc2K3HEkRZjF0ZG2F/e/ypVH0xiZIMfItFtD3CX0XFbwPzp9fIEUVg==}
     engines: {node: '>= 10'}
     hasBin: true
     peerDependencies:
@@ -9247,12 +9247,12 @@ packages:
       jest: 26.6.3
       jest-util: 26.6.2
       json5: 2.1.3
-      lodash: 4.17.20
+      lodash: 4.17.21
       make-error: 1.3.6
       mkdirp: 1.0.4
-      semver: 7.3.4
+      semver: 7.3.5
       typescript: 3.9.9
-      yargs-parser: 20.1.0
+      yargs-parser: 20.2.7
     dev: true
 
   /ts-loader/8.0.17_typescript@3.9.9+webpack@4.46.0:
@@ -9886,11 +9886,6 @@ packages:
     dependencies:
       camelcase: 5.3.1
       decamelize: 1.2.0
-    dev: true
-
-  /yargs-parser/20.1.0:
-    resolution: {integrity: sha512-RV4YEjMLfjWkK9jNV/aZytlJ5uz+JBk7t29FofILa41jJAU/yCwghgsjH2xT0h7eu7b6MrCDJb1qZjeDJ/jI1w==}
-    engines: {node: '>=10'}
     dev: true
 
   /yargs-parser/20.2.7:
