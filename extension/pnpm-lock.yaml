@@ -67,7 +67,7 @@ specifiers:
   style-loader: 2.0.0
   terser-webpack-plugin: 4.2.3
   ts-jest: 26.5.5
-  ts-loader: 8.0.17
+  ts-loader: 8.2.0
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.1.0
   typescript: 3.9.9
@@ -163,7 +163,7 @@ devDependencies:
   style-loader: 2.0.0_webpack@4.46.0
   terser-webpack-plugin: 4.2.3_webpack@4.46.0
   ts-jest: 26.5.5_jest@26.6.3+typescript@3.9.9
-  ts-loader: 8.0.17_typescript@3.9.9+webpack@4.46.0
+  ts-loader: 8.2.0_typescript@3.9.9+webpack@4.46.0
   tsconfig-paths-webpack-plugin: 3.3.0
   tslib: 2.1.0
   typescript: 3.9.9
@@ -12569,6 +12569,7 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
+    optional: true
 
   /semver/7.3.5:
     resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
@@ -13733,8 +13734,8 @@ packages:
       typescript: 3.9.9
     dev: true
 
-  /ts-loader/8.0.17_typescript@3.9.9+webpack@4.46.0:
-    resolution: {integrity: sha512-OeVfSshx6ot/TCxRwpBHQ/4lRzfgyTkvi7ghDVrLXOHzTbSK413ROgu/xNqM72i3AFeAIJgQy78FwSMKmOW68w==}
+  /ts-loader/8.2.0_typescript@3.9.9+webpack@4.46.0:
+    resolution: {integrity: sha512-ebXBFrNyMSmbWgjnb3WBloUBK+VSx1xckaXsMXxlZRDqce/OPdYBVN5efB0W3V0defq0Gcy4YuzvPGqRgjj85A==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       typescript: '*'
@@ -13744,7 +13745,7 @@ packages:
       enhanced-resolve: 4.5.0
       loader-utils: 2.0.0
       micromatch: 4.0.2
-      semver: 7.3.4
+      semver: 7.3.5
       typescript: 3.9.9
       webpack: 4.46.0_webpack-cli@3.3.12
     dev: true
