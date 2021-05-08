@@ -5,7 +5,7 @@ specifiers:
   '@babel/preset-env': 7.13.15
   '@babel/preset-typescript': 7.13.0
   '@fullhuman/postcss-purgecss': 3.1.3
-  '@types/chrome': 0.0.135
+  '@types/chrome': 0.0.137
   '@types/copy-webpack-plugin': 5.0.3
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.41
@@ -105,7 +105,7 @@ devDependencies:
   '@babel/preset-env': 7.13.15_@babel+core@7.13.16
   '@babel/preset-typescript': 7.13.0_@babel+core@7.13.16
   '@fullhuman/postcss-purgecss': 3.1.3
-  '@types/chrome': 0.0.135
+  '@types/chrome': 0.0.137
   '@types/copy-webpack-plugin': 5.0.3
   '@types/debug': 4.1.5
   '@types/google.analytics': 0.0.41
@@ -3088,8 +3088,8 @@ packages:
       '@types/node': 14.14.25
     dev: true
 
-  /@types/chrome/0.0.135:
-    resolution: {integrity: sha512-SczB5P5mIgQWHAeiimlYg5VFvuQKCw4Q5cAzVD7II1Czf4U0222jb3mTHUd1qM0BRJ/kPtzybBde+Zy2sdx/LA==}
+  /@types/chrome/0.0.137:
+    resolution: {integrity: sha512-rMJOMqdX+RvVcl/F8VV6amYkZVkGj9KXM1EWGi5XxB/xdNB47CwBwInaMKFm+mgftdO9XWR1m4zgHiR6nrIX5w==}
     dependencies:
       '@types/filesystem': 0.0.29
       '@types/har-format': 1.2.5
