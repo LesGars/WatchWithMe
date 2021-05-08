@@ -22,7 +22,7 @@ specifiers:
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
-  serverless-webpack: 5.4.1
+  serverless-webpack: 5.4.2
   ts-jest: 26.5.5
   ts-loader: 8.2.0
   typescript: 3.9.9
@@ -54,7 +54,7 @@ devDependencies:
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
-  serverless-webpack: 5.4.1_typescript@3.9.9+webpack@4.46.0
+  serverless-webpack: 5.4.2_typescript@3.9.9+webpack@4.46.0
   ts-jest: 26.5.5_jest@26.6.3+typescript@3.9.9
   ts-loader: 8.2.0_typescript@3.9.9+webpack@4.46.0
   typescript: 3.9.9
@@ -5692,8 +5692,8 @@ packages:
     resolution: {integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==}
     dev: true
 
-  /is-builtin-module/3.0.0:
-    resolution: {integrity: sha512-/93sDihsAD652hrMEbJGbMAVBf1qc96kyThHQ0CAOONHaE3aROLpTjDe4WQ5aoC5ITHFxEq1z8XqSU7km+8amw==}
+  /is-builtin-module/3.1.0:
+    resolution: {integrity: sha512-OV7JjAgOTfAFJmHZLvpSTb4qi0nIILDV1gWPYDnDJUTNFM5aGlRAhk4QcT8i7TuAleeEV5Fdkqn3t4mS+Q11fg==}
     engines: {node: '>=6'}
     dependencies:
       builtin-modules: 3.1.0
@@ -8362,8 +8362,8 @@ packages:
     resolution: {integrity: sha512-A/O49AR8LL6jlnPSmnOTYgL1KqVgskeRla4sVDeS/r5dHFJlwOU5MgFilc7aaQP8NWAwRJANaIS9oiSE3I+VUA==}
     dev: true
 
-  /serverless-webpack/5.4.1_typescript@3.9.9+webpack@4.46.0:
-    resolution: {integrity: sha512-yhCFXHgbHjiSdvcFhQ+/X5Tgh+j7nnWQei37W3DVXaaJ1DDUHV2y+SrEjB3tb4JNDzUipndLzUgvspgPEPFHfg==}
+  /serverless-webpack/5.4.2_typescript@3.9.9+webpack@4.46.0:
+    resolution: {integrity: sha512-QX3ZQbCItACW8midkQf/w5gNdT2glSB4Aoxad5RU2xzXoWww/f9VOF5Et2bOLNFr+jlXTOk8XbcZxxL6AIan/A==}
     peerDependencies:
       webpack: '>= 3.0.0 < 6'
     dependencies:
@@ -8371,7 +8371,7 @@ packages:
       bluebird: 3.7.2
       fs-extra: 9.1.0
       glob: 7.1.6
-      is-builtin-module: 3.0.0
+      is-builtin-module: 3.1.0
       lodash: 4.17.21
       semver: 7.3.5
       webpack: 4.46.0
