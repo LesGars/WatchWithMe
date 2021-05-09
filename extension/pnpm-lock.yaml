@@ -71,7 +71,7 @@ specifiers:
   tsconfig-paths-webpack-plugin: 3.5.1
   tslib: 2.2.0
   typescript: 3.9.9
-  unique-names-generator: 4.4.0
+  unique-names-generator: 4.5.0
   uuid: 8.3.2
   vue: 3.0.11
   vue-loader: 16.2.0
@@ -94,7 +94,7 @@ dependencies:
   dayjs: 1.10.4
   debug: 4.3.1
   lodash-es: 4.17.21
-  unique-names-generator: 4.4.0
+  unique-names-generator: 4.5.0
   uuid: 8.3.2
   vue: 3.0.11
   vue-router: 4.0.6_vue@3.0.11
@@ -13705,9 +13705,9 @@ packages:
       unique-slug: 2.0.2
     dev: true
 
-  /unique-names-generator/4.4.0:
-    resolution: {integrity: sha512-0noP+m59TGwolNqnmXfiqMA5KiTudIk6D0VgzNkk2C1Jv3Lr+sY3T07nEWBg8Uq92/FjGca1klsRR6CXFriqFw==}
-    engines: {node: '>=6'}
+  /unique-names-generator/4.5.0:
+    resolution: {integrity: sha512-GaiWvo3rKIHi1SyYP8/9cDrPMPSwEiYDUo2p0NQHeCHDXzLn8P6p8bttSS3lX7HHS3Yl5vnw/ulybO4GN85CgQ==}
+    engines: {node: '>=8'}
     dev: false
 
   /unique-slug/2.0.2:
