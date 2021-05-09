@@ -83,7 +83,7 @@ specifiers:
   webpack: 4.46.0
   webpack-bundle-analyzer: 3.9.0
   webpack-cli: 3.3.12
-  webpack-dashboard: 3.3.1
+  webpack-dashboard: 3.3.3
   webpack-extension-reloader: 1.1.4
   webpack-merge: 4.2.2
   write-file-webpack-plugin: 4.5.1
@@ -174,7 +174,7 @@ devDependencies:
   webpack: 4.46.0_webpack-cli@3.3.12
   webpack-bundle-analyzer: 3.9.0
   webpack-cli: 3.3.12_webpack@4.46.0
-  webpack-dashboard: 3.3.1_webpack@4.46.0
+  webpack-dashboard: 3.3.3_webpack@4.46.0
   webpack-extension-reloader: 1.1.4_webpack@4.46.0
   webpack-merge: 4.2.2
   write-file-webpack-plugin: 4.5.1
@@ -6683,8 +6683,8 @@ packages:
       yeast: 0.1.2
     dev: true
 
-  /engine.io-client/4.1.1:
-    resolution: {integrity: sha512-iYasV/EttP/2pLrdowe9G3zwlNIFhwny8VSIh+vPlMnYZqSzLsTzSLa9hFy015OrH1s4fzoYxeHjVkO8hSFKwg==}
+  /engine.io-client/5.0.1:
+    resolution: {integrity: sha512-CQtGN3YwfvbxVwpPugcsHe5rHT4KgT49CEcQppNtu9N7WxbPN0MAG27lGaem7bvtCFtGNLSL+GEqXsFSz36jTg==}
     dependencies:
       base64-arraybuffer: 0.1.4
       component-emitter: 1.3.0
@@ -6694,7 +6694,6 @@ packages:
       parseqs: 0.0.6
       parseuri: 0.0.6
       ws: 7.4.3
-      xmlhttprequest-ssl: 1.5.5
       yeast: 0.1.2
     transitivePeerDependencies:
       - bufferutil
@@ -6734,8 +6733,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /engine.io/4.1.1:
-    resolution: {integrity: sha512-t2E9wLlssQjGw0nluF6aYyfX8LwYU8Jj0xct+pAhfWfv/YrBn6TSNtEYsgxHIfaMqfrLx07czcMg9bMN6di+3w==}
+  /engine.io/5.0.0:
+    resolution: {integrity: sha512-BATIdDV3H1SrE9/u2BAotvsmjJg0t1P4+vGedImSs1lkFAtQdvk4Ev1y4LDiPF7BPWgXWEG+NDY+nLvW3UrMWw==}
     engines: {node: '>=10.0.0'}
     dependencies:
       accepts: 1.3.7
@@ -12799,8 +12798,8 @@ packages:
     resolution: {integrity: sha512-WzZRUj1kUjrTIrUKpZLEzFZ1OLj5FwLlAFQs9kuZJzJi5DKdU7FsWc36SNmA8iDOtwBQyT8FkrriRM8vXLYz8g==}
     dev: true
 
-  /socket.io-adapter/2.1.0:
-    resolution: {integrity: sha512-+vDov/aTsLjViYTwS9fPy5pEtTkrbEKsw2M+oVSoFGw6OD1IpvlV1VPhUzNbofCQ8oyMbdYJqDtGdmHQK6TdPg==}
+  /socket.io-adapter/2.2.0:
+    resolution: {integrity: sha512-rG49L+FwaVEwuAdeBRq49M97YI3ElVabJPzvHT9S6a2CWhDKnjSFasvwAwSYPRhQzfn4NtDIbCaGYgOCOU/rlg==}
     dev: true
 
   /socket.io-client/2.3.0:
@@ -12822,15 +12821,15 @@ packages:
       to-array: 0.1.4
     dev: true
 
-  /socket.io-client/3.1.1:
-    resolution: {integrity: sha512-BLgIuCjI7Sf3mDHunKddX9zKR/pbkP7IACM3sJS3jha+zJ6/pGKRV6Fz5XSBHCfUs9YzT8kYIqNwOOuFNLtnYA==}
+  /socket.io-client/4.0.2:
+    resolution: {integrity: sha512-z6Hw9Cs+cc7BEkSPlDrtHFpAI++xXMklG9iEEyPJdK4WcFcVrhrXcczYVDZmV3GIpFed5hL3LEXhpnmMy8DqDg==}
     engines: {node: '>=10.0.0'}
     dependencies:
       '@types/component-emitter': 1.2.10
       backo2: 1.0.2
       component-emitter: 1.3.0
       debug: 4.3.1
-      engine.io-client: 4.1.1
+      engine.io-client: 5.0.1
       parseuri: 0.0.6
       socket.io-parser: 4.0.4
     transitivePeerDependencies:
@@ -12880,8 +12879,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /socket.io/3.1.1:
-    resolution: {integrity: sha512-7cBWdsDC7bbyEF6WbBqffjizc/H4YF1wLdZoOzuYfo2uMNSFjJKuQ36t0H40o9B20DO6p+mSytEd92oP4S15bA==}
+  /socket.io/4.0.2:
+    resolution: {integrity: sha512-1sVnsumrYTshhH2LWUtmzNvuZqkEOAG5PxcHpKu1r/sIDhzACTdo9XbvonVB2M90Y2CkTZnCWT6hlaKEkdBu5Q==}
     engines: {node: '>=10.0.0'}
     dependencies:
       '@types/cookie': 0.4.0
@@ -12890,8 +12889,8 @@ packages:
       accepts: 1.3.7
       base64id: 2.0.0
       debug: 4.3.1
-      engine.io: 4.1.1
-      socket.io-adapter: 2.1.0
+      engine.io: 5.0.0
+      socket.io-adapter: 2.2.0
       socket.io-parser: 4.0.4
     transitivePeerDependencies:
       - bufferutil
@@ -14438,8 +14437,8 @@ packages:
       yargs: 13.3.2
     dev: true
 
-  /webpack-dashboard/3.3.1_webpack@4.46.0:
-    resolution: {integrity: sha512-0nMsrsq0yOwdOHj2xP4sRL+I4B5+IApVFQZRbsUMpbZ6mhsWaq1C+clM2m8/lVIxszH8OA+cgJzmmgNnG5E0Fw==}
+  /webpack-dashboard/3.3.3_webpack@4.46.0:
+    resolution: {integrity: sha512-G1EXpz0/EZG4K1I4Qk8Hgzte5cCDnKATNYK5W2fks8lJ8zYzTVTdow1nP6sqZ310CLXq2ArrvZy64ox9bxOnPg==}
     engines: {node: '>=8.0.0'}
     hasBin: true
     peerDependencies:
@@ -14453,8 +14452,8 @@ packages:
       inspectpack: 4.6.1
       most: 1.9.0
       neo-blessed: 0.2.0
-      socket.io: 3.1.1
-      socket.io-client: 3.1.1
+      socket.io: 4.0.2
+      socket.io-client: 4.0.2
       webpack: 4.46.0_webpack-cli@3.3.12
     transitivePeerDependencies:
       - bufferutil
