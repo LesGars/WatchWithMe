@@ -20,7 +20,7 @@ specifiers:
   js-yaml: 3.14.1
   prettier: 2.2.1
   serverless: 1.83.3
-  serverless-iam-roles-per-function: 2.0.2
+  serverless-iam-roles-per-function: 3.2.0
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.4.2
   ts-jest: 26.5.6
@@ -52,7 +52,7 @@ devDependencies:
   js-yaml: 3.14.1
   prettier: 2.2.1
   serverless: 1.83.3
-  serverless-iam-roles-per-function: 2.0.2
+  serverless-iam-roles-per-function: 3.2.0
   serverless-pseudo-parameters: 2.5.0
   serverless-webpack: 5.4.2_typescript@3.9.9+webpack@4.46.0
   ts-jest: 26.5.6_jest@26.6.3+typescript@3.9.9
@@ -8444,11 +8444,11 @@ packages:
     resolution: {integrity: sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==}
     dev: true
 
-  /serverless-iam-roles-per-function/2.0.2:
-    resolution: {integrity: sha512-3zv4Af3x7KJHC4fuJMHniEEstCljMghReaYIg94Spdsqkhiy8GJ3yfJ5Jy+wiG/DvyObK91JJNMjLhDnDc+vCQ==}
-    engines: {node: '>=6.10.0'}
+  /serverless-iam-roles-per-function/3.2.0:
+    resolution: {integrity: sha512-AXmxACHEUsDcFDcv8QNwDgn2L0brRJ7pz/phD3lFB/wQ3TtPJkorC+J7PxgFQbaWIQk15EIlU83BtKXeQoPTAg==}
+    engines: {node: '>=10'}
     dependencies:
-      lodash: 4.17.15
+      lodash: 4.17.21
     dev: true
 
   /serverless-pseudo-parameters/2.5.0:
