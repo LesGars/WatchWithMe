@@ -6,8 +6,8 @@
     },
     "private": true,
     "devDependencies": {
-        "@commitlint/cli": "11.0.0",
-        "@commitlint/config-conventional": "11.0.0",
+        "@commitlint/cli": "12.1.4",
+        "@commitlint/config-conventional": "12.1.4",
         "@types/color-name": "1.1.1",
         "@types/json-schema": "7.0.7",
         "@types/minimist": "1.2.1",
