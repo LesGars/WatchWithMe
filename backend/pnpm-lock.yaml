@@ -14,7 +14,7 @@ specifiers:
   aws-sdk: ^2.663.0
   babel-jest: 26.6.3
   eslint: 6.8.0
-  eslint-config-prettier: 6.15.0
+  eslint-config-prettier: 8.3.0
   eslint-plugin-jest: 23.20.0
   jest: 26.6.3
   js-yaml: 3.14.1
@@ -46,7 +46,7 @@ devDependencies:
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.9
   babel-jest: 26.6.3_@babel+core@7.14.6
   eslint: 6.8.0
-  eslint-config-prettier: 6.15.0_eslint@6.8.0
+  eslint-config-prettier: 8.3.0_eslint@6.8.0
   eslint-plugin-jest: 23.20.0_eslint@6.8.0+typescript@3.9.9
   jest: 26.6.3
   js-yaml: 3.14.1
@@ -4490,14 +4490,13 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-prettier/6.15.0_eslint@6.8.0:
-    resolution: {integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==}
+  /eslint-config-prettier/8.3.0_eslint@6.8.0:
+    resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
     hasBin: true
     peerDependencies:
-      eslint: '>=3.14.1'
+      eslint: '>=7.0.0'
     dependencies:
       eslint: 6.8.0
-      get-stdin: 6.0.0
     dev: true
 
   /eslint-plugin-jest/23.20.0_eslint@6.8.0+typescript@3.9.9:
