@@ -65,7 +65,7 @@ specifiers:
   sinon: 9.2.4
   string-replace-loader: 2.3.0
   style-loader: 2.0.0
-  terser-webpack-plugin: 4.2.3
+  terser-webpack-plugin: 5.1.4
   ts-jest: 26.5.6
   ts-loader: 8.2.0
   tsconfig-paths-webpack-plugin: 3.5.1
@@ -161,7 +161,7 @@ devDependencies:
   sinon: 9.2.4
   string-replace-loader: 2.3.0_webpack@4.46.0
   style-loader: 2.0.0_webpack@4.46.0
-  terser-webpack-plugin: 4.2.3_webpack@4.46.0
+  terser-webpack-plugin: 5.1.4_webpack@4.46.0
   ts-jest: 26.5.6_jest@26.6.3+typescript@3.9.9
   ts-loader: 8.2.0_typescript@3.9.9+webpack@4.46.0
   tsconfig-paths-webpack-plugin: 3.5.1
@@ -3205,13 +3205,6 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /@npmcli/move-file/1.0.1:
-    resolution: {integrity: sha512-Uv6h1sT+0DrblvIrolFtbvM1FgWm+/sy4B3pvLp67Zys+thcukzS5ekn7HsZFGpWP4Q3fYJCljbWQE/XivMRLw==}
-    engines: {node: '>=10'}
-    dependencies:
-      mkdirp: 1.0.4
-    dev: true
-
   /@sindresorhus/is/0.14.0:
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
     engines: {node: '>=6'}
@@ -4395,14 +4388,6 @@ packages:
     resolution: {integrity: sha1-/ts5T58OAqqXaOcCvaI7UF+ufh8=}
     dev: true
 
-  /aggregate-error/3.1.0:
-    resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}
-    engines: {node: '>=8'}
-    dependencies:
-      clean-stack: 2.2.0
-      indent-string: 4.0.0
-    dev: true
-
   /ajv-errors/1.0.1_ajv@6.12.6:
     resolution: {integrity: sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==}
     peerDependencies:
@@ -5292,29 +5277,6 @@ packages:
       y18n: 4.0.0
     dev: true
 
-  /cacache/15.0.5:
-    resolution: {integrity: sha512-lloiL22n7sOjEEXdL8NAjTgv9a1u43xICE9/203qonkZUCj5X1UEWIdf2/Y0d6QcCtMzbKQyhrcDbdvlZTs/+A==}
-    engines: {node: '>= 10'}
-    dependencies:
-      '@npmcli/move-file': 1.0.1
-      chownr: 2.0.0
-      fs-minipass: 2.1.0
-      glob: 7.1.6
-      infer-owner: 1.0.4
-      lru-cache: 6.0.0
-      minipass: 3.1.3
-      minipass-collect: 1.0.2
-      minipass-flush: 1.0.5
-      minipass-pipeline: 1.2.4
-      mkdirp: 1.0.4
-      p-map: 4.0.0
-      promise-inflight: 1.0.1
-      rimraf: 3.0.2
-      ssri: 8.0.0
-      tar: 6.0.5
-      unique-filename: 1.1.1
-    dev: true
-
   /cache-base/1.0.1:
     resolution: {integrity: sha512-AKcdTnFSWATd5/GCPRxr2ChwIJ85CeyrEyjRHlKxQ56d4XJMGym0uAiKn0xbLOGOl3+yRpOTi484dVCEc5AUzQ==}
     engines: {node: '>=0.10.0'}
@@ -5562,11 +5524,6 @@ packages:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
     dev: true
 
-  /chownr/2.0.0:
-    resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
-    engines: {node: '>=10'}
-    dev: true
-
   /chrome-trace-event/1.0.2:
     resolution: {integrity: sha512-9e/zx1jw7B4CO+c/RXoCsfg/x1AfUBioy4owYH0bJprEYAx5hRFLRhWBqHAG57D0ZM4H7vxbP7bPe0VwhQRYDQ==}
     engines: {node: '>=6.0'}
@@ -5608,11 +5565,6 @@ packages:
     engines: {node: '>= 4.0'}
     dependencies:
       source-map: 0.6.1
-    dev: true
-
-  /clean-stack/2.2.0:
-    resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
-    engines: {node: '>=6'}
     dev: true
 
   /clean-webpack-plugin/3.0.0_webpack@4.46.0:
@@ -7850,13 +7802,6 @@ packages:
     dev: true
     optional: true
 
-  /fs-minipass/2.1.0:
-    resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
-    engines: {node: '>= 8'}
-    dependencies:
-      minipass: 3.1.3
-    dev: true
-
   /fs-monkey/1.0.1:
     resolution: {integrity: sha512-fcSa+wyTqZa46iWweI7/ZiUfegOZl0SG8+dltIwFXo7+zYU9J9kpS3NB6pZcSlJdhvIwp81Adx2XhZorncxiaA==}
     dev: true
@@ -8695,11 +8640,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       repeating: 2.0.1
-    dev: true
-
-  /indent-string/4.0.0:
-    resolution: {integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==}
-    engines: {node: '>=8'}
     dev: true
 
   /indexes-of/1.0.1:
@@ -9624,6 +9564,15 @@ packages:
       supports-color: 7.2.0
     dev: true
 
+  /jest-worker/27.0.2:
+    resolution: {integrity: sha512-EoBdilOTTyOgmHXtw/cPc+ZrCA0KJMrkXzkrPGNwLmnvvlN1nj7MPrxpT7m+otSv2e1TLaVffzDnE/LB14zJMg==}
+    engines: {node: '>= 10.13.0'}
+    dependencies:
+      '@types/node': 14.14.25
+      merge-stream: 2.0.0
+      supports-color: 8.1.1
+    dev: true
+
   /jest/26.6.3:
     resolution: {integrity: sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==}
     engines: {node: '>= 10.14.2'}
@@ -10342,39 +10291,10 @@ packages:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: true
 
-  /minipass-collect/1.0.2:
-    resolution: {integrity: sha512-6T6lH0H8OG9kITm/Jm6tdooIbogG9e0tLgpY6mphXSm/A9u8Nq1ryBG+Qspiub9LjWlBPsPS3tWQ/Botq4FdxA==}
-    engines: {node: '>= 8'}
-    dependencies:
-      minipass: 3.1.3
-    dev: true
-
-  /minipass-flush/1.0.5:
-    resolution: {integrity: sha512-JmQSYYpPUqX5Jyn1mXaRwOda1uQ8HP5KAT/oDSLCzt1BYRhQU0/hDtsB1ufZfEEzMZ9aAVmsBw8+FWsIXlClWw==}
-    engines: {node: '>= 8'}
-    dependencies:
-      minipass: 3.1.3
-    dev: true
-
-  /minipass-pipeline/1.2.4:
-    resolution: {integrity: sha512-xuIq7cIOt09RPRJ19gdi4b+RiNvDFYe5JH+ggNvBqGqpQXcru3PcRmOZuHBKWK1Txf9+cQ+HMVN4d6z46LZP7A==}
-    engines: {node: '>=8'}
-    dependencies:
-      minipass: 3.1.3
-    dev: true
-
   /minipass/3.1.3:
     resolution: {integrity: sha512-Mgd2GdMVzY+x3IJ+oHnVM+KG3lA5c8tnabyJKmHSaG2kAGpudxuOf8ToDkhumF7UzME7DecbQE9uOZhNm7PuJg==}
     engines: {node: '>=8'}
     dependencies:
-      yallist: 4.0.0
-    dev: true
-
-  /minizlib/2.1.2:
-    resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
-    engines: {node: '>= 8'}
-    dependencies:
-      minipass: 3.1.3
       yallist: 4.0.0
     dev: true
 
@@ -11033,11 +10953,11 @@ packages:
       p-try: 2.2.0
     dev: true
 
-  /p-limit/3.0.2:
-    resolution: {integrity: sha512-iwqZSOoWIW+Ew4kAGUlN16J4M7OB3ysMLSZtnhmqx7njIHFPlxWBX8xo3lVTyFVq6mI/lL9qt2IsN1sHwaxJkg==}
+  /p-limit/3.1.0:
+    resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
     engines: {node: '>=10'}
     dependencies:
-      p-try: 2.2.0
+      yocto-queue: 0.1.0
     dev: true
 
   /p-locate/3.0.0:
@@ -11057,13 +10977,6 @@ packages:
   /p-map/2.1.0:
     resolution: {integrity: sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==}
     engines: {node: '>=6'}
-    dev: true
-
-  /p-map/4.0.0:
-    resolution: {integrity: sha512-/bjOqmgETBYB5BoEeGVea8dmvHb2m9GLy1E9W43yeyfP6QQCZGFNa+XRceJEuDB6zqr+gKpIAmlLebMpykw/MQ==}
-    engines: {node: '>=10'}
-    dependencies:
-      aggregate-error: 3.1.0
     dev: true
 
   /p-retry/3.0.1:
@@ -12691,8 +12604,8 @@ packages:
       randombytes: 2.1.0
     dev: true
 
-  /serialize-javascript/5.0.1:
-    resolution: {integrity: sha512-SaaNal9imEO737H2c05Og0/8LUXG7EnsZyMa8MzkmuHoELfT6txuj0cMqRj6zfPKnmQ1yasR4PCJc8x+M4JSPA==}
+  /serialize-javascript/6.0.0:
+    resolution: {integrity: sha512-Qr3TosvguFt8ePWqsvRfrKyQXIiW+nGbYpy8XK24NQHE83caxWt+mIymTT19DGFbNWNLfEwsrkSmN64lVWB9ag==}
     dependencies:
       randombytes: 2.1.0
     dev: true
@@ -13132,13 +13045,6 @@ packages:
       figgy-pudding: 3.5.2
     dev: true
 
-  /ssri/8.0.0:
-    resolution: {integrity: sha512-aq/pz989nxVYwn16Tsbj1TqFpD5LLrQxHf5zaHuieFV+R0Bbr4y8qUsOA45hXT/N4/9UNXTarBjnjVmjSOVaAA==}
-    engines: {node: '>= 8'}
-    dependencies:
-      minipass: 3.1.3
-    dev: true
-
   /ssri/8.0.1:
     resolution: {integrity: sha512-97qShzy1AiyxvPNIkLWoGua7xoQzzPjQ0HAH4B0rWKo7SZ6USuPcrUiAFrws0UH8RrbWmgq3LMTObhPIHbbBeQ==}
     engines: {node: '>= 8'}
@@ -13429,6 +13335,13 @@ packages:
       has-flag: 4.0.0
     dev: true
 
+  /supports-color/8.1.1:
+    resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
+    engines: {node: '>=10'}
+    dependencies:
+      has-flag: 4.0.0
+    dev: true
+
   /supports-hyperlinks/2.1.0:
     resolution: {integrity: sha512-zoE5/e+dnEijk6ASB6/qrK+oYdm2do1hjoLWrqUC/8WEIW1gbxFcKuBof7sW8ArN6e+AYvsE8HBGiVRWL/F5CA==}
     engines: {node: '>=8'}
@@ -13498,18 +13411,6 @@ packages:
       inherits: 2.0.4
     dev: true
 
-  /tar/6.0.5:
-    resolution: {integrity: sha512-0b4HOimQHj9nXNEAA7zWwMM91Zhhba3pspja6sQbgTpynOJf+bkjBnfybNYzbpLbnwXnbyB4LOREvlyXLkCHSg==}
-    engines: {node: '>= 10'}
-    dependencies:
-      chownr: 2.0.0
-      fs-minipass: 2.1.0
-      minipass: 3.1.3
-      minizlib: 2.1.2
-      mkdirp: 1.0.4
-      yallist: 4.0.0
-    dev: true
-
   /temp/0.8.4:
     resolution: {integrity: sha512-s0ZZzd0BzYv5tLSptZooSjK8oj6C+c19p7Vqta9+6NPOf7r+fxq0cJe6/oN4LTC79sy5NY8ucOJNgwsKCSbfqg==}
     engines: {node: '>=6.0.0'}
@@ -13543,22 +13444,19 @@ packages:
       worker-farm: 1.7.0
     dev: true
 
-  /terser-webpack-plugin/4.2.3_webpack@4.46.0:
-    resolution: {integrity: sha512-jTgXh40RnvOrLQNgIkwEKnQ8rmHjHK4u+6UBEi+W+FPmvb+uo+chJXntKe7/3lW5mNysgSWD60KyesnhW8D6MQ==}
+  /terser-webpack-plugin/5.1.4_webpack@4.46.0:
+    resolution: {integrity: sha512-C2WkFwstHDhVEmsmlCxrXUtVklS+Ir1A7twrYzrDrQQOIMOaVAYykaoo/Aq1K0QRkMoY2hhvDQY1cm4jnIMFwA==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
-      webpack: ^4.0.0 || ^5.0.0
+      webpack: ^5.1.0
     dependencies:
-      cacache: 15.0.5
-      find-cache-dir: 3.3.1
-      jest-worker: 26.6.2
-      p-limit: 3.0.2
+      jest-worker: 27.0.2
+      p-limit: 3.1.0
       schema-utils: 3.0.0
-      serialize-javascript: 5.0.1
+      serialize-javascript: 6.0.0
       source-map: 0.6.1
-      terser: 5.3.8
+      terser: 5.7.0
       webpack: 4.46.0_webpack-cli@3.3.12
-      webpack-sources: 1.4.3
     dev: true
 
   /terser/4.8.0:
@@ -13571,8 +13469,8 @@ packages:
       source-map-support: 0.5.19
     dev: true
 
-  /terser/5.3.8:
-    resolution: {integrity: sha512-zVotuHoIfnYjtlurOouTazciEfL7V38QMAOhGqpXDEg6yT13cF4+fEP9b0rrCEQTn+tT46uxgFsTZzhygk+CzQ==}
+  /terser/5.7.0:
+    resolution: {integrity: sha512-HP5/9hp2UaZt5fYkuhNBR8YyRcT8juw8+uFbAme53iN9hblvKnLUTKkmwJG6ocWpIKf8UK4DoeWG4ty0J6S6/g==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -14967,6 +14865,11 @@ packages:
 
   /yeast/0.1.2:
     resolution: {integrity: sha1-AI4G2AlDIMNy28L47XagymyKxBk=}
+    dev: true
+
+  /yocto-queue/0.1.0:
+    resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
+    engines: {node: '>=10'}
     dev: true
 
   /yorkie/2.0.0:
