@@ -63,7 +63,7 @@ specifiers:
   rimraf: 3.0.2
   sass-loader: 10.1.1
   sinon: 9.2.4
-  string-replace-loader: 2.3.0
+  string-replace-loader: 3.0.3
   style-loader: 2.0.0
   terser-webpack-plugin: 4.2.3
   ts-jest: 26.5.6
@@ -159,7 +159,7 @@ devDependencies:
   rimraf: 3.0.2
   sass-loader: 10.1.1_node-sass@4.14.1+webpack@4.46.0
   sinon: 9.2.4
-  string-replace-loader: 2.3.0_webpack@4.46.0
+  string-replace-loader: 3.0.3_webpack@4.46.0
   style-loader: 2.0.0_webpack@4.46.0
   terser-webpack-plugin: 4.2.3_webpack@4.46.0
   ts-jest: 26.5.6_jest@26.6.3+typescript@3.9.9
@@ -13230,13 +13230,13 @@ packages:
       strip-ansi: 6.0.0
     dev: true
 
-  /string-replace-loader/2.3.0_webpack@4.46.0:
-    resolution: {integrity: sha512-HYBIHStViMKLZC/Lehxy42OuwsBaPzX/LjcF5mkJlE2SnHXmW6SW6eiHABTXnY8ZCm/REbdJ8qnA0ptmIzN0Ng==}
+  /string-replace-loader/3.0.3_webpack@4.46.0:
+    resolution: {integrity: sha512-8c26Dl6H9XmKNj3mFBvaUYR7ImOxQ4YRBFuUju78wXpa1cDpyDYvKmqGg8mfkxdYexQ/BBogB7PELlLnmR08nw==}
     peerDependencies:
-      webpack: 1 || 2 || 3 || 4
+      webpack: ^5
     dependencies:
-      loader-utils: 1.4.0
-      schema-utils: 2.7.1
+      loader-utils: 2.0.0
+      schema-utils: 3.0.0
       webpack: 4.46.0_webpack-cli@3.3.12
     dev: true
 
