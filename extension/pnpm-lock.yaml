@@ -28,7 +28,7 @@ specifiers:
   '@vue/devtools': 6.0.0-beta.9
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 7.0.0
-  autoprefixer: 9.8.6
+  autoprefixer: 10.3.1
   axios: 0.21.1
   babel-jest: 26.6.3
   clean-webpack-plugin: 3.0.0
@@ -127,7 +127,7 @@ devDependencies:
   '@vue/devtools': 6.0.0-beta.9
   '@vue/eslint-config-prettier': 6.0.0_e81ef07f5f53383f92a2f30d2761775d
   '@vue/eslint-config-typescript': 7.0.0_b0571b253069c8cfe4407a9ec5811d4a
-  autoprefixer: 9.8.6
+  autoprefixer: 10.3.1
   axios: 0.21.1
   babel-jest: 26.6.3_@babel+core@7.14.6
   clean-webpack-plugin: 3.0.0_webpack@4.46.0
@@ -4654,6 +4654,21 @@ packages:
     hasBin: true
     dev: true
 
+  /autoprefixer/10.3.1:
+    resolution: {integrity: sha512-L8AmtKzdiRyYg7BUXJTzigmhbQRCXFKz6SA1Lqo0+AR2FBbQ4aTAPFSDlOutnFkjhiz8my4agGXog1xlMjPJ6A==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.16.6
+      caniuse-lite: 1.0.30001243
+      colorette: 1.2.2
+      fraction.js: 4.1.1
+      normalize-range: 0.1.2
+      postcss-value-parser: 4.1.0
+    dev: true
+
   /autoprefixer/9.8.6:
     resolution: {integrity: sha512-XrvP4VVHdRBCdX1S3WXVD8+RyG9qeb1D5Sn1DeLiG2xfSpzellk5k54xbUERJ3M5DggQxes39UGOTP8CFrEGbg==}
     hasBin: true
@@ -5198,7 +5213,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001237
+      caniuse-lite: 1.0.30001243
       colorette: 1.2.2
       electron-to-chromium: 1.3.752
       escalade: 3.1.1
@@ -5455,8 +5470,8 @@ packages:
     resolution: {integrity: sha512-O2/SCpuaU3eASWVaesQirZv1MSjUNOvmugaD8zNSJqw6Vv5SGwoOpA9LJs3pNPfM745nxqPvfZY3MQKY4AKHYg==}
     dev: true
 
-  /caniuse-lite/1.0.30001237:
-    resolution: {integrity: sha512-pDHgRndit6p1NR2GhzMbQ6CkRrp4VKuSsqbcLeOQppYPKOYkKT/6ZvZDvKJUqcmtyWIAHuZq3SVS2vc1egCZzw==}
+  /caniuse-lite/1.0.30001243:
+    resolution: {integrity: sha512-vNxw9mkTBtkmLFnJRv/2rhs1yufpDfCkBZexG3Y0xdOH2Z/eE/85E4Dl5j1YUN34nZVsSp6vVRFQRrez9wJMRA==}
     dev: true
 
   /capture-exit/2.0.0:
@@ -7789,6 +7804,10 @@ packages:
 
   /fp-ts/2.8.6:
     resolution: {integrity: sha512-fGGpKf/Jy3UT4s16oM+hr/8F5QXFcZ+20NAvaZXH5Y5jsiLPMDCaNqffXq0z1Kr6ZUJj0346cH9tq+cI2SoJ4w==}
+    dev: true
+
+  /fraction.js/4.1.1:
+    resolution: {integrity: sha512-MHOhvvxHTfRFpF1geTK9czMIZ6xclsEor2wkIGYYq+PxcQqT7vStJqjhe6S1TenZrMZzo+wlqOufBDVepUEgPg==}
     dev: true
 
   /fragment-cache/0.2.1:
@@ -11139,7 +11158,7 @@ packages:
     resolution: {integrity: sha512-+mi/lmVVNKFNVyLXV31ERiy2CY5E1/F6QtJFEzoChPRwwngMNXRDQ9GJ5WdE2Z2P4AujsOi0/+2qHID68KwfIQ==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/code-frame': 7.12.13
+      '@babel/code-frame': 7.14.5
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.1.6
