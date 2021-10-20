@@ -16,7 +16,7 @@ specifiers:
   '@types/sinon': 9.0.11
   '@types/uuid': 8.3.1
   '@types/webpack': 4.41.31
-  '@types/webpack-env': 1.16.0
+  '@types/webpack-env': 1.16.3
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0
   '@typescript-eslint/parser': 2.34.0
@@ -115,7 +115,7 @@ devDependencies:
   '@types/rimraf': 3.0.2
   '@types/sinon': 9.0.11
   '@types/webpack': 4.41.31
-  '@types/webpack-env': 1.16.0
+  '@types/webpack-env': 1.16.3
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.9
@@ -3549,8 +3549,8 @@ packages:
       '@types/webpack': 4.41.31
     dev: true
 
-  /@types/webpack-env/1.16.0:
-    resolution: {integrity: sha512-Fx+NpfOO0CpeYX2g9bkvX8O5qh9wrU1sOF4g8sft4Mu7z+qfe387YlyY8w8daDyDsKY5vUxM0yxkAYnbkRbZEw==}
+  /@types/webpack-env/1.16.3:
+    resolution: {integrity: sha512-9gtOPPkfyNoEqCQgx4qJKkuNm/x0R2hKR7fdl7zvTJyHnIisuE/LfvXOsYWL0o3qq6uiBnKZNNNzi3l0y/X+xw==}
     dev: true
 
   /@types/webpack-merge/4.1.5:
@@ -3884,7 +3884,7 @@ packages:
       '@vue/compiler-sfc':
         optional: true
     dependencies:
-      '@types/webpack-env': 1.16.0
+      '@types/webpack-env': 1.16.3
       '@vue/cli-service': 4.5.13_cc6a48d09904fee8ac2ca1e479ea8c6b
       '@vue/cli-shared-utils': 4.5.13
       '@vue/compiler-sfc': 3.0.11_vue@3.0.11
