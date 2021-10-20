@@ -8,7 +8,7 @@ specifiers:
   '@types/aws-lambda': 8.10.84
   '@types/jest': 26.0.24
   '@types/node': 13.13.51
-  '@types/uuid': 8.3.0
+  '@types/uuid': 8.3.1
   '@typescript-eslint/eslint-plugin': 2.34.0
   '@typescript-eslint/parser': 2.34.0
   aws-sdk: ^2.663.0
@@ -41,7 +41,7 @@ devDependencies:
   '@types/aws-lambda': 8.10.84
   '@types/jest': 26.0.24
   '@types/node': 13.13.51
-  '@types/uuid': 8.3.0
+  '@types/uuid': 8.3.1
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.9
   babel-jest: 26.6.3_@babel+core@7.14.6
@@ -2260,8 +2260,8 @@ packages:
     resolution: {integrity: sha512-I99sngh224D0M7XgW1s120zxCt3VYQ3IQsuw3P3jbq5GG4yc79+ZjyKznyOGIQrflfylLgcfekeZW/vk0yng6A==}
     dev: true
 
-  /@types/uuid/8.3.0:
-    resolution: {integrity: sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==}
+  /@types/uuid/8.3.1:
+    resolution: {integrity: sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==}
     dev: true
 
   /@types/yargs-parser/15.0.0:

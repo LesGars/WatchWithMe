@@ -14,7 +14,7 @@ specifiers:
   '@types/node': 13.13.51
   '@types/rimraf': 3.0.2
   '@types/sinon': 9.0.11
-  '@types/uuid': 8.3.0
+  '@types/uuid': 8.3.1
   '@types/webpack': 4.41.28
   '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
@@ -90,7 +90,7 @@ specifiers:
   zip-webpack-plugin: 3.0.0
 
 dependencies:
-  '@types/uuid': 8.3.0
+  '@types/uuid': 8.3.1
   dayjs: 1.10.4
   debug: 4.3.1
   lodash-es: 4.17.21
@@ -3539,8 +3539,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /@types/uuid/8.3.0:
-    resolution: {integrity: sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==}
+  /@types/uuid/8.3.1:
+    resolution: {integrity: sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==}
     dev: false
 
   /@types/webpack-dev-server/3.11.1:
