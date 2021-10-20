@@ -20,7 +20,7 @@
         "webpack:dev:dashboard": "webpack-dashboard -- webpack-cli --config compile/webpack.dev.js --watch"
     },
     "dependencies": {
-        "@types/uuid": "8.3.0",
+        "@types/uuid": "8.3.1",
         "dayjs": "1.10.4",
         "debug": "4.3.1",
         "lodash-es": "4.17.21",
