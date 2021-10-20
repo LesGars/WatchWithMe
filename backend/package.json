@@ -27,7 +27,7 @@
         "@babel/preset-typescript": "7.14.5",
         "@shelf/jest-dynamodb": "1.8.1",
         "@types/aws-lambda": "8.10.84",
-        "@types/jest": "26.0.23",
+        "@types/jest": "26.0.24",
         "@types/node": "13.13.51",
         "@types/uuid": "8.3.0",
         "@typescript-eslint/eslint-plugin": "2.34.0",
