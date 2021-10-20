@@ -28,7 +28,7 @@ specifiers:
   '@vue/devtools': 6.0.0-beta.9
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 7.0.0
-  autoprefixer: 9.8.6
+  autoprefixer: 9.8.8
   axios: 0.21.2
   babel-jest: 26.6.3
   clean-webpack-plugin: 3.0.0
@@ -127,7 +127,7 @@ devDependencies:
   '@vue/devtools': 6.0.0-beta.9
   '@vue/eslint-config-prettier': 6.0.0_e81ef07f5f53383f92a2f30d2761775d
   '@vue/eslint-config-typescript': 7.0.0_b0571b253069c8cfe4407a9ec5811d4a
-  autoprefixer: 9.8.6
+  autoprefixer: 9.8.8
   axios: 0.21.2_debug@4.3.1
   babel-jest: 26.6.3_@babel+core@7.14.6
   clean-webpack-plugin: 3.0.0_webpack@4.46.0
@@ -369,7 +369,7 @@ packages:
       '@babel/compat-data': 7.14.0
       '@babel/core': 7.13.16
       '@babel/helper-validator-option': 7.12.17
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       semver: 6.3.0
     dev: true
 
@@ -3957,7 +3957,7 @@ packages:
       acorn: 7.4.1
       acorn-walk: 7.2.0
       address: 1.1.2
-      autoprefixer: 9.8.6
+      autoprefixer: 9.8.8
       browserslist: 4.16.5
       cache-loader: 4.1.0_webpack@4.46.0
       case-sensitive-paths-webpack-plugin: 2.3.0
@@ -4620,15 +4620,15 @@ packages:
     hasBin: true
     dev: true
 
-  /autoprefixer/9.8.6:
-    resolution: {integrity: sha512-XrvP4VVHdRBCdX1S3WXVD8+RyG9qeb1D5Sn1DeLiG2xfSpzellk5k54xbUERJ3M5DggQxes39UGOTP8CFrEGbg==}
+  /autoprefixer/9.8.8:
+    resolution: {integrity: sha512-eM9d/swFopRt5gdJ7jrpCwgvEMIayITpojhkkSMRsFHYuH5bkSQ4p/9qTEHtmNudUZh22Tehu7I6CxAW0IXTKA==}
     hasBin: true
     dependencies:
-      browserslist: 4.14.7
-      caniuse-lite: 1.0.30001158
-      colorette: 1.2.1
+      browserslist: 4.16.6
+      caniuse-lite: 1.0.30001237
       normalize-range: 0.1.2
       num2fraction: 1.2.2
+      picocolors: 0.2.1
       postcss: 7.0.35
       postcss-value-parser: 4.1.0
     dev: true
@@ -5126,38 +5126,14 @@ packages:
       pako: 1.0.11
     dev: true
 
-  /browserslist/4.14.7:
-    resolution: {integrity: sha512-BSVRLCeG3Xt/j/1cCGj1019Wbty0H+Yvu2AOuZSuoaUWn3RatbL33Cxk+Q4jRMRAbOm0p7SLravLjpnT6s0vzQ==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-    dependencies:
-      caniuse-lite: 1.0.30001158
-      colorette: 1.2.1
-      electron-to-chromium: 1.3.596
-      escalade: 3.1.1
-      node-releases: 1.1.66
-    dev: true
-
-  /browserslist/4.16.3:
-    resolution: {integrity: sha512-vIyhWmIkULaq04Gt93txdh+j02yX/JzlyhLYbV3YQCn/zvES3JnY7TifHHvvr1w5hTDluNKMkV05cs4vy8Q7sw==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-    dependencies:
-      caniuse-lite: 1.0.30001191
-      colorette: 1.2.2
-      electron-to-chromium: 1.3.672
-      escalade: 3.1.1
-      node-releases: 1.1.70
-    dev: true
-
   /browserslist/4.16.5:
     resolution: {integrity: sha512-C2HAjrM1AI/djrpAUU/tr4pml1DqLIzJKSLDBXBrNErl9ZCCTXdhwxdJjYc16953+mBWf7Lw+uUJgpgb8cN71A==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001214
+      caniuse-lite: 1.0.30001237
       colorette: 1.2.2
-      electron-to-chromium: 1.3.720
+      electron-to-chromium: 1.3.752
       escalade: 3.1.1
       node-releases: 1.1.71
     dev: true
@@ -5406,22 +5382,10 @@ packages:
   /caniuse-api/3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
-      browserslist: 4.16.5
-      caniuse-lite: 1.0.30001214
+      browserslist: 4.16.6
+      caniuse-lite: 1.0.30001237
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
-    dev: true
-
-  /caniuse-lite/1.0.30001158:
-    resolution: {integrity: sha512-s5loVYY+yKpuVA3HyW8BarzrtJvwHReuzugQXlv1iR3LKSReoFXRm86mT6hT7PEF5RxW+XQZg+6nYjlywYzQ+g==}
-    dev: true
-
-  /caniuse-lite/1.0.30001191:
-    resolution: {integrity: sha512-xJJqzyd+7GCJXkcoBiQ1GuxEiOBCLQ0aVW9HMekifZsAVGdj5eJ4mFB9fEhSHipq9IOk/QXFJUiIr9lZT+EsGw==}
-    dev: true
-
-  /caniuse-lite/1.0.30001214:
-    resolution: {integrity: sha512-O2/SCpuaU3eASWVaesQirZv1MSjUNOvmugaD8zNSJqw6Vv5SGwoOpA9LJs3pNPfM745nxqPvfZY3MQKY4AKHYg==}
     dev: true
 
   /caniuse-lite/1.0.30001237:
@@ -5742,10 +5706,6 @@ packages:
       color-string: 1.5.4
     dev: true
 
-  /colorette/1.2.1:
-    resolution: {integrity: sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==}
-    dev: true
-
   /colorette/1.2.2:
     resolution: {integrity: sha512-MKGMzyfeuutC/ZJ1cba9NqcNpfeqMUcYmyF1ZFY6/Cn7CNSAKx6a+s48sqLqyAiZuaP2TcqMhoo+dlwFnVxT9w==}
     dev: true
@@ -5963,7 +5923,7 @@ packages:
   /core-js-compat/3.11.0:
     resolution: {integrity: sha512-3wsN9YZJohOSDCjVB0GequOyHax8zFiogSX3XWLE28M1Ew7dTU57tgHjIylSBKSIouwmLBp3g61sKMz/q3xEGA==}
     dependencies:
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       semver: 7.0.0
     dev: true
 
@@ -5977,7 +5937,7 @@ packages:
   /core-js-compat/3.9.0:
     resolution: {integrity: sha512-YK6fwFjCOKWwGnjFUR3c544YsnA/7DoLL0ysncuOJ4pwbriAtOpvM2bygdlcXbvQCQZ7bBU9CL4t7tGl7ETRpQ==}
     dependencies:
-      browserslist: 4.16.3
+      browserslist: 4.16.6
       semver: 7.0.0
     dev: true
 
@@ -6737,18 +6697,6 @@ packages:
     resolution: {integrity: sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==}
     engines: {node: '>=0.10.0'}
     requiresBuild: true
-    dev: true
-
-  /electron-to-chromium/1.3.596:
-    resolution: {integrity: sha512-nLO2Wd2yU42eSoNJVQKNf89CcEGqeFZd++QsnN2XIgje1s/19AgctfjLIbPORlvcCO8sYjLwX4iUgDdusOY8Sg==}
-    dev: true
-
-  /electron-to-chromium/1.3.672:
-    resolution: {integrity: sha512-gFQe7HBb0lbOMqK2GAS5/1F+B0IMdYiAgB9OT/w1F4M7lgJK2aNOMNOM622aEax+nS1cTMytkiT0uMOkbtFmHw==}
-    dev: true
-
-  /electron-to-chromium/1.3.720:
-    resolution: {integrity: sha512-B6zLTxxaOFP4WZm6DrvgRk8kLFYWNhQ5TrHMC0l5WtkMXhU5UbnvWoTfeEwqOruUSlNMhVLfYak7REX6oC5Yfw==}
     dev: true
 
   /electron-to-chromium/1.3.752:
@@ -10622,14 +10570,6 @@ packages:
     dev: true
     optional: true
 
-  /node-releases/1.1.66:
-    resolution: {integrity: sha512-JHEQ1iWPGK+38VLB2H9ef2otU4l8s3yAMt9Xf934r6+ojCYDMHPMqvCc9TnzfeFSP1QEOeU6YZEd3+De0LTCgg==}
-    dev: true
-
-  /node-releases/1.1.70:
-    resolution: {integrity: sha512-Slf2s69+2/uAD79pVVQo8uSiC34+g8GWY8UH2Qtqv34ZfhYrxpYpfzs9Js9d6O0mbDmALuxaTlplnBTnSELcrw==}
-    dev: true
-
   /node-releases/1.1.71:
     resolution: {integrity: sha512-zR6HoT6LrLCRBwukmrVbHv0EpEQjksO6GmFcZQQuCAy139BEsoVKPYnf3jongYW83fAa1torLGYwxxky/p28sg==}
     dev: true
@@ -11283,6 +11223,10 @@ packages:
     resolution: {integrity: sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=}
     dev: true
 
+  /picocolors/0.2.1:
+    resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
+    dev: true
+
   /picomatch/2.2.2:
     resolution: {integrity: sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==}
     engines: {node: '>=8.6'}
@@ -11383,7 +11327,7 @@ packages:
     resolution: {integrity: sha512-WyQFAdDZpExQh32j0U0feWisZ0dmOtPl44qYmJKkq9xFWY3p+4qnRzCHeNrkeRhwPHz9bQ3mo0/yVkaply0MNw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       color: 3.1.3
       has: 1.0.3
       postcss: 7.0.35
@@ -11468,7 +11412,7 @@ packages:
     resolution: {integrity: sha512-U7e3r1SbvYzO0Jr3UT/zKBVgYYyhAz0aitvGIYOYK5CPmkNih+WDSsS5tvPrJ8YMQYlEMvsZIiqmn7HdFUaeEQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       caniuse-api: 3.0.0
       cssnano-util-same-parent: 4.0.1
       postcss: 7.0.35
@@ -11499,7 +11443,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       alphanum-sort: 1.0.2
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       cssnano-util-get-arguments: 4.0.0
       postcss: 7.0.35
       postcss-value-parser: 3.3.1
@@ -11663,7 +11607,7 @@ packages:
     resolution: {integrity: sha512-od18Uq2wCYn+vZ/qCOeutvHjB5jm57ToxRaMeNuf0nWVHaP9Hua56QyMF6fs/4FSUnVIw0CBPsU0K4LnBPwYwg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       postcss: 7.0.35
       postcss-value-parser: 3.3.1
     dev: true
@@ -11699,7 +11643,7 @@ packages:
     resolution: {integrity: sha512-gKWmR5aUulSjbzOfD9AlJiHCGH6AEVLaM0AV+aSioxUDd16qXP1PCh8d1/BGVvpdWn8k/HiK7n6TjeoXN1F7DA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       caniuse-api: 3.0.0
       has: 1.0.3
       postcss: 7.0.35
@@ -11793,15 +11737,6 @@ packages:
       chalk: 2.4.2
       source-map: 0.6.1
       supports-color: 6.1.0
-    dev: true
-
-  /postcss/8.2.1:
-    resolution: {integrity: sha512-RhsqOOAQzTgh1UB/IZdca7F9WDb7SUCR2Vnv1x7DbvuuggQIpoDwjK+q0rzoPffhYvWNKX5JSwS4so4K3UC6vA==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      colorette: 1.2.1
-      nanoid: 3.1.20
-      source-map: 0.6.1
     dev: true
 
   /postcss/8.2.12:
@@ -11978,7 +11913,7 @@ packages:
     dependencies:
       commander: 6.2.0
       glob: 7.1.6
-      postcss: 8.2.1
+      postcss: 8.2.12
       postcss-selector-parser: 6.0.4
     dev: true
 
@@ -13377,7 +13312,7 @@ packages:
     resolution: {integrity: sha512-7GlLk9JwlElY4Y6a/rmbH2MhVlTyVmiJd1PfTCqFaIBEGMYNsrO/v3SeGTdhBThLg4Z+NbOk/qFMwCa+J+3p/g==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      browserslist: 4.16.5
+      browserslist: 4.16.6
       postcss: 7.0.35
       postcss-selector-parser: 3.1.2
     dev: true
