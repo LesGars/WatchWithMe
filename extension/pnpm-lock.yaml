@@ -29,7 +29,7 @@ specifiers:
   '@vue/eslint-config-prettier': 6.0.0
   '@vue/eslint-config-typescript': 7.0.0
   autoprefixer: 9.8.6
-  axios: 0.21.1
+  axios: 0.21.2
   babel-jest: 26.6.3
   clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 5.1.2
@@ -128,7 +128,7 @@ devDependencies:
   '@vue/eslint-config-prettier': 6.0.0_e81ef07f5f53383f92a2f30d2761775d
   '@vue/eslint-config-typescript': 7.0.0_b0571b253069c8cfe4407a9ec5811d4a
   autoprefixer: 9.8.6
-  axios: 0.21.1
+  axios: 0.21.2_debug@4.3.1
   babel-jest: 26.6.3_@babel+core@7.14.6
   clean-webpack-plugin: 3.0.0_webpack@4.46.0
   copy-webpack-plugin: 5.1.2_webpack@4.46.0
@@ -4675,10 +4675,12 @@ packages:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
     dev: true
 
-  /axios/0.21.1:
-    resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
+  /axios/0.21.2_debug@4.3.1:
+    resolution: {integrity: sha512-87otirqUw3e8CzHTMO+/9kh/FSgXt/eVDvipijwDtEuwbkySWZ9SBm6VEubmJ/kLKEoLQV/POhxXFb66bfekfg==}
     dependencies:
-      follow-redirects: 1.13.0
+      follow-redirects: 1.14.4_debug@4.3.1
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /babel-code-frame/6.26.0:
@@ -7729,9 +7731,16 @@ packages:
       readable-stream: 2.3.7
     dev: true
 
-  /follow-redirects/1.13.0:
-    resolution: {integrity: sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==}
+  /follow-redirects/1.14.4_debug@4.3.1:
+    resolution: {integrity: sha512-zwGkiSXC1MUJG/qmeIFH2HBJx9u0V46QGUe3YR1fXG8bXQxq7fLj0RjLZQ5nubr9qNJUZrH+xUcwXEoXNpfS+g==}
     engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.1_supports-color@6.1.0
     dev: true
 
   /for-in/1.0.2:
@@ -8558,23 +8567,27 @@ packages:
     resolution: {integrity: sha512-opCO9ASqg5Wy2FNo7A0sxy71yGbbkJJXLdgMK04Tcypw9jr2MgWbyubb0+WdmDmGnFflO7fRbqbaihh/ENDlRQ==}
     dev: true
 
-  /http-proxy-middleware/0.19.1:
+  /http-proxy-middleware/0.19.1_debug@4.3.1:
     resolution: {integrity: sha512-yHYTgWMQO8VvwNS22eLLloAkvungsKdKTLO8AJlftYIKNfJr3GK3zK0ZCfzDDGUBttdGc8xFy1mCitvNKQtC3Q==}
     engines: {node: '>=4.0.0'}
     dependencies:
-      http-proxy: 1.18.1
+      http-proxy: 1.18.1_debug@4.3.1
       is-glob: 4.0.1
       lodash: 4.17.20
       micromatch: 3.1.10
+    transitivePeerDependencies:
+      - debug
     dev: true
 
-  /http-proxy/1.18.1:
+  /http-proxy/1.18.1_debug@4.3.1:
     resolution: {integrity: sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==}
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.13.0
+      follow-redirects: 1.14.4_debug@4.3.1
       requires-port: 1.0.0
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /http-signature/1.2.0:
@@ -14552,7 +14565,7 @@ packages:
       del: 4.1.1
       express: 4.17.1
       html-entities: 1.3.1
-      http-proxy-middleware: 0.19.1
+      http-proxy-middleware: 0.19.1_debug@4.3.1
       import-local: 2.0.0
       internal-ip: 4.3.0
       ip: 1.1.5
