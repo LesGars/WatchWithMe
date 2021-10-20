@@ -6,7 +6,7 @@ specifiers:
   '@types/color-name': 1.1.1
   '@types/json-schema': 7.0.9
   '@types/minimist': 1.2.2
-  '@types/normalize-package-data': 2.4.0
+  '@types/normalize-package-data': 2.4.1
   '@types/parse-json': 4.0.0
   '@types/unist': 2.0.3
   '@typescript-eslint/parser': 3.10.1
@@ -21,7 +21,7 @@ devDependencies:
   '@types/color-name': 1.1.1
   '@types/json-schema': 7.0.9
   '@types/minimist': 1.2.2
-  '@types/normalize-package-data': 2.4.0
+  '@types/normalize-package-data': 2.4.1
   '@types/parse-json': 4.0.0
   '@types/unist': 2.0.3
   '@typescript-eslint/parser': 3.10.1
@@ -414,8 +414,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/normalize-package-data/2.4.0:
-    resolution: {integrity: sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==}
+  /@types/normalize-package-data/2.4.1:
+    resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
   /@types/parse-json/4.0.0:
@@ -2229,7 +2229,7 @@ packages:
     resolution: {integrity: sha512-Ug69mNOpfvKDAc2Q8DRpMjjzdtrnv9HcSMX+4VsZxD1aZ6ZzrIE7rlzXBtWTyhULSMKg076AW6WR5iZpD0JiOg==}
     engines: {node: '>=8'}
     dependencies:
-      '@types/normalize-package-data': 2.4.0
+      '@types/normalize-package-data': 2.4.1
       normalize-package-data: 2.5.0
       parse-json: 5.0.0
       type-fest: 0.6.0
