@@ -36,7 +36,7 @@ specifiers:
   cross-env: 7.0.3
   css-loader: 5.2.7
   cssnano: 4.1.11
-  dayjs: 1.10.4
+  dayjs: 1.10.7
   debug: 4.3.1
   eslint: 6.8.0
   eslint-config-airbnb: 18.2.1
@@ -91,7 +91,7 @@ specifiers:
 
 dependencies:
   '@types/uuid': 8.3.1
-  dayjs: 1.10.4
+  dayjs: 1.10.7
   debug: 4.3.1
   lodash-es: 4.17.21
   unique-names-generator: 4.5.0
@@ -6294,8 +6294,8 @@ packages:
       whatwg-url: 8.4.0
     dev: true
 
-  /dayjs/1.10.4:
-    resolution: {integrity: sha512-RI/Hh4kqRc1UKLOAf/T5zdMMX5DQIlDxwUe3wSyMMnEbGunnpENCdbUgM+dW7kXidZqCttBrmw7BhN4TMddkCw==}
+  /dayjs/1.10.7:
+    resolution: {integrity: sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==}
     dev: false
 
   /debug/2.6.9:
