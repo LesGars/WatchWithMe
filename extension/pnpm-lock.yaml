@@ -15,7 +15,7 @@ specifiers:
   '@types/rimraf': 3.0.2
   '@types/sinon': 9.0.11
   '@types/uuid': 8.3.1
-  '@types/webpack': 4.41.28
+  '@types/webpack': 4.41.31
   '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0
@@ -114,7 +114,7 @@ devDependencies:
   '@types/node': 13.13.51
   '@types/rimraf': 3.0.2
   '@types/sinon': 9.0.11
-  '@types/webpack': 4.41.28
+  '@types/webpack': 4.41.31
   '@types/webpack-env': 1.16.0
   '@types/webpack-merge': 4.1.5
   '@typescript-eslint/eslint-plugin': 2.34.0_4df26d2b9b7591cbda305132c8f490f3
@@ -242,7 +242,7 @@ packages:
     resolution: {integrity: sha512-sXHpixBiWWFti0AV2Zq7avpTasr6sIAu7Y396c608541qAU2ui4a193m0KSQmfPSKFZLnQ3cvlKDOm3XkuXm3Q==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/code-frame': 7.12.13
+      '@babel/code-frame': 7.14.5
       '@babel/generator': 7.13.16
       '@babel/helper-compilation-targets': 7.13.16_@babel+core@7.13.16
       '@babel/helper-module-transforms': 7.13.14
@@ -3263,10 +3263,6 @@ packages:
       defer-to-connect: 1.1.3
     dev: true
 
-  /@types/anymatch/1.3.1:
-    resolution: {integrity: sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==}
-    dev: true
-
   /@types/babel__core/7.1.12:
     resolution: {integrity: sha512-wMTHiiTiBAAPebqaPiPDLFA4LYPKr6Ph0Xq/6rq1Ur3v66HXyG+clfR9CNETkD7MQS8ZHvpQOtA53DLws5WAEQ==}
     dependencies:
@@ -3336,7 +3332,7 @@ packages:
     dependencies:
       '@types/minimatch': 3.0.3
       '@types/node': 14.14.25
-      '@types/webpack': 4.41.26
+      '@types/webpack': 4.41.31
     dev: true
 
   /@types/cors/2.8.9:
@@ -3550,7 +3546,7 @@ packages:
       '@types/express': 4.17.9
       '@types/http-proxy-middleware': 0.19.3
       '@types/serve-static': 1.13.7
-      '@types/webpack': 4.41.28
+      '@types/webpack': 4.41.31
     dev: true
 
   /@types/webpack-env/1.16.0:
@@ -3560,7 +3556,7 @@ packages:
   /@types/webpack-merge/4.1.5:
     resolution: {integrity: sha512-cbDo592ljSHeaVe5Q39JKN6Z4vMhmo4+C3JbksOIg+kjhKQYN2keGN7dvr/i18+dughij98Qrsfn1mU9NgVoCA==}
     dependencies:
-      '@types/webpack': 4.41.25
+      '@types/webpack': 4.41.31
     dev: true
 
   /@types/webpack-sources/0.1.8:
@@ -3579,36 +3575,14 @@ packages:
       source-map: 0.7.3
     dev: true
 
-  /@types/webpack/4.41.25:
-    resolution: {integrity: sha512-cr6kZ+4m9lp86ytQc1jPOJXgINQyz3kLLunZ57jznW+WIAL0JqZbGubQk4GlD42MuQL5JGOABrxdpqqWeovlVQ==}
+  /@types/webpack/4.41.31:
+    resolution: {integrity: sha512-/i0J7sepXFIp1ZT7FjUGi1eXMCg8HCCzLJEQkKsOtbJFontsJLolBcDC+3qxn5pPwiCt1G0ZdRmYRzNBtvpuGQ==}
     dependencies:
-      '@types/anymatch': 1.3.1
       '@types/node': 14.14.25
       '@types/tapable': 1.0.6
       '@types/uglify-js': 3.11.1
       '@types/webpack-sources': 2.0.0
-      source-map: 0.6.1
-    dev: true
-
-  /@types/webpack/4.41.26:
-    resolution: {integrity: sha512-7ZyTfxjCRwexh+EJFwRUM+CDB2XvgHl4vfuqf1ZKrgGvcS5BrNvPQqJh3tsZ0P6h6Aa1qClVHaJZszLPzpqHeA==}
-    dependencies:
-      '@types/anymatch': 1.3.1
-      '@types/node': 14.14.25
-      '@types/tapable': 1.0.6
-      '@types/uglify-js': 3.11.1
-      '@types/webpack-sources': 2.0.0
-      source-map: 0.6.1
-    dev: true
-
-  /@types/webpack/4.41.28:
-    resolution: {integrity: sha512-Nn84RAiJjKRfPFFCVR8LC4ueTtTdfWAMZ03THIzZWRJB+rX24BD3LqPSFnbMscWauEsT4segAsylPDIaZyZyLQ==}
-    dependencies:
-      '@types/anymatch': 1.3.1
-      '@types/node': 14.14.25
-      '@types/tapable': 1.0.6
-      '@types/uglify-js': 3.11.1
-      '@types/webpack-sources': 2.0.0
+      anymatch: 3.1.1
       source-map: 0.6.1
     dev: true
 
@@ -3970,7 +3944,7 @@ packages:
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.46.0
       '@soda/get-current-script': 1.0.2
       '@types/minimist': 1.2.1
-      '@types/webpack': 4.41.28
+      '@types/webpack': 4.41.31
       '@types/webpack-dev-server': 3.11.1
       '@vue/cli-overlay': 4.5.13
       '@vue/cli-plugin-router': 4.5.13_@vue+cli-service@4.5.13
@@ -5616,7 +5590,7 @@ packages:
     peerDependencies:
       webpack: '*'
     dependencies:
-      '@types/webpack': 4.41.25
+      '@types/webpack': 4.41.31
       del: 4.1.1
       webpack: 4.46.0_webpack-cli@3.3.12
     dev: true
@@ -8485,7 +8459,7 @@ packages:
     dependencies:
       '@types/html-minifier-terser': 5.1.1
       '@types/tapable': 1.0.6
-      '@types/webpack': 4.41.26
+      '@types/webpack': 4.41.31
       html-minifier-terser: 5.1.1
       loader-utils: 1.4.0
       lodash: 4.17.20
@@ -14591,7 +14565,7 @@ packages:
     peerDependencies:
       webpack: ^4
     dependencies:
-      '@types/webpack': 4.41.25
+      '@types/webpack': 4.41.31
       '@types/webpack-sources': 0.1.8
       colors: 1.4.0
       lodash: 4.17.20
