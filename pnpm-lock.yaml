@@ -8,7 +8,7 @@ specifiers:
   '@types/minimist': 1.2.2
   '@types/normalize-package-data': 2.4.1
   '@types/parse-json': 4.0.0
-  '@types/unist': 2.0.3
+  '@types/unist': 2.0.6
   '@typescript-eslint/parser': 3.10.1
   husky: 4.3.8
   lint-staged: 10.5.4
@@ -23,7 +23,7 @@ devDependencies:
   '@types/minimist': 1.2.2
   '@types/normalize-package-data': 2.4.1
   '@types/parse-json': 4.0.0
-  '@types/unist': 2.0.3
+  '@types/unist': 2.0.6
   '@typescript-eslint/parser': 3.10.1
   husky: 4.3.8
   lint-staged: 10.5.4
@@ -407,7 +407,7 @@ packages:
   /@types/mdast/3.0.3:
     resolution: {integrity: sha512-SXPBMnFVQg1s00dlMCc/jCdvPqdE4mXaMMCeRlxLDmTAEoegHT53xKtkDnzDTOcmMHUfcjyf36/YYZ6SxRdnsw==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /@types/minimist/1.2.2:
@@ -422,8 +422,8 @@ packages:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
 
-  /@types/unist/2.0.3:
-    resolution: {integrity: sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==}
+  /@types/unist/2.0.6:
+    resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
 
   /@typescript-eslint/experimental-utils/3.10.1:
@@ -1729,7 +1729,7 @@ packages:
   /mdast-util-to-markdown/0.5.3:
     resolution: {integrity: sha512-sr8q7fQJ1xoCqZSXW6dO/MYu2Md+a4Hfk9uO+XHCfiBhVM0EgWtfAV7BuN+ff6otUeu2xDyt1o7vhZGwOG3+BA==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       longest-streak: 2.0.4
       mdast-util-to-string: 1.1.0
       parse-entities: 2.0.0
@@ -2785,7 +2785,7 @@ packages:
   /unist-util-stringify-position/2.0.3:
     resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /universalify/1.0.0:
@@ -2817,14 +2817,14 @@ packages:
   /vfile-message/2.0.4:
     resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-stringify-position: 2.0.3
     dev: true
 
   /vfile/4.1.1:
     resolution: {integrity: sha512-lRjkpyDGjVlBA7cDQhQ+gNcvB1BGaTHYuSOcY3S7OhDmBtnzX95FhtZZDecSTDm6aajFymyve6S5DN4ZHGezdQ==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       is-buffer: 2.0.4
       replace-ext: 1.0.0
       unist-util-stringify-position: 2.0.3
