@@ -8,7 +8,7 @@ specifiers:
   '@types/chrome': 0.0.159
   '@types/copy-webpack-plugin': 5.0.3
   '@types/debug': 4.1.5
-  '@types/google.analytics': 0.0.41
+  '@types/google.analytics': 0.0.42
   '@types/jest': 26.0.23
   '@types/lodash': 4.14.168
   '@types/node': 13.13.51
@@ -108,7 +108,7 @@ devDependencies:
   '@types/chrome': 0.0.159
   '@types/copy-webpack-plugin': 5.0.3
   '@types/debug': 4.1.5
-  '@types/google.analytics': 0.0.41
+  '@types/google.analytics': 0.0.42
   '@types/jest': 26.0.23
   '@types/lodash': 4.14.168
   '@types/node': 13.13.51
@@ -2679,7 +2679,7 @@ packages:
   /@babel/template/7.10.4:
     resolution: {integrity: sha512-ZCjD27cGJFUB6nmCB1Enki3r+L5kJveX9pq1SvAUKoICy6CZ9yD8xO086YXdYhvNjBdnekm4ZnaP5yC8Cs/1tA==}
     dependencies:
-      '@babel/code-frame': 7.10.4
+      '@babel/code-frame': 7.14.5
       '@babel/parser': 7.12.5
       '@babel/types': 7.12.6
     dev: true
@@ -2687,7 +2687,7 @@ packages:
   /@babel/template/7.12.13:
     resolution: {integrity: sha512-/7xxiGA57xMo/P2GVvdEumr8ONhFOhfgq2ihK3h1e6THqzTAkHbkXgB0xI9yeTfIUoH3+oAeHhqm/I43OTbbjA==}
     dependencies:
-      '@babel/code-frame': 7.12.13
+      '@babel/code-frame': 7.14.5
       '@babel/parser': 7.14.1
       '@babel/types': 7.14.1
     dev: true
@@ -2776,7 +2776,7 @@ packages:
   /@babel/traverse/7.13.17:
     resolution: {integrity: sha512-BMnZn0R+X6ayqm3C3To7o1j7Q020gWdqdyP50KEoVqaCO2c/Im7sYZSmVgvefp8TTMQ+9CtwuBp0Z1CZ8V3Pvg==}
     dependencies:
-      '@babel/code-frame': 7.12.13
+      '@babel/code-frame': 7.14.5
       '@babel/generator': 7.13.16
       '@babel/helper-function-name': 7.12.13
       '@babel/helper-split-export-declaration': 7.12.13
@@ -2791,7 +2791,7 @@ packages:
   /@babel/traverse/7.14.0:
     resolution: {integrity: sha512-dZ/a371EE5XNhTHomvtuLTUyx6UEoJmYX+DT5zBCQN3McHemsuIaKKYqsc/fs26BEkHs/lBZy0J571LP5z9kQA==}
     dependencies:
-      '@babel/code-frame': 7.12.13
+      '@babel/code-frame': 7.14.5
       '@babel/generator': 7.14.1
       '@babel/helper-function-name': 7.12.13
       '@babel/helper-split-export-declaration': 7.12.13
@@ -3385,8 +3385,8 @@ packages:
       '@types/node': 13.13.30
     dev: true
 
-  /@types/google.analytics/0.0.41:
-    resolution: {integrity: sha512-LE6AfJFJtxUl1d56oQ1PvQDEOtU+0fgqTVgmOw+T0eaz7FB4DTqKxbI6x8sq+7FDvAeIXOugZyGHJLR4CAxO4A==}
+  /@types/google.analytics/0.0.42:
+    resolution: {integrity: sha512-w0ZFj3SHznQXSq99kFCuO8tkN6w4T14znjrF2alLCSDnHOXEnpzneyNwxLvekcsDBInr8b5mXmzYh03GArqEyw==}
     dev: true
 
   /@types/graceful-fs/4.1.4:
