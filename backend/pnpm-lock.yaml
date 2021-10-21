@@ -24,7 +24,7 @@ specifiers:
   serverless-pseudo-parameters: 2.6.1
   serverless-webpack: 5.5.5
   ts-jest: 26.5.6
-  ts-loader: 8.2.0
+  ts-loader: 8.3.0
   typescript: 3.9.10
   uuid: ^8.1.0
   webpack: 4.46.0
@@ -56,7 +56,7 @@ devDependencies:
   serverless-pseudo-parameters: 2.6.1_serverless@1.83.3
   serverless-webpack: 5.5.5_ef504aeb77407a93bc7e26e7f6b8ef69
   ts-jest: 26.5.6_jest@26.6.3+typescript@3.9.10
-  ts-loader: 8.2.0_typescript@3.9.10+webpack@4.46.0
+  ts-loader: 8.3.0_typescript@3.9.10+webpack@4.46.0
   typescript: 3.9.10
   webpack: 4.46.0
 
@@ -1338,9 +1338,9 @@ packages:
       '@jest/types': 26.6.2
       '@types/node': 13.13.30
       ansi-escapes: 4.3.1
-      chalk: 4.0.0
+      chalk: 4.1.0
       exit: 0.1.2
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-changed-files: 26.6.2
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
@@ -1471,10 +1471,10 @@ packages:
       '@babel/core': 7.15.8
       '@jest/types': 26.6.2
       babel-plugin-istanbul: 6.0.0
-      chalk: 4.0.0
+      chalk: 4.1.0
       convert-source-map: 1.7.0
       fast-json-stable-stringify: 2.1.0
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-haste-map: 26.6.2
       jest-regex-util: 26.0.0
       jest-util: 26.6.2
@@ -5839,9 +5839,9 @@ packages:
       '@jest/core': 26.6.3
       '@jest/test-result': 26.6.2
       '@jest/types': 26.6.2
-      chalk: 4.0.0
+      chalk: 4.1.0
       exit: 0.1.2
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       import-local: 3.0.2
       is-ci: 2.0.0
       jest-config: 26.6.3
@@ -9113,8 +9113,8 @@ packages:
       yargs-parser: 20.2.7
     dev: true
 
-  /ts-loader/8.2.0_typescript@3.9.10+webpack@4.46.0:
-    resolution: {integrity: sha512-ebXBFrNyMSmbWgjnb3WBloUBK+VSx1xckaXsMXxlZRDqce/OPdYBVN5efB0W3V0defq0Gcy4YuzvPGqRgjj85A==}
+  /ts-loader/8.3.0_typescript@3.9.10+webpack@4.46.0:
+    resolution: {integrity: sha512-MgGly4I6cStsJy27ViE32UoqxPTN9Xly4anxxVyaIWR+9BGxboV4EyJBGfR3RePV7Ksjj3rHmPZJeIt+7o4Vag==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       typescript: '*'
