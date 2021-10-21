@@ -18,7 +18,7 @@ specifiers:
   eslint-plugin-jest: 23.20.0
   jest: 26.6.3
   js-yaml: 3.14.1
-  prettier: 2.2.1
+  prettier: 2.4.1
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
@@ -50,7 +50,7 @@ devDependencies:
   eslint-plugin-jest: 23.20.0_eslint@6.8.0+typescript@3.9.10
   jest: 26.6.3
   js-yaml: 3.14.1
-  prettier: 2.2.1
+  prettier: 2.4.1
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.5.0
@@ -7542,8 +7542,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier/2.2.1:
-    resolution: {integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==}
+  /prettier/2.4.1:
+    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
