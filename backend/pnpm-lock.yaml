@@ -22,7 +22,7 @@ specifiers:
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.6.1
-  serverless-webpack: 5.4.2
+  serverless-webpack: 5.5.5
   ts-jest: 26.5.6
   ts-loader: 8.2.0
   typescript: 3.9.10
@@ -54,7 +54,7 @@ devDependencies:
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
   serverless-pseudo-parameters: 2.6.1_serverless@1.83.3
-  serverless-webpack: 5.4.2_typescript@3.9.10+webpack@4.46.0
+  serverless-webpack: 5.5.5_ef504aeb77407a93bc7e26e7f6b8ef69
   ts-jest: 26.5.6_jest@26.6.3+typescript@3.9.10
   ts-loader: 8.2.0_typescript@3.9.10+webpack@4.46.0
   typescript: 3.9.10
@@ -1275,7 +1275,7 @@ packages:
     resolution: {integrity: sha512-BzSY3NJBKM4kyatSOWh3D/JJ2O3CVzBybHWxtgxnggaxEuaSTTDqeiSb/xk9lrkw2Tbqyivw5ZU4rT+EfznQsA==}
     dependencies:
       '@babel/helper-validator-identifier': 7.15.7
-      lodash: 4.17.20
+      lodash: 4.17.21
       to-fast-properties: 2.0.0
     dev: true
 
@@ -1409,8 +1409,8 @@ packages:
       chalk: 4.1.0
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
-      glob: 7.1.6
-      graceful-fs: 4.2.4
+      glob: 7.2.0
+      graceful-fs: 4.2.6
       istanbul-lib-coverage: 3.0.0
       istanbul-lib-instrument: 4.0.3
       istanbul-lib-report: 3.0.0
@@ -1453,7 +1453,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/test-result': 26.6.2
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-haste-map: 26.6.2
       jest-runner: 26.6.3
       jest-runtime: 26.6.3
@@ -2084,9 +2084,9 @@ packages:
     dependencies:
       debug: 4.1.1
       eslint-visitor-keys: 1.1.0
-      glob: 7.1.6
+      glob: 7.2.0
       is-glob: 4.0.1
-      lodash: 4.17.15
+      lodash: 4.17.21
       semver: 7.3.5
       tsutils: 3.17.1_typescript@3.9.10
       typescript: 3.9.10
@@ -2401,7 +2401,7 @@ packages:
     resolution: {integrity: sha512-bEL/yUb/fNNiNTuUz979Z0Yg5L+LzLxGJz8x79lYmR54fmTIb6ob/hNQgkQnIUDWIFjZVQwl9Xs356I6BAMHfw==}
     engines: {node: '>= 6'}
     dependencies:
-      glob: 7.1.6
+      glob: 7.2.0
       graceful-fs: 4.2.6
       lazystream: 1.0.0
       lodash.defaults: 4.2.0
@@ -2420,9 +2420,9 @@ packages:
       archiver-utils: 2.1.0
       async: 2.6.3
       buffer-crc32: 0.2.13
-      glob: 7.1.6
+      glob: 7.2.0
       readable-stream: 3.6.0
-      tar-stream: 2.1.4
+      tar-stream: 2.2.0
       zip-stream: 2.1.3
     dev: true
 
@@ -2433,9 +2433,9 @@ packages:
       archiver-utils: 2.1.0
       async: 2.6.3
       buffer-crc32: 0.2.13
-      glob: 7.1.6
+      glob: 7.2.0
       readable-stream: 3.6.0
-      tar-stream: 2.1.4
+      tar-stream: 2.2.0
       zip-stream: 3.0.1
     dev: true
 
@@ -2772,7 +2772,7 @@ packages:
     dependencies:
       archiver: 5.3.0
       async: 3.2.0
-      glob: 7.1.6
+      glob: 7.2.0
       which: 2.0.2
       yargs: 16.2.0
     dev: true
@@ -3042,8 +3042,8 @@ packages:
       bluebird: 3.7.2
       chownr: 1.1.4
       figgy-pudding: 3.5.2
-      glob: 7.1.6
-      graceful-fs: 4.2.4
+      glob: 7.2.0
+      graceful-fs: 4.2.6
       infer-owner: 1.0.4
       lru-cache: 5.1.1
       mississippi: 3.0.0
@@ -5028,8 +5028,8 @@ packages:
     resolution: {integrity: sha1-jFoUlNIGbFcMw7/kSWF1rMTVAqs=}
     dev: true
 
-  /glob/7.1.6:
-    resolution: {integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==}
+  /glob/7.2.0:
+    resolution: {integrity: sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==}
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -5077,7 +5077,7 @@ packages:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.2.2
-      glob: 7.1.6
+      glob: 7.2.0
       ignore: 5.1.4
       merge2: 1.3.0
       slash: 3.0.0
@@ -5091,7 +5091,7 @@ packages:
       array-union: 1.0.2
       dir-glob: 2.2.2
       fast-glob: 2.2.7
-      glob: 7.1.6
+      glob: 7.2.0
       ignore: 4.0.6
       pify: 4.0.1
       slash: 2.0.0
@@ -5461,7 +5461,7 @@ packages:
       cli-width: 2.2.1
       external-editor: 3.1.0
       figures: 3.2.0
-      lodash: 4.17.15
+      lodash: 4.17.21
       mute-stream: 0.0.8
       run-async: 2.4.1
       rxjs: 6.5.5
@@ -5871,8 +5871,8 @@ packages:
       babel-jest: 26.6.3_@babel+core@7.15.8
       chalk: 4.1.0
       deepmerge: 4.2.2
-      glob: 7.1.6
-      graceful-fs: 4.2.4
+      glob: 7.2.0
+      graceful-fs: 4.2.6
       jest-environment-jsdom: 26.6.2
       jest-environment-node: 26.6.2
       jest-get-type: 26.3.0
@@ -5960,7 +5960,7 @@ packages:
       '@types/node': 13.13.30
       anymatch: 3.1.1
       fb-watchman: 2.0.1
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-regex-util: 26.0.0
       jest-serializer: 26.6.2
       jest-util: 26.6.2
@@ -6027,7 +6027,7 @@ packages:
       '@jest/types': 26.6.2
       '@types/stack-utils': 2.0.0
       chalk: 4.1.0
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       micromatch: 4.0.2
       pretty-format: 26.6.2
       slash: 3.0.0
@@ -6074,7 +6074,7 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       chalk: 4.1.0
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-pnp-resolver: 1.2.2_jest-resolve@26.6.2
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
@@ -6094,7 +6094,7 @@ packages:
       chalk: 4.1.0
       emittery: 0.7.1
       exit: 0.1.2
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-config: 26.6.3
       jest-docblock: 26.0.0
       jest-haste-map: 26.6.2
@@ -6131,8 +6131,8 @@ packages:
       cjs-module-lexer: 0.6.0
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
-      glob: 7.1.6
-      graceful-fs: 4.2.4
+      glob: 7.2.0
+      graceful-fs: 4.2.6
       jest-config: 26.6.3
       jest-haste-map: 26.6.2
       jest-message-util: 26.6.2
@@ -6157,7 +6157,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@types/node': 13.13.30
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
     dev: true
 
   /jest-snapshot/26.6.2:
@@ -6170,7 +6170,7 @@ packages:
       '@types/prettier': 2.0.0
       chalk: 4.1.0
       expect: 26.6.2
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jest-diff: 26.6.2
       jest-get-type: 26.3.0
       jest-haste-map: 26.6.2
@@ -6583,10 +6583,6 @@ packages:
 
   /lodash/4.17.15:
     resolution: {integrity: sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==}
-    dev: true
-
-  /lodash/4.17.20:
-    resolution: {integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==}
     dev: true
 
   /lodash/4.17.21:
@@ -7929,7 +7925,7 @@ packages:
     peerDependencies:
       request: ^2.34
     dependencies:
-      lodash: 4.17.20
+      lodash: 4.17.21
       request: 2.88.2
     dev: true
 
@@ -8057,21 +8053,21 @@ packages:
     resolution: {integrity: sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==}
     hasBin: true
     dependencies:
-      glob: 7.1.6
+      glob: 7.2.0
     dev: true
 
   /rimraf/2.7.1:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
     hasBin: true
     dependencies:
-      glob: 7.1.6
+      glob: 7.2.0
     dev: true
 
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
     dependencies:
-      glob: 7.1.6
+      glob: 7.2.0
     dev: true
 
   /ripemd160/2.0.2:
@@ -8218,18 +8214,21 @@ packages:
       serverless: 1.83.3
     dev: true
 
-  /serverless-webpack/5.4.2_typescript@3.9.10+webpack@4.46.0:
-    resolution: {integrity: sha512-QX3ZQbCItACW8midkQf/w5gNdT2glSB4Aoxad5RU2xzXoWww/f9VOF5Et2bOLNFr+jlXTOk8XbcZxxL6AIan/A==}
+  /serverless-webpack/5.5.5_ef504aeb77407a93bc7e26e7f6b8ef69:
+    resolution: {integrity: sha512-j40gbCLl/VQqGvSYYYGMq8hTIH0jiCN0gtwjEx2QtEsvzf3dttYTLOGAjcgJKVhvls9F+LkfQjHvkNiZuCHGVg==}
+    engines: {node: '>= 10.12.0'}
     peerDependencies:
+      serverless: 1 || 2
       webpack: '>= 3.0.0 < 6'
     dependencies:
       bestzip: 2.2.0
       bluebird: 3.7.2
       fs-extra: 9.1.0
-      glob: 7.1.6
+      glob: 7.2.0
       is-builtin-module: 3.1.0
       lodash: 4.17.21
       semver: 7.3.5
+      serverless: 1.83.3
       webpack: 4.46.0
     optionalDependencies:
       ts-node: 8.10.1_typescript@3.9.10
@@ -8834,7 +8833,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       ajv: 6.12.2
-      lodash: 4.17.15
+      lodash: 4.17.21
       slice-ansi: 2.1.0
       string-width: 3.1.0
     dev: true
@@ -8866,17 +8865,6 @@ packages:
       readable-stream: 2.3.7
       to-buffer: 1.1.1
       xtend: 4.0.2
-    dev: true
-
-  /tar-stream/2.1.4:
-    resolution: {integrity: sha512-o3pS2zlG4gxr67GmFYBLlq+dM8gyRGUOvsrHclSkvtVtQbjV0s/+ZE8OpICbaj8clrX3tjeHngYGP7rweaBnuw==}
-    engines: {node: '>=6'}
-    dependencies:
-      bl: 4.0.3
-      end-of-stream: 1.4.4
-      fs-constants: 1.0.0
-      inherits: 2.0.4
-      readable-stream: 3.6.0
     dev: true
 
   /tar-stream/2.2.0:
@@ -8951,7 +8939,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@istanbuljs/schema': 0.1.2
-      glob: 7.1.6
+      glob: 7.2.0
       minimatch: 3.0.4
     dev: true
 
@@ -9480,7 +9468,7 @@ packages:
   /watchpack/1.7.4:
     resolution: {integrity: sha512-aWAgTW4MoSJzZPAicljkO1hsi1oKj/RRq/OJQh2PKI2UKL04c2Bs+MBOB+BBABHTXJpf9mCwHN7ANCvYsvY2sg==}
     dependencies:
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       neo-async: 2.6.1
     optionalDependencies:
       chokidar: 3.4.2
@@ -9754,7 +9742,7 @@ packages:
     hasBin: true
     dependencies:
       argparse: 1.0.10
-      glob: 7.1.6
+      glob: 7.2.0
     dev: true
 
   /yargs-parser/18.1.3:
