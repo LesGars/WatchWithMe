@@ -21,7 +21,7 @@ specifiers:
   prettier: 2.4.1
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
-  serverless-pseudo-parameters: 2.5.0
+  serverless-pseudo-parameters: 2.6.1
   serverless-webpack: 5.4.2
   ts-jest: 26.5.6
   ts-loader: 8.2.0
@@ -53,7 +53,7 @@ devDependencies:
   prettier: 2.4.1
   serverless: 1.83.3
   serverless-iam-roles-per-function: 2.0.2
-  serverless-pseudo-parameters: 2.5.0
+  serverless-pseudo-parameters: 2.6.1_serverless@1.83.3
   serverless-webpack: 5.4.2_typescript@3.9.10+webpack@4.46.0
   ts-jest: 26.5.6_jest@26.6.3+typescript@3.9.10
   ts-loader: 8.2.0_typescript@3.9.10+webpack@4.46.0
@@ -2087,7 +2087,7 @@ packages:
       glob: 7.1.6
       is-glob: 4.0.1
       lodash: 4.17.15
-      semver: 7.3.2
+      semver: 7.3.5
       tsutils: 3.17.1_typescript@3.9.10
       typescript: 3.9.10
     dev: true
@@ -8189,12 +8189,6 @@ packages:
     hasBin: true
     dev: true
 
-  /semver/7.3.2:
-    resolution: {integrity: sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dev: true
-
   /semver/7.3.5:
     resolution: {integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==}
     engines: {node: '>=10'}
@@ -8214,8 +8208,14 @@ packages:
       lodash: 4.17.15
     dev: true
 
-  /serverless-pseudo-parameters/2.5.0:
-    resolution: {integrity: sha512-A/O49AR8LL6jlnPSmnOTYgL1KqVgskeRla4sVDeS/r5dHFJlwOU5MgFilc7aaQP8NWAwRJANaIS9oiSE3I+VUA==}
+  /serverless-pseudo-parameters/2.6.1_serverless@1.83.3:
+    resolution: {integrity: sha512-mHedRk4l7O6OlzFh3++WInQoBfwUy/B10VL0eHMiiV4xwA5hJui45lp00eMSe7Ga0qj1eV91LqeYv8wu98Vekw==}
+    deprecated: All functionalities as provided by plugin are natively supported by Serveless Framework (from 2.50.0 onwards)
+    peerDependencies:
+      serverless: 1 || 2
+    dependencies:
+      semver: 7.3.5
+      serverless: 1.83.3
     dev: true
 
   /serverless-webpack/5.4.2_typescript@3.9.10+webpack@4.46.0:
