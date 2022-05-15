@@ -25,7 +25,7 @@
         "@babel/core": "7.15.8",
         "@babel/preset-env": "7.15.8",
         "@babel/preset-typescript": "7.15.0",
-        "@shelf/jest-dynamodb": "1.8.1",
+        "@shelf/jest-dynamodb": "2.2.4",
         "@types/aws-lambda": "8.10.84",
         "@types/jest": "26.0.24",
         "@types/node": "13.13.51",
