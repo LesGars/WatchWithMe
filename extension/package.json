@@ -38,7 +38,7 @@
         "@types/chrome": "0.0.159",
         "@types/copy-webpack-plugin": "5.0.3",
         "@types/debug": "4.1.7",
-        "@types/google.analytics": "0.0.42",
+        "@types/google.analytics": "0.0.46",
         "@types/jest": "26.0.24",
         "@types/lodash": "4.14.176",
         "@types/node": "13.13.51",
